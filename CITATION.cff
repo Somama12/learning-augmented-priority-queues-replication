@@ -2,10 +2,13 @@ cff-version: 1.2.0
 message: "Please cite this software snapshot when using its code or results."
 type: software
 title: "Learning-Augmented Priority Queues: Partial Replication and Artifact Audit"
-version: "0.2.0-preparation"
+version: "1.0.0"
 authors:
   - family-names: "Siddiqui"
     given-names: "Sahil"
+    affiliation: "Fisk University"
+    orcid: "https://orcid.org/0009-0002-1033-2669"
 abstract: "Source, frozen plans, comparison-count observations, and analysis for a partial replication of learning-augmented priority queues, with a retention-defect cleanup and supporting two-host runtime and memory analyses. Licensing scope is documented in THIRD_PARTY_NOTICES.md."
 repository-code: "https://github.com/Somama12/learning-augmented-priority-queues-replication"
-url: "https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/d71f1494c0f02f70b40216f69af1158a12db3d70"
+url: "https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/v1.0.0"
+doi: "10.5281/zenodo.24023742"

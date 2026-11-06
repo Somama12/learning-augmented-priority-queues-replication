@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "started_utc": "2026-11-06T22:41:07.332182+00:00",
+  "argv": [
+    "/usr/bin/c++",
+    "-O3",
+    "-std=c++17",
+    "-DNDEBUG",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic",
+    "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/release_warning_validation/lapq/phase7/replication.cpp",
+    "-o",
+    "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/release_warning_validation/quick/build/replication"
+  ],
+  "compiler_path": "/usr/bin/c++",
+  "compiler_version": "Apple clang version 15.0.0 (clang-1500.1.0.2.5)\nTarget: arm64-apple-darwin23.3.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "compiler_version_returncode": 0,
+  "source_sha256": "b57660f393ecf22e402907f25ca91fde019036cd0a4ea896ff4da4e0bdce1200",
+  "flags": [
+    "-O3",
+    "-std=c++17",
+    "-DNDEBUG",
+    "-Wall",
+    "-Wextra",
+    "-Wpedantic"
+  ],
+  "release_source_revision": {
+    "revision_sha256": "b36595506a54f0d30ceeeafdc077cc5a17705afff1d0a7de35761da89c9e759a",
+    "resolver_sha256": "4c17ef6910ac355697296b9c8ae4c4de4b47c0dc2dd7155a80f00933d79688d0",
+    "active_source": "replication.cpp",
+    "active_source_sha256": "b57660f393ecf22e402907f25ca91fde019036cd0a4ea896ff4da4e0bdce1200",
+    "historical_source": "frozen/replication.cpp",
+    "historical_source_sha256": "5ef65dfa3cf90a90490fe731949a0faafbbf77a6b777c3ccd6c34cf61ba54ef9",
+    "exact_documented_replacements_verified": true,
+    "non_whitespace_bytes_identical": true
+  },
+  "scope": "Fresh local build from the frozen source; no claim of binary identity across hosts.",
+  "returncode": 0,
+  "binary_sha256": "5305c5b4a3421cc37c05031a2848197e46495d2171bbe21d90cc71240be0c526",
+  "binary_bytes": 91304,
+  "finished_utc": "2026-11-06T22:41:08.976052+00:00"
+}

@@ -7,6 +7,8 @@ from pathlib import Path
 import statistics
 from collections import Counter, defaultdict
 
+from release_source import source_pin_path
+
 HERE = Path(__file__).resolve().parent
 
 
@@ -51,7 +53,7 @@ def main():
     check(execution["raw_engine_file_sha256"] == sha(HERE / "results/raw-engine-output.jsonl"), "raw-engine hash")
     for name, digest in freeze["source_sha256"].items():
         if name != "build/replication":
-            check(sha(HERE / name) == digest, "source pin " + name)
+            check(sha(source_pin_path(name)) == digest, "source pin " + name)
     check(len(raw) == 11340 and len(conditions) == len(plan["conditions"]) == 3780, "raw coverage")
     check(len(summary["point_rows"]) == 378 and len(summary["curve_summaries"]) == 18, "summary coverage")
     records = defaultdict(dict); ids = set(); index = 0; insertions = 0

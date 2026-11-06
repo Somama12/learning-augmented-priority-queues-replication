@@ -31,10 +31,12 @@ import threading
 import time
 import traceback
 
+from release_source import source_pin_path, verify_release_source
+
 HERE = Path(__file__).resolve().parent
 FREEZE_SHA256 = '5cf250d30ed87935eb0055137ff2a4305faa5858ed16e86c8adba026b3145a15'
 HISTORICAL_BINARY = 'build/replication'
-COMPILER_FLAGS = ['-O3', '-std=c++17', '-DNDEBUG']
+COMPILER_FLAGS = ['-O3', '-std=c++17', '-DNDEBUG', '-Wall', '-Wextra', '-Wpedantic']
 QUICK_RULE = {'parameter_index': 20, 'repetition': 0,
               'regimes': ['class', 'decay'], 'sizes': [1000, 10000, 100000]}
 
@@ -71,7 +73,7 @@ def verify_sources():
                 'Unsafe source path in freeze')
         if name == HISTORICAL_BINARY:
             continue
-        path = HERE/name
+        path = source_pin_path(name)
         require(path.is_file() and not path.is_symlink() and path.resolve().is_relative_to(HERE),
                 'Missing, symlinked, or escaping pinned file: ' + name)
         observed[name] = sha(path)
@@ -110,6 +112,7 @@ def build_engine(destination, compiler):
                 'compiler_path': resolved, 'compiler_version': version.stdout,
                 'compiler_version_returncode': version.returncode,
                 'source_sha256': sha(HERE/'replication.cpp'), 'flags': COMPILER_FLAGS,
+                'release_source_revision': verify_release_source(),
                 'scope': 'Fresh local build from the frozen source; no claim of binary identity across hosts.'}
     write_json(folder/'build.json', metadata)
     try:
@@ -243,6 +246,7 @@ def main():
         print(json.dumps({'status':'passed', 'frozen_protocol_sha256':FREEZE_SHA256,
                           'verified_source_input_evidence_files':len(sources),
                           'historical_binary_pin_exempted':HISTORICAL_BINARY,
+                          'release_source_revision':verify_release_source(),
                           'experiments_run':False}, indent=2))
         return
     require(args.destination is not None, 'A fresh --destination is required')
@@ -261,6 +265,7 @@ def main():
                 'planned_conditions':len(conditions), 'planned_method_runs':len(conditions)*len(plan['models']),
                 'models':plan['models'], 'conditions':conditions, 'original_freeze_sha256':FREEZE_SHA256,
                 'verified_source_sha256':sources,
+                'release_source_revision':verify_release_source(),
                 'historical_binary_exemption':{'path':HISTORICAL_BINARY,'original_sha256':frozen['source_sha256'][HISTORICAL_BINARY],
                     'reason':'Platform-specific original binary; rebuild verified source and record the new executable instead.'},
                 'portable_runner_sha256':sha(__file__), 'python':sys.version, 'platform':platform.platform(),
@@ -269,6 +274,7 @@ def main():
     execution = {'status':'preparing','started_utc':now(),'freeze_sha256':FREEZE_SHA256,
                  'run_manifest_sha256':sha(destination/'run-manifest.json'),'portable_runner_sha256':sha(__file__),
                  'mode':args.mode,'full_paper_reproduction':args.mode=='full',
+                 'release_source_revision':verify_release_source(),
                  'planned_conditions':len(conditions),'planned_method_runs':len(conditions)*len(plan['models']),
                  'completed_conditions':0,'completed_method_runs':0,'failures':[],
                  'python':sys.version,'platform':platform.platform(),

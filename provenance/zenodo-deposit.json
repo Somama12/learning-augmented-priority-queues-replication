@@ -1,0 +1,13 @@
+{
+  "record_id": "24023742",
+  "doi": "10.5281/zenodo.24023742",
+  "record_url": "https://zenodo.org/records/24023742",
+  "draft_url": "https://zenodo.org/uploads/24023742",
+  "reservation_verified_in_browser": true,
+  "resource_type": "software",
+  "version": "1.0.0",
+  "author": "Sahil Siddiqui",
+  "orcid": "0009-0002-1033-2669",
+  "affiliation": "Fisk University",
+  "archive_policy": "One ZIP of the tagged release, with component-specific licenses; no upstream Python or road-input redistribution."
+}

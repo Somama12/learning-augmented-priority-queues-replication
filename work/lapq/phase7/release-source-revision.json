@@ -1,0 +1,24 @@
+{
+  "format_version": 1,
+  "created_utc": "2026-11-06T22:39:46.603033+00:00",
+  "revision_kind": "formatting-only statement separation for misleading-indentation diagnostics",
+  "active_source": "replication.cpp",
+  "active_source_sha256": "b57660f393ecf22e402907f25ca91fde019036cd0a4ea896ff4da4e0bdce1200",
+  "historical_source": "frozen/replication.cpp",
+  "historical_source_sha256": "5ef65dfa3cf90a90490fe731949a0faafbbf77a6b777c3ccd6c34cf61ba54ef9",
+  "resolver_sha256": "4c17ef6910ac355697296b9c8ae4c4de4b47c0dc2dd7155a80f00933d79688d0",
+  "original_primary_source_commit": "d71f1494c0f02f70b40216f69af1158a12db3d70",
+  "original_primary_protocol_sha256": "5cf250d30ed87935eb0055137ff2a4305faa5858ed16e86c8adba026b3145a15",
+  "edits": [
+    {
+      "original_line": 117,
+      "description": "Place return out on its own line after the range-for statement."
+    },
+    {
+      "original_line": 224,
+      "description": "Place each of the four model-alias if statements on its own line."
+    }
+  ],
+  "preservation": "The original frozen protocol, original engine source bytes, primary results and primary preflight evidence remain unchanged. Only the logical replication.cpp source pin is resolved to frozen/replication.cpp for historical verification. The portable runner compiles active replication.cpp.",
+  "semantic_scope": "Exactly four newline-plus-indentation insertions after statement-ending semicolons outside strings/comments; no C++ tokens or control flow changed. The resolver verifies the two exact byte replacements rather than accepting arbitrary whitespace edits."
+}

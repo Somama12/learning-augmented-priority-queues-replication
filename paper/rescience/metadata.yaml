@@ -3,19 +3,25 @@
   "authors": [
     {
       "name": "Sahil Siddiqui",
-      "orcid": "",
+      "orcid": "0009-0002-1033-2669",
       "email": "somamasiddiqui11@gmail.com",
-      "affiliations": "*"
+      "affiliations": "1,*"
     }
   ],
-  "affiliations": [],
+  "affiliations": [
+    {
+      "code": 1,
+      "name": "Fisk University",
+      "address": ""
+    }
+  ],
   "keywords": "priority queues, replication, learning-augmented algorithms, C++",
   "code": [
     {
-      "url": "https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/d71f1494c0f02f70b40216f69af1158a12db3d70"
+      "url": "https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/v1.0.0"
     },
     {
-      "doi": ""
+      "doi": "10.5281/zenodo.24023742"
     },
     {
       "swh": ""
@@ -23,7 +29,7 @@
   ],
   "data": [
     {
-      "url": "https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/d71f1494c0f02f70b40216f69af1158a12db3d70/work/lapq"
+      "url": "https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/v1.0.0/work/lapq"
     },
     {
       "doi": ""

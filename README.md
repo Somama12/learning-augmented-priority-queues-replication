@@ -1,17 +1,39 @@
 # Learning-augmented priority queues: partial replication and artifact audit
 
+**The frozen input generator requires exactly NumPy 2.2.4, including quick runs.
+Create the pinned virtual environment below before running any verification,
+analysis, preflight or reproduction command. Keep the version and hash checks
+intact; a newer NumPy version is not a supported substitute.**
+
+From the repository root, using Python 3.12 or 3.13:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -c "import numpy; assert numpy.__version__ == '2.2.4', numpy.__version__; print('NumPy', numpy.__version__)"
+```
+
+Use `.venv/bin/python` for every Python command below. On Windows, use the
+corresponding `.venv\Scripts\python.exe` executable. The requirements file
+pins NumPy and the other required packages; the assertion confirms the active
+interpreter is using the frozen generator version.
+
 Author: **Sahil Siddiqui**. The author is responsible for all claims. AI coding
 assistants were used as tools for code generation, debugging, and editing of prose.
 
 Public repository: [learning-augmented-priority-queues-replication](https://github.com/Somama12/learning-augmented-priority-queues-replication).
-The independently verified [scientific source snapshot](https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/d71f1494c0f02f70b40216f69af1158a12db3d70)
-is commit `d71f1494c0f02f70b40216f69af1158a12db3d70`. This stable source commit precedes the current
-paper/documentation update; it is not presented as the commit of this README.
-Source publication does not imply journal submission or acceptance.
+Use the [v1.0.0 tagged source](https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/v1.0.0) and
+[v1.0.0 release page](https://github.com/Somama12/learning-augmented-priority-queues-replication/releases/tag/v1.0.0).
+Artifact DOI: [10.5281/zenodo.24023742](https://doi.org/10.5281/zenodo.24023742).
+The archive contains source, raw records, the paper, and the supplement.
+Journal review status is separate from this software release.
 
 ## Main paper and scope
 
-`paper/learned-priority-queues-rescience-c.pdf` is the ReScience C preparation.
+[Read the main paper](paper/learned-priority-queues-rescience-c.pdf),
+[metadata](paper/rescience/metadata.yaml), and
+[supplement](supplement/learned-priority-queues-runtime-memory-supplement.pdf).
+The paper is prepared for ReScience C.
 Editable source, figures, template class and licensed fonts are in
 `paper/rescience/`. This is a **partial replication** of clean-comparison sorting
 curves from Benomar and Coester (2024): offline rank predictions, online rank
@@ -39,12 +61,10 @@ the original comparison-count results.
 
 ## Verify and reanalyze existing evidence
 
-From the repository root, with Python 3.12 or 3.13:
+After completing the pinned environment setup above:
 
 ```sh
-python3 verify_snapshot.py
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python verify_snapshot.py
 .venv/bin/python work/lapq/phase7/reproduce_replication.py --verify-only
 .venv/bin/python work/lapq/phase7/fetch_replication_references.py
 .venv/bin/python work/lapq/phase7/analyze_replication.py --results work/lapq/phase7/results --output reanalysis/replication_summary.json
@@ -65,6 +85,9 @@ source/input/evidence file, compiles the source locally, and records the new
 compiler and executable hash. The original platform-specific executable hash is
 historical provenance, not a requirement that another compiler reproduce it.
 
+The quick and full modes both require NumPy 2.2.4 and enforce the frozen source
+and input checks. The quick mode only reduces the number of conditions.
+
 Predetermined quick check: six conditions (maximum parameter, repetition zero,
 one per size/setting), 18 model runs. **This is not full paper evidence.**
 
@@ -82,8 +105,11 @@ Complete frozen plan, followed by analysis of that separate run:
 The full-grid analysis deliberately rejects quick/incomplete runs. No destination
 overwrite or resume is supported by the portable runner; preserve failed outputs
 and choose a new directory. Raw responses, input seeds/hashes and failures are
-retained. Elapsed progress messages are not performance results. Original frozen
-sources and records are never rewritten to accommodate a new machine.
+retained. Elapsed progress messages are not performance results. Frozen primary sources and records are preserved. The release source only splits
+two ambiguous-looking C++ lines to remove compiler warnings; its exact formatting
+revision is verified against the byte-for-byte original in
+`work/lapq/phase7/frozen/replication.cpp`. `release-source-revision.json` records
+both hashes, and the current runner builds the warning-free source.
 
 Original Python source is not bundled. For optional differential validation,
 work in a **disposable repository copy**: the preflight writes its compiled builds
@@ -149,7 +175,9 @@ source datasets, author aggregates, or publication text. Read
 This is a named repository. Exact raw records retain historical local paths and
 machine metadata. It is not an anonymized submission artifact. The public
 repository and verified source commit are recorded in `provenance/public-repository.json`.
-No DOI, affiliation, ORCID, journal acceptance or journal publication date is invented.
+The author uses ORCID 0009-0002-1033-2669 and the supplied affiliation Fisk
+University. The artifact DOI was reserved for this release; no journal
+acceptance or journal publication date is asserted.
 
 ## Public release checklist
 
@@ -160,13 +188,12 @@ No DOI, affiliation, ORCID, journal acceptance or journal publication date is in
 - [x] Template/font notices are retained and distinguished from the MIT scope.
 - [x] Portable quick-run validation matches all six primary input hashes and all 18 outputs.
 - [ ] Check the documented machine/compiler prerequisites on the reviewer host.
-- Optional: add affiliation or ORCID only if supplied; absent fields remain blank.
+- [x] Author-supplied Fisk University affiliation and ORCID are recorded in paper and metadata.
 - [x] The scientific source snapshot is public and its complete Git tree was independently verified.
-- [x] Repository and immutable source-snapshot links are supplied in this README and citation metadata.
-- [ ] Review named sharing of raw local paths and third-party licensing boundaries.
-- [ ] Add the unchanged full historical artifact as a separate release asset if desired.
+- [x] Version v1.0.0 links and the artifact DOI are recorded in paper, README and citation metadata.
+- [x] The active C++ formatting revision passes differential, quick-run and warning checks; the measured source is archived unchanged.
+- [x] Historical local paths/name provenance remain disclosed and unchanged; component license notices are preserved.
 - [ ] Complete the current ReScience C submission form using the actual release URLs.
 
-The scientific source is public at the links above. The paper is prepared for
-ReScience C; no journal submission or acceptance is claimed. A future document
-update must not describe its own not-yet-created commit as already published.
+The software release and journal review are separate. The artifact DOI identifies
+the software/data archive; it is not a journal article DOI or an acceptance claim.

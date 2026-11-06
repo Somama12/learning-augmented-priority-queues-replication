@@ -19,6 +19,8 @@ import sys
 
 import numpy as np
 
+from release_source import source_pin_path, verify_release_source
+
 HERE = Path(__file__).resolve().parent
 BOOTSTRAP_SEED = 2026110608
 BOOTSTRAP_RESAMPLES = 5000
@@ -101,7 +103,7 @@ def audit_inputs(results):
         # run's own source guards checked this binary during execution; analysis
         # retains that historical identity without loading or executing it.
         if name != HISTORICAL_EXECUTABLE:
-            require(sha(HERE / name) == expected, "Frozen source hash mismatch: " + name)
+            require(sha(source_pin_path(name)) == expected, "Frozen source hash mismatch: " + name)
     require(re.fullmatch(r"[0-9a-f]{64}", freeze["source_sha256"][HISTORICAL_EXECUTABLE]), "Malformed historical binary hash")
     require(plan["condition_count"] == freeze["condition_count"] == 3780, "Unexpected planned condition count")
     require(plan["method_run_count"] == freeze["method_run_count"] == 11340, "Unexpected planned method count")
@@ -308,7 +310,7 @@ def main():
     require(execution["raw_engine_file_sha256"] == sha(args.results / "raw-engine-output.jsonl"), "Raw output changed during analysis")
     for name, expected in freeze["source_sha256"].items():
         if name != HISTORICAL_EXECUTABLE:
-            require(sha(HERE / name) == expected, "Frozen source changed during analysis: " + name)
+            require(sha(source_pin_path(name)) == expected, "Frozen source changed during analysis: " + name)
     args.output.parent.mkdir(parents=True, exist_ok=True)
     tables = args.output.parent / "tables"; tables.mkdir(exist_ok=True)
     table_rows = {"replication_points.csv": points, "replication_curves.csv": curves,
@@ -319,6 +321,7 @@ def main():
                     args.results / "execution.json", args.results / "conditions.jsonl", args.results / "raw-engine-output.jsonl"]
     output = dict(complete=True, audit=audit, created_utc=datetime.now(timezone.utc).isoformat(),
                   analysis_source_sha256=sha(__file__), python=sys.version, numpy_version=np.__version__,
+                  release_source_revision=verify_release_source(),
                   source_sha256={str(path.relative_to(HERE)) if path.is_relative_to(HERE) else str(path): sha(path) for path in source_files},
                   analysis_method=dict(bootstrap_resamples=BOOTSTRAP_RESAMPLES, master_seed=BOOTSTRAP_SEED,
                                        seed_derivation="First16 SHA256 bytes of seed:label as little-endian integer; NumPy PCG64",

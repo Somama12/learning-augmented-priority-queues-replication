@@ -14,6 +14,7 @@ import hashlib
 import importlib.util
 import json
 from pathlib import Path
+from release_source import source_pin_path, verify_release_source
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[2]
@@ -28,7 +29,8 @@ SOURCE_NAMES = (
     'published_reference_curves.json', 'reference_provenance.json', 'analyze_replication.py',
     'reproduce_replication.py', 'replication_summary.json', 'update_repository_for_rescience.py',
     'plot_replication.py', 'independent_count_audit.py', 'independent_count_audit.json',
-    'independent_count_audit.txt',
+    'independent_count_audit.txt', 'release_source.py', 'release-source-revision.json',
+    'frozen/replication.cpp', 'release_warning_validation.json', 'release_warning_validation.txt',
 )
 OPTIONAL_NAMES = ('portable_validation.json', 'portable_runner_validation.json', 'replication_analysis_validation.json', 'document_validation.json')
 PAPER_NAMES = {'article.tex','article.py','content.tex','header.tex','metadata.tex','metadata.yaml',
@@ -72,18 +74,40 @@ FETCH_REFERENCE = '#!/usr/bin/env python3\n"""Fetch separately distributed refer
 
 README = '''# Learning-augmented priority queues: partial replication and artifact audit
 
+**The frozen input generator requires exactly NumPy 2.2.4, including quick runs.
+Create the pinned virtual environment below before running any verification,
+analysis, preflight or reproduction command. Keep the version and hash checks
+intact; a newer NumPy version is not a supported substitute.**
+
+From the repository root, using Python 3.12 or 3.13:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -c "import numpy; assert numpy.__version__ == '2.2.4', numpy.__version__; print('NumPy', numpy.__version__)"
+```
+
+Use `.venv/bin/python` for every Python command below. On Windows, use the
+corresponding `.venv\\Scripts\\python.exe` executable. The requirements file
+pins NumPy and the other required packages; the assertion confirms the active
+interpreter is using the frozen generator version.
+
 Author: **Sahil Siddiqui**. The author is responsible for all claims. AI coding
 assistants were used as tools for code generation, debugging, and editing of prose.
 
 Public repository: [learning-augmented-priority-queues-replication](__PUBLIC_ROOT__).
-The independently verified [scientific source snapshot](__PUBLIC_ROOT__/tree/__PUBLIC_SOURCE__)
-is commit `__PUBLIC_SOURCE__`. This stable source commit precedes the current
-paper/documentation update; it is not presented as the commit of this README.
-Source publication does not imply journal submission or acceptance.
+Use the [v1.0.0 tagged source](__PUBLIC_ROOT__/tree/v1.0.0) and
+[v1.0.0 release page](__PUBLIC_ROOT__/releases/tag/v1.0.0).
+Artifact DOI: [10.5281/zenodo.24023742](https://doi.org/10.5281/zenodo.24023742).
+The archive contains source, raw records, the paper, and the supplement.
+Journal review status is separate from this software release.
 
 ## Main paper and scope
 
-`paper/learned-priority-queues-rescience-c.pdf` is the ReScience C preparation.
+[Read the main paper](paper/learned-priority-queues-rescience-c.pdf),
+[metadata](paper/rescience/metadata.yaml), and
+[supplement](supplement/learned-priority-queues-runtime-memory-supplement.pdf).
+The paper is prepared for ReScience C.
 Editable source, figures, template class and licensed fonts are in
 `paper/rescience/`. This is a **partial replication** of clean-comparison sorting
 curves from Benomar and Coester (2024): offline rank predictions, online rank
@@ -111,12 +135,10 @@ the original comparison-count results.
 
 ## Verify and reanalyze existing evidence
 
-From the repository root, with Python 3.12 or 3.13:
+After completing the pinned environment setup above:
 
 ```sh
-python3 verify_snapshot.py
-python3 -m venv .venv
-.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python verify_snapshot.py
 .venv/bin/python work/lapq/phase7/reproduce_replication.py --verify-only
 .venv/bin/python work/lapq/phase7/fetch_replication_references.py
 .venv/bin/python work/lapq/phase7/analyze_replication.py --results work/lapq/phase7/results --output reanalysis/replication_summary.json
@@ -137,6 +159,9 @@ source/input/evidence file, compiles the source locally, and records the new
 compiler and executable hash. The original platform-specific executable hash is
 historical provenance, not a requirement that another compiler reproduce it.
 
+The quick and full modes both require NumPy 2.2.4 and enforce the frozen source
+and input checks. The quick mode only reduces the number of conditions.
+
 Predetermined quick check: six conditions (maximum parameter, repetition zero,
 one per size/setting), 18 model runs. **This is not full paper evidence.**
 
@@ -154,8 +179,11 @@ Complete frozen plan, followed by analysis of that separate run:
 The full-grid analysis deliberately rejects quick/incomplete runs. No destination
 overwrite or resume is supported by the portable runner; preserve failed outputs
 and choose a new directory. Raw responses, input seeds/hashes and failures are
-retained. Elapsed progress messages are not performance results. Original frozen
-sources and records are never rewritten to accommodate a new machine.
+retained. Elapsed progress messages are not performance results. Frozen primary sources and records are preserved. The release source only splits
+two ambiguous-looking C++ lines to remove compiler warnings; its exact formatting
+revision is verified against the byte-for-byte original in
+`work/lapq/phase7/frozen/replication.cpp`. `release-source-revision.json` records
+both hashes, and the current runner builds the warning-free source.
 
 Original Python source is not bundled. For optional differential validation,
 work in a **disposable repository copy**: the preflight writes its compiled builds
@@ -221,7 +249,9 @@ source datasets, author aggregates, or publication text. Read
 This is a named repository. Exact raw records retain historical local paths and
 machine metadata. It is not an anonymized submission artifact. The public
 repository and verified source commit are recorded in `provenance/public-repository.json`.
-No DOI, affiliation, ORCID, journal acceptance or journal publication date is invented.
+The author uses ORCID 0009-0002-1033-2669 and the supplied affiliation Fisk
+University. The artifact DOI was reserved for this release; no journal
+acceptance or journal publication date is asserted.
 
 ## Public release checklist
 
@@ -232,16 +262,15 @@ No DOI, affiliation, ORCID, journal acceptance or journal publication date is in
 - [x] Template/font notices are retained and distinguished from the MIT scope.
 - [x] Portable quick-run validation matches all six primary input hashes and all 18 outputs.
 - [ ] Check the documented machine/compiler prerequisites on the reviewer host.
-- Optional: add affiliation or ORCID only if supplied; absent fields remain blank.
+- [x] Author-supplied Fisk University affiliation and ORCID are recorded in paper and metadata.
 - [x] The scientific source snapshot is public and its complete Git tree was independently verified.
-- [x] Repository and immutable source-snapshot links are supplied in this README and citation metadata.
-- [ ] Review named sharing of raw local paths and third-party licensing boundaries.
-- [ ] Add the unchanged full historical artifact as a separate release asset if desired.
+- [x] Version v1.0.0 links and the artifact DOI are recorded in paper, README and citation metadata.
+- [x] The active C++ formatting revision passes differential, quick-run and warning checks; the measured source is archived unchanged.
+- [x] Historical local paths/name provenance remain disclosed and unchanged; component license notices are preserved.
 - [ ] Complete the current ReScience C submission form using the actual release URLs.
 
-The scientific source is public at the links above. The paper is prepared for
-ReScience C; no journal submission or acceptance is claimed. A future document
-update must not describe its own not-yet-created commit as already published.
+The software release and journal review are separate. The artifact DOI identifies
+the software/data archive; it is not a journal article DOI or an acceptance claim.
 '''
 
 NOTICE = '''
@@ -296,8 +325,9 @@ def collect_files(repository, paper_source):
             and byline['old_display_name'] == 'Somama Siddiqui'
             and byline['new_display_name'] == 'Sahil Siddiqui',
             'Supplement byline-only derivative failed its provenance check')
+    verify_release_source()
     for name, digest in frozen['source_sha256'].items():
-        require(sha((HERE/name).read_bytes()) == digest, 'Frozen source/evidence changed: '+name)
+        require(sha(source_pin_path(name).read_bytes()) == digest, 'Frozen source/evidence changed: '+name)
     require(execution['condition_file_sha256'] == sha((HERE/'results/conditions.jsonl').read_bytes()),
             'Primary conditions changed')
     require(execution['raw_engine_file_sha256'] == sha((HERE/'results/raw-engine-output.jsonl').read_bytes()),
@@ -305,7 +335,7 @@ def collect_files(repository, paper_source):
     files = {f'work/lapq/phase7/{name}':(HERE/name).read_bytes() for name in SOURCE_NAMES}
     for name in OPTIONAL_NAMES:
         if (HERE/name).is_file(): files['work/lapq/phase7/'+name]=(HERE/name).read_bytes()
-    for folder in ('results','tables','portable_validation','figures'):
+    for folder in ('results','tables','portable_validation','figures','release_validation'):
         require((HERE/folder).is_dir(), 'Missing completed evidence folder: '+folder)
         for path in (HERE/folder).rglob('*'):
             if path.is_file() and path.suffix in {'.json','.jsonl','.csv','.txt','.png','.pdf'}:
@@ -335,6 +365,7 @@ def collect_files(repository, paper_source):
     files['supplement/learned-priority-queues-runtime-memory-supplement.pdf']=EXTENSION_PDF.read_bytes()
     files['provenance/preferred-name-revision.json']=(HERE/'preferred_name_revision.json').read_bytes()
     files['provenance/public-repository.json']=(HERE/'public_repository.json').read_bytes()
+    files['provenance/zenodo-deposit.json']=(HERE/'zenodo_deposit.json').read_bytes()
     files['work/lapq/phase7/fetch_replication_references.py']=FETCH_REFERENCE.encode()
     pdf_digest=read(HERE/'published_reference_curves.json')['source_pdf_sha256']
     provenance=read(HERE/'reference_provenance.json')
@@ -360,14 +391,18 @@ def collect_files(repository, paper_source):
     files['requirements-reference.txt']=b'pypdf==6.10.0\n'
     files['requirements-figures.txt']=b'matplotlib==3.10.1\nnumpy==2.2.4\n'
     citation=(repository/'CITATION.cff').read_text().replace('given-names: "Somama"', 'given-names: "Sahil"')
-    citation='\n'.join(('title: "Learning-Augmented Priority Queues: Partial Replication and Artifact Audit"' if line.startswith('title:') else 'version: "0.2.0-preparation"' if line.startswith('version:') else 'abstract: "Source, frozen plans, comparison-count observations, and analysis for a partial replication of learning-augmented priority queues, with a retention-defect cleanup and supporting two-host runtime and memory analyses. Licensing scope is documented in THIRD_PARTY_NOTICES.md."' if line.startswith('abstract:') else line) for line in citation.splitlines())+'\n'
+    citation='\n'.join(('title: "Learning-Augmented Priority Queues: Partial Replication and Artifact Audit"' if line.startswith('title:') else 'version: "1.0.0"' if line.startswith('version:') else 'abstract: "Source, frozen plans, comparison-count observations, and analysis for a partial replication of learning-augmented priority queues, with a retention-defect cleanup and supporting two-host runtime and memory analyses. Licensing scope is documented in THIRD_PARTY_NOTICES.md."' if line.startswith('abstract:') else line) for line in citation.splitlines())+'\n'
     citation='\n'.join(line for line in citation.splitlines()
                        if not line.startswith(('repository-code:', 'url:')))+'\n'
     citation+='repository-code: '+json.dumps(publication['repository_url'])+'\n'
-    citation+='url: '+json.dumps(publication['repository_url']+'/tree/'+publication['source_commit'])+'\n'
+    citation+='url: '+json.dumps(publication['repository_url']+'/tree/v1.0.0')+'\n'
+    citation='\n'.join(line for line in citation.splitlines() if not line.startswith(('    affiliation:', '    orcid:')))+'\n'
+    citation=citation.replace('    given-names: \"Sahil\"', '    given-names: \"Sahil\"\n    affiliation: \"Fisk University\"\n    orcid: \"https://orcid.org/0009-0002-1033-2669\"')
+    citation='\n'.join(line for line in citation.splitlines() if not line.startswith('doi:'))+'\n'
+    citation+='doi: \"10.5281/zenodo.24023742\"\n'
     files['CITATION.cff']=citation.encode()
     files['README.md']=README.replace('__PUBLIC_ROOT__',publication['repository_url']).replace('__PUBLIC_SOURCE__',publication['source_commit']).encode()
-    notice=(repository/'THIRD_PARTY_NOTICES.md').read_text().replace('Somama Siddiqui', 'Sahil Siddiqui')
+    notice=(repository/'THIRD_PARTY_NOTICES.md').read_text().replace('Somama Siddiqui', 'Sahil Siddiqui').replace('using Codex', 'using AI coding assistants')
     files['LICENSE']=(repository/'LICENSE').read_text().replace('Somama Siddiqui', 'Sahil Siddiqui').encode()
     if '## ReScience partial replication, template and reference material' not in notice:
         notice+=NOTICE

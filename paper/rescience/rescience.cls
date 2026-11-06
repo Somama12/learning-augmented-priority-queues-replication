@@ -242,7 +242,7 @@
   fontupper={\tiny \sffamily}, before upper={\vphantom{dlg}},
   colframe=white, colback=black!10!white, coltext=black}
 \newcommand{\orcid}[1]{\href{https://orcid.org/#1}{\iconbox{ID}}}
-\newcommand{\doi}[1]{\href{http://oadoi.org/#1}{#1}}
+\newcommand{\doi}[1]{\href{https://doi.org/#1}{#1}}
 \newcommand{\github}[1]{\href{https://github.com/#1}{github.com/#1}}
 
 % See https://tex.stackexchange.com/questions/99316/symbol-for-external-links

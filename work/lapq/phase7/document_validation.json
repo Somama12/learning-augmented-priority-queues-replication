@@ -1,22 +1,21 @@
 {
   "status": "passed",
   "created_utc": "2026-11-06T22:04:59.516329+00:00",
-  "pages": 9,
-  "pdf_sha256": "c4b3bda66833aab68fd4f4f67de46168c8966611c73a21144aa36101aac67b0f",
+  "pages": 8,
+  "pdf_sha256": "514806b368d9fe838e62a8a9797e22303379c1b291662251062bf6d9d3a2ec22",
   "summary_sha256": "381492caa17e994ba4c036888e57bcd1ae848824e07e7e8901f1bf039e1e7582",
   "frozen_protocol_sha256": "5cf250d30ed87935eb0055137ff2a4305faa5858ed16e86c8adba026b3145a15",
   "rendered_pages": [
-    "work/lapq/phase7/rendered-public/final-1.png",
-    "work/lapq/phase7/rendered-public/final-2.png",
-    "work/lapq/phase7/rendered-public/final-3.png",
-    "work/lapq/phase7/rendered-public/final-4.png",
-    "work/lapq/phase7/rendered-public/final-5.png",
-    "work/lapq/phase7/rendered-public/final-6.png",
-    "work/lapq/phase7/rendered-public/final-7.png",
-    "work/lapq/phase7/rendered-public/final-8.png",
-    "work/lapq/phase7/rendered-public/final-9.png"
+    "work/lapq/phase7/rendered-release/page-1.png",
+    "work/lapq/phase7/rendered-release/page-2.png",
+    "work/lapq/phase7/rendered-release/page-3.png",
+    "work/lapq/phase7/rendered-release/page-4.png",
+    "work/lapq/phase7/rendered-release/page-5.png",
+    "work/lapq/phase7/rendered-release/page-6.png",
+    "work/lapq/phase7/rendered-release/page-7.png",
+    "work/lapq/phase7/rendered-release/page-8.png"
   ],
-  "visual_review": "All final pages reviewed after restructuring and adding real pinned source/data hyperlinks. No overfull boxes or unresolved citation labels.",
+  "visual_review": "All eight release pages visually inspected after author affiliation, ORCID, artifact DOI and tagged links were added. Figures/tables, author line and hyperlinks are legible; no clipping or overlaps. Original scientific figures and values retained.",
   "cited_references": 10,
   "exact_author_disclosure_preserved": true,
   "sorting_host_scope": "Mac only; two-host memory/runtime extension separate",
@@ -25,11 +24,14 @@
     "BibLaTeX fall-back BibTeX backend emits a generic rerun/undefined-references warning; all ten citation labels and bibliography entries resolve in rendered PDF.",
     "Minor underfull paragraph/bibliography warnings, visually checked."
   ],
-  "publication_status": "Public source/evidence snapshot verified; revised paper/metadata upload follows; no journal submission.",
+  "publication_status": "Release files prepared using real reserved Zenodo DOI; tag/deposit publication and journal submission follow.",
   "author_display_name": "Sahil Siddiqui",
   "byline_only_main_text_change_verified": false,
   "publication_revision": "Replication remains the core. Retention bug and fix are main Section5; two-host runtime is main Section6. Four tables/two figures. Detailed supporting experiments remain in supplement.",
-  "code_url": "https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/d71f1494c0f02f70b40216f69af1158a12db3d70",
-  "data_url": "https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/d71f1494c0f02f70b40216f69af1158a12db3d70/work/lapq",
-  "url_annotations_verified": true
+  "code_url": "https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/v1.0.0",
+  "data_url": "https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/v1.0.0/work/lapq",
+  "url_annotations_verified": true,
+  "orcid": "0009-0002-1033-2669",
+  "affiliation": "Fisk University",
+  "artifact_doi": "10.5281/zenodo.24023742"
 }

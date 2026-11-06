@@ -1,0 +1,404 @@
+{
+  "status": "passed",
+  "independent_source_sha256": "6fc68ca2acc744aa9899173fdfca6c7721c83f9019ae479c40317abc2016952b",
+  "checks": 137062,
+  "failures": [],
+  "raw_conditions": 3780,
+  "raw_outputs": 11340,
+  "cells": 378,
+  "ordinal_insertions": 419580000,
+  "curve_count": 18,
+  "endpoint_count": 18,
+  "input_sha256": {
+    "frozen_protocol.json": "5cf250d30ed87935eb0055137ff2a4305faa5858ed16e86c8adba026b3145a15",
+    "experiment_plan.json": "0533c79a6003ee73f5d4c6a20f575901df1732e6d24988fd5856e4af553a95b1",
+    "results/execution.json": "7d2f9d2385e10fa7b9591cae4b4217882ca2a1e2fe6b615266a24cbecd8da1bf",
+    "results/conditions.jsonl": "18010bfe2d5abe57175c80dab1aa6559d38efd2126d26acfa4b75b6b0fbea12f",
+    "results/raw-engine-output.jsonl": "e041327061e65852529ce600230ad540a0db44ed1caa22b303651fad1d8e6970",
+    "published_reference_curves.json": "b45ffe3420cd83aa7dad537e047efae93425fa9a1a9eb581d73586ee5d097913"
+  },
+  "audited_numeric_summary_sha256": "20951f3a205c9ae450f42836e38bf5f664ae85346c320a06985f2380694de2db",
+  "summary_hash_scope": "Calculated fields only; manuscript prose may be appended separately without changing this audit projection.",
+  "independence": "Uses math.fsum, statistics.mean-equivalent sum/n, statistics.stdev/pstdev directly on raw integer counts. Does not import or call analyze_replication.py.",
+  "bootstrap_scope": "Bootstrap sampling is not independently repeated. Endpoint/BH classifications are checked against supplied interval bounds; raw endpoint directions are independently recomputed.",
+  "analytic_bh_per_key": {
+    "1000": 9.953853754816983,
+    "10000": 13.853543420705508,
+    "100000": 17.557310350078414
+  },
+  "bh_mean_below_count": 369,
+  "bh_mean_above_count": 9,
+  "bh_above_cells": [
+    {
+      "regime": "class",
+      "n": 1000,
+      "model": "dirty",
+      "parameter_index": 0
+    },
+    {
+      "regime": "class",
+      "n": 1000,
+      "model": "offline",
+      "parameter_index": 0
+    },
+    {
+      "regime": "class",
+      "n": 1000,
+      "model": "online",
+      "parameter_index": 0
+    },
+    {
+      "regime": "class",
+      "n": 10000,
+      "model": "dirty",
+      "parameter_index": 0
+    },
+    {
+      "regime": "class",
+      "n": 10000,
+      "model": "offline",
+      "parameter_index": 0
+    },
+    {
+      "regime": "class",
+      "n": 10000,
+      "model": "online",
+      "parameter_index": 0
+    },
+    {
+      "regime": "class",
+      "n": 100000,
+      "model": "dirty",
+      "parameter_index": 0
+    },
+    {
+      "regime": "class",
+      "n": 100000,
+      "model": "offline",
+      "parameter_index": 0
+    },
+    {
+      "regime": "class",
+      "n": 100000,
+      "model": "online",
+      "parameter_index": 0
+    }
+  ],
+  "computed_curves": [
+    {
+      "regime": "class",
+      "n": 1000,
+      "model": "offline",
+      "median_absolute_relative_error": 0.005900291699814164,
+      "maximum_absolute_relative_error": 0.04650396328744261,
+      "normalized_rmse": 0.029858280050614014
+    },
+    {
+      "regime": "class",
+      "n": 1000,
+      "model": "online",
+      "median_absolute_relative_error": 0.00813410117697226,
+      "maximum_absolute_relative_error": 0.035166996009144004,
+      "normalized_rmse": 0.017730906993639516
+    },
+    {
+      "regime": "class",
+      "n": 1000,
+      "model": "dirty",
+      "median_absolute_relative_error": 0.006806779246206726,
+      "maximum_absolute_relative_error": 0.020303450012591356,
+      "normalized_rmse": 0.011164040106323629
+    },
+    {
+      "regime": "class",
+      "n": 10000,
+      "model": "offline",
+      "median_absolute_relative_error": 0.0015079242032998374,
+      "maximum_absolute_relative_error": 0.007429039168124839,
+      "normalized_rmse": 0.006998816531360077
+    },
+    {
+      "regime": "class",
+      "n": 10000,
+      "model": "online",
+      "median_absolute_relative_error": 0.0011322305995774555,
+      "maximum_absolute_relative_error": 0.006205105315512923,
+      "normalized_rmse": 0.0050257188873601335
+    },
+    {
+      "regime": "class",
+      "n": 10000,
+      "model": "dirty",
+      "median_absolute_relative_error": 0.001011013854076402,
+      "maximum_absolute_relative_error": 0.0059596269921840354,
+      "normalized_rmse": 0.007379299824243833
+    },
+    {
+      "regime": "class",
+      "n": 100000,
+      "model": "offline",
+      "median_absolute_relative_error": 0.0005914847605814434,
+      "maximum_absolute_relative_error": 0.0030724956004522805,
+      "normalized_rmse": 0.0060456262404245415
+    },
+    {
+      "regime": "class",
+      "n": 100000,
+      "model": "online",
+      "median_absolute_relative_error": 0.0006368622203701376,
+      "maximum_absolute_relative_error": 0.00308668419161409,
+      "normalized_rmse": 0.0044912356904747595
+    },
+    {
+      "regime": "class",
+      "n": 100000,
+      "model": "dirty",
+      "median_absolute_relative_error": 0.00028221531340796255,
+      "maximum_absolute_relative_error": 0.0020702151910523266,
+      "normalized_rmse": 0.0029630956712440645
+    },
+    {
+      "regime": "decay",
+      "n": 1000,
+      "model": "offline",
+      "median_absolute_relative_error": 0.006459544904570494,
+      "maximum_absolute_relative_error": 0.021886777638191027,
+      "normalized_rmse": 0.01004277090064408
+    },
+    {
+      "regime": "decay",
+      "n": 1000,
+      "model": "online",
+      "median_absolute_relative_error": 0.006094369627795392,
+      "maximum_absolute_relative_error": 0.021218279541139612,
+      "normalized_rmse": 0.010151801580752783
+    },
+    {
+      "regime": "decay",
+      "n": 1000,
+      "model": "dirty",
+      "median_absolute_relative_error": 0.003346392425726442,
+      "maximum_absolute_relative_error": 0.02806337549299618,
+      "normalized_rmse": 0.010462733295971482
+    },
+    {
+      "regime": "decay",
+      "n": 10000,
+      "model": "offline",
+      "median_absolute_relative_error": 0.0009408249411559582,
+      "maximum_absolute_relative_error": 0.003353956231679958,
+      "normalized_rmse": 0.0016371312421848729
+    },
+    {
+      "regime": "decay",
+      "n": 10000,
+      "model": "online",
+      "median_absolute_relative_error": 0.0006733554902832764,
+      "maximum_absolute_relative_error": 0.004499758083961548,
+      "normalized_rmse": 0.0019520630282846684
+    },
+    {
+      "regime": "decay",
+      "n": 10000,
+      "model": "dirty",
+      "median_absolute_relative_error": 0.0008736128304980658,
+      "maximum_absolute_relative_error": 0.0025919840184171327,
+      "normalized_rmse": 0.0013496228154066675
+    },
+    {
+      "regime": "decay",
+      "n": 100000,
+      "model": "offline",
+      "median_absolute_relative_error": 0.00031976454877193024,
+      "maximum_absolute_relative_error": 0.0012361989508135425,
+      "normalized_rmse": 0.0005522636046715003
+    },
+    {
+      "regime": "decay",
+      "n": 100000,
+      "model": "online",
+      "median_absolute_relative_error": 0.00038798692078284927,
+      "maximum_absolute_relative_error": 0.000887772699357039,
+      "normalized_rmse": 0.0004922329964863494
+    },
+    {
+      "regime": "decay",
+      "n": 100000,
+      "model": "dirty",
+      "median_absolute_relative_error": 0.0003272960541590142,
+      "maximum_absolute_relative_error": 0.0009154254343559591,
+      "normalized_rmse": 0.000481933400613535
+    }
+  ],
+  "computed_endpoints": [
+    {
+      "regime": "class",
+      "n": 1000,
+      "model": "offline",
+      "observed": "decrease",
+      "first": 19.740066666666667,
+      "last": 1.0001666666666666,
+      "change": -18.739900000000002
+    },
+    {
+      "regime": "class",
+      "n": 1000,
+      "model": "online",
+      "observed": "decrease",
+      "first": 19.947666666666667,
+      "last": 1.9890666666666668,
+      "change": -17.9586
+    },
+    {
+      "regime": "class",
+      "n": 1000,
+      "model": "dirty",
+      "observed": "decrease",
+      "first": 18.516366666666666,
+      "last": 1.9872,
+      "change": -16.529166666666665
+    },
+    {
+      "regime": "class",
+      "n": 10000,
+      "model": "offline",
+      "observed": "decrease",
+      "first": 29.697906666666665,
+      "last": 1.0000133333333332,
+      "change": -28.697893333333333
+    },
+    {
+      "regime": "class",
+      "n": 10000,
+      "model": "online",
+      "observed": "decrease",
+      "first": 29.73848,
+      "last": 1.9984733333333333,
+      "change": -27.740006666666666
+    },
+    {
+      "regime": "class",
+      "n": 10000,
+      "model": "dirty",
+      "observed": "decrease",
+      "first": 26.801223333333333,
+      "last": 1.99828,
+      "change": -24.80294333333333
+    },
+    {
+      "regime": "class",
+      "n": 100000,
+      "model": "offline",
+      "observed": "decrease",
+      "first": 39.49653,
+      "last": 1.0000053333333334,
+      "change": -38.496524666666666
+    },
+    {
+      "regime": "class",
+      "n": 100000,
+      "model": "online",
+      "observed": "decrease",
+      "first": 39.573183,
+      "last": 1.9997800000000001,
+      "change": -37.573403
+    },
+    {
+      "regime": "class",
+      "n": 100000,
+      "model": "dirty",
+      "observed": "decrease",
+      "first": 35.30545366666667,
+      "last": 1.9997646666666666,
+      "change": -33.30568900000001
+    },
+    {
+      "regime": "decay",
+      "n": 1000,
+      "model": "offline",
+      "observed": "increase",
+      "first": 0.999,
+      "last": 5.7363,
+      "change": 4.7373
+    },
+    {
+      "regime": "decay",
+      "n": 1000,
+      "model": "online",
+      "observed": "increase",
+      "first": 1.985,
+      "last": 7.3207,
+      "change": 5.3357
+    },
+    {
+      "regime": "decay",
+      "n": 1000,
+      "model": "dirty",
+      "observed": "increase",
+      "first": 1.985,
+      "last": 6.730833333333334,
+      "change": 4.745833333333334
+    },
+    {
+      "regime": "decay",
+      "n": 10000,
+      "model": "offline",
+      "observed": "increase",
+      "first": 0.9999,
+      "last": 7.646836666666667,
+      "change": 6.646936666666667
+    },
+    {
+      "regime": "decay",
+      "n": 10000,
+      "model": "online",
+      "observed": "increase",
+      "first": 1.9979666666666667,
+      "last": 9.09933,
+      "change": 7.1013633333333335
+    },
+    {
+      "regime": "decay",
+      "n": 10000,
+      "model": "dirty",
+      "observed": "increase",
+      "first": 1.9979666666666667,
+      "last": 8.498383333333333,
+      "change": 6.500416666666666
+    },
+    {
+      "regime": "decay",
+      "n": 100000,
+      "model": "offline",
+      "observed": "increase",
+      "first": 0.99999,
+      "last": 9.681021,
+      "change": 8.681030999999999
+    },
+    {
+      "regime": "decay",
+      "n": 100000,
+      "model": "online",
+      "observed": "increase",
+      "first": 1.9997533333333335,
+      "last": 10.968134,
+      "change": 8.968380666666665
+    },
+    {
+      "regime": "decay",
+      "n": 100000,
+      "model": "dirty",
+      "observed": "increase",
+      "first": 1.9997533333333335,
+      "last": 10.262271,
+      "change": 8.262517666666668
+    }
+  ],
+  "main_median_pointwise_relative_error_range": [
+    0.00028221531340796255,
+    0.0015079242032998374
+  ],
+  "main_maximum_pointwise_relative_error": 0.007429039168124839,
+  "n1000_maximum_pointwise_relative_error": 0.04650396328744261,
+  "numerical_citation_scope": "PDF-derived means are rounded plotted coordinates, not original raw measurements; released n1000 standard deviations are not standard errors. Paper states nominal30runs; saved aggregates lack raw trials/effective-count verification."
+}

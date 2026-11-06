@@ -114,7 +114,8 @@ public:
 };
 static std::vector<int64_t> integers(const Json& j) {
     std::vector<int64_t> out; out.reserve(j.array().size());
-    for(const auto& v:j.array())out.push_back(v.number());return out;
+    for(const auto& v:j.array())out.push_back(v.number());
+    return out;
 }
 template<class T> static void json_array(std::ostream& out,const std::vector<T>& values) {
     out << '[';for(size_t i=0;i<values.size();++i){if(i)out<<',';out<<values[i];}out<<']';
@@ -221,7 +222,10 @@ struct Result {
 };
 static Result solve(const Json& input) {
     Result r;r.id=input.at("id").string();r.model=input.at("model").string();r.trace=input.has("trace")&&input.at("trace").boolean();
-    if(r.model=="SL")r.model="offline";if(r.model=="OSL")r.model="online";if(r.model=="DC")r.model="dirty";if(r.model=="BH")r.model="bh_analytic";
+    if(r.model=="SL")r.model="offline";
+    if(r.model=="OSL")r.model="online";
+    if(r.model=="DC")r.model="dirty";
+    if(r.model=="BH")r.model="bh_analytic";
     if(r.model=="bh_analytic"){
         int64_t n=input.at("n").number();require(n>0&&n<=10000000,"invalid analytic n");r.n=size_t(n);r.reference=true;
         for(size_t k=1;k<r.n;++k){unsigned depth=0;for(size_t v=k+1;v>1;v>>=1)++depth;r.analytic+=std::log2(double(depth))+double(depth)-1.0;}

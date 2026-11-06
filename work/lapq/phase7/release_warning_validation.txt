@@ -1,0 +1,5 @@
+Release warning cleanup: PASSED.
+The active source has exactly four newline/indent insertions after semicolons. The original primary source is archived byte-for-byte, and frozen protocol/results/preflight hashes are unchanged.
+All 666 small differential cases passed with optimized and ASan/UBSan builds; counts and comparator traces match the original preflight exactly. All six quick conditions and eighteen model outputs match primary metadata/counts exactly.
+Portable compilation with -Wall -Wextra -Wpedantic produced no warnings on Apple Clang 15.0.0. No claim is made for an untested compiler.
+Full-record analysis and the 137,062-check independent audit pass with unchanged numerical projection. Full-mode plan selection has 3,780 conditions; the full sorting grid was not rerun. The NumPy version rejection remains active.
