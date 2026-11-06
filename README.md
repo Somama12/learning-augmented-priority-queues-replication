@@ -81,7 +81,11 @@ These commands do not run the sorting experiments or execute imported binaries.
 
 ## Portable experimental reproduction
 
-A GCC/Clang-compatible C++17 compiler is required. Use a quiet machine, fresh
+Before running on a new machine, confirm Python 3.12 or 3.13, the pinned
+NumPy 2.2.4 environment above, and a GCC/Clang-compatible C++17 compiler.
+Check these prerequisites on each reviewer host before starting.
+
+Use a quiet machine, fresh
 destinations, and sequential execution. The portable runner checks every frozen
 source/input/evidence file, compiles the source locally, and records the new
 compiler and executable hash. The original platform-specific executable hash is
@@ -178,10 +182,10 @@ This is a named repository. Exact raw records retain historical local paths and
 machine metadata. It is not an anonymized submission artifact. The public
 repository and verified source commit are recorded in `provenance/public-repository.json`.
 The author uses ORCID 0009-0002-1033-2669 and the supplied affiliation Fisk
-University. The artifact DOI was reserved for this release; no journal
+University. The artifact DOI is published for this release; no journal
 acceptance or journal publication date is asserted.
 
-## Public release checklist
+## Completed release and submission checks
 
 - [x] Full planned records and analysis are complete and pass the declared audit.
 - [x] Source, plan, input-hash and result provenance accompany the observations.
@@ -189,7 +193,6 @@ acceptance or journal publication date is asserted.
 - [x] Original paper/Python and foreign executable builds are excluded.
 - [x] Template/font notices are retained and distinguished from the MIT scope.
 - [x] Portable quick-run validation matches all six primary input hashes and all 18 outputs.
-- [ ] Check the documented machine/compiler prerequisites on the reviewer host.
 - [x] Author-supplied Fisk University affiliation and ORCID are recorded in paper and metadata.
 - [x] The scientific source snapshot is public and its complete Git tree was independently verified.
 - [x] Version v1.0.0 links and the artifact DOI are recorded in paper, README and citation metadata.
@@ -199,3 +202,11 @@ acceptance or journal publication date is asserted.
 
 The software release and journal review are separate. The artifact DOI identifies
 the software/data archive; it is not a journal article DOI or an acceptance claim.
+
+## Remaining journal stages
+
+Submission [#153](https://github.com/ReScience/submissions/issues/153) is open.
+Editor assignment, independent reviewer reproduction and the publication decision
+remain with ReScience C. After acceptance, the author and editor complete review
+credits, editorial dates, journal identifiers and the separate article DOI.
+The archived v1.0.0 release remains unchanged.

@@ -14,13 +14,13 @@
     "no assumed competing-interest declaration",
     "no inferred publication year"
   ],
-  "missing_author_metadata": [
-    "affiliation",
-    "ORCID"
-  ],
+  "missing_author_metadata": [],
   "public_artifact_url_pending": false,
   "extension_supplement_filename": "learned-priority-queues-runtime-memory-supplement.pdf",
   "extension_supplement_source": "outputs/learned-priority-queues-manuscript-draft.pdf",
   "compiled": false,
-  "submitted": false
+  "submitted": false,
+  "manifest_scope": "Source staging only. The compiled PDF is verified in work/lapq/phase7/document_validation.json; journal submission status is recorded in README. The staging compiled/submitted flags describe this builder operation, not current publication status.",
+  "metadata_language": "C++",
+  "status_correction": "Author fields and primary-language status reconciled on 2026-11-06 after release. The builder hash continues to identify the original source-staging operation; this documentation correction does not rebuild the paper or change experiments."
 }
