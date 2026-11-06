@@ -65,11 +65,11 @@
 
       \ifdefempty{\codeURL}{}
       {Code is available at
-      \href{\codeURL}{\detokenize\expandafter{\codeURL}}\ifdefempty{\codeDOI}{.}{ -- DOI \doi{\codeDOI}.}\ifdefempty{\codeSWH}{.}{ -- SWH  \href{https://archive.softwareheritage.org/\codeSWH/}{\detokenize\expandafter{\codeSWH}}.}}
+      \href{\codeURL}{GitHub source snapshot}\ifdefempty{\codeDOI}{.}{ -- DOI \doi{\codeDOI}.}\ifdefempty{\codeSWH}{}{ -- SWH  \href{https://archive.softwareheritage.org/\codeSWH/}{\detokenize\expandafter{\codeSWH}}.}}
 
       \ifdefempty{\dataURL}{}
       {Data is available at
-      \href{\dataURL}{\detokenize\expandafter{\dataURL}}\ifdefempty{\dataDOI}{.}{ -- DOI \doi{\dataDOI}.}}
+      \href{\dataURL}{GitHub raw records and analyses}\ifdefempty{\dataDOI}{.}{ -- DOI \doi{\dataDOI}.}}
 
       \ifdefempty{\reviewURL}{}
      {Open peer review is available at \href{\reviewURL}{\detokenize\expandafter{\reviewURL}}.}

@@ -4,9 +4,9 @@
   "source_content_sha256": "7354f098d4ab9cced30b4994fa59659ffcbf2e359dc4a1160d080f7678e6d8f4",
   "bibliography_sha256": "d09056b246e1394211ebd35b9a19b27cc276ebf64ac7ad6d772d680b190c4b1f",
   "summary_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase7/replication_summary.json",
-  "summary_sha256": "2e30c6a1467e3b0a93207353627b24ffe1ca1c861596d0b15fd9d47084fb24e1",
-  "builder_sha256": "c14225321a84005a980a9a0933b5cdd3974f37d014e0847360ed9445d3405ab7",
-  "blocks": 49,
+  "summary_sha256": "381492caa17e994ba4c036888e57bcd1ae848824e07e7e8901f1bf039e1e7582",
+  "builder_sha256": "addefba9ccbf361fee88dc2f5ce856b93bdc85657b690cfa0b617902f41c184c",
+  "blocks": 53,
   "template_commit": "0978d0e5d9a86246789fd3468aec6fc71e39c944",
   "adaptations": [
     "biblatex backend bibtex",
@@ -18,7 +18,7 @@
     "affiliation",
     "ORCID"
   ],
-  "public_artifact_url_pending": true,
+  "public_artifact_url_pending": false,
   "extension_supplement_filename": "learned-priority-queues-runtime-memory-supplement.pdf",
   "extension_supplement_source": "outputs/learned-priority-queues-manuscript-draft.pdf",
   "compiled": false,

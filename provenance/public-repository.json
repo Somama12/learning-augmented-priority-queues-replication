@@ -1,0 +1,10 @@
+{
+  "repository_url": "https://github.com/Somama12/learning-augmented-priority-queues-replication",
+  "visibility": "public",
+  "source_snapshot_published": true,
+  "source_commit": "d71f1494c0f02f70b40216f69af1158a12db3d70",
+  "source_tree": "a264adaeb761a50026a89e55d2c86aae3bb1dc3c",
+  "files": 2429,
+  "journal_submitted": false,
+  "source_verification": "Independently fetched remote commit: every path/mode/blob matches the prepared local source snapshot."
+}

@@ -1,14 +1,22 @@
 {
   "status": "passed",
   "created_utc": "2026-11-06T22:04:59.516329+00:00",
-  "pages": 8,
-  "pdf_sha256": "1620a2adccb7cf35d1411e5ce332fe4cb1f7b34cff06a097af51851bb005eaed",
-  "summary_sha256": "2e30c6a1467e3b0a93207353627b24ffe1ca1c861596d0b15fd9d47084fb24e1",
+  "pages": 9,
+  "pdf_sha256": "c4b3bda66833aab68fd4f4f67de46168c8966611c73a21144aa36101aac67b0f",
+  "summary_sha256": "381492caa17e994ba4c036888e57bcd1ae848824e07e7e8901f1bf039e1e7582",
   "frozen_protocol_sha256": "5cf250d30ed87935eb0055137ff2a4305faa5858ed16e86c8adba026b3145a15",
   "rendered_pages": [
-    "work/lapq/phase7/rendered/preferred-name-1.png"
+    "work/lapq/phase7/rendered-public/final-1.png",
+    "work/lapq/phase7/rendered-public/final-2.png",
+    "work/lapq/phase7/rendered-public/final-3.png",
+    "work/lapq/phase7/rendered-public/final-4.png",
+    "work/lapq/phase7/rendered-public/final-5.png",
+    "work/lapq/phase7/rendered-public/final-6.png",
+    "work/lapq/phase7/rendered-public/final-7.png",
+    "work/lapq/phase7/rendered-public/final-8.png",
+    "work/lapq/phase7/rendered-public/final-9.png"
   ],
-  "visual_review": "All eight pages previously inspected; preferred-name revision changes first-page author/contact text only. All extracted pages equal previous version after the display-name substitution. First page re-rendered for visual verification. Updated first pages of main paper and supplement visually inspected: Sahil Siddiqui is legible with no overlap or clipping.",
+  "visual_review": "All final pages reviewed after restructuring and adding real pinned source/data hyperlinks. No overfull boxes or unresolved citation labels.",
   "cited_references": 10,
   "exact_author_disclosure_preserved": true,
   "sorting_host_scope": "Mac only; two-host memory/runtime extension separate",
@@ -17,7 +25,11 @@
     "BibLaTeX fall-back BibTeX backend emits a generic rerun/undefined-references warning; all ten citation labels and bibliography entries resolve in rendered PDF.",
     "Minor underfull paragraph/bibliography warnings, visually checked."
   ],
-  "publication_status": "Prepared locally, not published or submitted; actual public code/data URLs still required.",
+  "publication_status": "Public source/evidence snapshot verified; revised paper/metadata upload follows; no journal submission.",
   "author_display_name": "Sahil Siddiqui",
-  "byline_only_main_text_change_verified": true
+  "byline_only_main_text_change_verified": false,
+  "publication_revision": "Replication remains the core. Retention bug and fix are main Section5; two-host runtime is main Section6. Four tables/two figures. Detailed supporting experiments remain in supplement.",
+  "code_url": "https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/d71f1494c0f02f70b40216f69af1158a12db3d70",
+  "data_url": "https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/d71f1494c0f02f70b40216f69af1158a12db3d70/work/lapq",
+  "url_annotations_verified": true
 }

@@ -19556,7 +19556,7 @@
       },
       {
         "kind": "p",
-        "text": "All eighteen endpoint contrasts have the expected direction: increasing the class parameter from its first to last value reduces the mean clean count, while increasing decay from zero to its maximum increases it, for all three methods and all three sizes. Each pointwise 95% bootstrap interval for the endpoint difference excludes zero in that direction. This assesses endpoint responses; it does not require every adjacent noisy mean to be monotonic."
+        "text": "All eighteen endpoint contrasts have the expected direction: increasing the class parameter from its first to last value reduces the mean clean count, while increasing decay from zero to its maximum increases it, for all three methods and all three sizes. Each pointwise 95% bootstrap interval for the endpoint difference excludes zero in that direction."
       },
       {
         "kind": "table",

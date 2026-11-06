@@ -36,6 +36,9 @@ PAPER_NAMES = {'article.tex','article.py','content.tex','header.tex','metadata.t
                'yaml-to-latex.py','build_manifest.json'}
 FONT_FOLDERS = {'roboto','source-code-pro','source-sans-pro','source-serif-pro'}
 PROTECTED = tuple(f'work/lapq/phase{i}/' for i in (2,3,4,5))
+PUBLIC_REPOSITORY_URL = 'https://github.com/Somama12/learning-augmented-priority-queues-replication'
+PUBLISHED_SOURCE_COMMIT = 'd71f1494c0f02f70b40216f69af1158a12db3d70'
+PUBLISHED_SOURCE_TREE = 'a264adaeb761a50026a89e55d2c86aae3bb1dc3c'
 
 
 def sha(data):
@@ -51,12 +54,32 @@ def require(value, message):
         raise RuntimeError(message)
 
 
+def public_repository():
+    metadata = read(HERE/'public_repository.json')
+    require(metadata.get('repository_url') == PUBLIC_REPOSITORY_URL,
+            'Public repository URL differs from the confirmed repository')
+    require(metadata.get('visibility') == 'public' and metadata.get('source_snapshot_published') is True,
+            'Public scientific source publication has not been verified')
+    require(metadata.get('source_commit') == PUBLISHED_SOURCE_COMMIT
+            and metadata.get('source_tree') == PUBLISHED_SOURCE_TREE,
+            'Public source snapshot differs from the independently verified commit/tree')
+    require(metadata.get('journal_submitted') is False,
+            'Journal status changed; review release wording before integration')
+    return metadata
+
+
 FETCH_REFERENCE = '#!/usr/bin/env python3\n"""Fetch separately distributed references; never execute downloaded source."""\nimport argparse,hashlib,json\nfrom pathlib import Path\nimport urllib.request\nhere=Path(__file__).resolve().parent\nparser=argparse.ArgumentParser(description=__doc__)\nparser.add_argument(\'--check-only\',action=\'store_true\')\nparser.add_argument(\'--include-oracle\',action=\'store_true\',help=\'Also fetch four original Python oracle files for optional differential checks\')\nargs=parser.parse_args()\nmanifest=json.loads((here/\'reference_fetch_manifest.json\').read_text())\nfor item in manifest:\n if item[\'kind\']==\'oracle\' and not args.include_oracle:continue\n target=(here/item[\'target\']).resolve()\n if here.parent not in target.parents:raise SystemExit(\'Unsafe reference target\')\n if target.exists():\n  if hashlib.sha256(target.read_bytes()).hexdigest()!=item[\'local_sha256\']:\n   raise SystemExit(\'Existing reference differs; preserve it and resolve discrepancy: \'+str(target))\n  print(\'Verified:\',item[\'target\']);continue\n if args.check_only:raise SystemExit(\'Missing reference: \'+item[\'target\'])\n request=urllib.request.Request(item[\'url\'],headers={\'User-Agent\':\'LAPQ-partial-replication-reference/1.0\'})\n with urllib.request.urlopen(request,timeout=120) as response:data=response.read()\n if hashlib.sha256(data).hexdigest()!=item[\'download_sha256\']:raise SystemExit(\'Download hash differs: \'+item[\'target\'])\n if item.get(\'git_blob_sha1\'):\n  blob=hashlib.sha1(b\'blob \'+str(len(data)).encode()+b\'\\0\'+data).hexdigest()\n  if blob!=item[\'git_blob_sha1\']:raise SystemExit(\'Git blob hash differs: \'+item[\'target\'])\n if item[\'normalization\']==\'append_one_newline\':data+=b\'\\n\'\n elif item[\'normalization\']!=\'none\':raise SystemExit(\'Unknown normalization\')\n if hashlib.sha256(data).hexdigest()!=item[\'local_sha256\']:raise SystemExit(\'Normalized hash differs: \'+item[\'target\'])\n target.parent.mkdir(parents=True,exist_ok=True)\n temporary=target.with_suffix(target.suffix+\'.download.tmp\');temporary.write_bytes(data);temporary.replace(target)\n print(\'Fetched and verified:\',item[\'target\'])\n'
 
 README = '''# Learning-augmented priority queues: partial replication and artifact audit
 
 Author: **Sahil Siddiqui**. The author is responsible for all claims. AI coding
 assistants were used as tools for code generation, debugging, and editing of prose.
+
+Public repository: [learning-augmented-priority-queues-replication](__PUBLIC_ROOT__).
+The independently verified [scientific source snapshot](__PUBLIC_ROOT__/tree/__PUBLIC_SOURCE__)
+is commit `__PUBLIC_SOURCE__`. This stable source commit precedes the current
+paper/documentation update; it is not presented as the commit of this README.
+Source publication does not imply journal submission or acceptance.
 
 ## Main paper and scope
 
@@ -78,10 +101,13 @@ The original mathematical decay distribution is preserved; finite PRNG outputs
 are not claimed identical. All pointwise discrepancies and limitations remain
 in the analysis rather than being hidden behind a single success label.
 
-The earlier two-host runtime and memory study is separate extension evidence:
-`supplement/learned-priority-queues-runtime-memory-supplement.pdf`, with its unchanged records under
-`work/lapq/phase2` through `phase5`. Those timings do not substitute for replication
-of the original comparison-count results.
+The main paper proceeds from the comparison-count replication to the historical
+node-map retention defect, its narrow cleanup, and a short runtime comparison.
+The full supporting runtime, memory, ablation and two-host analyses are in
+`supplement/learned-priority-queues-runtime-memory-supplement.pdf`; their scientific
+records remain unchanged under `work/lapq/phase2` through `phase5`. Those timings
+are additional implementation evidence and do not substitute for replication of
+the original comparison-count results.
 
 ## Verify and reanalyze existing evidence
 
@@ -155,7 +181,7 @@ claim that a reviewer has rerun them. Matplotlib is required for plots and by th
 original skip-list oracle imports; pypdf is needed only for optional PDF extraction.
 The existing `fetch_inputs.py` separately retrieves the earlier study's inputs.
 
-## Runtime/memory extension
+## Supporting retention and runtime analyses
 
 ```sh
 .venv/bin/python work/lapq/phase4/native_cross_host_analysis.py --output reanalysis/native.json --tables reanalysis/native-tables
@@ -165,7 +191,7 @@ The existing `fetch_inputs.py` separately retrieves the earlier study's inputs.
 
 Run the last command in a disposable copy because it writes the shipped summary
 path. These analyses preserve host separation and the allocation/timing scope.
-The extension's full historical artifact may be offered as a separate release
+The full historical artifact may be offered as a separate release
 asset. Nested historical ZIPs, old executable builds and the original paper PDF
 are not embedded in this repository. Historical checksum lists are preserved
 unchanged under `provenance/historical-checksums/`; use `verify_snapshot.py` for
@@ -193,8 +219,9 @@ source datasets, author aggregates, or publication text. Read
 `THIRD_PARTY_NOTICES.md` and `DATA_SOURCES.md` for attribution and scope.
 
 This is a named repository. Exact raw records retain historical local paths and
-machine metadata. It is not an anonymized submission artifact. No repository URL,
-DOI, affiliation, ORCID, acceptance or publication date is invented.
+machine metadata. It is not an anonymized submission artifact. The public
+repository and verified source commit are recorded in `provenance/public-repository.json`.
+No DOI, affiliation, ORCID, journal acceptance or journal publication date is invented.
 
 ## Public release checklist
 
@@ -206,13 +233,15 @@ DOI, affiliation, ORCID, acceptance or publication date is invented.
 - [x] Portable quick-run validation matches all six primary input hashes and all 18 outputs.
 - [ ] Check the documented machine/compiler prerequisites on the reviewer host.
 - Optional: add affiliation or ORCID only if supplied; absent fields remain blank.
-- [ ] Insert actual public repository/release URLs in paper metadata and citation.
+- [x] The scientific source snapshot is public and its complete Git tree was independently verified.
+- [x] Repository and immutable source-snapshot links are supplied in this README and citation metadata.
 - [ ] Review named sharing of raw local paths and third-party licensing boundaries.
 - [ ] Add the unchanged full historical artifact as a separate release asset if desired.
 - [ ] Complete the current ReScience C submission form using the actual release URLs.
 
-Building this repository does not publish it or submit the paper. The repository
-URL and release identifier should be set only after the actual public release.
+The scientific source is public at the links above. The paper is prepared for
+ReScience C; no journal submission or acceptance is claimed. A future document
+update must not describe its own not-yet-created commit as already published.
 '''
 
 NOTICE = '''
@@ -244,6 +273,7 @@ def load_builder():
 
 
 def collect_files(repository, paper_source):
+    publication = public_repository()
     execution = read(HERE/'results/execution.json')
     summary = read(HERE/'replication_summary.json')
     frozen = read(HERE/'frozen_protocol.json')
@@ -304,6 +334,7 @@ def collect_files(repository, paper_source):
     files['paper/learned-priority-queues-rescience-c.pdf']=MAIN_PDF.read_bytes()
     files['supplement/learned-priority-queues-runtime-memory-supplement.pdf']=EXTENSION_PDF.read_bytes()
     files['provenance/preferred-name-revision.json']=(HERE/'preferred_name_revision.json').read_bytes()
+    files['provenance/public-repository.json']=(HERE/'public_repository.json').read_bytes()
     files['work/lapq/phase7/fetch_replication_references.py']=FETCH_REFERENCE.encode()
     pdf_digest=read(HERE/'published_reference_curves.json')['source_pdf_sha256']
     provenance=read(HERE/'reference_provenance.json')
@@ -329,9 +360,13 @@ def collect_files(repository, paper_source):
     files['requirements-reference.txt']=b'pypdf==6.10.0\n'
     files['requirements-figures.txt']=b'matplotlib==3.10.1\nnumpy==2.2.4\n'
     citation=(repository/'CITATION.cff').read_text().replace('given-names: "Somama"', 'given-names: "Sahil"')
-    citation='\n'.join(('title: "Learning-Augmented Priority Queues: Partial Replication and Artifact Audit"' if line.startswith('title:') else 'version: "0.2.0-preparation"' if line.startswith('version:') else 'abstract: "Source, frozen plans, comparison-count observations, and analysis for a partial replication of learning-augmented priority queues, with a separate two-host runtime and memory audit. Licensing scope is documented in THIRD_PARTY_NOTICES.md."' if line.startswith('abstract:') else line) for line in citation.splitlines())+'\n'
+    citation='\n'.join(('title: "Learning-Augmented Priority Queues: Partial Replication and Artifact Audit"' if line.startswith('title:') else 'version: "0.2.0-preparation"' if line.startswith('version:') else 'abstract: "Source, frozen plans, comparison-count observations, and analysis for a partial replication of learning-augmented priority queues, with a retention-defect cleanup and supporting two-host runtime and memory analyses. Licensing scope is documented in THIRD_PARTY_NOTICES.md."' if line.startswith('abstract:') else line) for line in citation.splitlines())+'\n'
+    citation='\n'.join(line for line in citation.splitlines()
+                       if not line.startswith(('repository-code:', 'url:')))+'\n'
+    citation+='repository-code: '+json.dumps(publication['repository_url'])+'\n'
+    citation+='url: '+json.dumps(publication['repository_url']+'/tree/'+publication['source_commit'])+'\n'
     files['CITATION.cff']=citation.encode()
-    files['README.md']=README.encode()
+    files['README.md']=README.replace('__PUBLIC_ROOT__',publication['repository_url']).replace('__PUBLIC_SOURCE__',publication['source_commit']).encode()
     notice=(repository/'THIRD_PARTY_NOTICES.md').read_text().replace('Somama Siddiqui', 'Sahil Siddiqui')
     files['LICENSE']=(repository/'LICENSE').read_text().replace('Somama Siddiqui', 'Sahil Siddiqui').encode()
     if '## ReScience partial replication, template and reference material' not in notice:
@@ -369,6 +404,7 @@ def main():
         path=repository/name;path.parent.mkdir(parents=True,exist_ok=True);path.write_bytes(data)
     for name,digest in protected.items():
         require(sha((repository/name).read_bytes())==digest,'Older scientific record changed: '+name)
+    publication=public_repository()
     receipt={'status':'integrated','created_utc':datetime.now(timezone.utc).isoformat(),
              'phase7_freeze_sha256':sha((HERE/'frozen_protocol.json').read_bytes()),
              'phase7_summary_sha256':sha((HERE/'replication_summary.json').read_bytes()),
@@ -377,7 +413,13 @@ def main():
              'preserved_phase2_to_phase5_files':len(protected),
              'added_or_updated_files':{name:sha(data) for name,data in files.items()},
              'excluded':['original paper PDF','original Python source','compiled engines','nested archives'],
-             'published':False,'submitted':False,'helper_sha256':sha(Path(__file__).read_bytes())}
+             'published':publication['source_snapshot_published'],
+             'publication_scope':'Independently verified scientific source snapshot; publication of this new integration is not asserted',
+             'public_repository_url':publication['repository_url'],
+             'published_source_commit':publication['source_commit'],
+             'published_source_tree':publication['source_tree'],
+             'public_repository_evidence_sha256':sha((HERE/'public_repository.json').read_bytes()),
+             'submitted':publication['journal_submitted'],'helper_sha256':sha(Path(__file__).read_bytes())}
     (repository/'provenance/rescience-integration.json').write_text(json.dumps(receipt,indent=2)+'\n')
     source_map=manifest.get('source_map',{})
     for name,data in files.items():
@@ -388,7 +430,8 @@ def main():
                    and p.name!='snapshot-manifest.json'
                    and not {'.git','__pycache__'}.intersection(p.relative_to(repository).parts)}
     final['source_map']={name:record for name,record in source_map.items() if '.git' not in Path(name).parts}
-    final['phase7_replication']={k:receipt[k] for k in ('phase7_freeze_sha256','phase7_summary_sha256','primary_conditions','primary_method_runs','main_pdf_sha256','extension_pdf_sha256')}
+    final['phase7_replication']={k:receipt[k] for k in ('phase7_freeze_sha256','phase7_summary_sha256','primary_conditions','primary_method_runs','main_pdf_sha256','extension_pdf_sha256',
+        'public_repository_url','published_source_commit','published_source_tree','public_repository_evidence_sha256')}
     (repository/'snapshot-manifest.json').write_text(json.dumps(final,indent=2)+'\n')
     (HERE/'repository_integration.json').write_text(json.dumps(receipt,indent=2)+'\n')
     print(json.dumps({'status':'integrated','files':len(final['files']),

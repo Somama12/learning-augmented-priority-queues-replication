@@ -3,6 +3,12 @@
 Author: **Sahil Siddiqui**. The author is responsible for all claims. AI coding
 assistants were used as tools for code generation, debugging, and editing of prose.
 
+Public repository: [learning-augmented-priority-queues-replication](https://github.com/Somama12/learning-augmented-priority-queues-replication).
+The independently verified [scientific source snapshot](https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/d71f1494c0f02f70b40216f69af1158a12db3d70)
+is commit `d71f1494c0f02f70b40216f69af1158a12db3d70`. This stable source commit precedes the current
+paper/documentation update; it is not presented as the commit of this README.
+Source publication does not imply journal submission or acceptance.
+
 ## Main paper and scope
 
 `paper/learned-priority-queues-rescience-c.pdf` is the ReScience C preparation.
@@ -23,10 +29,13 @@ The original mathematical decay distribution is preserved; finite PRNG outputs
 are not claimed identical. All pointwise discrepancies and limitations remain
 in the analysis rather than being hidden behind a single success label.
 
-The earlier two-host runtime and memory study is separate extension evidence:
-`supplement/learned-priority-queues-runtime-memory-supplement.pdf`, with its unchanged records under
-`work/lapq/phase2` through `phase5`. Those timings do not substitute for replication
-of the original comparison-count results.
+The main paper proceeds from the comparison-count replication to the historical
+node-map retention defect, its narrow cleanup, and a short runtime comparison.
+The full supporting runtime, memory, ablation and two-host analyses are in
+`supplement/learned-priority-queues-runtime-memory-supplement.pdf`; their scientific
+records remain unchanged under `work/lapq/phase2` through `phase5`. Those timings
+are additional implementation evidence and do not substitute for replication of
+the original comparison-count results.
 
 ## Verify and reanalyze existing evidence
 
@@ -100,7 +109,7 @@ claim that a reviewer has rerun them. Matplotlib is required for plots and by th
 original skip-list oracle imports; pypdf is needed only for optional PDF extraction.
 The existing `fetch_inputs.py` separately retrieves the earlier study's inputs.
 
-## Runtime/memory extension
+## Supporting retention and runtime analyses
 
 ```sh
 .venv/bin/python work/lapq/phase4/native_cross_host_analysis.py --output reanalysis/native.json --tables reanalysis/native-tables
@@ -110,7 +119,7 @@ The existing `fetch_inputs.py` separately retrieves the earlier study's inputs.
 
 Run the last command in a disposable copy because it writes the shipped summary
 path. These analyses preserve host separation and the allocation/timing scope.
-The extension's full historical artifact may be offered as a separate release
+The full historical artifact may be offered as a separate release
 asset. Nested historical ZIPs, old executable builds and the original paper PDF
 are not embedded in this repository. Historical checksum lists are preserved
 unchanged under `provenance/historical-checksums/`; use `verify_snapshot.py` for
@@ -138,8 +147,9 @@ source datasets, author aggregates, or publication text. Read
 `THIRD_PARTY_NOTICES.md` and `DATA_SOURCES.md` for attribution and scope.
 
 This is a named repository. Exact raw records retain historical local paths and
-machine metadata. It is not an anonymized submission artifact. No repository URL,
-DOI, affiliation, ORCID, acceptance or publication date is invented.
+machine metadata. It is not an anonymized submission artifact. The public
+repository and verified source commit are recorded in `provenance/public-repository.json`.
+No DOI, affiliation, ORCID, journal acceptance or journal publication date is invented.
 
 ## Public release checklist
 
@@ -151,10 +161,12 @@ DOI, affiliation, ORCID, acceptance or publication date is invented.
 - [x] Portable quick-run validation matches all six primary input hashes and all 18 outputs.
 - [ ] Check the documented machine/compiler prerequisites on the reviewer host.
 - Optional: add affiliation or ORCID only if supplied; absent fields remain blank.
-- [ ] Insert actual public repository/release URLs in paper metadata and citation.
+- [x] The scientific source snapshot is public and its complete Git tree was independently verified.
+- [x] Repository and immutable source-snapshot links are supplied in this README and citation metadata.
 - [ ] Review named sharing of raw local paths and third-party licensing boundaries.
 - [ ] Add the unchanged full historical artifact as a separate release asset if desired.
 - [ ] Complete the current ReScience C submission form using the actual release URLs.
 
-Building this repository does not publish it or submit the paper. The repository
-URL and release identifier should be set only after the actual public release.
+The scientific source is public at the links above. The paper is prepared for
+ReScience C; no journal submission or acceptance is claimed. A future document
+update must not describe its own not-yet-created commit as already published.

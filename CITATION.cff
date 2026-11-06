@@ -6,4 +6,6 @@ version: "0.2.0-preparation"
 authors:
   - family-names: "Siddiqui"
     given-names: "Sahil"
-abstract: "Source, frozen plans, comparison-count observations, and analysis for a partial replication of learning-augmented priority queues, with a separate two-host runtime and memory audit. Licensing scope is documented in THIRD_PARTY_NOTICES.md."
+abstract: "Source, frozen plans, comparison-count observations, and analysis for a partial replication of learning-augmented priority queues, with a retention-defect cleanup and supporting two-host runtime and memory analyses. Licensing scope is documented in THIRD_PARTY_NOTICES.md."
+repository-code: "https://github.com/Somama12/learning-augmented-priority-queues-replication"
+url: "https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/d71f1494c0f02f70b40216f69af1158a12db3d70"
