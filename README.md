@@ -1,6 +1,6 @@
 # Learning-augmented priority queues: partial replication and artifact audit
 
-Author: **Somama Siddiqui**. The author is responsible for all claims. AI coding
+Author: **Sahil Siddiqui**. The author is responsible for all claims. AI coding
 assistants were used as tools for code generation, debugging, and editing of prose.
 
 ## Main paper and scope

@@ -1,7 +1,7 @@
 # Licensing scope and third-party notices
 
 The MIT license covers new software/documentation authored for this audit by
-Somama Siddiqui using Codex. It is not a license for the original Benomar–Coester
+Sahil Siddiqui using Codex. It is not a license for the original Benomar–Coester
 implementation, separately obtained data, dependencies, or third-party content.
 Raw factual observations are preserved as evidence; no blanket ownership/license
 claim is made over third-party-derived data or quoted metadata. Copyrightable

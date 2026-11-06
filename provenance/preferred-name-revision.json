@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "old_display_name": "Somama Siddiqui",
+  "new_display_name": "Sahil Siddiqui",
+  "original_pdf_sha256": "fed2e62fa49bf384ad89146194a0c4af093de753a09a0343678a57ed15c5f070",
+  "updated_pdf_sha256": "55f54f08abc07c4bdded1acfd89c41caa6b8d8bee0ba0f8b4473963da4f57e84",
+  "original_tex_sha256": "4609aa54532a1d5e683c4009efd0fbf9dda9e41019fd5ef66e2996360acf014f",
+  "updated_tex_sha256": "e5b49c5572e46e657abf74b0386679235b5a64c89e562b8a925aeb94484813ae",
+  "authoring_script_sha256": "d0e88fb3a8d3731607a6de7aa194d7a3466429c42716e81f744ef9e31472f8bf",
+  "pages": 11,
+  "changed_visible_text_operands": 1,
+  "supplement_text_only_byline_changed": true,
+  "metadata_edit": "Author display name only",
+  "historical_original_preserved": true,
+  "scientific_content": "Every extracted page exactly equals the original after the single display-name substitution."
+}

@@ -55,7 +55,7 @@ FETCH_REFERENCE = '#!/usr/bin/env python3\n"""Fetch separately distributed refer
 
 README = '''# Learning-augmented priority queues: partial replication and artifact audit
 
-Author: **Somama Siddiqui**. The author is responsible for all claims. AI coding
+Author: **Sahil Siddiqui**. The author is responsible for all claims. AI coding
 assistants were used as tools for code generation, debugging, and editing of prose.
 
 ## Main paper and scope
@@ -259,8 +259,13 @@ def collect_files(repository, paper_source):
             'Paper source uses a different summary')
     require(MAIN_PDF.is_file() and MAIN_PDF.read_bytes().startswith(b'%PDF-'), 'Final main PDF is unavailable')
     require(EXTENSION_PDF.is_file() and EXTENSION_PDF.read_bytes().startswith(b'%PDF-'), 'Extension PDF is unavailable')
-    require(sha(EXTENSION_PDF.read_bytes()) == sha(LEGACY_EXTENSION_PDF.read_bytes()),
-            'Renamed extension PDF differs from the previous complete working paper')
+    byline = read(HERE/'preferred_name_revision.json')
+    require(byline['status'] == 'passed' and byline['supplement_text_only_byline_changed'] is True
+            and byline['original_pdf_sha256'] == sha(LEGACY_EXTENSION_PDF.read_bytes())
+            and byline['updated_pdf_sha256'] == sha(EXTENSION_PDF.read_bytes())
+            and byline['old_display_name'] == 'Somama Siddiqui'
+            and byline['new_display_name'] == 'Sahil Siddiqui',
+            'Supplement byline-only derivative failed its provenance check')
     for name, digest in frozen['source_sha256'].items():
         require(sha((HERE/name).read_bytes()) == digest, 'Frozen source/evidence changed: '+name)
     require(execution['condition_file_sha256'] == sha((HERE/'results/conditions.jsonl').read_bytes()),
@@ -298,6 +303,7 @@ def collect_files(repository, paper_source):
                 'Font license missing: '+folder)
     files['paper/learned-priority-queues-rescience-c.pdf']=MAIN_PDF.read_bytes()
     files['supplement/learned-priority-queues-runtime-memory-supplement.pdf']=EXTENSION_PDF.read_bytes()
+    files['provenance/preferred-name-revision.json']=(HERE/'preferred_name_revision.json').read_bytes()
     files['work/lapq/phase7/fetch_replication_references.py']=FETCH_REFERENCE.encode()
     pdf_digest=read(HERE/'published_reference_curves.json')['source_pdf_sha256']
     provenance=read(HERE/'reference_provenance.json')
@@ -322,11 +328,12 @@ def collect_files(repository, paper_source):
     files['work/lapq/phase7/reference_fetch_manifest.json']=(json.dumps(reference_manifest,indent=2)+'\n').encode()
     files['requirements-reference.txt']=b'pypdf==6.10.0\n'
     files['requirements-figures.txt']=b'matplotlib==3.10.1\nnumpy==2.2.4\n'
-    citation=(repository/'CITATION.cff').read_text()
+    citation=(repository/'CITATION.cff').read_text().replace('given-names: "Somama"', 'given-names: "Sahil"')
     citation='\n'.join(('title: "Learning-Augmented Priority Queues: Partial Replication and Artifact Audit"' if line.startswith('title:') else 'version: "0.2.0-preparation"' if line.startswith('version:') else 'abstract: "Source, frozen plans, comparison-count observations, and analysis for a partial replication of learning-augmented priority queues, with a separate two-host runtime and memory audit. Licensing scope is documented in THIRD_PARTY_NOTICES.md."' if line.startswith('abstract:') else line) for line in citation.splitlines())+'\n'
     files['CITATION.cff']=citation.encode()
     files['README.md']=README.encode()
-    notice=(repository/'THIRD_PARTY_NOTICES.md').read_text()
+    notice=(repository/'THIRD_PARTY_NOTICES.md').read_text().replace('Somama Siddiqui', 'Sahil Siddiqui')
+    files['LICENSE']=(repository/'LICENSE').read_text().replace('Somama Siddiqui', 'Sahil Siddiqui').encode()
     if '## ReScience partial replication, template and reference material' not in notice:
         notice+=NOTICE
     files['THIRD_PARTY_NOTICES.md']=notice.encode()
@@ -347,6 +354,8 @@ def main():
     require(repository.is_dir(), 'Existing curated repository is required; no historical rebuild is performed')
     manifest=read(repository/'snapshot-manifest.json')
     for name, record in manifest['files'].items():
+        if '.git' in Path(name).parts:
+            continue
         require((repository/name).is_file() and sha((repository/name).read_bytes())==record['sha256'],
                 'Existing snapshot changed; review and refresh its manifest first: '+name)
     protected={name:record['sha256'] for name,record in manifest['files'].items() if name.startswith(PROTECTED)}
@@ -373,8 +382,12 @@ def main():
     source_map=manifest.get('source_map',{})
     for name,data in files.items():
         source_map[name]={'sha256':sha(data),'bytes':len(data),'origin':'Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged'}
-    load_builder().write_manifest(repository,source_map)
-    final=read(repository/'snapshot-manifest.json')
+    final=dict(manifest)
+    final['files']={p.relative_to(repository).as_posix():{'bytes':p.stat().st_size,'sha256':sha(p.read_bytes())}
+                   for p in sorted(repository.rglob('*')) if p.is_file()
+                   and p.name!='snapshot-manifest.json'
+                   and not {'.git','__pycache__'}.intersection(p.relative_to(repository).parts)}
+    final['source_map']={name:record for name,record in source_map.items() if '.git' not in Path(name).parts}
     final['phase7_replication']={k:receipt[k] for k in ('phase7_freeze_sha256','phase7_summary_sha256','primary_conditions','primary_method_runs','main_pdf_sha256','extension_pdf_sha256')}
     (repository/'snapshot-manifest.json').write_text(json.dumps(final,indent=2)+'\n')
     (HERE/'repository_integration.json').write_text(json.dumps(receipt,indent=2)+'\n')

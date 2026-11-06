@@ -6,24 +6,24 @@
       "sha256": "17c4ea06f4c7c5edf06f7294f796cbfdbd310df834b343869dbf7c7d48e116dd"
     },
     "CITATION.cff": {
-      "bytes": 540,
-      "sha256": "c60fa2a39df2c5318286b732c0f693983685b2a861f78fb7bc113595896c32ef"
+      "bytes": 539,
+      "sha256": "d8a748fd1e9a6a38d18f0990fed70a0454452fe8abec8a448c9ab10aa742058a"
     },
     "DATA_SOURCES.md": {
       "bytes": 681,
       "sha256": "d4eb3f0199848a98f99d0a74e95fbd0b517b296b7adb7fa146b419adc9b97464"
     },
     "LICENSE": {
-      "bytes": 1072,
-      "sha256": "32dce0cb45cf45a33e30b3155be87878209e15e7693134206b90b0727f87ed21"
+      "bytes": 1071,
+      "sha256": "82de3bf65515abe9da97969bc730e996ebed42cd43a3d94b1876a49fc4df939a"
     },
     "README.md": {
-      "bytes": 8782,
-      "sha256": "8377f13b0ae749e077e9f8cc14b7ded5c2b2ed850b4429175fe7da1b4726d26c"
+      "bytes": 8781,
+      "sha256": "404b9716cbeff6a534e249ad14a9645067c8cb32fe7f359b58648f197067e17c"
     },
     "THIRD_PARTY_NOTICES.md": {
-      "bytes": 4313,
-      "sha256": "ed0cd41b50d29e0532495fd4bd20ac507c6ca56018bba25880313c33517b449e"
+      "bytes": 4312,
+      "sha256": "1a3da95218c86b5547e3e884ed3a87d9dcbb08d607a1d404b2d8c285ad602ef7"
     },
     "fetch_inputs.py": {
       "bytes": 2236,
@@ -46,8 +46,8 @@
       "sha256": "3b2bfac8b469b70057a424fed07f133c6413edbebb46f0126ddd1f5e2a160153"
     },
     "paper/learned-priority-queues-rescience-c.pdf": {
-      "bytes": 109173,
-      "sha256": "d45449cc43117955f5cc2695eb9ea4530f5c60887768cc6a9301dc43036578ea"
+      "bytes": 109155,
+      "sha256": "1620a2adccb7cf35d1411e5ce332fe4cb1f7b34cff06a097af51851bb005eaed"
     },
     "paper/rescience/BUILD_NOTES.txt": {
       "bytes": 1374,
@@ -75,7 +75,7 @@
     },
     "paper/rescience/build_manifest.json": {
       "bytes": 1141,
-      "sha256": "d898e2ee8e34b9bc1c66402723c43a8018e832f4dcc15f907fec03e79108d01f"
+      "sha256": "de23ad0d474b4532b7d9f8ffe08e401117bc6e9236ca4a4e8b4a62b4a405ab4e"
     },
     "paper/rescience/content.tex": {
       "bytes": 21547,
@@ -94,12 +94,12 @@
       "sha256": "afe4c164c59a367a19adf2f656c510988443ef56a4f9ed58c6f59189638c191d"
     },
     "paper/rescience/metadata.tex": {
-      "bytes": 2433,
-      "sha256": "89ca5cf5b4aba22fe2723a0a3afb2ae99c35e585a69c80993c8ae59ccaddd029"
+      "bytes": 2430,
+      "sha256": "d17b000391b1c48b8be43cdf04189ef607aa28e0c0f8d3d945e725bda118a6b7"
     },
     "paper/rescience/metadata.yaml": {
-      "bytes": 2816,
-      "sha256": "09a26f0e9bc361798749767dda49912ef5e6ebe9b0528d24930224b9a422ff48"
+      "bytes": 2815,
+      "sha256": "7b9680c216d02e23e67eeafcee4fad2bb57f545e92b1e89ee27ffab5d5982be5"
     },
     "paper/rescience/rescience.cls": {
       "bytes": 13205,
@@ -365,13 +365,17 @@
       "bytes": 177740,
       "sha256": "1f4cf32637c30d436ac562fe3a648176dc269b4b46e4c600d02b49bed8a187c3"
     },
+    "provenance/preferred-name-revision.json": {
+      "bytes": 881,
+      "sha256": "347ce76e7e72ccb48bc0909f9eef7b326d695b4bb43b61241250a841fdc6af5a"
+    },
     "provenance/repository-validation.json": {
       "bytes": 1284,
       "sha256": "15de01e6751c78e522b152ae629f4ed0a4cae8306355fef9152ebf2a177e6199"
     },
     "provenance/rescience-integration.json": {
-      "bytes": 17312,
-      "sha256": "4f521e55057859fad2814f4c452f5cc23fb252604034b9a180f052fc1489d933"
+      "bytes": 17510,
+      "sha256": "be4d56c7e8b6e5e2ec5bb4f36509ac0d603aa30d323c375ba7b8d1fcf099e826"
     },
     "requirements-figures.txt": {
       "bytes": 32,
@@ -390,8 +394,8 @@
       "sha256": "28ddb33689213032453e3f3d5ebafad4fc797f855e7d4926e76eae85717ad711"
     },
     "supplement/learned-priority-queues-runtime-memory-supplement.pdf": {
-      "bytes": 352118,
-      "sha256": "fed2e62fa49bf384ad89146194a0c4af093de753a09a0343678a57ed15c5f070"
+      "bytes": 351927,
+      "sha256": "55f54f08abc07c4bdded1acfd89c41caa6b8d8bee0ba0f8b4473963da4f57e84"
     },
     "verify_snapshot.py": {
       "bytes": 728,
@@ -9510,8 +9514,8 @@
       "sha256": "2cea171996aab9f86f00986e845cb68ac3d4b1b3fc4ee1c5ceb0e4649e7c399b"
     },
     "work/lapq/phase7/document_validation.json": {
-      "bytes": 1625,
-      "sha256": "642abee23985efcbcdd1e14b311c7af790ed1fe288f8c19c9a45a9fbec581742"
+      "bytes": 1553,
+      "sha256": "a46dc9d40e10cae8abe2e620c60258b545a58743240cb62fea7e47edfbdcc351"
     },
     "work/lapq/phase7/engine_preflight.json": {
       "bytes": 135737,
@@ -9706,8 +9710,8 @@
       "sha256": "2efe0966c8a6edccf824cccc4c1e7a1ec9e58409e87d4e6c5c3737824c975eae"
     },
     "work/lapq/phase7/update_repository_for_rescience.py": {
-      "bytes": 25315,
-      "sha256": "cee99009c4f542cc0ca8b298452de45c4486b5d6bcf138d196eb97deb6d5113e"
+      "bytes": 26409,
+      "sha256": "ec33ecb1f2b8fef56adda599eeb9d93767ca2c42d7cc77ba6f875210b492b33e"
     }
   },
   "source_artifact_sha256": "e05b822ddf67dcf259838c3807481777d90f3cc31802d6ec544ece26675aaffc",
@@ -21223,8 +21227,8 @@
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "work/lapq/phase7/update_repository_for_rescience.py": {
-      "sha256": "cee99009c4f542cc0ca8b298452de45c4486b5d6bcf138d196eb97deb6d5113e",
-      "bytes": 25315,
+      "sha256": "ec33ecb1f2b8fef56adda599eeb9d93767ca2c42d7cc77ba6f875210b492b33e",
+      "bytes": 26409,
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "work/lapq/phase7/plot_replication.py": {
@@ -21253,8 +21257,8 @@
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "work/lapq/phase7/document_validation.json": {
-      "sha256": "642abee23985efcbcdd1e14b311c7af790ed1fe288f8c19c9a45a9fbec581742",
-      "bytes": 1625,
+      "sha256": "a46dc9d40e10cae8abe2e620c60258b545a58743240cb62fea7e47edfbdcc351",
+      "bytes": 1553,
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "work/lapq/phase7/results/engine-stderr.txt": {
@@ -21393,8 +21397,8 @@
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "paper/rescience/metadata.tex": {
-      "sha256": "89ca5cf5b4aba22fe2723a0a3afb2ae99c35e585a69c80993c8ae59ccaddd029",
-      "bytes": 2433,
+      "sha256": "d17b000391b1c48b8be43cdf04189ef607aa28e0c0f8d3d945e725bda118a6b7",
+      "bytes": 2430,
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "paper/rescience/content.tex": {
@@ -21408,12 +21412,12 @@
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "paper/rescience/metadata.yaml": {
-      "sha256": "09a26f0e9bc361798749767dda49912ef5e6ebe9b0528d24930224b9a422ff48",
-      "bytes": 2816,
+      "sha256": "7b9680c216d02e23e67eeafcee4fad2bb57f545e92b1e89ee27ffab5d5982be5",
+      "bytes": 2815,
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "paper/rescience/build_manifest.json": {
-      "sha256": "d898e2ee8e34b9bc1c66402723c43a8018e832f4dcc15f907fec03e79108d01f",
+      "sha256": "de23ad0d474b4532b7d9f8ffe08e401117bc6e9236ca4a4e8b4a62b4a405ab4e",
       "bytes": 1141,
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
@@ -21768,13 +21772,13 @@
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "paper/learned-priority-queues-rescience-c.pdf": {
-      "sha256": "d45449cc43117955f5cc2695eb9ea4530f5c60887768cc6a9301dc43036578ea",
-      "bytes": 109173,
+      "sha256": "1620a2adccb7cf35d1411e5ce332fe4cb1f7b34cff06a097af51851bb005eaed",
+      "bytes": 109155,
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "supplement/learned-priority-queues-runtime-memory-supplement.pdf": {
-      "sha256": "fed2e62fa49bf384ad89146194a0c4af093de753a09a0343678a57ed15c5f070",
-      "bytes": 352118,
+      "sha256": "55f54f08abc07c4bdded1acfd89c41caa6b8d8bee0ba0f8b4473963da4f57e84",
+      "bytes": 351927,
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "work/lapq/phase7/fetch_replication_references.py": {
@@ -21798,23 +21802,33 @@
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "CITATION.cff": {
-      "sha256": "c60fa2a39df2c5318286b732c0f693983685b2a861f78fb7bc113595896c32ef",
-      "bytes": 540,
+      "sha256": "d8a748fd1e9a6a38d18f0990fed70a0454452fe8abec8a448c9ab10aa742058a",
+      "bytes": 539,
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "README.md": {
-      "sha256": "8377f13b0ae749e077e9f8cc14b7ded5c2b2ed850b4429175fe7da1b4726d26c",
-      "bytes": 8782,
+      "sha256": "404b9716cbeff6a534e249ad14a9645067c8cb32fe7f359b58648f197067e17c",
+      "bytes": 8781,
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "THIRD_PARTY_NOTICES.md": {
-      "sha256": "ed0cd41b50d29e0532495fd4bd20ac507c6ca56018bba25880313c33517b449e",
-      "bytes": 4313,
+      "sha256": "1a3da95218c86b5547e3e884ed3a87d9dcbb08d607a1d404b2d8c285ad602ef7",
+      "bytes": 4312,
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     ".gitignore": {
       "sha256": "17c4ea06f4c7c5edf06f7294f796cbfdbd310df834b343869dbf7c7d48e116dd",
       "bytes": 184,
+      "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
+    },
+    "provenance/preferred-name-revision.json": {
+      "sha256": "347ce76e7e72ccb48bc0909f9eef7b326d695b4bb43b61241250a841fdc6af5a",
+      "bytes": 881,
+      "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
+    },
+    "LICENSE": {
+      "sha256": "82de3bf65515abe9da97969bc730e996ebed42cd43a3d94b1876a49fc4df939a",
+      "bytes": 1071,
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     }
   },
@@ -21824,7 +21838,7 @@
     "phase7_summary_sha256": "2e30c6a1467e3b0a93207353627b24ffe1ca1c861596d0b15fd9d47084fb24e1",
     "primary_conditions": 3780,
     "primary_method_runs": 11340,
-    "main_pdf_sha256": "d45449cc43117955f5cc2695eb9ea4530f5c60887768cc6a9301dc43036578ea",
-    "extension_pdf_sha256": "fed2e62fa49bf384ad89146194a0c4af093de753a09a0343678a57ed15c5f070"
+    "main_pdf_sha256": "1620a2adccb7cf35d1411e5ce332fe4cb1f7b34cff06a097af51851bb005eaed",
+    "extension_pdf_sha256": "55f54f08abc07c4bdded1acfd89c41caa6b8d8bee0ba0f8b4473963da4f57e84"
   }
 }
