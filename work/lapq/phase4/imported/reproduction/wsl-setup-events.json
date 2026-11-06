@@ -1,0 +1,17 @@
+[
+  {
+    "Event": "Initial check",
+    "Observed": "WSL was not installed",
+    "Source": "First wsl.exe --status and --list --verbose tool output"
+  },
+  {
+    "Event": "After user installation",
+    "Observed": "Wsl/EnumerateDistros/Service/E_ACCESSDENIED",
+    "Source": "work/wsl-initial-status.txt; current Windows command sandbox"
+  },
+  {
+    "Event": "User reply",
+    "Observed": "Ubuntu is ready",
+    "Source": "User message; distribution/kernel version still needs direct verification"
+  }
+]

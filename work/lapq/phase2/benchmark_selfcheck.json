@@ -1,0 +1,976 @@
+{
+  "status": "passed",
+  "cases": 39,
+  "checks": [
+    {
+      "method": "heapq_native",
+      "seed": 17,
+      "checks": {
+        "fully_drained": true
+      }
+    },
+    {
+      "method": "heapq_shared",
+      "seed": 17,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "kind": "heapq",
+          "live_entries": 0,
+          "container_shallow_bytes": 56
+        }
+      }
+    },
+    {
+      "method": "sortedlist_native",
+      "seed": 17,
+      "checks": {
+        "fully_drained": true
+      }
+    },
+    {
+      "method": "skiplist",
+      "seed": 17,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "skiplist",
+          "live_entries": 0
+        }
+      }
+    },
+    {
+      "method": "original_exact",
+      "seed": 17,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "original_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "SortedList",
+            "size_excluding_sentinel": 0
+          }
+        }
+      }
+    },
+    {
+      "method": "original_linear",
+      "seed": 17,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "original_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "SortedList",
+            "size_excluding_sentinel": 0
+          }
+        }
+      }
+    },
+    {
+      "method": "original_hist64",
+      "seed": 17,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "original_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "SortedList",
+            "size_excluding_sentinel": 0
+          }
+        }
+      }
+    },
+    {
+      "method": "bitmap_exact",
+      "seed": 17,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "bitmap_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 7,
+            "mode": "dense",
+            "size": 0,
+            "levels": 1,
+            "word_capacity_by_level": [
+              1
+            ],
+            "nonzero_words_by_level": [
+              0
+            ],
+            "python_bytes_estimate": 1170,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          }
+        }
+      }
+    },
+    {
+      "method": "bitmap_linear",
+      "seed": 17,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "bitmap_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 7,
+            "mode": "dense",
+            "size": 0,
+            "levels": 1,
+            "word_capacity_by_level": [
+              1
+            ],
+            "nonzero_words_by_level": [
+              0
+            ],
+            "python_bytes_estimate": 1162,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          }
+        }
+      }
+    },
+    {
+      "method": "bitmap_hist64",
+      "seed": 17,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "bitmap_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 7,
+            "mode": "dense",
+            "size": 0,
+            "levels": 1,
+            "word_capacity_by_level": [
+              1
+            ],
+            "nonzero_words_by_level": [
+              0
+            ],
+            "python_bytes_estimate": 1154,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          }
+        }
+      }
+    },
+    {
+      "method": "veb_linear",
+      "seed": 17,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "veb_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "kind": "sparse_veb",
+            "size": 0,
+            "universe": 7,
+            "nodes": 1,
+            "cluster_entries": 0,
+            "leaf_words": 1,
+            "depth": 1
+          }
+        }
+      }
+    },
+    {
+      "method": "compact_linear",
+      "seed": 17,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 0,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "guided_bitmap_compact",
+          "live_entries": 0,
+          "live_distinct_keys": 0,
+          "live_rank_groups": 0,
+          "rank_bucket_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 7,
+            "mode": "dense",
+            "size": 0,
+            "levels": 1,
+            "word_capacity_by_level": [
+              1
+            ],
+            "nonzero_words_by_level": [
+              0
+            ],
+            "python_bytes_estimate": 1146,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          },
+          "caveat": "grouped duplicates and different hint/height history; not index-only ablation"
+        }
+      }
+    },
+    {
+      "method": "radix",
+      "seed": 17,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "kind": "radix",
+          "live_entries": 0,
+          "bucket_count": 4,
+          "retained_bucket_entries": 0,
+          "last_extracted": 4
+        }
+      }
+    },
+    {
+      "method": "heapq_native",
+      "seed": 29,
+      "checks": {
+        "fully_drained": true
+      }
+    },
+    {
+      "method": "heapq_shared",
+      "seed": 29,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "kind": "heapq",
+          "live_entries": 0,
+          "container_shallow_bytes": 56
+        }
+      }
+    },
+    {
+      "method": "sortedlist_native",
+      "seed": 29,
+      "checks": {
+        "fully_drained": true
+      }
+    },
+    {
+      "method": "skiplist",
+      "seed": 29,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "skiplist",
+          "live_entries": 0
+        }
+      }
+    },
+    {
+      "method": "original_exact",
+      "seed": 29,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "original_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "SortedList",
+            "size_excluding_sentinel": 0
+          }
+        }
+      }
+    },
+    {
+      "method": "original_linear",
+      "seed": 29,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "original_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "SortedList",
+            "size_excluding_sentinel": 0
+          }
+        }
+      }
+    },
+    {
+      "method": "original_hist64",
+      "seed": 29,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "original_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "SortedList",
+            "size_excluding_sentinel": 0
+          }
+        }
+      }
+    },
+    {
+      "method": "bitmap_exact",
+      "seed": 29,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "bitmap_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 7,
+            "mode": "dense",
+            "size": 0,
+            "levels": 1,
+            "word_capacity_by_level": [
+              1
+            ],
+            "nonzero_words_by_level": [
+              0
+            ],
+            "python_bytes_estimate": 1138,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          }
+        }
+      }
+    },
+    {
+      "method": "bitmap_linear",
+      "seed": 29,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "bitmap_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 7,
+            "mode": "dense",
+            "size": 0,
+            "levels": 1,
+            "word_capacity_by_level": [
+              1
+            ],
+            "nonzero_words_by_level": [
+              0
+            ],
+            "python_bytes_estimate": 1130,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          }
+        }
+      }
+    },
+    {
+      "method": "bitmap_hist64",
+      "seed": 29,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "bitmap_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 7,
+            "mode": "dense",
+            "size": 0,
+            "levels": 1,
+            "word_capacity_by_level": [
+              1
+            ],
+            "nonzero_words_by_level": [
+              0
+            ],
+            "python_bytes_estimate": 1122,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          }
+        }
+      }
+    },
+    {
+      "method": "veb_linear",
+      "seed": 29,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "veb_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "kind": "sparse_veb",
+            "size": 0,
+            "universe": 7,
+            "nodes": 1,
+            "cluster_entries": 0,
+            "leaf_words": 1,
+            "depth": 1
+          }
+        }
+      }
+    },
+    {
+      "method": "compact_linear",
+      "seed": 29,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 0,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "guided_bitmap_compact",
+          "live_entries": 0,
+          "live_distinct_keys": 0,
+          "live_rank_groups": 0,
+          "rank_bucket_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 7,
+            "mode": "dense",
+            "size": 0,
+            "levels": 1,
+            "word_capacity_by_level": [
+              1
+            ],
+            "nonzero_words_by_level": [
+              0
+            ],
+            "python_bytes_estimate": 1114,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          },
+          "caveat": "grouped duplicates and different hint/height history; not index-only ablation"
+        }
+      }
+    },
+    {
+      "method": "radix",
+      "seed": 29,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "kind": "radix",
+          "live_entries": 0,
+          "bucket_count": 4,
+          "retained_bucket_entries": 0,
+          "last_extracted": 4
+        }
+      }
+    },
+    {
+      "method": "heapq_native",
+      "seed": 43,
+      "checks": {
+        "fully_drained": true
+      }
+    },
+    {
+      "method": "heapq_shared",
+      "seed": 43,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "kind": "heapq",
+          "live_entries": 0,
+          "container_shallow_bytes": 56
+        }
+      }
+    },
+    {
+      "method": "sortedlist_native",
+      "seed": 43,
+      "checks": {
+        "fully_drained": true
+      }
+    },
+    {
+      "method": "skiplist",
+      "seed": 43,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "skiplist",
+          "live_entries": 0
+        }
+      }
+    },
+    {
+      "method": "original_exact",
+      "seed": 43,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "original_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "SortedList",
+            "size_excluding_sentinel": 0
+          }
+        }
+      }
+    },
+    {
+      "method": "original_linear",
+      "seed": 43,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "original_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "SortedList",
+            "size_excluding_sentinel": 0
+          }
+        }
+      }
+    },
+    {
+      "method": "original_hist64",
+      "seed": 43,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "original_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "SortedList",
+            "size_excluding_sentinel": 0
+          }
+        }
+      }
+    },
+    {
+      "method": "bitmap_exact",
+      "seed": 43,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "bitmap_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 7,
+            "mode": "dense",
+            "size": 0,
+            "levels": 1,
+            "word_capacity_by_level": [
+              1
+            ],
+            "nonzero_words_by_level": [
+              0
+            ],
+            "python_bytes_estimate": 1106,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          }
+        }
+      }
+    },
+    {
+      "method": "bitmap_linear",
+      "seed": 43,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "bitmap_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 7,
+            "mode": "dense",
+            "size": 0,
+            "levels": 1,
+            "word_capacity_by_level": [
+              1
+            ],
+            "nonzero_words_by_level": [
+              0
+            ],
+            "python_bytes_estimate": 1098,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          }
+        }
+      }
+    },
+    {
+      "method": "bitmap_hist64",
+      "seed": 43,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "bitmap_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 7,
+            "mode": "dense",
+            "size": 0,
+            "levels": 1,
+            "word_capacity_by_level": [
+              1
+            ],
+            "nonzero_words_by_level": [
+              0
+            ],
+            "python_bytes_estimate": 1090,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          }
+        }
+      }
+    },
+    {
+      "method": "veb_linear",
+      "seed": 43,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 4,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "veb_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "kind": "sparse_veb",
+            "size": 0,
+            "universe": 7,
+            "nodes": 1,
+            "cluster_entries": 0,
+            "leaf_words": 1,
+            "depth": 1
+          }
+        }
+      }
+    },
+    {
+      "method": "compact_linear",
+      "seed": 43,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 0,
+          "max_skiplist_height": 3,
+          "clean_comparisons": null,
+          "kind": "guided_bitmap_compact",
+          "live_entries": 0,
+          "live_distinct_keys": 0,
+          "live_rank_groups": 0,
+          "rank_bucket_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 7,
+            "mode": "dense",
+            "size": 0,
+            "levels": 1,
+            "word_capacity_by_level": [
+              1
+            ],
+            "nonzero_words_by_level": [
+              0
+            ],
+            "python_bytes_estimate": 1082,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          },
+          "caveat": "grouped duplicates and different hint/height history; not index-only ablation"
+        }
+      }
+    },
+    {
+      "method": "radix",
+      "seed": 43,
+      "checks": {
+        "insertions": 7,
+        "extractions": 7,
+        "fully_drained": true,
+        "stats": {
+          "kind": "radix",
+          "live_entries": 0,
+          "bucket_count": 4,
+          "retained_bucket_entries": 0,
+          "last_extracted": 4
+        }
+      }
+    }
+  ],
+  "scope": "Small zero/tie-rich connected graph; independent oracle; untimed. Workload-sized validation is also required before timing each method."
+}

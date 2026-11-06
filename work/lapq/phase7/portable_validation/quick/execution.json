@@ -1,0 +1,48 @@
+{
+  "status": "passed",
+  "started_utc": "2026-11-06T21:51:36.305754+00:00",
+  "freeze_sha256": "5cf250d30ed87935eb0055137ff2a4305faa5858ed16e86c8adba026b3145a15",
+  "run_manifest_sha256": "9ae445ccf07d1653f5f4ac5e437de80c28d2083a2c3699e7f04eb7b7101e1cc0",
+  "portable_runner_sha256": "f43225db572789bee97935d26f9ea4cea12ad574e0acf19c10972f9026696742",
+  "mode": "quick",
+  "full_paper_reproduction": false,
+  "planned_conditions": 6,
+  "planned_method_runs": 18,
+  "completed_conditions": 6,
+  "completed_method_runs": 18,
+  "failures": [],
+  "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "platform": "macOS-14.3.1-arm64-arm-64bit-Mach-O",
+  "scope": "Explicit recompiled comparison-count run; new hardware/compiler metadata retained.",
+  "build": {
+    "status": "passed",
+    "started_utc": "2026-11-06T21:51:38.462298+00:00",
+    "argv": [
+      "/usr/bin/c++",
+      "-O3",
+      "-std=c++17",
+      "-DNDEBUG",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase7/replication.cpp",
+      "-o",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase7/portable_validation/quick/build/replication"
+    ],
+    "compiler_path": "/usr/bin/c++",
+    "compiler_version": "Apple clang version 15.0.0 (clang-1500.1.0.2.5)\nTarget: arm64-apple-darwin23.3.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+    "compiler_version_returncode": 0,
+    "source_sha256": "5ef65dfa3cf90a90490fe731949a0faafbbf77a6b777c3ccd6c34cf61ba54ef9",
+    "flags": [
+      "-O3",
+      "-std=c++17",
+      "-DNDEBUG"
+    ],
+    "scope": "Fresh local build from the frozen source; no claim of binary identity across hosts.",
+    "returncode": 0,
+    "binary_sha256": "5305c5b4a3421cc37c05031a2848197e46495d2171bbe21d90cc71240be0c526",
+    "binary_bytes": 91304,
+    "finished_utc": "2026-11-06T21:51:40.967553+00:00"
+  },
+  "last_progress_utc": "2026-11-06T21:51:42.682624+00:00",
+  "ended_utc": "2026-11-06T21:51:42.704387+00:00",
+  "condition_file_sha256": "79f4636384bc83a5744f504efc8f1ce301555439b59cb26b956844bd794468c6",
+  "raw_engine_file_sha256": "b1d88aaeb70eff6ddb913403c0c253c0a380b4ac3da54d49b035ca26019fdb5e"
+}

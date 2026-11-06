@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/build/native_benchmark_sanitized",
+    "--selftest"
+  ],
+  "binary_sha256": "ced18fb335417ca10698576483f23924e104b01ae4fd6e096a67337c5223d011",
+  "cwd": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2",
+  "exception": null,
+  "finished_at_utc": "2026-11-06T06:41:07.812703+00:00",
+  "lifecycle_scope": "whole subprocess including IO; not algorithm-only runtime",
+  "process_lifecycle_wall_seconds": 2.086146541987546,
+  "returncode": 0,
+  "started_at_utc": "2026-11-06T06:41:05.726592+00:00",
+  "stderr_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/build/sanitizer_selftest.stderr.txt",
+  "stdout_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/build/sanitizer_selftest.stdout.txt"
+}

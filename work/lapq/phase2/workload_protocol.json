@@ -1,0 +1,42 @@
+{
+  "protocol_version": 1,
+  "design_seed": 20261105,
+  "status": "Frozen input design before phase-2 performance timings; no algorithm hyperparameter tuning is specified here.",
+  "objective": "Measure costs of frozen rank advice across graph families, source-location strata and explicit key-distribution shifts. This protocol does not claim a new priority-queue mechanism.",
+  "real_inputs": {
+    "brussels": "Released LAPQ repository GraphML at commit 3915cc261e87949b2b0aa724673c2227492d1b08. Preserve node/neighbor order and upstream per-pair key-0 edge, not shortest parallel edge. The released graph has 2268 nodes and differs from the 1380-node Brussels figure in the paper.",
+    "ny": "Previously pinned DIMACS USA-road-d.NY.gr mirror; preserve all 733846 arcs, including 3746 equal-weight duplicate arcs, and all original integer weights. This is distinct from the paper's OSMnx New York map."
+  },
+  "synthetic_inputs": {
+    "grid_integer": "45x45 and 90x90 bidirectional lattice; separately sampled directional edge costs uniform integers 1..16. Every vertex is reachable from every source; many distance ties are intentional.",
+    "geometric_float": "2048 and 8192 uniform points in the unit square; exact 8-nearest-neighbor graph symmetrized with Euclidean edge length times 10000. Spatial bins affect generation speed only. Any disconnected components are joined to vertex 0 through their nearest-to-0 representative, recorded in metadata. This is a controlled geometric graph, not an OSM road model.",
+    "sparse_integer": "2048 and 8192 vertices; bidirectional ring plus four distinct uniformly sampled outgoing neighbors per vertex; independent integer costs 1..1024. Six outgoing arcs per node; strongly connected by construction."
+  },
+  "source_selection": {
+    "training_models": 3,
+    "training_sampling": "Uniform vertex sampling without replacement, with a graph-specific SHA256-derived seed. Fit a separate model at each training source. Distinct training sources are not statistically independent graph samples.",
+    "heldout_sampling": "For each training source, sort reachable non-source vertices by reference distance then vertex ID. Sample two sources from the first quarter and two from the last quarter; NY uses one from each quarter. Exclude every training source and all already selected heldout sources, making all sources globally distinct within each graph.",
+    "groups": ["near", "far"],
+    "source_stratification": "Near/far refer to distance from training source in the unshifted graph; they intentionally probe source-location change. They are strata, not guaranteed equal-rank-error distributions.",
+    "leakage_boundary": "Reference distances select and validate experimental workloads only. Predictor fitting may use the training graph/source, but may not consume heldout trace keys, heldout distance arrays or validation outputs.",
+    "rng": "Python random.Random; explicit per-generator seeds; graph, raw-input and reference-distance hashes recorded. Reject rather than silently accept hash mismatches on other runtimes."
+  },
+  "frozen_model_shifts": {
+    "scale025_and_scale4": "On Brussels and the smaller instance of each synthetic family, multiply every edge by 0.25 or 4 and reuse the unshifted fitted predictor. Powers of two avoid introducing rounding beyond the original float representation. Every competing method runs on the identical target graph. Uniform scaling preserves mathematical shortest-path order; it isolates stale numeric calibration, not altered topology. Integer-only baselines must declare applicability: the 0.25 variant can have fractional costs.",
+    "lopsided": "Only sparse_2048: leave edges entirely within the first quarter of vertices unchanged, multiply all remaining edge costs by 4096. Reuse the unshifted fitted predictor. This declared stress case creates separated cost regimes and may change shortest paths; no realism claim. Compare all methods within the transformed target graph.",
+    "query_sources": "Use the same frozen source IDs and original near/far labels as the base graph; do not relabel or reselect after seeing target outcomes.",
+    "retraining": "None in these shift conditions. If a later study adds adaptation or refitting, designate a new protocol revision and charge those costs explicitly."
+  },
+  "validation": {
+    "input_checks": "Check vertex bounds, finite strictly positive weights, declared edge counts, typed ordered adjacency hashes, original file hashes, integer applicability and n*max-weight bound. Bounds are descriptive, not a claim that arbitrary-precision Python operations have constant cost.",
+    "distance_oracle": "Standard heapq Dijkstra; validate every finite vertex has an attainable decreasing-distance parent path and every edge satisfies the shortest-path triangle inequality. Record typed SHA256, reachable count and maximum finite distance for all training and heldout sources in every target graph.",
+    "timing_separation": "Graph construction, reference certification and workload selection collect no performance timings. The benchmark runner separately controls loading, training, inference and queue accounting.",
+    "replication_unit": "Queries paired across methods; training-source groups and graph families are reported separately. Do not treat repeated timing samples, source queries or synthetic seeds as independent datasets."
+  },
+  "reporting_boundaries": [
+    "Use released-artifact replication terminology; do not claim exact recreation of the published Brussels figure.",
+    "Report each family and each shift separately, including losses; no post-hoc selection of only winning workloads.",
+    "Arithmetic, metadata construction and auxiliary predecessor operations belong in end-to-end costs even when outside the original clean-key comparison metric.",
+    "This is a CPU engineering study with one instance per size/family; broad population generalization needs more independently generated instances and real datasets."
+  ]
+}

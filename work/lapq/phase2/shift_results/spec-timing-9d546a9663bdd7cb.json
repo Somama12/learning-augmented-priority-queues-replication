@@ -1,0 +1,28 @@
+{
+  "stage": "shift",
+  "workload": "sparse_2048__scale025",
+  "training_workload": "sparse_2048",
+  "train_source": 870,
+  "query_source": 1487,
+  "query_group": "near",
+  "train_index": 0,
+  "query_index": 0,
+  "repeat": 2,
+  "queue_seed": 43,
+  "method_order_seed": 41129,
+  "methods": [
+    "heapq_native",
+    "heapq_shared",
+    "sortedlist_native",
+    "skiplist",
+    "original_exact",
+    "original_linear",
+    "original_hist64",
+    "bitmap_exact",
+    "bitmap_linear",
+    "bitmap_hist64",
+    "veb_linear",
+    "compact_linear"
+  ],
+  "block_id": "9d546a9663bdd7cb"
+}

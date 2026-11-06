@@ -1,0 +1,22 @@
+usage: native_experiment.py [-h] [--stage {plan,prepare,run,all}]
+                            [--destination DESTINATION] [--compiler COMPILER]
+                            [--sanitizers] [--timeout TIMEOUT]
+
+Prepare and run the frozen native follow-up protocol, sequentially. Writing
+this runner does not authorize concurrent timing with the Python study.
+Default --stage plan only writes a small plan. Root explicitly schedules
+prepare and run after Python timing/memory work. No export, compilation,
+oracle execution, sanitizer test, or benchmark occurs merely by importing this
+module. Native processes receive only graph data and selected source IDs,
+never heldout distance arrays. Python validates their binary64 output against
+independently certified reference distances after each process exits. Every
+failure is kept.
+
+options:
+  -h, --help            show this help message and exit
+  --stage {plan,prepare,run,all}
+  --destination DESTINATION
+  --compiler COMPILER
+  --sanitizers          compile and run separate ASAN+UBSAN selftest before
+                        native timing
+  --timeout TIMEOUT

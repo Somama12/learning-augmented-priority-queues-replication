@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "archive_sha256": "f0c5a7bfbfb3e82f1dac8d89b1a2105475c7161f486fd71ef649a2a7baa0baa8",
+  "base_archive_sha256": "47cc68b38ee7871f56831c43c323087a8814c2dc6b86e4abba77ce4978bff69b",
+  "outer_members_verified": 479,
+  "base_members_verified": 1315,
+  "measurements_started": false
+}

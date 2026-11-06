@@ -1,0 +1,41 @@
+{
+  "status": "frozen_before_primary_execution",
+  "created_utc": "2026-11-06T21:39:29.624562+00:00",
+  "registration_scope": "Private computational plan frozen after code/input preflight and inspection of published reference curves; not an external preregistration.",
+  "target": "Partial replication of Benomar-Coester 2024 Figures2/3 and AppendixF class/decay sorting-comparison results, not a Dijkstra replication.",
+  "source_sha256": {
+    "replication.cpp": "5ef65dfa3cf90a90490fe731949a0faafbbf77a6b777c3ccd6c34cf61ba54ef9",
+    "input_generation.py": "440aeae4d4eaf5ea34f320609f6e0eb15fa8c9bad732ca72d36108851b267345",
+    "experiment_plan.py": "cf531b33284713c2f288a8bab97c464bd793ef9eb363de5f5d48bd3c7dea8139",
+    "experiment_plan.json": "0533c79a6003ee73f5d4c6a20f575901df1732e6d24988fd5856e4af553a95b1",
+    "run_replication.py": "30825f69d2e4e6b8290c50a63cbd91b2872644879f96354bcff6370a57c53979",
+    "engine_preflight.py": "4de4f83c3f38572a6c34e1af9f7a0a8bfd0f3f61dd7baf619ae9fa714ea64f1f",
+    "engine_preflight.json": "58ce45d951b379dc955b79bd838c852d754d9aacb868f161469270ac57546aed",
+    "input_generation_validation.json": "2f09dc990874aaef4010b9466ae2145a7435fb4c0bb6bd4268ab6b2e4690d461",
+    "extract_reference_curves.py": "a3822fafe238ff845ffaaa773f08a504fb2c6c3cef60ceef49b44223378fa8d7",
+    "published_reference_curves.json": "b45ffe3420cd83aa7dad537e047efae93425fa9a1a9eb581d73586ee5d097913",
+    "build/replication": "5305c5b4a3421cc37c05031a2848197e46495d2171bbe21d90cc71240be0c526"
+  },
+  "method_run_count": 11340,
+  "condition_count": 3780,
+  "primary_estimand": "Mean clean key comparisons per key over30 independent condition draws; head comparisons free; dirty counts reported separately. Advice/index/RNG/transport comparisons are outside original clean-count metric.",
+  "analysis_rules": {
+    "curves": "Publish every size/model/parameter cell, mean, sample and population SD, and95% bootstrap CI from our30replicates; original std never reinterpreted as standard error.",
+    "agreement": "All378pointwise errors; median/max absolute relative error per curve and RMSE divided by mean reference curve. PDF-derived plotted means distinguished from released n1000 aggregates and raw trials.",
+    "claims": [
+      "Report class c=0-to-n endpoint changes plus full curves; no adjacent-step monotonicity requirement.",
+      "Report decay t=0-to-max endpoint changes plus full curves; no adjacent-step monotonicity requirement.",
+      "Report every cell relative to author analytic BH formula and crossover intervals; no claimallpredictionqualitiesbeatBH.",
+      "Report online/offline and dirty/offline paired ratios descriptively; no arbitrary equivalence interpretation of comparable."
+    ],
+    "inference": "Qualitative claim-specific supported/unsupported/indeterminate assessments with explicit scope, not one automatic success score or universal speed claim.",
+    "failures": "Preserve all conditions, validation errors and interruptions. No outcome-based exclusions or retuned parameters."
+  },
+  "departures": [
+    "Independent C++implementation, validated against originalPythonon666smallshared traces.",
+    "Domain-separated RNGstreams andcommoninputs/heightsacrossmodelsinplaceoforiginalunseededinterleaving.",
+    "Exact-in-ideal-law multinomial sampling of final decay ranks, with declared floating-PRNG differences.",
+    "Primary sorting counts only on the Mac; previous two-host native timings and retention are separate extensions."
+  ],
+  "publication_reference_note": "One Figure2 n100000 heap line differs from the released analytic formula by0.0003104comparisons/key; retain it as a published plot/reference discrepancy. Vector ticks independently calibrate the axis."
+}

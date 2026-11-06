@@ -1,0 +1,212 @@
+{
+  "case": {
+    "case_id": "geometric_8192_train0_far",
+    "expected_reachable": 8192,
+    "expected_typed_distance_sha256": "2e18fc685067b208e2120aeb61741ed0e5a38bfabbbfa76879f864eaacdbf4eb",
+    "methods": [
+      "guided_set_hist64",
+      "guided_bitmap_hist64",
+      "std_heap",
+      "std_multiset",
+      "guided_bitmap_exact",
+      "guided_set_exact",
+      "guided_set_linear",
+      "direct_heap",
+      "plain_skiplist",
+      "guided_bitmap_linear",
+      "grouped_heap"
+    ],
+    "oracle_binary64_bytes": 65536,
+    "oracle_binary64_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/oracles/geometric_8192_train0_far.f64le",
+    "oracle_binary64_sha256": "ab90a9e58486bfccff54c54b0f543b5a0113187b9f440f403e65407cb623c2f7",
+    "paired_seed": 3717806055,
+    "query_source": 5813,
+    "repetitions": 7,
+    "source_group": "far",
+    "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+    "train_index": 0,
+    "train_source": 2370,
+    "training_graph": "geometric_8192",
+    "workload": "geometric_8192"
+  },
+  "distance_verification": {
+    "actual_bytes": 65536,
+    "actual_sha256": "ab90a9e58486bfccff54c54b0f543b5a0113187b9f440f403e65407cb623c2f7",
+    "expected_bytes": 65536,
+    "expected_sha256": "ab90a9e58486bfccff54c54b0f543b5a0113187b9f440f403e65407cb623c2f7",
+    "passed": true
+  },
+  "errors": [],
+  "execution_ordinal": 32,
+  "native_metadata": {
+    "all_exact_distances_passed": true,
+    "all_queues_drained": true,
+    "arcs": 75568,
+    "build_times": {
+      "exact": {
+        "cpu_seconds": 0.00033,
+        "wall_seconds": 0.00033275
+      },
+      "hist64": {
+        "cpu_seconds": 5.1e-05,
+        "wall_seconds": 5.0875e-05
+      },
+      "linear": {
+        "cpu_seconds": 2.9e-05,
+        "wall_seconds": 2.8e-05
+      }
+    },
+    "clock_ticks_per_second": 1000000,
+    "common_lifo_work_counts_passed": true,
+    "compiler": "Apple LLVM 15.0.0 (clang-1500.1.0.2.5)",
+    "diagnostics_outside_timing": {
+      "direct_heap": {
+        "extractions": 12038,
+        "insertions": 12038,
+        "peak_entries": 295,
+        "peak_queue_nodes": 295
+      },
+      "grouped_heap": {
+        "extractions": 12038,
+        "insertions": 12038,
+        "peak_entries": 295,
+        "peak_queue_nodes": 295
+      },
+      "guided_bitmap_exact": {
+        "extractions": 12038,
+        "insertions": 12038,
+        "peak_entries": 295,
+        "peak_queue_nodes": 295
+      },
+      "guided_bitmap_hist64": {
+        "extractions": 12038,
+        "insertions": 12038,
+        "peak_entries": 295,
+        "peak_queue_nodes": 295
+      },
+      "guided_bitmap_linear": {
+        "extractions": 12038,
+        "insertions": 12038,
+        "peak_entries": 295,
+        "peak_queue_nodes": 295
+      },
+      "guided_set_exact": {
+        "extractions": 12038,
+        "insertions": 12038,
+        "peak_entries": 295,
+        "peak_queue_nodes": 295
+      },
+      "guided_set_hist64": {
+        "extractions": 12038,
+        "insertions": 12038,
+        "peak_entries": 295,
+        "peak_queue_nodes": 295
+      },
+      "guided_set_linear": {
+        "extractions": 12038,
+        "insertions": 12038,
+        "peak_entries": 295,
+        "peak_queue_nodes": 295
+      },
+      "plain_skiplist": {
+        "extractions": 12038,
+        "insertions": 12038,
+        "peak_entries": 295,
+        "peak_queue_nodes": 295
+      },
+      "std_heap": {
+        "extractions": 12038,
+        "insertions": 12038,
+        "peak_entries": 295,
+        "peak_queue_nodes": 295
+      },
+      "std_multiset": {
+        "extractions": 12038,
+        "insertions": 12038,
+        "peak_entries": 295,
+        "peak_queue_nodes": 295
+      }
+    },
+    "distance_encoding": "little-endian IEEE754 binary64, vertex order",
+    "distance_fnv1a64": "10846020891091057959",
+    "distances_output": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/geometric_8192_train0_far/distances.f64le",
+    "graph": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/inputs/geometric_8192.txt",
+    "implementation": "independent engineered C++17; grouped live-only skiplist",
+    "methods": [
+      "guided_set_hist64",
+      "guided_bitmap_hist64",
+      "std_heap",
+      "std_multiset",
+      "guided_bitmap_exact",
+      "guided_set_exact",
+      "guided_set_linear",
+      "direct_heap",
+      "plain_skiplist",
+      "guided_bitmap_linear",
+      "grouped_heap"
+    ],
+    "notes": [
+      "Times include queue construction/destruction, distance allocation, predictor queries and all queue work. All methods except direct_heap include the common pending map. Model training/build and correctness checks are excluded.",
+      "Observed counters are compiled out of timed runs. Queue multiplicities and size fields remain algorithm state.",
+      "One observed warmup per method, shuffled; each repetition has matched height seed and shuffled method order.",
+      "Same scalar distance to LIFO vertex map for queue ablations. direct_heap embeds vertices with reverse insertion sequence, preserving LIFO ties without the map. Reference oracle uses an independent vertex-tie pair heap.",
+      "Guided set and bitmap share the same grouped skiplist and live-only rank buckets; plain skiplist shares grouping without rank buckets.",
+      "Grouping alters original artifact hint history and random-height consumption. This is an engineered crosscheck, not exact artifact reproduction.",
+      "Dense hierarchical bitmap is O(log_64 U), not vEB. Grouped heap controls duplicate compression. No RSS or total memory claim.",
+      "All three fitted advisors and training samples remain resident across methods; this is not isolated per-method memory measurement.",
+      "Training/build are measured once per invocation; baseline queues require neither. Shared-host timings are diagnostic."
+    ],
+    "radix_eligible": false,
+    "rank_universe": 11997,
+    "repeat": 7,
+    "schema_version": 1,
+    "seed": 3717806055,
+    "source": 5813,
+    "timed_records": 77,
+    "train": 2370,
+    "train_arcs": 75568,
+    "train_graph": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/inputs/geometric_8192.txt",
+    "train_vertices": 8192,
+    "training_cpu_seconds": 0.002429,
+    "training_keys": 11996,
+    "training_timing_note": "one common std_heap run, collecting every successful noninitial insertion; excludes graph read and oracle",
+    "training_wall_seconds": 0.002462625,
+    "vertices": 8192
+  },
+  "passed": true,
+  "process": {
+    "argv": [
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/build/native_benchmark",
+      "--graph",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/inputs/geometric_8192.txt",
+      "--train-graph",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/inputs/geometric_8192.txt",
+      "--train",
+      "2370",
+      "--source",
+      "5813",
+      "--repeat",
+      "7",
+      "--seed",
+      "3717806055",
+      "--methods",
+      "guided_set_hist64,guided_bitmap_hist64,std_heap,std_multiset,guided_bitmap_exact,guided_set_exact,guided_set_linear,direct_heap,plain_skiplist,guided_bitmap_linear,grouped_heap",
+      "--output",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/geometric_8192_train0_far/native",
+      "--distances-output",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/geometric_8192_train0_far/distances.f64le"
+    ],
+    "cwd": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2",
+    "exception": null,
+    "finished_at_utc": "2026-11-06T06:42:30.718196+00:00",
+    "lifecycle_scope": "whole subprocess including IO; not algorithm-only runtime",
+    "process_lifecycle_wall_seconds": 0.6078900420106947,
+    "returncode": 0,
+    "started_at_utc": "2026-11-06T06:42:30.110325+00:00",
+    "stderr_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/geometric_8192_train0_far/process.stderr.txt",
+    "stdout_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/geometric_8192_train0_far/process.stdout.txt"
+  },
+  "timing_csv": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/geometric_8192_train0_far/native.csv",
+  "timing_csv_sha256": "a1f64437ad08a9c5068af93a881591700ce8168710c5264fd8ff64ed05841495",
+  "timing_rows": 77
+}

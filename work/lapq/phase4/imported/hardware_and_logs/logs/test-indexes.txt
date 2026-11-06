@@ -1,0 +1,17 @@
+test_auto_mode_and_domain (__main__.BitmapTests.test_auto_mode_and_domain) ... ok
+test_bitmap_veb_same_operations (__main__.BitmapTests.test_bitmap_veb_same_operations) ... ok
+test_boundaries_and_duplicates (__main__.BitmapTests.test_boundaries_and_duplicates) ... ok
+test_randomized_against_sorted_set (__main__.BitmapTests.test_randomized_against_sorted_set) ... ok
+test_all_variants_frozen_monotone_advice (__main__.QueueTests.test_all_variants_frozen_monotone_advice) ... ok
+test_compact_arbitrary_frozen_advice (__main__.QueueTests.test_compact_arbitrary_frozen_advice) ... ok
+test_compact_empty_memory_and_domain_validation (__main__.QueueTests.test_compact_empty_memory_and_domain_validation) ... ok
+test_counter_stripped_classes_and_notes (__main__.QueueTests.test_counter_stripped_classes_and_notes) ... ok
+test_external_rng_seed_preserves_height_stream (__main__.QueueTests.test_external_rng_seed_preserves_height_stream) ... ok
+test_float_priorities_and_duplicate_group_lifecycle (__main__.QueueTests.test_float_priorities_and_duplicate_group_lifecycle) ... ok
+test_index_only_trace_parity_and_counter_stripping (__main__.QueueTests.test_index_only_trace_parity_and_counter_stripping) ... ok
+test_radix_monotone_scalar_interface (__main__.QueueTests.test_radix_monotone_scalar_interface) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 1.212s
+
+OK

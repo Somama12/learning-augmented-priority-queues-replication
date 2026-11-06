@@ -1,0 +1,28 @@
+{
+  "stage": "primary",
+  "workload": "geometric_8192",
+  "training_workload": "geometric_8192",
+  "train_source": 2908,
+  "query_source": 4015,
+  "query_group": "near",
+  "train_index": 2,
+  "query_index": 0,
+  "repeat": 0,
+  "queue_seed": 17,
+  "method_order_seed": 41081,
+  "methods": [
+    "heapq_native",
+    "heapq_shared",
+    "sortedlist_native",
+    "skiplist",
+    "original_exact",
+    "original_linear",
+    "original_hist64",
+    "bitmap_exact",
+    "bitmap_linear",
+    "bitmap_hist64",
+    "veb_linear",
+    "compact_linear"
+  ],
+  "block_id": "30a45b4fa8cc5ec8"
+}

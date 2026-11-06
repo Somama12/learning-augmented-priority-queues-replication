@@ -1,0 +1,7 @@
+{
+  "captured_utc": "2026-11-06T19:13:10.7054615Z",
+  "api": "SetThreadExecutionState",
+  "requested": "ES_CONTINUOUS | ES_SYSTEM_REQUIRED",
+  "return_value": 2147483648,
+  "duration": "Parent Windows PowerShell thread waits synchronously for native stages; cleared on completion"
+}

@@ -1,0 +1,212 @@
+{
+  "case": {
+    "case_id": "brussels_train2_near",
+    "expected_reachable": 2238,
+    "expected_typed_distance_sha256": "7137d595730782cb2e41e59ea61dc075c291381309fd7df7cbe10add5b0d0eaf",
+    "methods": [
+      "guided_bitmap_exact",
+      "guided_set_hist64",
+      "guided_set_linear",
+      "std_multiset",
+      "plain_skiplist",
+      "direct_heap",
+      "grouped_heap",
+      "guided_set_exact",
+      "guided_bitmap_hist64",
+      "std_heap",
+      "guided_bitmap_linear"
+    ],
+    "oracle_binary64_bytes": 18144,
+    "oracle_binary64_path": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/oracles/brussels_train2_near.f64le",
+    "oracle_binary64_sha256": "5fb3377e165fceea43a18a66c4aae1cf69e5283ec716e748099758206818ed82",
+    "paired_seed": 2526940705,
+    "query_source": 197,
+    "repetitions": 7,
+    "source_group": "near",
+    "target_adjacency_sha256": "8673702900ebc00043b27b33029a4f70ece793c09741839448293d8df8352170",
+    "train_index": 2,
+    "train_source": 39,
+    "training_graph": "brussels",
+    "workload": "brussels"
+  },
+  "distance_verification": {
+    "actual_bytes": 18144,
+    "actual_sha256": "5fb3377e165fceea43a18a66c4aae1cf69e5283ec716e748099758206818ed82",
+    "expected_bytes": 18144,
+    "expected_sha256": "5fb3377e165fceea43a18a66c4aae1cf69e5283ec716e748099758206818ed82",
+    "passed": true
+  },
+  "errors": [],
+  "execution_ordinal": 22,
+  "native_metadata": {
+    "all_exact_distances_passed": true,
+    "all_queues_drained": true,
+    "arcs": 4378,
+    "build_times": {
+      "exact": {
+        "cpu_seconds": 7e-05,
+        "wall_seconds": 7e-05
+      },
+      "hist64": {
+        "cpu_seconds": 1.1e-05,
+        "wall_seconds": 1.17e-05
+      },
+      "linear": {
+        "cpu_seconds": 6e-06,
+        "wall_seconds": 6e-06
+      }
+    },
+    "clock_ticks_per_second": 1000000,
+    "common_lifo_work_counts_passed": true,
+    "compiler": "13.3.0",
+    "diagnostics_outside_timing": {
+      "direct_heap": {
+        "extractions": 2368,
+        "insertions": 2368,
+        "peak_entries": 47,
+        "peak_queue_nodes": 47
+      },
+      "grouped_heap": {
+        "extractions": 2368,
+        "insertions": 2368,
+        "peak_entries": 47,
+        "peak_queue_nodes": 47
+      },
+      "guided_bitmap_exact": {
+        "extractions": 2368,
+        "insertions": 2368,
+        "peak_entries": 47,
+        "peak_queue_nodes": 47
+      },
+      "guided_bitmap_hist64": {
+        "extractions": 2368,
+        "insertions": 2368,
+        "peak_entries": 47,
+        "peak_queue_nodes": 47
+      },
+      "guided_bitmap_linear": {
+        "extractions": 2368,
+        "insertions": 2368,
+        "peak_entries": 47,
+        "peak_queue_nodes": 47
+      },
+      "guided_set_exact": {
+        "extractions": 2368,
+        "insertions": 2368,
+        "peak_entries": 47,
+        "peak_queue_nodes": 47
+      },
+      "guided_set_hist64": {
+        "extractions": 2368,
+        "insertions": 2368,
+        "peak_entries": 47,
+        "peak_queue_nodes": 47
+      },
+      "guided_set_linear": {
+        "extractions": 2368,
+        "insertions": 2368,
+        "peak_entries": 47,
+        "peak_queue_nodes": 47
+      },
+      "plain_skiplist": {
+        "extractions": 2368,
+        "insertions": 2368,
+        "peak_entries": 47,
+        "peak_queue_nodes": 47
+      },
+      "std_heap": {
+        "extractions": 2368,
+        "insertions": 2368,
+        "peak_entries": 47,
+        "peak_queue_nodes": 47
+      },
+      "std_multiset": {
+        "extractions": 2368,
+        "insertions": 2368,
+        "peak_entries": 47,
+        "peak_queue_nodes": 47
+      }
+    },
+    "distance_encoding": "little-endian IEEE754 binary64, vertex order",
+    "distance_fnv1a64": "9232090077214162450",
+    "distances_output": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/cases/brussels_train2_near/distances.f64le",
+    "graph": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/inputs/brussels.txt",
+    "implementation": "independent engineered C++17; grouped live-only skiplist",
+    "methods": [
+      "guided_bitmap_exact",
+      "guided_set_hist64",
+      "guided_set_linear",
+      "std_multiset",
+      "plain_skiplist",
+      "direct_heap",
+      "grouped_heap",
+      "guided_set_exact",
+      "guided_bitmap_hist64",
+      "std_heap",
+      "guided_bitmap_linear"
+    ],
+    "notes": [
+      "Times include queue construction/destruction, distance allocation, predictor queries and all queue work. All methods except direct_heap include the common pending map. Model training/build and correctness checks are excluded.",
+      "Observed counters are compiled out of timed runs. Queue multiplicities and size fields remain algorithm state.",
+      "One observed warmup per method, shuffled; each repetition has matched height seed and shuffled method order.",
+      "Same scalar distance to LIFO vertex map for queue ablations. direct_heap embeds vertices with reverse insertion sequence, preserving LIFO ties without the map. Reference oracle uses an independent vertex-tie pair heap.",
+      "Guided set and bitmap share the same grouped skiplist and live-only rank buckets; plain skiplist shares grouping without rank buckets.",
+      "Grouping alters original artifact hint history and random-height consumption. This is an engineered crosscheck, not exact artifact reproduction.",
+      "Dense hierarchical bitmap is O(log_64 U), not vEB. Grouped heap controls duplicate compression. No RSS or total memory claim.",
+      "All three fitted advisors and training samples remain resident across methods; this is not isolated per-method memory measurement.",
+      "Training/build are measured once per invocation; baseline queues require neither. Shared-host timings are diagnostic."
+    ],
+    "radix_eligible": false,
+    "rank_universe": 2365,
+    "repeat": 7,
+    "schema_version": 1,
+    "seed": 2526940705,
+    "source": 197,
+    "timed_records": 77,
+    "train": 39,
+    "train_arcs": 4378,
+    "train_graph": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/inputs/brussels.txt",
+    "train_vertices": 2268,
+    "training_cpu_seconds": 0.000546,
+    "training_keys": 2364,
+    "training_timing_note": "one common std_heap run, collecting every successful noninitial insertion; excludes graph read and oracle",
+    "training_wall_seconds": 0.0005471,
+    "vertices": 2268
+  },
+  "passed": true,
+  "process": {
+    "argv": [
+      "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/build/native_benchmark",
+      "--graph",
+      "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/inputs/brussels.txt",
+      "--train-graph",
+      "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/inputs/brussels.txt",
+      "--train",
+      "39",
+      "--source",
+      "197",
+      "--repeat",
+      "7",
+      "--seed",
+      "2526940705",
+      "--methods",
+      "guided_bitmap_exact,guided_set_hist64,guided_set_linear,std_multiset,plain_skiplist,direct_heap,grouped_heap,guided_set_exact,guided_bitmap_hist64,std_heap,guided_bitmap_linear",
+      "--output",
+      "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/cases/brussels_train2_near/native",
+      "--distances-output",
+      "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/cases/brussels_train2_near/distances.f64le"
+    ],
+    "cwd": "/root/research/learned-pq-second-host/work/lapq/phase2",
+    "exception": null,
+    "finished_at_utc": "2026-11-06T19:14:12.883951+00:00",
+    "lifecycle_scope": "whole subprocess including IO; not algorithm-only runtime",
+    "process_lifecycle_wall_seconds": 0.11521869100005233,
+    "returncode": 0,
+    "started_at_utc": "2026-11-06T19:14:12.768728+00:00",
+    "stderr_path": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/cases/brussels_train2_near/process.stderr.txt",
+    "stdout_path": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/cases/brussels_train2_near/process.stdout.txt"
+  },
+  "timing_csv": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/cases/brussels_train2_near/native.csv",
+  "timing_csv_sha256": "74d8671f7ae57f9e762e27909cd9300e240beb26823f5c57445a9f3d9ae574a1",
+  "timing_rows": 77
+}

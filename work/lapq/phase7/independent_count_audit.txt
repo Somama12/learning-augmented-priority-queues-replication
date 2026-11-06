@@ -1,0 +1,8 @@
+Independent count audit: PASSED (137,062 checks).
+Audited 3,780 conditions, 11,340 raw method outputs, 419,580,000 ordinal insertions, 378 cells and 18 curves.
+All clean/dirty means, sample/population SDs, point errors, curve normalized RMSEs and endpoint changes agree.
+Main-size curve median pointwise relative errors: 0.028222% to 0.150792%; maximum pointwise error 0.742904%.
+n = 1,000 maximum pointwise relative error: 4.650396%.
+BH: 369 cell means below and 9 above; all 9 above are class parameter 0. All 18 endpoint directions match their scoped class/decay direction.
+Bootstrap draws were not repeated. This verifies calculated summaries, not original trial-level agreement or runtime superiority.
+The original paper states 30 nominal runs; raw original trials and effective count for saved aggregate files remain unavailable.

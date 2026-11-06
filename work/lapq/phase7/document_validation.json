@@ -1,0 +1,28 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-06T22:04:59.516329+00:00",
+  "pages": 8,
+  "pdf_sha256": "d45449cc43117955f5cc2695eb9ea4530f5c60887768cc6a9301dc43036578ea",
+  "summary_sha256": "2e30c6a1467e3b0a93207353627b24ffe1ca1c861596d0b15fd9d47084fb24e1",
+  "frozen_protocol_sha256": "5cf250d30ed87935eb0055137ff2a4305faa5858ed16e86c8adba026b3145a15",
+  "rendered_pages": [
+    "work/lapq/phase7/rendered/final-1.png",
+    "work/lapq/phase7/rendered/final-2.png",
+    "work/lapq/phase7/rendered/final-3.png",
+    "work/lapq/phase7/rendered/final-4.png",
+    "work/lapq/phase7/rendered/final-5.png",
+    "work/lapq/phase7/rendered/final-6.png",
+    "work/lapq/phase7/rendered/final-7.png",
+    "work/lapq/phase7/rendered/final-8.png"
+  ],
+  "visual_review": "All eight final rendered pages inspected. Tables, equations, figures, captions, citations, author line and correspondence readable; no overlap, clipping or empty editorial placeholder. No overfull boxes in final log.",
+  "cited_references": 10,
+  "exact_author_disclosure_preserved": true,
+  "sorting_host_scope": "Mac only; two-host memory/runtime extension separate",
+  "scientific_numeric_payload_sha256": "246c705234058f762717217b2ad8c0a9533d800ec094c9df25ae5be48a37f238",
+  "latex_notes": [
+    "BibLaTeX fall-back BibTeX backend emits a generic rerun/undefined-references warning; all ten citation labels and bibliography entries resolve in rendered PDF.",
+    "Minor underfull paragraph/bibliography warnings, visually checked."
+  ],
+  "publication_status": "Prepared locally, not published or submitted; actual public code/data URLs still required."
+}

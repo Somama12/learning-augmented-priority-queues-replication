@@ -1,0 +1,11 @@
+SOURCE STAGING ONLY. This builder does not compile or submit.
+Official upstream uses XeLaTeX, fontspec and bundled fonts; it is not a LuaLaTeX requirement.
+Adaptation: biblatex backend=bibtex replaces biber for the available Tectonic/BibTeX path.
+The official class/layout/fonts remain otherwise unchanged. Run Tectonic from this directory, or XeLaTeX then BibTeX then XeLaTeX twice. No compile has been attempted by this builder.
+The official UNDER REVIEW label is suppressed because staging is not submission.
+Default no-conflict assertion removed; absent affiliation/ORCID/DOIs/editorial dates remain empty.
+metadata.tex is generated from the same object as metadata.yaml, avoiding the upstream Date fallback that could invent a publication year. Do not run the upstream metadata converter over the draft without reviewing that behavior.
+Existing full runtime/memory manuscript is a separate supplement; no prior numerical data were changed.
+Stage the existing full extension PDF separately as learned-priority-queues-runtime-memory-supplement.pdf. This builder does not copy or write PDF files.
+Repository build: from paper/rescience, run xelatex article.tex; bibtex article; xelatex article.tex; xelatex article.tex. Tectonic is an alternative.
+The historical staging command depends on authoring files outside this repository and is intentionally not advertised here.

@@ -1,0 +1,28 @@
+{
+  "veb_mutation_query_checks": 288000,
+  "veb_universes": [
+    1,
+    2,
+    3,
+    63,
+    64,
+    65,
+    127,
+    128,
+    129,
+    4095,
+    4096,
+    4097,
+    65536,
+    300001,
+    4294967296,
+    18446744073709551616
+  ],
+  "radix_differential_extractions": 129890,
+  "all_passed": true,
+  "sha256": {
+    "veb_index.py": "e9441ff59f83c352643dec8a1206df08120a759bd179832109fd35b1f6e31dfb",
+    "radix_queue.py": "c072f3b2560bdd04fd826502aa7d43498e2e74817c4bec726495029a480125f2",
+    "test_veb_radix.py": "7051b5ddcccce96482269ccbf404bf5455bc8f619632e18a20e8935784daa7cd"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "argv": [
+    "/usr/bin/c++",
+    "-O1",
+    "-g",
+    "-std=c++17",
+    "-fsanitize=address,undefined",
+    "-fno-omit-frame-pointer",
+    "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_benchmark.cpp",
+    "-o",
+    "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/build/native_benchmark_sanitized"
+  ],
+  "binary_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/build/native_benchmark_sanitized",
+  "binary_sha256": "ced18fb335417ca10698576483f23924e104b01ae4fd6e096a67337c5223d011",
+  "compile_flags": [
+    "-O1",
+    "-g",
+    "-std=c++17",
+    "-fsanitize=address,undefined",
+    "-fno-omit-frame-pointer"
+  ],
+  "compiler": "/usr/bin/c++",
+  "compiler_version": "Apple clang version 15.0.0 (clang-1500.1.0.2.5)\nTarget: arm64-apple-darwin23.3.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "cwd": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2",
+  "exception": null,
+  "finished_at_utc": "2026-11-06T06:41:05.579100+00:00",
+  "lifecycle_scope": "whole subprocess including IO; not algorithm-only runtime",
+  "process_lifecycle_wall_seconds": 8.605650290992344,
+  "returncode": 0,
+  "sanitizers": true,
+  "source_sha256": "1ce22bccf0d90010cdf58e7639ef674c189ff7679e442f5823cb1b739a579f2c",
+  "started_at_utc": "2026-11-06T06:40:56.973663+00:00",
+  "stderr_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/build/compile_sanitized.stderr.txt",
+  "stdout_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/build/compile_sanitized.stdout.txt"
+}

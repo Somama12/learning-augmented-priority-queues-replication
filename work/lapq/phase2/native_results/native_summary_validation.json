@@ -1,0 +1,10 @@
+{
+  "all_passed": true,
+  "independent_raw_ratio_checks": 2296,
+  "native_source_frozen_sha256_matches": true,
+  "timed_records": 3444,
+  "case_count": 42,
+  "exact_distance_checks": 42,
+  "selftest_returncode": 0,
+  "sanitizer_selftest_returncode": 0
+}

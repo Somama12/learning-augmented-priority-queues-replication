@@ -1,0 +1,31 @@
+{
+  "stage": "primary",
+  "workload": "ny",
+  "training_workload": "ny",
+  "train_source": 22217,
+  "query_source": 156630,
+  "query_group": "far",
+  "train_index": 0,
+  "query_index": 1,
+  "repeat": 2,
+  "queue_seed": 43,
+  "method_order_seed": 41216,
+  "methods": [
+    "heapq_native",
+    "heapq_shared",
+    "sortedlist_native",
+    "skiplist",
+    "original_exact",
+    "original_linear",
+    "original_hist64",
+    "bitmap_exact",
+    "bitmap_linear",
+    "bitmap_hist64",
+    "veb_linear",
+    "compact_linear",
+    "radix"
+  ],
+  "block_id": "f51187411a113476",
+  "method": "bitmap_hist64",
+  "memory_id": "ny-0-bitmap_hist64"
+}

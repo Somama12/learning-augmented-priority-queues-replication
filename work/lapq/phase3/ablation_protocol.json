@@ -1,0 +1,2730 @@
+{
+  "protocol_version": 1,
+  "status": "Frozen proposed design; correctness preflight passed; performance and memory experiments NOT executed",
+  "decision_date": "2026-11-06",
+  "preregistration": "Private computational plan after examining phase-two results; not public preregistration or an independent confirmatory sample",
+  "scope": "Marginal bookkeeping costs at fixed occurrence-level skiplist semantics; grouped policy is an explicitly coupled secondary comparison",
+  "selection_rationale": {
+    "grid_8100": "High duplicate pressure and large prior combined-repair gain",
+    "geometric_8192": "Mostly distinct numeric keys; prior repair showed little query-time gain",
+    "ny": "Large real integer graph and large historical-retention footprint",
+    "sparse_2048__lopsided": "Frozen-advisor saturation/collision stress, not a realism claim"
+  },
+  "methods": [
+    "occ_list_retain",
+    "occ_list_map",
+    "occ_linked_retain",
+    "occ_linked_map",
+    "grouped_compact_reference"
+  ],
+  "common_components": [
+    "Frozen phase-two bitmap rank index and original skiplist methods",
+    "Original valRank per-occurrence lists in all four occurrence arms",
+    "Same scalar-distance to LIFO-vertex routing kernel",
+    "Same frozen linear advisor fitted from one common training-source heap trace",
+    "Same queue seed across methods within each block; seeds reset outside timers"
+  ],
+  "factorial": {
+    "cleanup": {
+      "retain": "Preserve original historical sl.nodes entries",
+      "map": "Delete sl.nodes[value] only after valRank[value] disappears, meaning the last live occurrence was extracted; retain node links"
+    },
+    "rank_bucket": {
+      "list": "Original per-rank Python list",
+      "linked": "Doubly linked occurrence sequence plus value-to-deque handles; append order, tail hint and first-equal removal preserved"
+    },
+    "not_changed": [
+      "No duplicate grouping",
+      "No value-rank list replacement",
+      "No live representative retargeting",
+      "No pointer detachment",
+      "No changes to sampling or comparison decisions"
+    ]
+  },
+  "contrasts": [
+    {
+      "id": "map_cleanup_list",
+      "numerator": "occ_list_map",
+      "denominator": "occ_list_retain",
+      "identifies": "Conditional implementation effect of deleting exhausted-key dictionary entries with original list buckets and unchanged search/height traces",
+      "does_not_identify": "Full immediate object reclamation, link detachment or duplicate grouping"
+    },
+    {
+      "id": "map_cleanup_linked",
+      "numerator": "occ_linked_map",
+      "denominator": "occ_linked_retain",
+      "identifies": "Same map-entry cleanup effect conditional on linked occurrence buckets",
+      "does_not_identify": "A universal cleanup effect independent of bucket implementation or garbage collection"
+    },
+    {
+      "id": "bucket_replace_retained",
+      "numerator": "occ_linked_retain",
+      "denominator": "occ_list_retain",
+      "identifies": "Net effect of occurrence-preserving direct removal, including added hashing, handles and allocation, conditional on retained history",
+      "does_not_identify": "Pure asymptotic removal savings with all other machine costs erased"
+    },
+    {
+      "id": "bucket_replace_map",
+      "numerator": "occ_linked_map",
+      "denominator": "occ_list_map",
+      "identifies": "Same bucket-policy effect conditional on exhausted-key map cleanup",
+      "does_not_identify": "Duplicate compression; both arms retain one skiplist node per occurrence"
+    },
+    {
+      "id": "interaction",
+      "definition": "(linked_map/list_map) / (linked_retain/list_retain), formed within a paired block before source aggregation",
+      "identifies": "Multiplicative interaction of these two concrete implementation changes on the measured workload",
+      "does_not_identify": "Independent main effects when the interaction is non-negligible"
+    },
+    {
+      "id": "grouped_bridge",
+      "numerator": "grouped_compact_reference",
+      "denominator": "occ_linked_map",
+      "identifies": "Net difference between the existing grouped compact policy and a cleaned occurrence-preserving direct-bucket policy",
+      "does_not_identify": "Isolated duplicate grouping: live representative policy, node/height consumption, per-value metadata and link detachment also differ"
+    }
+  ],
+  "validity_contract": "Finite numeric keys and fixed deterministic monotone rank prediction; the original arbitrary-advice duplicate defects are not claimed repaired",
+  "preflight": {
+    "purpose": "Correctness/semantic preflight only; no performance measurements",
+    "bucket_mutations": 3600,
+    "counted_parity_pairs": 288,
+    "counted_and_counter_free_executions": 576,
+    "grouped_correctness_traces": 72,
+    "graph_method_cases": 60,
+    "status": "passed",
+    "validity_contract": "Finite numeric priorities, frozen deterministic monotone ranks; original arbitrary-advice duplicate failures are not claimed repaired.",
+    "sources": {
+      "ablation_queues.py": "1446ce3e454555b6f178500d3bd597ee53b88e294349d0fb7a584accfaab1be1",
+      "preflight.py": "548cbe296c628ddec82fa50bd3b99dda9d0eed18a2b99e56a96c6e86bd56970e"
+    }
+  },
+  "coupling_evidence": {
+    "file": "minimal_detachment_failure.json",
+    "operations": [
+      "insert(1,rank1)",
+      "insert(1,rank1)",
+      "extractMin()",
+      "insert(2,rank2)"
+    ],
+    "finding": "An extracted newest duplicate may remain the value-to-node hint representative while an older equal key remains live. Clearing its links invalidates subsequent insertion. Original and map-only controls pass this trace.",
+    "excluded_attempts": [
+      "unsafe_detachment_initial.py",
+      "unsafe_detachment_failure.json"
+    ],
+    "interpretation": "This is failure of our attempted transformation, not failure of the original queue on this trace"
+  },
+  "timing": {
+    "planned_blocks": 108,
+    "planned_method_queries": 540,
+    "planned_source_cases": 24,
+    "small_repeats": 5,
+    "ny_repeats": 3,
+    "processes": "Fresh process per paired block; shuffled block and method order",
+    "warmup": "One validated warmup per method; warm RNG and class loading before measurement",
+    "gc": "Disable cyclic GC during query as in phase two; force collection before methods and record cleanup separately",
+    "include": "Queue construction, predictor lookup, shared routing and queue work",
+    "exclude": "Graph loading, oracle checks, training/build, diagnostic tracing and forced post-query collection",
+    "clocks": [
+      "process_time_ns",
+      "perf_counter_ns"
+    ],
+    "outliers": "No time-based filtering; preserve all failures and stop attribution if semantic parity fails"
+  },
+  "memory": {
+    "planned_graph_workers": 40,
+    "source_subset": "First training source and first far query for each of the four targets",
+    "gc_modes": [
+      "enabled",
+      "disabled_during_query"
+    ],
+    "processes": "Fresh process per target/method/GC mode; prewarm NumPy RNG and AST runtime before tracing",
+    "phases": [
+      "training/build peak",
+      "query peak including retained advisor",
+      "empty queue alive before full collection",
+      "empty queue alive after full collection",
+      "after queue destruction and collection"
+    ],
+    "scope": "Python traced allocations, graph/oracle excluded; record RSS high-water separately; never call a query-only peak whole-pipeline peak"
+  },
+  "bounded_live_diagnostic": {
+    "status": "Proposed, secondary; no timing interpretation",
+    "methods": [
+      "occ_list_retain",
+      "occ_list_map",
+      "occ_linked_retain",
+      "occ_linked_map",
+      "grouped_compact_reference"
+    ],
+    "insertions": [
+      1000,
+      10000,
+      100000
+    ],
+    "max_live": 128,
+    "prediction": "constant0",
+    "keys": "unique increasing values; isolates exhausted-key history from duplicate grouping",
+    "gc_modes": [
+      "enabled",
+      "disabled_during_trace"
+    ],
+    "planned_workers": 30
+  },
+  "analysis": {
+    "unit": "Per-source median paired repetition ratios; six source units per target grouped by three training sources",
+    "intervals": "Exploratory training-cluster bootstrap only; too few clusters for broad confirmatory inference",
+    "report": "Every contrast, both clocks, each target separately; no universal winner or full factor attribution to grouping",
+    "stop_rule": "Any output, hint, operand, live-node or height mismatch invalidates the corresponding clean ablation; preserve and investigate before performance claims"
+  },
+  "performance_runner": "Not implemented or executed in this preparation task; runner must enforce this frozen plan before data collection",
+  "source_sha256": {
+    "work/lapq/phase3/ablation_queues.py": "1446ce3e454555b6f178500d3bd597ee53b88e294349d0fb7a584accfaab1be1",
+    "work/lapq/phase3/preflight.py": "548cbe296c628ddec82fa50bd3b99dda9d0eed18a2b99e56a96c6e86bd56970e",
+    "work/lapq/phase3/freeze_proposal.py": "bdcbff524d9d59a6232ec53c0a7c236d206ded495d19958ef5fec62c1d0fe883",
+    "work/lapq/phase2/queues.py": "a7f0d49301b604cfd0ce8d4ebb95a23cc41a8486e6a7f651183a29db352754a5",
+    "work/lapq/phase2/indexes.py": "a28c957dea436d6e8a64f3fbf4f7575d2c7fc218f6ac3426b659ae06b7697be2",
+    "work/lapq/phase2/benchmark.py": "b472b3da901290d768039a12e0a72badeb431b377326411c776c06734de68621",
+    "work/lapq/phase2/workloads.py": "53298dfa998440370fa88d5f4520eecf20968153234cac2d99292e436ee6ada2",
+    "work/lapq/data_loading.py": "0b68f44cc1b1c7c4fd3d7f8a3c16285dcbee7114a1ac4ac5c1cc1a5c81970da5",
+    "work/lapq/upstream/skiplist.py": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c"
+  },
+  "workload_manifest_sha256": "44ecbd9e2cea1e077d2f9c173b768fa49f9fd52b56e679c8e4680af1b8db58e5",
+  "protocol_seed": 90617341,
+  "source_cases": [
+    {
+      "case_id": "grid_8100_train0_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 292,
+      "query_source": 3712,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "2d7eea6dfc9bbfc712abdee36050206a345ba9fba646a5e8b04f9b87e5d021ab"
+    },
+    {
+      "case_id": "grid_8100_train0_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 292,
+      "query_source": 7350,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "343f7b2d46bbaab1ec484b57f47499b3453eb4b8524901023b7533c225b63758"
+    },
+    {
+      "case_id": "grid_8100_train1_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 3196,
+      "query_source": 3547,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "f00b0215fe98bf0b90d2b9efb11c5fb05779914cb6067c0d79950f665724734e"
+    },
+    {
+      "case_id": "grid_8100_train1_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 3196,
+      "query_source": 85,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "567d45ffbfe544c13184902dc9e716766f9b3fcef1b9af57f957783160ff1bf2"
+    },
+    {
+      "case_id": "grid_8100_train2_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 2868,
+      "query_source": 2154,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "04bf0249225d0a7cf98c8696cc5946168e437865fb25f05be6311d86f173e902"
+    },
+    {
+      "case_id": "grid_8100_train2_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 2868,
+      "query_source": 1986,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "973cffd9d266100d4fb6a2c3f902235cc823360a493546d0302dd310dc6a51b9"
+    },
+    {
+      "case_id": "geometric_8192_train0_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2370,
+      "query_source": 1072,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "87158f16df139b4ce7ba8906d62076b911bbeda6595f59b1706d1ada218168ed"
+    },
+    {
+      "case_id": "geometric_8192_train0_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2370,
+      "query_source": 5813,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "2e18fc685067b208e2120aeb61741ed0e5a38bfabbbfa76879f864eaacdbf4eb"
+    },
+    {
+      "case_id": "geometric_8192_train1_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 1518,
+      "query_source": 4711,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "5a00c5969eba65d43a1a897178898c25697f879dff3172cba330dbed3929d7c0"
+    },
+    {
+      "case_id": "geometric_8192_train1_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 1518,
+      "query_source": 8145,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "bc4108169fc3cf0236e8b1f43d2cf322bbddef1936d111a8d0d0e931a1fb7d47"
+    },
+    {
+      "case_id": "geometric_8192_train2_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2908,
+      "query_source": 4015,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "0b29812ea47361cc59b0b7ac1599db7a63063cc440c996af93eee181a1bed7ec"
+    },
+    {
+      "case_id": "geometric_8192_train2_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2908,
+      "query_source": 5805,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "f19fa56e8ce7fde0b03992c1fd01fcfc8823637166c8829af30e4649566c2e45"
+    },
+    {
+      "case_id": "ny_train0_near",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 22217,
+      "query_source": 109779,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "1640839dec456073751a56025db88f969d6b80ffdca95b2f3663105dd59f2eda"
+    },
+    {
+      "case_id": "ny_train0_far",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 22217,
+      "query_source": 156630,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "4590853dfe6a169e158ba236bc82c880b9b30c22b73181e997ec548e38e34403"
+    },
+    {
+      "case_id": "ny_train1_near",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 257685,
+      "query_source": 243856,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "eb368d050dbc06cf0fdb2ff8cb934a7e1c051223f7df8ac4d487eb1cd802306a"
+    },
+    {
+      "case_id": "ny_train1_far",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 257685,
+      "query_source": 119297,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "a2526dfc51ea23a49c452772df214ac0ff85b27d157409752208a8d93f1e3ca8"
+    },
+    {
+      "case_id": "ny_train2_near",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 42015,
+      "query_source": 33459,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "37efa544d2d976e92a74c38b9bbf725e1b198264cd1480090c4e14deaf1127d4"
+    },
+    {
+      "case_id": "ny_train2_far",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 42015,
+      "query_source": 81713,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "1e979cf7459cade8503f3ad1108ee7d9253cd840d8daaec5414604df5bc4e313"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train0_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 870,
+      "query_source": 1487,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "06ca943cab6a86196611fd2508e9b9031e52b60ae62fb14a537ccd5fada521df"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train0_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 870,
+      "query_source": 975,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "c21a27e64858f288049deb4be83d2cd06879ee8ea67846d4028d643adf8f1340"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train1_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1792,
+      "query_source": 1772,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "30fa48cb6af2479495bd34a02b57a8c24c2054444e2f697c7c850896b9ae4afc"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train1_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1792,
+      "query_source": 1098,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "0bb1eeba893df261123aee13e250e9d14d852ecee0bc80b15a6408e8c3b3b9ec"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train2_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1509,
+      "query_source": 396,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "c5444777be6e3ab3c6459313b0f14f4c82b735bde668e11a5e0e8403a1938990"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train2_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1509,
+      "query_source": 248,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "abaa0ef86ba976d0afc9e0a749cb0e08e0d1afadf8c080c30c7de68d7a379ae0"
+    }
+  ],
+  "blocks": [
+    {
+      "case_id": "geometric_8192_train0_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2370,
+      "query_source": 5813,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "2e18fc685067b208e2120aeb61741ed0e5a38bfabbbfa76879f864eaacdbf4eb",
+      "repeat": 4,
+      "queue_seed": 3824661471,
+      "method_order": [
+        "occ_linked_retain",
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_list_map",
+        "occ_list_retain"
+      ],
+      "block_id": "geometric_8192_train0_far:4"
+    },
+    {
+      "case_id": "geometric_8192_train2_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2908,
+      "query_source": 5805,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "f19fa56e8ce7fde0b03992c1fd01fcfc8823637166c8829af30e4649566c2e45",
+      "repeat": 2,
+      "queue_seed": 3515143572,
+      "method_order": [
+        "occ_list_retain",
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_list_map"
+      ],
+      "block_id": "geometric_8192_train2_far:2"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train2_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1509,
+      "query_source": 248,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "abaa0ef86ba976d0afc9e0a749cb0e08e0d1afadf8c080c30c7de68d7a379ae0",
+      "repeat": 4,
+      "queue_seed": 2992544090,
+      "method_order": [
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_retain"
+      ],
+      "block_id": "sparse_2048__lopsided_train2_far:4"
+    },
+    {
+      "case_id": "grid_8100_train0_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 292,
+      "query_source": 3712,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "2d7eea6dfc9bbfc712abdee36050206a345ba9fba646a5e8b04f9b87e5d021ab",
+      "repeat": 4,
+      "queue_seed": 469506512,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_list_retain",
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_list_map"
+      ],
+      "block_id": "grid_8100_train0_near:4"
+    },
+    {
+      "case_id": "geometric_8192_train1_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 1518,
+      "query_source": 4711,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "5a00c5969eba65d43a1a897178898c25697f879dff3172cba330dbed3929d7c0",
+      "repeat": 1,
+      "queue_seed": 338756607,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_list_map"
+      ],
+      "block_id": "geometric_8192_train1_near:1"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train2_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1509,
+      "query_source": 248,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "abaa0ef86ba976d0afc9e0a749cb0e08e0d1afadf8c080c30c7de68d7a379ae0",
+      "repeat": 2,
+      "queue_seed": 2315678383,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_list_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train2_far:2"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train2_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1509,
+      "query_source": 396,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "c5444777be6e3ab3c6459313b0f14f4c82b735bde668e11a5e0e8403a1938990",
+      "repeat": 0,
+      "queue_seed": 2088728041,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_list_retain",
+        "occ_linked_map",
+        "occ_list_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train2_near:0"
+    },
+    {
+      "case_id": "ny_train2_near",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 42015,
+      "query_source": 33459,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "37efa544d2d976e92a74c38b9bbf725e1b198264cd1480090c4e14deaf1127d4",
+      "repeat": 0,
+      "queue_seed": 1488373921,
+      "method_order": [
+        "occ_list_map",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_linked_map",
+        "grouped_compact_reference"
+      ],
+      "block_id": "ny_train2_near:0"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train1_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1792,
+      "query_source": 1098,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "0bb1eeba893df261123aee13e250e9d14d852ecee0bc80b15a6408e8c3b3b9ec",
+      "repeat": 2,
+      "queue_seed": 1792191678,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_map",
+        "occ_list_retain"
+      ],
+      "block_id": "sparse_2048__lopsided_train1_far:2"
+    },
+    {
+      "case_id": "geometric_8192_train1_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 1518,
+      "query_source": 8145,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "bc4108169fc3cf0236e8b1f43d2cf322bbddef1936d111a8d0d0e931a1fb7d47",
+      "repeat": 4,
+      "queue_seed": 1436728010,
+      "method_order": [
+        "occ_list_retain",
+        "occ_linked_map",
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_linked_retain"
+      ],
+      "block_id": "geometric_8192_train1_far:4"
+    },
+    {
+      "case_id": "grid_8100_train0_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 292,
+      "query_source": 7350,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "343f7b2d46bbaab1ec484b57f47499b3453eb4b8524901023b7533c225b63758",
+      "repeat": 3,
+      "queue_seed": 3248202916,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_list_map",
+        "occ_list_retain",
+        "occ_linked_map",
+        "grouped_compact_reference"
+      ],
+      "block_id": "grid_8100_train0_far:3"
+    },
+    {
+      "case_id": "ny_train2_near",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 42015,
+      "query_source": 33459,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "37efa544d2d976e92a74c38b9bbf725e1b198264cd1480090c4e14deaf1127d4",
+      "repeat": 1,
+      "queue_seed": 1243606848,
+      "method_order": [
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_list_map",
+        "occ_linked_retain",
+        "grouped_compact_reference"
+      ],
+      "block_id": "ny_train2_near:1"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train0_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 870,
+      "query_source": 975,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "c21a27e64858f288049deb4be83d2cd06879ee8ea67846d4028d643adf8f1340",
+      "repeat": 2,
+      "queue_seed": 391682572,
+      "method_order": [
+        "occ_linked_map",
+        "occ_list_map",
+        "occ_linked_retain",
+        "grouped_compact_reference",
+        "occ_list_retain"
+      ],
+      "block_id": "sparse_2048__lopsided_train0_far:2"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train2_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1509,
+      "query_source": 248,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "abaa0ef86ba976d0afc9e0a749cb0e08e0d1afadf8c080c30c7de68d7a379ae0",
+      "repeat": 0,
+      "queue_seed": 3644641086,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_retain",
+        "occ_list_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train2_far:0"
+    },
+    {
+      "case_id": "grid_8100_train0_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 292,
+      "query_source": 3712,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "2d7eea6dfc9bbfc712abdee36050206a345ba9fba646a5e8b04f9b87e5d021ab",
+      "repeat": 3,
+      "queue_seed": 1562383920,
+      "method_order": [
+        "occ_list_map",
+        "occ_list_retain",
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_linked_retain"
+      ],
+      "block_id": "grid_8100_train0_near:3"
+    },
+    {
+      "case_id": "grid_8100_train0_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 292,
+      "query_source": 7350,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "343f7b2d46bbaab1ec484b57f47499b3453eb4b8524901023b7533c225b63758",
+      "repeat": 2,
+      "queue_seed": 2653565033,
+      "method_order": [
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_list_map",
+        "occ_linked_map",
+        "occ_linked_retain"
+      ],
+      "block_id": "grid_8100_train0_far:2"
+    },
+    {
+      "case_id": "geometric_8192_train0_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2370,
+      "query_source": 1072,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "87158f16df139b4ce7ba8906d62076b911bbeda6595f59b1706d1ada218168ed",
+      "repeat": 0,
+      "queue_seed": 317132980,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_list_retain",
+        "occ_list_map",
+        "occ_linked_map",
+        "grouped_compact_reference"
+      ],
+      "block_id": "geometric_8192_train0_near:0"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train1_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1792,
+      "query_source": 1098,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "0bb1eeba893df261123aee13e250e9d14d852ecee0bc80b15a6408e8c3b3b9ec",
+      "repeat": 3,
+      "queue_seed": 703206177,
+      "method_order": [
+        "occ_list_map",
+        "occ_linked_retain",
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_linked_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train1_far:3"
+    },
+    {
+      "case_id": "ny_train0_near",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 22217,
+      "query_source": 109779,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "1640839dec456073751a56025db88f969d6b80ffdca95b2f3663105dd59f2eda",
+      "repeat": 1,
+      "queue_seed": 2134199897,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_list_map",
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_list_retain"
+      ],
+      "block_id": "ny_train0_near:1"
+    },
+    {
+      "case_id": "grid_8100_train0_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 292,
+      "query_source": 3712,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "2d7eea6dfc9bbfc712abdee36050206a345ba9fba646a5e8b04f9b87e5d021ab",
+      "repeat": 1,
+      "queue_seed": 882002699,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_list_map"
+      ],
+      "block_id": "grid_8100_train0_near:1"
+    },
+    {
+      "case_id": "geometric_8192_train2_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2908,
+      "query_source": 4015,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "0b29812ea47361cc59b0b7ac1599db7a63063cc440c996af93eee181a1bed7ec",
+      "repeat": 3,
+      "queue_seed": 647245391,
+      "method_order": [
+        "occ_list_retain",
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_linked_map"
+      ],
+      "block_id": "geometric_8192_train2_near:3"
+    },
+    {
+      "case_id": "ny_train1_near",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 257685,
+      "query_source": 243856,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "eb368d050dbc06cf0fdb2ff8cb934a7e1c051223f7df8ac4d487eb1cd802306a",
+      "repeat": 0,
+      "queue_seed": 2433521540,
+      "method_order": [
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_list_map",
+        "occ_linked_retain"
+      ],
+      "block_id": "ny_train1_near:0"
+    },
+    {
+      "case_id": "geometric_8192_train2_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2908,
+      "query_source": 4015,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "0b29812ea47361cc59b0b7ac1599db7a63063cc440c996af93eee181a1bed7ec",
+      "repeat": 2,
+      "queue_seed": 1786040467,
+      "method_order": [
+        "occ_list_map",
+        "occ_list_retain",
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_linked_retain"
+      ],
+      "block_id": "geometric_8192_train2_near:2"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train2_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1509,
+      "query_source": 396,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "c5444777be6e3ab3c6459313b0f14f4c82b735bde668e11a5e0e8403a1938990",
+      "repeat": 3,
+      "queue_seed": 4265457736,
+      "method_order": [
+        "occ_linked_retain",
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_linked_map",
+        "occ_list_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train2_near:3"
+    },
+    {
+      "case_id": "geometric_8192_train0_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2370,
+      "query_source": 1072,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "87158f16df139b4ce7ba8906d62076b911bbeda6595f59b1706d1ada218168ed",
+      "repeat": 2,
+      "queue_seed": 1918869307,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_list_map"
+      ],
+      "block_id": "geometric_8192_train0_near:2"
+    },
+    {
+      "case_id": "geometric_8192_train1_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 1518,
+      "query_source": 8145,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "bc4108169fc3cf0236e8b1f43d2cf322bbddef1936d111a8d0d0e931a1fb7d47",
+      "repeat": 1,
+      "queue_seed": 4094569679,
+      "method_order": [
+        "occ_list_retain",
+        "occ_linked_map",
+        "occ_list_map",
+        "occ_linked_retain",
+        "grouped_compact_reference"
+      ],
+      "block_id": "geometric_8192_train1_far:1"
+    },
+    {
+      "case_id": "grid_8100_train0_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 292,
+      "query_source": 7350,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "343f7b2d46bbaab1ec484b57f47499b3453eb4b8524901023b7533c225b63758",
+      "repeat": 1,
+      "queue_seed": 338220078,
+      "method_order": [
+        "occ_list_retain",
+        "occ_list_map",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "grouped_compact_reference"
+      ],
+      "block_id": "grid_8100_train0_far:1"
+    },
+    {
+      "case_id": "grid_8100_train1_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 3196,
+      "query_source": 85,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "567d45ffbfe544c13184902dc9e716766f9b3fcef1b9af57f957783160ff1bf2",
+      "repeat": 0,
+      "queue_seed": 1549947013,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_list_map",
+        "occ_linked_retain"
+      ],
+      "block_id": "grid_8100_train1_far:0"
+    },
+    {
+      "case_id": "geometric_8192_train0_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2370,
+      "query_source": 5813,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "2e18fc685067b208e2120aeb61741ed0e5a38bfabbbfa76879f864eaacdbf4eb",
+      "repeat": 1,
+      "queue_seed": 2474413833,
+      "method_order": [
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_list_map",
+        "grouped_compact_reference"
+      ],
+      "block_id": "geometric_8192_train0_far:1"
+    },
+    {
+      "case_id": "geometric_8192_train1_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 1518,
+      "query_source": 4711,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "5a00c5969eba65d43a1a897178898c25697f879dff3172cba330dbed3929d7c0",
+      "repeat": 0,
+      "queue_seed": 6054276,
+      "method_order": [
+        "occ_list_map",
+        "occ_list_retain",
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_linked_retain"
+      ],
+      "block_id": "geometric_8192_train1_near:0"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train1_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1792,
+      "query_source": 1772,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "30fa48cb6af2479495bd34a02b57a8c24c2054444e2f697c7c850896b9ae4afc",
+      "repeat": 1,
+      "queue_seed": 778116969,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_list_map",
+        "occ_linked_map",
+        "occ_list_retain",
+        "grouped_compact_reference"
+      ],
+      "block_id": "sparse_2048__lopsided_train1_near:1"
+    },
+    {
+      "case_id": "grid_8100_train2_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 2868,
+      "query_source": 1986,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "973cffd9d266100d4fb6a2c3f902235cc823360a493546d0302dd310dc6a51b9",
+      "repeat": 3,
+      "queue_seed": 1813665691,
+      "method_order": [
+        "occ_linked_map",
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_list_map"
+      ],
+      "block_id": "grid_8100_train2_far:3"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train2_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1509,
+      "query_source": 248,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "abaa0ef86ba976d0afc9e0a749cb0e08e0d1afadf8c080c30c7de68d7a379ae0",
+      "repeat": 1,
+      "queue_seed": 4135496154,
+      "method_order": [
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train2_far:1"
+    },
+    {
+      "case_id": "ny_train2_near",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 42015,
+      "query_source": 33459,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "37efa544d2d976e92a74c38b9bbf725e1b198264cd1480090c4e14deaf1127d4",
+      "repeat": 2,
+      "queue_seed": 1749461701,
+      "method_order": [
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_list_map",
+        "occ_list_retain"
+      ],
+      "block_id": "ny_train2_near:2"
+    },
+    {
+      "case_id": "ny_train2_far",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 42015,
+      "query_source": 81713,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "1e979cf7459cade8503f3ad1108ee7d9253cd840d8daaec5414604df5bc4e313",
+      "repeat": 0,
+      "queue_seed": 1640226476,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_list_map",
+        "occ_linked_retain",
+        "occ_linked_map"
+      ],
+      "block_id": "ny_train2_far:0"
+    },
+    {
+      "case_id": "grid_8100_train1_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 3196,
+      "query_source": 85,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "567d45ffbfe544c13184902dc9e716766f9b3fcef1b9af57f957783160ff1bf2",
+      "repeat": 3,
+      "queue_seed": 1477508658,
+      "method_order": [
+        "occ_list_map",
+        "occ_linked_retain",
+        "occ_list_retain",
+        "occ_linked_map",
+        "grouped_compact_reference"
+      ],
+      "block_id": "grid_8100_train1_far:3"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train1_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1792,
+      "query_source": 1772,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "30fa48cb6af2479495bd34a02b57a8c24c2054444e2f697c7c850896b9ae4afc",
+      "repeat": 2,
+      "queue_seed": 1037575178,
+      "method_order": [
+        "occ_list_retain",
+        "occ_linked_map",
+        "occ_list_map",
+        "occ_linked_retain",
+        "grouped_compact_reference"
+      ],
+      "block_id": "sparse_2048__lopsided_train1_near:2"
+    },
+    {
+      "case_id": "geometric_8192_train0_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2370,
+      "query_source": 5813,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "2e18fc685067b208e2120aeb61741ed0e5a38bfabbbfa76879f864eaacdbf4eb",
+      "repeat": 2,
+      "queue_seed": 2057623232,
+      "method_order": [
+        "occ_list_retain",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_map",
+        "grouped_compact_reference"
+      ],
+      "block_id": "geometric_8192_train0_far:2"
+    },
+    {
+      "case_id": "grid_8100_train1_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 3196,
+      "query_source": 3547,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "f00b0215fe98bf0b90d2b9efb11c5fb05779914cb6067c0d79950f665724734e",
+      "repeat": 1,
+      "queue_seed": 2413754911,
+      "method_order": [
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_linked_retain"
+      ],
+      "block_id": "grid_8100_train1_near:1"
+    },
+    {
+      "case_id": "geometric_8192_train2_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2908,
+      "query_source": 4015,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "0b29812ea47361cc59b0b7ac1599db7a63063cc440c996af93eee181a1bed7ec",
+      "repeat": 0,
+      "queue_seed": 1034986839,
+      "method_order": [
+        "occ_list_retain",
+        "occ_linked_retain",
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_list_map"
+      ],
+      "block_id": "geometric_8192_train2_near:0"
+    },
+    {
+      "case_id": "geometric_8192_train2_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2908,
+      "query_source": 5805,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "f19fa56e8ce7fde0b03992c1fd01fcfc8823637166c8829af30e4649566c2e45",
+      "repeat": 0,
+      "queue_seed": 842404202,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_retain",
+        "occ_list_map"
+      ],
+      "block_id": "geometric_8192_train2_far:0"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train1_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1792,
+      "query_source": 1098,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "0bb1eeba893df261123aee13e250e9d14d852ecee0bc80b15a6408e8c3b3b9ec",
+      "repeat": 1,
+      "queue_seed": 2010896437,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_list_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train1_far:1"
+    },
+    {
+      "case_id": "ny_train0_near",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 22217,
+      "query_source": 109779,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "1640839dec456073751a56025db88f969d6b80ffdca95b2f3663105dd59f2eda",
+      "repeat": 2,
+      "queue_seed": 3895656526,
+      "method_order": [
+        "occ_linked_retain",
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_list_map"
+      ],
+      "block_id": "ny_train0_near:2"
+    },
+    {
+      "case_id": "geometric_8192_train0_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2370,
+      "query_source": 5813,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "2e18fc685067b208e2120aeb61741ed0e5a38bfabbbfa76879f864eaacdbf4eb",
+      "repeat": 3,
+      "queue_seed": 849061589,
+      "method_order": [
+        "occ_list_map",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_retain",
+        "grouped_compact_reference"
+      ],
+      "block_id": "geometric_8192_train0_far:3"
+    },
+    {
+      "case_id": "grid_8100_train0_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 292,
+      "query_source": 7350,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "343f7b2d46bbaab1ec484b57f47499b3453eb4b8524901023b7533c225b63758",
+      "repeat": 4,
+      "queue_seed": 231497143,
+      "method_order": [
+        "occ_list_map",
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_linked_retain"
+      ],
+      "block_id": "grid_8100_train0_far:4"
+    },
+    {
+      "case_id": "geometric_8192_train1_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 1518,
+      "query_source": 4711,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "5a00c5969eba65d43a1a897178898c25697f879dff3172cba330dbed3929d7c0",
+      "repeat": 3,
+      "queue_seed": 2601170428,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_list_map",
+        "occ_linked_map"
+      ],
+      "block_id": "geometric_8192_train1_near:3"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train0_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 870,
+      "query_source": 1487,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "06ca943cab6a86196611fd2508e9b9031e52b60ae62fb14a537ccd5fada521df",
+      "repeat": 0,
+      "queue_seed": 3176131433,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train0_near:0"
+    },
+    {
+      "case_id": "geometric_8192_train0_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2370,
+      "query_source": 5813,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "2e18fc685067b208e2120aeb61741ed0e5a38bfabbbfa76879f864eaacdbf4eb",
+      "repeat": 0,
+      "queue_seed": 2224294011,
+      "method_order": [
+        "occ_list_retain",
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_linked_map"
+      ],
+      "block_id": "geometric_8192_train0_far:0"
+    },
+    {
+      "case_id": "ny_train2_far",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 42015,
+      "query_source": 81713,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "1e979cf7459cade8503f3ad1108ee7d9253cd840d8daaec5414604df5bc4e313",
+      "repeat": 1,
+      "queue_seed": 802175674,
+      "method_order": [
+        "occ_linked_map",
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_list_retain"
+      ],
+      "block_id": "ny_train2_far:1"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train2_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1509,
+      "query_source": 396,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "c5444777be6e3ab3c6459313b0f14f4c82b735bde668e11a5e0e8403a1938990",
+      "repeat": 2,
+      "queue_seed": 3357057859,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_list_map",
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_retain"
+      ],
+      "block_id": "sparse_2048__lopsided_train2_near:2"
+    },
+    {
+      "case_id": "geometric_8192_train1_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 1518,
+      "query_source": 8145,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "bc4108169fc3cf0236e8b1f43d2cf322bbddef1936d111a8d0d0e931a1fb7d47",
+      "repeat": 2,
+      "queue_seed": 1373608422,
+      "method_order": [
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_list_map",
+        "occ_linked_map"
+      ],
+      "block_id": "geometric_8192_train1_far:2"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train0_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 870,
+      "query_source": 975,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "c21a27e64858f288049deb4be83d2cd06879ee8ea67846d4028d643adf8f1340",
+      "repeat": 0,
+      "queue_seed": 2784486197,
+      "method_order": [
+        "occ_list_map",
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_linked_retain"
+      ],
+      "block_id": "sparse_2048__lopsided_train0_far:0"
+    },
+    {
+      "case_id": "grid_8100_train1_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 3196,
+      "query_source": 85,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "567d45ffbfe544c13184902dc9e716766f9b3fcef1b9af57f957783160ff1bf2",
+      "repeat": 4,
+      "queue_seed": 111392834,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_list_map"
+      ],
+      "block_id": "grid_8100_train1_far:4"
+    },
+    {
+      "case_id": "geometric_8192_train1_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 1518,
+      "query_source": 8145,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "bc4108169fc3cf0236e8b1f43d2cf322bbddef1936d111a8d0d0e931a1fb7d47",
+      "repeat": 3,
+      "queue_seed": 1355675895,
+      "method_order": [
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_list_map",
+        "occ_linked_retain",
+        "occ_linked_map"
+      ],
+      "block_id": "geometric_8192_train1_far:3"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train0_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 870,
+      "query_source": 1487,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "06ca943cab6a86196611fd2508e9b9031e52b60ae62fb14a537ccd5fada521df",
+      "repeat": 3,
+      "queue_seed": 4045178733,
+      "method_order": [
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_list_map",
+        "occ_linked_map",
+        "grouped_compact_reference"
+      ],
+      "block_id": "sparse_2048__lopsided_train0_near:3"
+    },
+    {
+      "case_id": "geometric_8192_train2_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2908,
+      "query_source": 4015,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "0b29812ea47361cc59b0b7ac1599db7a63063cc440c996af93eee181a1bed7ec",
+      "repeat": 4,
+      "queue_seed": 1899343715,
+      "method_order": [
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "grouped_compact_reference",
+        "occ_list_map"
+      ],
+      "block_id": "geometric_8192_train2_near:4"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train0_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 870,
+      "query_source": 975,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "c21a27e64858f288049deb4be83d2cd06879ee8ea67846d4028d643adf8f1340",
+      "repeat": 3,
+      "queue_seed": 2805353170,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_list_map",
+        "occ_list_retain",
+        "occ_linked_retain"
+      ],
+      "block_id": "sparse_2048__lopsided_train0_far:3"
+    },
+    {
+      "case_id": "geometric_8192_train1_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 1518,
+      "query_source": 4711,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "5a00c5969eba65d43a1a897178898c25697f879dff3172cba330dbed3929d7c0",
+      "repeat": 2,
+      "queue_seed": 2841326449,
+      "method_order": [
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_map",
+        "occ_list_retain",
+        "grouped_compact_reference"
+      ],
+      "block_id": "geometric_8192_train1_near:2"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train2_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1509,
+      "query_source": 248,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "abaa0ef86ba976d0afc9e0a749cb0e08e0d1afadf8c080c30c7de68d7a379ae0",
+      "repeat": 3,
+      "queue_seed": 2817944827,
+      "method_order": [
+        "occ_list_map",
+        "occ_linked_retain",
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_list_retain"
+      ],
+      "block_id": "sparse_2048__lopsided_train2_far:3"
+    },
+    {
+      "case_id": "grid_8100_train0_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 292,
+      "query_source": 3712,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "2d7eea6dfc9bbfc712abdee36050206a345ba9fba646a5e8b04f9b87e5d021ab",
+      "repeat": 0,
+      "queue_seed": 845174619,
+      "method_order": [
+        "occ_linked_retain",
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_list_map"
+      ],
+      "block_id": "grid_8100_train0_near:0"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train0_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 870,
+      "query_source": 975,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "c21a27e64858f288049deb4be83d2cd06879ee8ea67846d4028d643adf8f1340",
+      "repeat": 1,
+      "queue_seed": 844710632,
+      "method_order": [
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_linked_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train0_far:1"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train0_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 870,
+      "query_source": 1487,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "06ca943cab6a86196611fd2508e9b9031e52b60ae62fb14a537ccd5fada521df",
+      "repeat": 4,
+      "queue_seed": 2396326414,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_list_retain"
+      ],
+      "block_id": "sparse_2048__lopsided_train0_near:4"
+    },
+    {
+      "case_id": "geometric_8192_train2_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2908,
+      "query_source": 5805,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "f19fa56e8ce7fde0b03992c1fd01fcfc8823637166c8829af30e4649566c2e45",
+      "repeat": 3,
+      "queue_seed": 4293216152,
+      "method_order": [
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_map"
+      ],
+      "block_id": "geometric_8192_train2_far:3"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train2_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1509,
+      "query_source": 396,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "c5444777be6e3ab3c6459313b0f14f4c82b735bde668e11a5e0e8403a1938990",
+      "repeat": 1,
+      "queue_seed": 387853781,
+      "method_order": [
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_list_map",
+        "occ_linked_map",
+        "grouped_compact_reference"
+      ],
+      "block_id": "sparse_2048__lopsided_train2_near:1"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train1_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1792,
+      "query_source": 1098,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "0bb1eeba893df261123aee13e250e9d14d852ecee0bc80b15a6408e8c3b3b9ec",
+      "repeat": 0,
+      "queue_seed": 4049126896,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_linked_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train1_far:0"
+    },
+    {
+      "case_id": "geometric_8192_train1_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 1518,
+      "query_source": 8145,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "bc4108169fc3cf0236e8b1f43d2cf322bbddef1936d111a8d0d0e931a1fb7d47",
+      "repeat": 0,
+      "queue_seed": 1739507584,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_list_retain",
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_list_map"
+      ],
+      "block_id": "geometric_8192_train1_far:0"
+    },
+    {
+      "case_id": "geometric_8192_train2_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2908,
+      "query_source": 4015,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "0b29812ea47361cc59b0b7ac1599db7a63063cc440c996af93eee181a1bed7ec",
+      "repeat": 1,
+      "queue_seed": 4216060158,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_list_retain"
+      ],
+      "block_id": "geometric_8192_train2_near:1"
+    },
+    {
+      "case_id": "grid_8100_train2_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 2868,
+      "query_source": 1986,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "973cffd9d266100d4fb6a2c3f902235cc823360a493546d0302dd310dc6a51b9",
+      "repeat": 0,
+      "queue_seed": 2091148154,
+      "method_order": [
+        "occ_list_map",
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_retain",
+        "grouped_compact_reference"
+      ],
+      "block_id": "grid_8100_train2_far:0"
+    },
+    {
+      "case_id": "grid_8100_train1_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 3196,
+      "query_source": 3547,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "f00b0215fe98bf0b90d2b9efb11c5fb05779914cb6067c0d79950f665724734e",
+      "repeat": 2,
+      "queue_seed": 619705010,
+      "method_order": [
+        "occ_list_map",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_retain",
+        "grouped_compact_reference"
+      ],
+      "block_id": "grid_8100_train1_near:2"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train1_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1792,
+      "query_source": 1098,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "0bb1eeba893df261123aee13e250e9d14d852ecee0bc80b15a6408e8c3b3b9ec",
+      "repeat": 4,
+      "queue_seed": 1743003807,
+      "method_order": [
+        "occ_list_retain",
+        "occ_linked_map",
+        "occ_list_map",
+        "occ_linked_retain",
+        "grouped_compact_reference"
+      ],
+      "block_id": "sparse_2048__lopsided_train1_far:4"
+    },
+    {
+      "case_id": "ny_train1_far",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 257685,
+      "query_source": 119297,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "a2526dfc51ea23a49c452772df214ac0ff85b27d157409752208a8d93f1e3ca8",
+      "repeat": 1,
+      "queue_seed": 476313019,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_map"
+      ],
+      "block_id": "ny_train1_far:1"
+    },
+    {
+      "case_id": "ny_train1_near",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 257685,
+      "query_source": 243856,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "eb368d050dbc06cf0fdb2ff8cb934a7e1c051223f7df8ac4d487eb1cd802306a",
+      "repeat": 2,
+      "queue_seed": 3788569757,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_list_map",
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_linked_retain"
+      ],
+      "block_id": "ny_train1_near:2"
+    },
+    {
+      "case_id": "geometric_8192_train2_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2908,
+      "query_source": 5805,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "f19fa56e8ce7fde0b03992c1fd01fcfc8823637166c8829af30e4649566c2e45",
+      "repeat": 4,
+      "queue_seed": 2431091385,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_list_map",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_linked_map"
+      ],
+      "block_id": "geometric_8192_train2_far:4"
+    },
+    {
+      "case_id": "grid_8100_train2_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 2868,
+      "query_source": 1986,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "973cffd9d266100d4fb6a2c3f902235cc823360a493546d0302dd310dc6a51b9",
+      "repeat": 2,
+      "queue_seed": 1064096850,
+      "method_order": [
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_list_map",
+        "occ_linked_retain",
+        "occ_linked_map"
+      ],
+      "block_id": "grid_8100_train2_far:2"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train1_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1792,
+      "query_source": 1772,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "30fa48cb6af2479495bd34a02b57a8c24c2054444e2f697c7c850896b9ae4afc",
+      "repeat": 3,
+      "queue_seed": 3591230468,
+      "method_order": [
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_linked_map",
+        "occ_linked_retain"
+      ],
+      "block_id": "sparse_2048__lopsided_train1_near:3"
+    },
+    {
+      "case_id": "grid_8100_train1_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 3196,
+      "query_source": 85,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "567d45ffbfe544c13184902dc9e716766f9b3fcef1b9af57f957783160ff1bf2",
+      "repeat": 1,
+      "queue_seed": 2330843633,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_map"
+      ],
+      "block_id": "grid_8100_train1_far:1"
+    },
+    {
+      "case_id": "ny_train1_far",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 257685,
+      "query_source": 119297,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "a2526dfc51ea23a49c452772df214ac0ff85b27d157409752208a8d93f1e3ca8",
+      "repeat": 2,
+      "queue_seed": 3273839953,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_retain",
+        "occ_list_map"
+      ],
+      "block_id": "ny_train1_far:2"
+    },
+    {
+      "case_id": "ny_train0_near",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 22217,
+      "query_source": 109779,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "1640839dec456073751a56025db88f969d6b80ffdca95b2f3663105dd59f2eda",
+      "repeat": 0,
+      "queue_seed": 2324546095,
+      "method_order": [
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_linked_retain"
+      ],
+      "block_id": "ny_train0_near:0"
+    },
+    {
+      "case_id": "geometric_8192_train1_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 1518,
+      "query_source": 4711,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "5a00c5969eba65d43a1a897178898c25697f879dff3172cba330dbed3929d7c0",
+      "repeat": 4,
+      "queue_seed": 2966934005,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_list_retain",
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_linked_map"
+      ],
+      "block_id": "geometric_8192_train1_near:4"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train2_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1509,
+      "query_source": 396,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "c5444777be6e3ab3c6459313b0f14f4c82b735bde668e11a5e0e8403a1938990",
+      "repeat": 4,
+      "queue_seed": 2560806658,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_list_map",
+        "occ_linked_retain"
+      ],
+      "block_id": "sparse_2048__lopsided_train2_near:4"
+    },
+    {
+      "case_id": "ny_train0_far",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 22217,
+      "query_source": 156630,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "4590853dfe6a169e158ba236bc82c880b9b30c22b73181e997ec548e38e34403",
+      "repeat": 1,
+      "queue_seed": 1746974766,
+      "method_order": [
+        "occ_list_retain",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "grouped_compact_reference",
+        "occ_list_map"
+      ],
+      "block_id": "ny_train0_far:1"
+    },
+    {
+      "case_id": "geometric_8192_train0_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2370,
+      "query_source": 1072,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "87158f16df139b4ce7ba8906d62076b911bbeda6595f59b1706d1ada218168ed",
+      "repeat": 3,
+      "queue_seed": 4222648068,
+      "method_order": [
+        "occ_list_map",
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_linked_retain"
+      ],
+      "block_id": "geometric_8192_train0_near:3"
+    },
+    {
+      "case_id": "geometric_8192_train2_far",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2908,
+      "query_source": 5805,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "f19fa56e8ce7fde0b03992c1fd01fcfc8823637166c8829af30e4649566c2e45",
+      "repeat": 1,
+      "queue_seed": 395281692,
+      "method_order": [
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_map",
+        "occ_list_retain",
+        "grouped_compact_reference"
+      ],
+      "block_id": "geometric_8192_train2_far:1"
+    },
+    {
+      "case_id": "grid_8100_train2_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 2868,
+      "query_source": 2154,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "04bf0249225d0a7cf98c8696cc5946168e437865fb25f05be6311d86f173e902",
+      "repeat": 4,
+      "queue_seed": 3457925,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_list_retain",
+        "occ_linked_map",
+        "occ_list_map"
+      ],
+      "block_id": "grid_8100_train2_near:4"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train0_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 870,
+      "query_source": 1487,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "06ca943cab6a86196611fd2508e9b9031e52b60ae62fb14a537ccd5fada521df",
+      "repeat": 1,
+      "queue_seed": 1748507562,
+      "method_order": [
+        "occ_list_map",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "grouped_compact_reference",
+        "occ_linked_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train0_near:1"
+    },
+    {
+      "case_id": "grid_8100_train1_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 3196,
+      "query_source": 3547,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "f00b0215fe98bf0b90d2b9efb11c5fb05779914cb6067c0d79950f665724734e",
+      "repeat": 4,
+      "queue_seed": 977332044,
+      "method_order": [
+        "occ_list_retain",
+        "occ_list_map",
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_linked_retain"
+      ],
+      "block_id": "grid_8100_train1_near:4"
+    },
+    {
+      "case_id": "grid_8100_train1_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 3196,
+      "query_source": 85,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "567d45ffbfe544c13184902dc9e716766f9b3fcef1b9af57f957783160ff1bf2",
+      "repeat": 2,
+      "queue_seed": 2413354668,
+      "method_order": [
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_list_map",
+        "grouped_compact_reference"
+      ],
+      "block_id": "grid_8100_train1_far:2"
+    },
+    {
+      "case_id": "grid_8100_train1_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 3196,
+      "query_source": 3547,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "f00b0215fe98bf0b90d2b9efb11c5fb05779914cb6067c0d79950f665724734e",
+      "repeat": 0,
+      "queue_seed": 1684680263,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_list_map",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_linked_map"
+      ],
+      "block_id": "grid_8100_train1_near:0"
+    },
+    {
+      "case_id": "ny_train2_far",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 42015,
+      "query_source": 81713,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "1e979cf7459cade8503f3ad1108ee7d9253cd840d8daaec5414604df5bc4e313",
+      "repeat": 2,
+      "queue_seed": 712987679,
+      "method_order": [
+        "occ_linked_map",
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_list_retain"
+      ],
+      "block_id": "ny_train2_far:2"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train1_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1792,
+      "query_source": 1772,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "30fa48cb6af2479495bd34a02b57a8c24c2054444e2f697c7c850896b9ae4afc",
+      "repeat": 0,
+      "queue_seed": 2382103259,
+      "method_order": [
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train1_near:0"
+    },
+    {
+      "case_id": "grid_8100_train0_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 292,
+      "query_source": 7350,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "343f7b2d46bbaab1ec484b57f47499b3453eb4b8524901023b7533c225b63758",
+      "repeat": 0,
+      "queue_seed": 2160831199,
+      "method_order": [
+        "occ_list_retain",
+        "occ_list_map",
+        "occ_linked_retain",
+        "occ_linked_map",
+        "grouped_compact_reference"
+      ],
+      "block_id": "grid_8100_train0_far:0"
+    },
+    {
+      "case_id": "geometric_8192_train0_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2370,
+      "query_source": 1072,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "87158f16df139b4ce7ba8906d62076b911bbeda6595f59b1706d1ada218168ed",
+      "repeat": 4,
+      "queue_seed": 1198195580,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_list_map",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_linked_map"
+      ],
+      "block_id": "geometric_8192_train0_near:4"
+    },
+    {
+      "case_id": "grid_8100_train2_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 2868,
+      "query_source": 1986,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "973cffd9d266100d4fb6a2c3f902235cc823360a493546d0302dd310dc6a51b9",
+      "repeat": 4,
+      "queue_seed": 880399232,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_retain",
+        "occ_list_map",
+        "grouped_compact_reference"
+      ],
+      "block_id": "grid_8100_train2_far:4"
+    },
+    {
+      "case_id": "grid_8100_train2_far",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 2868,
+      "query_source": 1986,
+      "query_group": "far",
+      "train_index": 2,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "973cffd9d266100d4fb6a2c3f902235cc823360a493546d0302dd310dc6a51b9",
+      "repeat": 1,
+      "queue_seed": 696285598,
+      "method_order": [
+        "occ_list_retain",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_map",
+        "grouped_compact_reference"
+      ],
+      "block_id": "grid_8100_train2_far:1"
+    },
+    {
+      "case_id": "ny_train0_far",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 22217,
+      "query_source": 156630,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "4590853dfe6a169e158ba236bc82c880b9b30c22b73181e997ec548e38e34403",
+      "repeat": 2,
+      "queue_seed": 4148793211,
+      "method_order": [
+        "occ_linked_map",
+        "occ_list_map",
+        "occ_linked_retain",
+        "occ_list_retain",
+        "grouped_compact_reference"
+      ],
+      "block_id": "ny_train0_far:2"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train1_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 1792,
+      "query_source": 1772,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "30fa48cb6af2479495bd34a02b57a8c24c2054444e2f697c7c850896b9ae4afc",
+      "repeat": 4,
+      "queue_seed": 2800685950,
+      "method_order": [
+        "occ_list_map",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "grouped_compact_reference",
+        "occ_linked_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train1_near:4"
+    },
+    {
+      "case_id": "ny_train1_far",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 257685,
+      "query_source": 119297,
+      "query_group": "far",
+      "train_index": 1,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "a2526dfc51ea23a49c452772df214ac0ff85b27d157409752208a8d93f1e3ca8",
+      "repeat": 0,
+      "queue_seed": 3315610287,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_list_map",
+        "occ_linked_retain",
+        "occ_list_retain",
+        "occ_linked_map"
+      ],
+      "block_id": "ny_train1_far:0"
+    },
+    {
+      "case_id": "grid_8100_train2_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 2868,
+      "query_source": 2154,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "04bf0249225d0a7cf98c8696cc5946168e437865fb25f05be6311d86f173e902",
+      "repeat": 1,
+      "queue_seed": 503600697,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_list_map",
+        "occ_list_retain",
+        "occ_linked_map",
+        "grouped_compact_reference"
+      ],
+      "block_id": "grid_8100_train2_near:1"
+    },
+    {
+      "case_id": "ny_train0_far",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 22217,
+      "query_source": 156630,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "4590853dfe6a169e158ba236bc82c880b9b30c22b73181e997ec548e38e34403",
+      "repeat": 0,
+      "queue_seed": 3718898066,
+      "method_order": [
+        "occ_list_map",
+        "occ_linked_retain",
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_linked_map"
+      ],
+      "block_id": "ny_train0_far:0"
+    },
+    {
+      "case_id": "ny_train1_near",
+      "workload": "ny",
+      "training_graph": "ny",
+      "train_source": 257685,
+      "query_source": 243856,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "reference_distance_sha256": "eb368d050dbc06cf0fdb2ff8cb934a7e1c051223f7df8ac4d487eb1cd802306a",
+      "repeat": 1,
+      "queue_seed": 1494047389,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_list_map",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_retain"
+      ],
+      "block_id": "ny_train1_near:1"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train0_near",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 870,
+      "query_source": 1487,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "06ca943cab6a86196611fd2508e9b9031e52b60ae62fb14a537ccd5fada521df",
+      "repeat": 2,
+      "queue_seed": 3101458702,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "occ_list_map"
+      ],
+      "block_id": "sparse_2048__lopsided_train0_near:2"
+    },
+    {
+      "case_id": "grid_8100_train0_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 292,
+      "query_source": 3712,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "2d7eea6dfc9bbfc712abdee36050206a345ba9fba646a5e8b04f9b87e5d021ab",
+      "repeat": 2,
+      "queue_seed": 3800125251,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_list_map",
+        "occ_linked_map",
+        "grouped_compact_reference",
+        "occ_list_retain"
+      ],
+      "block_id": "grid_8100_train0_near:2"
+    },
+    {
+      "case_id": "grid_8100_train2_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 2868,
+      "query_source": 2154,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "04bf0249225d0a7cf98c8696cc5946168e437865fb25f05be6311d86f173e902",
+      "repeat": 3,
+      "queue_seed": 3574157693,
+      "method_order": [
+        "occ_list_retain",
+        "occ_linked_retain",
+        "grouped_compact_reference",
+        "occ_list_map",
+        "occ_linked_map"
+      ],
+      "block_id": "grid_8100_train2_near:3"
+    },
+    {
+      "case_id": "grid_8100_train2_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 2868,
+      "query_source": 2154,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "04bf0249225d0a7cf98c8696cc5946168e437865fb25f05be6311d86f173e902",
+      "repeat": 0,
+      "queue_seed": 2543717165,
+      "method_order": [
+        "grouped_compact_reference",
+        "occ_list_retain",
+        "occ_linked_retain",
+        "occ_list_map",
+        "occ_linked_map"
+      ],
+      "block_id": "grid_8100_train2_near:0"
+    },
+    {
+      "case_id": "geometric_8192_train0_near",
+      "workload": "geometric_8192",
+      "training_graph": "geometric_8192",
+      "train_source": 2370,
+      "query_source": 1072,
+      "query_group": "near",
+      "train_index": 0,
+      "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "reference_distance_sha256": "87158f16df139b4ce7ba8906d62076b911bbeda6595f59b1706d1ada218168ed",
+      "repeat": 1,
+      "queue_seed": 4251343722,
+      "method_order": [
+        "occ_list_retain",
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_list_map",
+        "occ_linked_map"
+      ],
+      "block_id": "geometric_8192_train0_near:1"
+    },
+    {
+      "case_id": "grid_8100_train1_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 3196,
+      "query_source": 3547,
+      "query_group": "near",
+      "train_index": 1,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "f00b0215fe98bf0b90d2b9efb11c5fb05779914cb6067c0d79950f665724734e",
+      "repeat": 3,
+      "queue_seed": 2051844137,
+      "method_order": [
+        "occ_list_map",
+        "occ_linked_map",
+        "occ_linked_retain",
+        "grouped_compact_reference",
+        "occ_list_retain"
+      ],
+      "block_id": "grid_8100_train1_near:3"
+    },
+    {
+      "case_id": "grid_8100_train2_near",
+      "workload": "grid_8100",
+      "training_graph": "grid_8100",
+      "train_source": 2868,
+      "query_source": 2154,
+      "query_group": "near",
+      "train_index": 2,
+      "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "reference_distance_sha256": "04bf0249225d0a7cf98c8696cc5946168e437865fb25f05be6311d86f173e902",
+      "repeat": 2,
+      "queue_seed": 3286544612,
+      "method_order": [
+        "occ_linked_map",
+        "occ_list_map",
+        "grouped_compact_reference",
+        "occ_linked_retain",
+        "occ_list_retain"
+      ],
+      "block_id": "grid_8100_train2_near:2"
+    },
+    {
+      "case_id": "sparse_2048__lopsided_train0_far",
+      "workload": "sparse_2048__lopsided",
+      "training_graph": "sparse_2048",
+      "train_source": 870,
+      "query_source": 975,
+      "query_group": "far",
+      "train_index": 0,
+      "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "reference_distance_sha256": "c21a27e64858f288049deb4be83d2cd06879ee8ea67846d4028d643adf8f1340",
+      "repeat": 4,
+      "queue_seed": 3343041254,
+      "method_order": [
+        "occ_linked_retain",
+        "occ_linked_map",
+        "occ_list_map",
+        "occ_list_retain",
+        "grouped_compact_reference"
+      ],
+      "block_id": "sparse_2048__lopsided_train0_far:4"
+    }
+  ]
+}

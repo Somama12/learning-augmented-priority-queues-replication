@@ -1,0 +1,335 @@
+{
+  "case": {
+    "case_id": "ny_train2_near",
+    "workload": "ny",
+    "training_graph": "ny",
+    "train_source": 42015,
+    "query_source": 33459,
+    "query_group": "near",
+    "train_index": 2,
+    "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+    "reference_distance_sha256": "37efa544d2d976e92a74c38b9bbf725e1b198264cd1480090c4e14deaf1127d4"
+  },
+  "queue_seed": 1488373921,
+  "seed_repeat": 0,
+  "status": "passed",
+  "records": [
+    {
+      "method": "occ_list_retain",
+      "status": "ok",
+      "insertions": 298773,
+      "extractions": 298773,
+      "distance_digest": "0df984ce0c4f62e5da38ea6287e705e59e38a53d9a2f64ccc04ab41b2373c347",
+      "streams": {
+        "operations": {
+          "events": 597546,
+          "sha256": "b6828bf428594229d5347d178a3f93aa232477d7966f674d540bfa1bcccf7a82"
+        },
+        "operands": {
+          "events": 1148734,
+          "sha256": "b29c125b3b4f35220d5363dd2149486c0076a011eb9f37cee5777489658197d2"
+        },
+        "hints": {
+          "events": 298773,
+          "sha256": "a37a6ebaeb5ed34e5e887473150b848d78c92b163f043ba04cbd487fcdc0b972"
+        },
+        "heights": {
+          "events": 298773,
+          "sha256": "8e1695c0fb007f3ad4521af73640f069acb6643eebac56fcde8be47aa15118cb"
+        },
+        "node_creation": {
+          "events": 298774,
+          "sha256": "1b9fb1ea736bff022e2b3fdd5d6da0f7687c56b8acd79cb2c2bf84879a613902"
+        },
+        "pointer_assignments": {
+          "events": 1794933,
+          "sha256": "18bb710e30976644d50a8b08abc0669a5dc8cb73898a9ed52a05192a054d0ac9"
+        }
+      },
+      "post_query_stats": {
+        "reachable_nodes": 0,
+        "level0_cycle": false,
+        "retained_node_map_entries": 243533,
+        "max_skiplist_height": 19,
+        "clean_comparisons": null,
+        "kind": "occ_list_retain",
+        "live_entries": 0,
+        "live_rank_groups": 0,
+        "live_value_groups": 0,
+        "rank_bucket_items": 0,
+        "value_rank_items": 0,
+        "index": {
+          "index_kind": "hierarchical_64bit_bitmap",
+          "universe": 299059,
+          "mode": "dense",
+          "size": 0,
+          "levels": 4,
+          "word_capacity_by_level": [
+            4673,
+            74,
+            2,
+            1
+          ],
+          "nonzero_words_by_level": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "python_bytes_estimate": 39414,
+          "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+          "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+        },
+        "rank_bucket_policy": "list",
+        "historical_node_cleanup": "retain",
+        "valRank_policy": "original per-occurrence rank list unchanged",
+        "grouping": false
+      }
+    },
+    {
+      "method": "occ_list_map",
+      "status": "ok",
+      "insertions": 298773,
+      "extractions": 298773,
+      "distance_digest": "0df984ce0c4f62e5da38ea6287e705e59e38a53d9a2f64ccc04ab41b2373c347",
+      "streams": {
+        "operations": {
+          "events": 597546,
+          "sha256": "b6828bf428594229d5347d178a3f93aa232477d7966f674d540bfa1bcccf7a82"
+        },
+        "operands": {
+          "events": 1148734,
+          "sha256": "b29c125b3b4f35220d5363dd2149486c0076a011eb9f37cee5777489658197d2"
+        },
+        "hints": {
+          "events": 298773,
+          "sha256": "a37a6ebaeb5ed34e5e887473150b848d78c92b163f043ba04cbd487fcdc0b972"
+        },
+        "heights": {
+          "events": 298773,
+          "sha256": "8e1695c0fb007f3ad4521af73640f069acb6643eebac56fcde8be47aa15118cb"
+        },
+        "node_creation": {
+          "events": 298774,
+          "sha256": "1b9fb1ea736bff022e2b3fdd5d6da0f7687c56b8acd79cb2c2bf84879a613902"
+        },
+        "pointer_assignments": {
+          "events": 1794933,
+          "sha256": "18bb710e30976644d50a8b08abc0669a5dc8cb73898a9ed52a05192a054d0ac9"
+        }
+      },
+      "post_query_stats": {
+        "reachable_nodes": 0,
+        "level0_cycle": false,
+        "retained_node_map_entries": 0,
+        "max_skiplist_height": 19,
+        "clean_comparisons": null,
+        "kind": "occ_list_map",
+        "live_entries": 0,
+        "live_rank_groups": 0,
+        "live_value_groups": 0,
+        "rank_bucket_items": 0,
+        "value_rank_items": 0,
+        "index": {
+          "index_kind": "hierarchical_64bit_bitmap",
+          "universe": 299059,
+          "mode": "dense",
+          "size": 0,
+          "levels": 4,
+          "word_capacity_by_level": [
+            4673,
+            74,
+            2,
+            1
+          ],
+          "nonzero_words_by_level": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "python_bytes_estimate": 39406,
+          "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+          "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+        },
+        "rank_bucket_policy": "list",
+        "historical_node_cleanup": "map",
+        "valRank_policy": "original per-occurrence rank list unchanged",
+        "grouping": false
+      }
+    },
+    {
+      "method": "occ_linked_retain",
+      "status": "ok",
+      "insertions": 298773,
+      "extractions": 298773,
+      "distance_digest": "0df984ce0c4f62e5da38ea6287e705e59e38a53d9a2f64ccc04ab41b2373c347",
+      "streams": {
+        "operations": {
+          "events": 597546,
+          "sha256": "b6828bf428594229d5347d178a3f93aa232477d7966f674d540bfa1bcccf7a82"
+        },
+        "operands": {
+          "events": 1148734,
+          "sha256": "b29c125b3b4f35220d5363dd2149486c0076a011eb9f37cee5777489658197d2"
+        },
+        "hints": {
+          "events": 298773,
+          "sha256": "a37a6ebaeb5ed34e5e887473150b848d78c92b163f043ba04cbd487fcdc0b972"
+        },
+        "heights": {
+          "events": 298773,
+          "sha256": "8e1695c0fb007f3ad4521af73640f069acb6643eebac56fcde8be47aa15118cb"
+        },
+        "node_creation": {
+          "events": 298774,
+          "sha256": "1b9fb1ea736bff022e2b3fdd5d6da0f7687c56b8acd79cb2c2bf84879a613902"
+        },
+        "pointer_assignments": {
+          "events": 1794933,
+          "sha256": "18bb710e30976644d50a8b08abc0669a5dc8cb73898a9ed52a05192a054d0ac9"
+        }
+      },
+      "post_query_stats": {
+        "reachable_nodes": 0,
+        "level0_cycle": false,
+        "retained_node_map_entries": 243533,
+        "max_skiplist_height": 19,
+        "clean_comparisons": null,
+        "kind": "occ_linked_retain",
+        "live_entries": 0,
+        "live_rank_groups": 0,
+        "live_value_groups": 0,
+        "rank_bucket_items": 0,
+        "value_rank_items": 0,
+        "index": {
+          "index_kind": "hierarchical_64bit_bitmap",
+          "universe": 299059,
+          "mode": "dense",
+          "size": 0,
+          "levels": 4,
+          "word_capacity_by_level": [
+            4673,
+            74,
+            2,
+            1
+          ],
+          "nonzero_words_by_level": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "python_bytes_estimate": 39398,
+          "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+          "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+        },
+        "rank_bucket_policy": "linked",
+        "historical_node_cleanup": "retain",
+        "valRank_policy": "original per-occurrence rank list unchanged",
+        "grouping": false
+      }
+    },
+    {
+      "method": "occ_linked_map",
+      "status": "ok",
+      "insertions": 298773,
+      "extractions": 298773,
+      "distance_digest": "0df984ce0c4f62e5da38ea6287e705e59e38a53d9a2f64ccc04ab41b2373c347",
+      "streams": {
+        "operations": {
+          "events": 597546,
+          "sha256": "b6828bf428594229d5347d178a3f93aa232477d7966f674d540bfa1bcccf7a82"
+        },
+        "operands": {
+          "events": 1148734,
+          "sha256": "b29c125b3b4f35220d5363dd2149486c0076a011eb9f37cee5777489658197d2"
+        },
+        "hints": {
+          "events": 298773,
+          "sha256": "a37a6ebaeb5ed34e5e887473150b848d78c92b163f043ba04cbd487fcdc0b972"
+        },
+        "heights": {
+          "events": 298773,
+          "sha256": "8e1695c0fb007f3ad4521af73640f069acb6643eebac56fcde8be47aa15118cb"
+        },
+        "node_creation": {
+          "events": 298774,
+          "sha256": "1b9fb1ea736bff022e2b3fdd5d6da0f7687c56b8acd79cb2c2bf84879a613902"
+        },
+        "pointer_assignments": {
+          "events": 1794933,
+          "sha256": "18bb710e30976644d50a8b08abc0669a5dc8cb73898a9ed52a05192a054d0ac9"
+        }
+      },
+      "post_query_stats": {
+        "reachable_nodes": 0,
+        "level0_cycle": false,
+        "retained_node_map_entries": 0,
+        "max_skiplist_height": 19,
+        "clean_comparisons": null,
+        "kind": "occ_linked_map",
+        "live_entries": 0,
+        "live_rank_groups": 0,
+        "live_value_groups": 0,
+        "rank_bucket_items": 0,
+        "value_rank_items": 0,
+        "index": {
+          "index_kind": "hierarchical_64bit_bitmap",
+          "universe": 299059,
+          "mode": "dense",
+          "size": 0,
+          "levels": 4,
+          "word_capacity_by_level": [
+            4673,
+            74,
+            2,
+            1
+          ],
+          "nonzero_words_by_level": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "python_bytes_estimate": 39390,
+          "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+          "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+        },
+        "rank_bucket_policy": "linked",
+        "historical_node_cleanup": "map",
+        "valRank_policy": "original per-occurrence rank list unchanged",
+        "grouping": false
+      }
+    }
+  ],
+  "all_streams_equal": true,
+  "source_sha256_at_launch": {
+    "work/lapq/phase3/ablation_queues.py": "1446ce3e454555b6f178500d3bd597ee53b88e294349d0fb7a584accfaab1be1",
+    "work/lapq/phase3/preflight.py": "548cbe296c628ddec82fa50bd3b99dda9d0eed18a2b99e56a96c6e86bd56970e",
+    "work/lapq/phase3/freeze_proposal.py": "bdcbff524d9d59a6232ec53c0a7c236d206ded495d19958ef5fec62c1d0fe883",
+    "work/lapq/phase2/queues.py": "a7f0d49301b604cfd0ce8d4ebb95a23cc41a8486e6a7f651183a29db352754a5",
+    "work/lapq/phase2/indexes.py": "a28c957dea436d6e8a64f3fbf4f7575d2c7fc218f6ac3426b659ae06b7697be2",
+    "work/lapq/phase2/benchmark.py": "b472b3da901290d768039a12e0a72badeb431b377326411c776c06734de68621",
+    "work/lapq/phase2/workloads.py": "53298dfa998440370fa88d5f4520eecf20968153234cac2d99292e436ee6ada2",
+    "work/lapq/data_loading.py": "0b68f44cc1b1c7c4fd3d7f8a3c16285dcbee7114a1ac4ac5c1cc1a5c81970da5",
+    "work/lapq/upstream/skiplist.py": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c",
+    "work/lapq/phase3/ablation_protocol.json": "08cde3cdf932bd68fddac8275d70f6c55205f566455b6daea7e0a6d096c08d77",
+    "work/lapq/phase3/full_trace_gate.py": "22556c00412c663451b3540577c7c34c3fa848182b8b6a2e0168051ec4eb543a"
+  },
+  "source_sha256_at_completion": {
+    "work/lapq/phase3/ablation_queues.py": "1446ce3e454555b6f178500d3bd597ee53b88e294349d0fb7a584accfaab1be1",
+    "work/lapq/phase3/preflight.py": "548cbe296c628ddec82fa50bd3b99dda9d0eed18a2b99e56a96c6e86bd56970e",
+    "work/lapq/phase3/freeze_proposal.py": "bdcbff524d9d59a6232ec53c0a7c236d206ded495d19958ef5fec62c1d0fe883",
+    "work/lapq/phase2/queues.py": "a7f0d49301b604cfd0ce8d4ebb95a23cc41a8486e6a7f651183a29db352754a5",
+    "work/lapq/phase2/indexes.py": "a28c957dea436d6e8a64f3fbf4f7575d2c7fc218f6ac3426b659ae06b7697be2",
+    "work/lapq/phase2/benchmark.py": "b472b3da901290d768039a12e0a72badeb431b377326411c776c06734de68621",
+    "work/lapq/phase2/workloads.py": "53298dfa998440370fa88d5f4520eecf20968153234cac2d99292e436ee6ada2",
+    "work/lapq/data_loading.py": "0b68f44cc1b1c7c4fd3d7f8a3c16285dcbee7114a1ac4ac5c1cc1a5c81970da5",
+    "work/lapq/upstream/skiplist.py": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c",
+    "work/lapq/phase3/ablation_protocol.json": "08cde3cdf932bd68fddac8275d70f6c55205f566455b6daea7e0a6d096c08d77",
+    "work/lapq/phase3/full_trace_gate.py": "22556c00412c663451b3540577c7c34c3fa848182b8b6a2e0168051ec4eb543a"
+  },
+  "scope": "One repeat-0 seed per planned source case; operations, operands, hints, node creations, sampled heights, pointer assignments; not every timed seed or an exhaustive correctness proof.",
+  "worker_returncode": 0
+}

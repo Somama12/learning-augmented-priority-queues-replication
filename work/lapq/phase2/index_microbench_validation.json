@@ -1,0 +1,123 @@
+{
+  "all_passed": true,
+  "cases": 16,
+  "timed_records": 240,
+  "memory_records": 48,
+  "repetitions": 5,
+  "hashes_match": true,
+  "paired_cpu_ratios_to_sortedlist": [
+    {
+      "case": "U256_n16_uniform",
+      "bitmap_operations_cpu_ratio": 1.221278853807376,
+      "bitmap_construction_plus_operations_cpu_ratio": 1.224748810153358,
+      "veb_operations_cpu_ratio": 1.4001524390243902,
+      "veb_construction_plus_operations_cpu_ratio": 1.4011127971674253
+    },
+    {
+      "case": "U256_n16_clustered",
+      "bitmap_operations_cpu_ratio": 1.1356907894736843,
+      "bitmap_construction_plus_operations_cpu_ratio": 1.1358799454297408,
+      "veb_operations_cpu_ratio": 1.2357456140350878,
+      "veb_construction_plus_operations_cpu_ratio": 1.234924965893588
+    },
+    {
+      "case": "U256_n128_uniform",
+      "bitmap_operations_cpu_ratio": 1.0394321766561514,
+      "bitmap_construction_plus_operations_cpu_ratio": 1.0456273764258555,
+      "veb_operations_cpu_ratio": 1.148766328011611,
+      "veb_construction_plus_operations_cpu_ratio": 1.1486068111455108
+    },
+    {
+      "case": "U256_n128_clustered",
+      "bitmap_operations_cpu_ratio": 1.0294185244771317,
+      "bitmap_construction_plus_operations_cpu_ratio": 1.0348968955359166,
+      "veb_operations_cpu_ratio": 1.1363743240065836,
+      "veb_construction_plus_operations_cpu_ratio": 1.1370911621433542
+    },
+    {
+      "case": "U4096_n16_uniform",
+      "bitmap_operations_cpu_ratio": 1.7363919129082426,
+      "bitmap_construction_plus_operations_cpu_ratio": 1.7340727366520505,
+      "veb_operations_cpu_ratio": 1.7248828735033837,
+      "veb_construction_plus_operations_cpu_ratio": 1.7272963155163465
+    },
+    {
+      "case": "U4096_n16_clustered",
+      "bitmap_operations_cpu_ratio": 1.2146938775510203,
+      "bitmap_construction_plus_operations_cpu_ratio": 1.2156809549647314,
+      "veb_operations_cpu_ratio": 1.3406563601844317,
+      "veb_construction_plus_operations_cpu_ratio": 1.3419843200865098
+    },
+    {
+      "case": "U4096_n128_uniform",
+      "bitmap_operations_cpu_ratio": 1.2611033193080878,
+      "bitmap_construction_plus_operations_cpu_ratio": 1.264638082065468,
+      "veb_operations_cpu_ratio": 1.3087891538101917,
+      "veb_construction_plus_operations_cpu_ratio": 1.3158726574847595
+    },
+    {
+      "case": "U4096_n128_clustered",
+      "bitmap_operations_cpu_ratio": 1.1222800378429518,
+      "bitmap_construction_plus_operations_cpu_ratio": 1.1225250407640344,
+      "veb_operations_cpu_ratio": 1.2489481065918653,
+      "veb_construction_plus_operations_cpu_ratio": 1.2534041080083083
+    },
+    {
+      "case": "U4096_n512_uniform",
+      "bitmap_operations_cpu_ratio": 0.9244372990353698,
+      "bitmap_construction_plus_operations_cpu_ratio": 0.9395986105750675,
+      "veb_operations_cpu_ratio": 1.0693317883352647,
+      "veb_construction_plus_operations_cpu_ratio": 1.0863117870722434
+    },
+    {
+      "case": "U4096_n512_clustered",
+      "bitmap_operations_cpu_ratio": 0.9381943041809735,
+      "bitmap_construction_plus_operations_cpu_ratio": 0.9533980582524272,
+      "veb_operations_cpu_ratio": 1.0745303978994143,
+      "veb_construction_plus_operations_cpu_ratio": 1.0858252427184465
+    },
+    {
+      "case": "U300001_n16_uniform",
+      "bitmap_operations_cpu_ratio": 2.490050411249668,
+      "bitmap_construction_plus_operations_cpu_ratio": 2.4878435517970403,
+      "veb_operations_cpu_ratio": 2.1729021913415285,
+      "veb_construction_plus_operations_cpu_ratio": 2.170881022092095
+    },
+    {
+      "case": "U300001_n16_clustered",
+      "bitmap_operations_cpu_ratio": 1.8368121442125238,
+      "bitmap_construction_plus_operations_cpu_ratio": 1.8372030237580994,
+      "veb_operations_cpu_ratio": 2.027997886951928,
+      "veb_construction_plus_operations_cpu_ratio": 2.024159663865546
+    },
+    {
+      "case": "U300001_n128_uniform",
+      "bitmap_operations_cpu_ratio": 1.9238117984236924,
+      "bitmap_construction_plus_operations_cpu_ratio": 1.928066037735849,
+      "veb_operations_cpu_ratio": 1.9040114613180517,
+      "veb_construction_plus_operations_cpu_ratio": 1.9123468426013195
+    },
+    {
+      "case": "U300001_n128_clustered",
+      "bitmap_operations_cpu_ratio": 1.2873089056054356,
+      "bitmap_construction_plus_operations_cpu_ratio": 1.2921267402784447,
+      "veb_operations_cpu_ratio": 1.8315125030347172,
+      "veb_construction_plus_operations_cpu_ratio": 1.8408818595734484
+    },
+    {
+      "case": "U300001_n512_uniform",
+      "bitmap_operations_cpu_ratio": 1.4394456718216508,
+      "bitmap_construction_plus_operations_cpu_ratio": 1.452142030104207,
+      "veb_operations_cpu_ratio": 1.6858389527965094,
+      "veb_construction_plus_operations_cpu_ratio": 1.7248475609756098
+    },
+    {
+      "case": "U300001_n512_clustered",
+      "bitmap_operations_cpu_ratio": 1.0155408205553254,
+      "bitmap_construction_plus_operations_cpu_ratio": 1.0295672606226747,
+      "veb_operations_cpu_ratio": 1.4556176288019864,
+      "veb_construction_plus_operations_cpu_ratio": 1.4760484993043133
+    }
+  ],
+  "synthetic_microbenchmark_only": true
+}

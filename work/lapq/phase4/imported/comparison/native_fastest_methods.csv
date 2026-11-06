@@ -1,0 +1,8 @@
+workload,Mac_fastest,Windows_WSL2_fastest,fastest_changed
+brussels,direct_heap,direct_heap,False
+ny,direct_heap,direct_heap,False
+grid_8100,direct_heap,direct_heap,False
+geometric_8192,direct_heap,direct_heap,False
+sparse_8192,direct_heap,direct_heap,False
+sparse_2048__scale4,direct_heap,direct_heap,False
+sparse_2048__lopsided,direct_heap,direct_heap,False

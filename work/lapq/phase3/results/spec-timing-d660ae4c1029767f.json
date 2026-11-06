@@ -1,0 +1,21 @@
+{
+  "case_id": "geometric_8192_train1_near",
+  "workload": "geometric_8192",
+  "training_graph": "geometric_8192",
+  "train_source": 1518,
+  "query_source": 4711,
+  "query_group": "near",
+  "train_index": 1,
+  "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+  "reference_distance_sha256": "5a00c5969eba65d43a1a897178898c25697f879dff3172cba330dbed3929d7c0",
+  "repeat": 0,
+  "queue_seed": 6054276,
+  "method_order": [
+    "occ_list_map",
+    "occ_list_retain",
+    "occ_linked_map",
+    "grouped_compact_reference",
+    "occ_linked_retain"
+  ],
+  "block_id": "geometric_8192_train1_near:0"
+}

@@ -1,0 +1,6 @@
+{
+  "windows_before_utc": "2026-11-06T19:18:17.6188067Z",
+  "linux_utc": "2026-11-06T19:17:32,717229049+00:00",
+  "windows_after_utc": "2026-11-06T19:18:20.4549077Z",
+  "note": "Record observed cross-environment calendar clocks. Stage sequence is enforced by synchronous calls; algorithm wall and CPU durations use monotonic/process timers."
+}

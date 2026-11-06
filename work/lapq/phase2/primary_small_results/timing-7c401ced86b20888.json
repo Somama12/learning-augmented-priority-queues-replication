@@ -1,0 +1,822 @@
+{
+  "kind": "timing_block",
+  "spec": {
+    "stage": "primary",
+    "workload": "sparse_8192",
+    "training_workload": "sparse_8192",
+    "train_source": 5657,
+    "query_source": 4298,
+    "query_group": "far",
+    "train_index": 1,
+    "query_index": 1,
+    "repeat": 4,
+    "queue_seed": 79,
+    "method_order_seed": 41200,
+    "methods": [
+      "heapq_native",
+      "heapq_shared",
+      "sortedlist_native",
+      "skiplist",
+      "original_exact",
+      "original_linear",
+      "original_hist64",
+      "bitmap_exact",
+      "bitmap_linear",
+      "bitmap_hist64",
+      "veb_linear",
+      "compact_linear",
+      "radix"
+    ],
+    "block_id": "7c401ced86b20888"
+  },
+  "environment": {
+    "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+    "executable": "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+    "platform": "macOS-14.3.1-arm64-arm-64bit-Mach-O",
+    "machine": "arm64",
+    "processor": "arm",
+    "cpu_count_visible": 8,
+    "load_average": [
+      3.83935546875,
+      3.87060546875,
+      3.85302734375
+    ],
+    "process_id": 32426,
+    "gc_enabled_before_block": true,
+    "hardware_verified_by_coordinator": {
+      "model": "MacBookAir10,1",
+      "chip": "Apple M1",
+      "physical_memory_bytes": 8589934592,
+      "total_cores": 8,
+      "performance_cores": 4,
+      "efficiency_cores": 4,
+      "macos_version": "14.3.1"
+    },
+    "host_control": "CPU affinity/frequency not controlled; no dedicated or isolated-machine claim. Other research agents idle during timing, but OS/user activity can remain.",
+    "argv": [
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/benchmark.py",
+      "worker",
+      "--kind",
+      "timing",
+      "--spec",
+      "work/lapq/phase2/primary_small_results/spec-timing-7c401ced86b20888.json"
+    ],
+    "timer": "perf_counter_ns and process_time_ns",
+    "source_sha256": {
+      "phase2/benchmark.py": "b472b3da901290d768039a12e0a72badeb431b377326411c776c06734de68621",
+      "phase2/queues.py": "a7f0d49301b604cfd0ce8d4ebb95a23cc41a8486e6a7f651183a29db352754a5",
+      "phase2/indexes.py": "a28c957dea436d6e8a64f3fbf4f7575d2c7fc218f6ac3426b659ae06b7697be2",
+      "phase2/veb_index.py": "e9441ff59f83c352643dec8a1206df08120a759bd179832109fd35b1f6e31dfb",
+      "phase2/radix_queue.py": "c072f3b2560bdd04fd826502aa7d43498e2e74817c4bec726495029a480125f2",
+      "phase2/workloads.py": "53298dfa998440370fa88d5f4520eecf20968153234cac2d99292e436ee6ada2",
+      "data_loading.py": "0b68f44cc1b1c7c4fd3d7f8a3c16285dcbee7114a1ac4ac5c1cc1a5c81970da5",
+      "upstream/skiplist.py": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c"
+    }
+  },
+  "training": {
+    "collecting_dijkstra": {
+      "wall_ns": 14134375,
+      "cpu_ns": 14069000
+    },
+    "key_count": 12935,
+    "advisor_builds": {
+      "exact": {
+        "wall_ns": 1774167,
+        "cpu_ns": 1748000,
+        "name": "exact",
+        "rank_limit_inclusive": 12935,
+        "retained_payload_slots": 12935,
+        "scalar_fields": [
+          "n",
+          "low",
+          "high",
+          "width"
+        ],
+        "payload_is_not_total_queue_memory": true
+      },
+      "hist64": {
+        "wall_ns": 2575500,
+        "cpu_ns": 2564000,
+        "name": "hist64",
+        "rank_limit_inclusive": 12935,
+        "retained_payload_slots": 65,
+        "scalar_fields": [
+          "n",
+          "low",
+          "high",
+          "width"
+        ],
+        "payload_is_not_total_queue_memory": true
+      },
+      "linear": {
+        "wall_ns": 289709,
+        "cpu_ns": 291000,
+        "name": "linear",
+        "rank_limit_inclusive": 12935,
+        "retained_payload_slots": 0,
+        "scalar_fields": [
+          "n",
+          "low",
+          "high",
+          "width"
+        ],
+        "payload_is_not_total_queue_memory": true
+      }
+    },
+    "distance_digest": "c6519a38a3f34e90418748941473ab3091b6908d0b383364b346bbd881c14dd6",
+    "cost_scope": "One collecting native-heap run plus each advisor build; validation/load excluded."
+  },
+  "method_order": [
+    "bitmap_exact",
+    "sortedlist_native",
+    "original_exact",
+    "compact_linear",
+    "heapq_shared",
+    "bitmap_linear",
+    "veb_linear",
+    "radix",
+    "heapq_native",
+    "bitmap_hist64",
+    "original_linear",
+    "skiplist",
+    "original_hist64"
+  ],
+  "records": [
+    {
+      "method": "bitmap_exact",
+      "status": "ok",
+      "untimed_validation": {
+        "insertions": 12911,
+        "extractions": 12911,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 1729,
+          "max_skiplist_height": 18,
+          "clean_comparisons": null,
+          "kind": "bitmap_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 12936,
+            "mode": "dense",
+            "size": 0,
+            "levels": 3,
+            "word_capacity_by_level": [
+              203,
+              4,
+              1
+            ],
+            "nonzero_words_by_level": [
+              0,
+              0,
+              0
+            ],
+            "python_bytes_estimate": 2994,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          }
+        }
+      },
+      "query_wall_ns": 143550000,
+      "query_cpu_ns": 141104000,
+      "wall_cpu_ratio": 1.0173347318290056,
+      "distance_digest": "37777cf930a486c70da98d1deb52bae7e495c162fcfd64f91f28a18c95e2f634",
+      "post_query_queue_stats": {
+        "reachable_nodes": 0,
+        "level0_cycle": false,
+        "retained_node_map_entries": 1729,
+        "max_skiplist_height": 18,
+        "clean_comparisons": null,
+        "kind": "bitmap_online",
+        "live_entries": 0,
+        "live_rank_groups": 0,
+        "live_value_groups": 0,
+        "rank_bucket_items": 0,
+        "value_rank_items": 0,
+        "index": {
+          "index_kind": "hierarchical_64bit_bitmap",
+          "universe": 12936,
+          "mode": "dense",
+          "size": 0,
+          "levels": 3,
+          "word_capacity_by_level": [
+            203,
+            4,
+            1
+          ],
+          "nonzero_words_by_level": [
+            0,
+            0,
+            0
+          ],
+          "python_bytes_estimate": 2986,
+          "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+          "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+        }
+      },
+      "forced_cleanup_wall_ns": 7577125,
+      "forced_cleanup_cpu_ns": 7567000
+    },
+    {
+      "method": "sortedlist_native",
+      "status": "ok",
+      "untimed_validation": {
+        "fully_drained": true
+      },
+      "query_wall_ns": 39051625,
+      "query_cpu_ns": 38619000,
+      "wall_cpu_ratio": 1.0112023874258784,
+      "distance_digest": "37777cf930a486c70da98d1deb52bae7e495c162fcfd64f91f28a18c95e2f634",
+      "forced_cleanup_wall_ns": 4732417,
+      "forced_cleanup_cpu_ns": 4670000
+    },
+    {
+      "method": "original_exact",
+      "status": "ok",
+      "untimed_validation": {
+        "insertions": 12911,
+        "extractions": 12911,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 1729,
+          "max_skiplist_height": 18,
+          "clean_comparisons": null,
+          "kind": "original_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "SortedList",
+            "size_excluding_sentinel": 0
+          }
+        }
+      },
+      "query_wall_ns": 139187666,
+      "query_cpu_ns": 138886000,
+      "wall_cpu_ratio": 1.0021720403784398,
+      "distance_digest": "37777cf930a486c70da98d1deb52bae7e495c162fcfd64f91f28a18c95e2f634",
+      "post_query_queue_stats": {
+        "reachable_nodes": 0,
+        "level0_cycle": false,
+        "retained_node_map_entries": 1729,
+        "max_skiplist_height": 18,
+        "clean_comparisons": null,
+        "kind": "original_online",
+        "live_entries": 0,
+        "live_rank_groups": 0,
+        "live_value_groups": 0,
+        "rank_bucket_items": 0,
+        "value_rank_items": 0,
+        "index": {
+          "index_kind": "SortedList",
+          "size_excluding_sentinel": 0
+        }
+      },
+      "forced_cleanup_wall_ns": 6710208,
+      "forced_cleanup_cpu_ns": 6681000
+    },
+    {
+      "method": "compact_linear",
+      "status": "ok",
+      "untimed_validation": {
+        "insertions": 12911,
+        "extractions": 12911,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 0,
+          "max_skiplist_height": 10,
+          "clean_comparisons": null,
+          "kind": "guided_bitmap_compact",
+          "live_entries": 0,
+          "live_distinct_keys": 0,
+          "live_rank_groups": 0,
+          "rank_bucket_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 12936,
+            "mode": "dense",
+            "size": 0,
+            "levels": 3,
+            "word_capacity_by_level": [
+              203,
+              4,
+              1
+            ],
+            "nonzero_words_by_level": [
+              0,
+              0,
+              0
+            ],
+            "python_bytes_estimate": 2978,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          },
+          "caveat": "grouped duplicates and different hint/height history; not index-only ablation"
+        }
+      },
+      "query_wall_ns": 36503792,
+      "query_cpu_ns": 36382000,
+      "wall_cpu_ratio": 1.003347589467319,
+      "distance_digest": "37777cf930a486c70da98d1deb52bae7e495c162fcfd64f91f28a18c95e2f634",
+      "post_query_queue_stats": {
+        "reachable_nodes": 0,
+        "level0_cycle": false,
+        "retained_node_map_entries": 0,
+        "max_skiplist_height": 10,
+        "clean_comparisons": null,
+        "kind": "guided_bitmap_compact",
+        "live_entries": 0,
+        "live_distinct_keys": 0,
+        "live_rank_groups": 0,
+        "rank_bucket_items": 0,
+        "index": {
+          "index_kind": "hierarchical_64bit_bitmap",
+          "universe": 12936,
+          "mode": "dense",
+          "size": 0,
+          "levels": 3,
+          "word_capacity_by_level": [
+            203,
+            4,
+            1
+          ],
+          "nonzero_words_by_level": [
+            0,
+            0,
+            0
+          ],
+          "python_bytes_estimate": 2970,
+          "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+          "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+        },
+        "caveat": "grouped duplicates and different hint/height history; not index-only ablation"
+      },
+      "forced_cleanup_wall_ns": 4608167,
+      "forced_cleanup_cpu_ns": 4605000
+    },
+    {
+      "method": "heapq_shared",
+      "status": "ok",
+      "untimed_validation": {
+        "insertions": 12911,
+        "extractions": 12911,
+        "fully_drained": true,
+        "stats": {
+          "kind": "heapq",
+          "live_entries": 0,
+          "container_shallow_bytes": 56
+        }
+      },
+      "query_wall_ns": 16375292,
+      "query_cpu_ns": 15833000,
+      "wall_cpu_ratio": 1.0342507421208869,
+      "distance_digest": "37777cf930a486c70da98d1deb52bae7e495c162fcfd64f91f28a18c95e2f634",
+      "post_query_queue_stats": {
+        "kind": "heapq",
+        "live_entries": 0,
+        "container_shallow_bytes": 56
+      },
+      "forced_cleanup_wall_ns": 4736292,
+      "forced_cleanup_cpu_ns": 4584000
+    },
+    {
+      "method": "bitmap_linear",
+      "status": "ok",
+      "untimed_validation": {
+        "insertions": 12911,
+        "extractions": 12911,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 1729,
+          "max_skiplist_height": 18,
+          "clean_comparisons": null,
+          "kind": "bitmap_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 12936,
+            "mode": "dense",
+            "size": 0,
+            "levels": 3,
+            "word_capacity_by_level": [
+              203,
+              4,
+              1
+            ],
+            "nonzero_words_by_level": [
+              0,
+              0,
+              0
+            ],
+            "python_bytes_estimate": 2962,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          }
+        }
+      },
+      "query_wall_ns": 130695667,
+      "query_cpu_ns": 128766000,
+      "wall_cpu_ratio": 1.0149858425360732,
+      "distance_digest": "37777cf930a486c70da98d1deb52bae7e495c162fcfd64f91f28a18c95e2f634",
+      "post_query_queue_stats": {
+        "reachable_nodes": 0,
+        "level0_cycle": false,
+        "retained_node_map_entries": 1729,
+        "max_skiplist_height": 18,
+        "clean_comparisons": null,
+        "kind": "bitmap_online",
+        "live_entries": 0,
+        "live_rank_groups": 0,
+        "live_value_groups": 0,
+        "rank_bucket_items": 0,
+        "value_rank_items": 0,
+        "index": {
+          "index_kind": "hierarchical_64bit_bitmap",
+          "universe": 12936,
+          "mode": "dense",
+          "size": 0,
+          "levels": 3,
+          "word_capacity_by_level": [
+            203,
+            4,
+            1
+          ],
+          "nonzero_words_by_level": [
+            0,
+            0,
+            0
+          ],
+          "python_bytes_estimate": 2954,
+          "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+          "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+        }
+      },
+      "forced_cleanup_wall_ns": 6772000,
+      "forced_cleanup_cpu_ns": 6712000
+    },
+    {
+      "method": "veb_linear",
+      "status": "ok",
+      "untimed_validation": {
+        "insertions": 12911,
+        "extractions": 12911,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 1729,
+          "max_skiplist_height": 18,
+          "clean_comparisons": null,
+          "kind": "veb_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "kind": "sparse_veb",
+            "size": 0,
+            "universe": 12936,
+            "nodes": 1,
+            "cluster_entries": 0,
+            "leaf_words": 0,
+            "depth": 1
+          }
+        }
+      },
+      "query_wall_ns": 136808500,
+      "query_cpu_ns": 135933000,
+      "wall_cpu_ratio": 1.0064406729785997,
+      "distance_digest": "37777cf930a486c70da98d1deb52bae7e495c162fcfd64f91f28a18c95e2f634",
+      "post_query_queue_stats": {
+        "reachable_nodes": 0,
+        "level0_cycle": false,
+        "retained_node_map_entries": 1729,
+        "max_skiplist_height": 18,
+        "clean_comparisons": null,
+        "kind": "veb_online",
+        "live_entries": 0,
+        "live_rank_groups": 0,
+        "live_value_groups": 0,
+        "rank_bucket_items": 0,
+        "value_rank_items": 0,
+        "index": {
+          "kind": "sparse_veb",
+          "size": 0,
+          "universe": 12936,
+          "nodes": 1,
+          "cluster_entries": 0,
+          "leaf_words": 0,
+          "depth": 1
+        }
+      },
+      "forced_cleanup_wall_ns": 6752000,
+      "forced_cleanup_cpu_ns": 6709000
+    },
+    {
+      "method": "radix",
+      "status": "ok",
+      "untimed_validation": {
+        "insertions": 12911,
+        "extractions": 12911,
+        "fully_drained": true,
+        "stats": {
+          "kind": "radix",
+          "live_entries": 0,
+          "bucket_count": 13,
+          "retained_bucket_entries": 0,
+          "last_extracted": 2897
+        }
+      },
+      "query_wall_ns": 26100834,
+      "query_cpu_ns": 25923000,
+      "wall_cpu_ratio": 1.0068600856382364,
+      "distance_digest": "37777cf930a486c70da98d1deb52bae7e495c162fcfd64f91f28a18c95e2f634",
+      "post_query_queue_stats": {
+        "kind": "radix",
+        "live_entries": 0,
+        "bucket_count": 13,
+        "retained_bucket_entries": 0,
+        "last_extracted": 2897
+      },
+      "forced_cleanup_wall_ns": 4568083,
+      "forced_cleanup_cpu_ns": 4559000
+    },
+    {
+      "method": "heapq_native",
+      "status": "ok",
+      "untimed_validation": {
+        "fully_drained": true
+      },
+      "query_wall_ns": 14208583,
+      "query_cpu_ns": 14157000,
+      "wall_cpu_ratio": 1.0036436391890937,
+      "distance_digest": "37777cf930a486c70da98d1deb52bae7e495c162fcfd64f91f28a18c95e2f634",
+      "forced_cleanup_wall_ns": 4450916,
+      "forced_cleanup_cpu_ns": 4439000
+    },
+    {
+      "method": "bitmap_hist64",
+      "status": "ok",
+      "untimed_validation": {
+        "insertions": 12911,
+        "extractions": 12911,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 1729,
+          "max_skiplist_height": 18,
+          "clean_comparisons": null,
+          "kind": "bitmap_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "hierarchical_64bit_bitmap",
+            "universe": 12936,
+            "mode": "dense",
+            "size": 0,
+            "levels": 3,
+            "word_capacity_by_level": [
+              203,
+              4,
+              1
+            ],
+            "nonzero_words_by_level": [
+              0,
+              0,
+              0
+            ],
+            "python_bytes_estimate": 2946,
+            "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+            "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+          }
+        }
+      },
+      "query_wall_ns": 132411167,
+      "query_cpu_ns": 131947000,
+      "wall_cpu_ratio": 1.0035178291283622,
+      "distance_digest": "37777cf930a486c70da98d1deb52bae7e495c162fcfd64f91f28a18c95e2f634",
+      "post_query_queue_stats": {
+        "reachable_nodes": 0,
+        "level0_cycle": false,
+        "retained_node_map_entries": 1729,
+        "max_skiplist_height": 18,
+        "clean_comparisons": null,
+        "kind": "bitmap_online",
+        "live_entries": 0,
+        "live_rank_groups": 0,
+        "live_value_groups": 0,
+        "rank_bucket_items": 0,
+        "value_rank_items": 0,
+        "index": {
+          "index_kind": "hierarchical_64bit_bitmap",
+          "universe": 12936,
+          "mode": "dense",
+          "size": 0,
+          "levels": 3,
+          "word_capacity_by_level": [
+            203,
+            4,
+            1
+          ],
+          "nonzero_words_by_level": [
+            0,
+            0,
+            0
+          ],
+          "python_bytes_estimate": 2938,
+          "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+          "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+        }
+      },
+      "forced_cleanup_wall_ns": 7414417,
+      "forced_cleanup_cpu_ns": 7408000
+    },
+    {
+      "method": "original_linear",
+      "status": "ok",
+      "untimed_validation": {
+        "insertions": 12911,
+        "extractions": 12911,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 1729,
+          "max_skiplist_height": 18,
+          "clean_comparisons": null,
+          "kind": "original_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "SortedList",
+            "size_excluding_sentinel": 0
+          }
+        }
+      },
+      "query_wall_ns": 130444625,
+      "query_cpu_ns": 129645000,
+      "wall_cpu_ratio": 1.0061678043889082,
+      "distance_digest": "37777cf930a486c70da98d1deb52bae7e495c162fcfd64f91f28a18c95e2f634",
+      "post_query_queue_stats": {
+        "reachable_nodes": 0,
+        "level0_cycle": false,
+        "retained_node_map_entries": 1729,
+        "max_skiplist_height": 18,
+        "clean_comparisons": null,
+        "kind": "original_online",
+        "live_entries": 0,
+        "live_rank_groups": 0,
+        "live_value_groups": 0,
+        "rank_bucket_items": 0,
+        "value_rank_items": 0,
+        "index": {
+          "index_kind": "SortedList",
+          "size_excluding_sentinel": 0
+        }
+      },
+      "forced_cleanup_wall_ns": 6796916,
+      "forced_cleanup_cpu_ns": 6742000
+    },
+    {
+      "method": "skiplist",
+      "status": "ok",
+      "untimed_validation": {
+        "insertions": 12911,
+        "extractions": 12911,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 1729,
+          "max_skiplist_height": 18,
+          "clean_comparisons": null,
+          "kind": "skiplist",
+          "live_entries": 0
+        }
+      },
+      "query_wall_ns": 198435000,
+      "query_cpu_ns": 197483000,
+      "wall_cpu_ratio": 1.0048206681081409,
+      "distance_digest": "37777cf930a486c70da98d1deb52bae7e495c162fcfd64f91f28a18c95e2f634",
+      "post_query_queue_stats": {
+        "reachable_nodes": 0,
+        "level0_cycle": false,
+        "retained_node_map_entries": 1729,
+        "max_skiplist_height": 18,
+        "clean_comparisons": null,
+        "kind": "skiplist",
+        "live_entries": 0
+      },
+      "forced_cleanup_wall_ns": 6942542,
+      "forced_cleanup_cpu_ns": 6832000
+    },
+    {
+      "method": "original_hist64",
+      "status": "ok",
+      "untimed_validation": {
+        "insertions": 12911,
+        "extractions": 12911,
+        "fully_drained": true,
+        "stats": {
+          "reachable_nodes": 0,
+          "level0_cycle": false,
+          "retained_node_map_entries": 1729,
+          "max_skiplist_height": 18,
+          "clean_comparisons": null,
+          "kind": "original_online",
+          "live_entries": 0,
+          "live_rank_groups": 0,
+          "live_value_groups": 0,
+          "rank_bucket_items": 0,
+          "value_rank_items": 0,
+          "index": {
+            "index_kind": "SortedList",
+            "size_excluding_sentinel": 0
+          }
+        }
+      },
+      "query_wall_ns": 133302334,
+      "query_cpu_ns": 131700000,
+      "wall_cpu_ratio": 1.0121665451784359,
+      "distance_digest": "37777cf930a486c70da98d1deb52bae7e495c162fcfd64f91f28a18c95e2f634",
+      "post_query_queue_stats": {
+        "reachable_nodes": 0,
+        "level0_cycle": false,
+        "retained_node_map_entries": 1729,
+        "max_skiplist_height": 18,
+        "clean_comparisons": null,
+        "kind": "original_online",
+        "live_entries": 0,
+        "live_rank_groups": 0,
+        "live_value_groups": 0,
+        "rank_bucket_items": 0,
+        "value_rank_items": 0,
+        "index": {
+          "index_kind": "SortedList",
+          "size_excluding_sentinel": 0
+        }
+      },
+      "forced_cleanup_wall_ns": 7749875,
+      "forced_cleanup_cpu_ns": 7678000
+    }
+  ],
+  "protocol": "Fresh process per paired block; one verified method-specific warmup; query includes queue creation and advisor calls; NumPy seed reset outside timer; GC disabled during query; forced cleanup separately reported, not a deployment-GC estimate. All required advisors remain resident across this paired block.",
+  "launcher_argv": [
+    "/Library/Frameworks/Python.framework/Versions/3.13/bin/python3",
+    "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/benchmark.py",
+    "worker",
+    "--kind",
+    "timing",
+    "--spec",
+    "work/lapq/phase2/primary_small_results/spec-timing-7c401ced86b20888.json"
+  ],
+  "launcher_elapsed_seconds": 3.15937876701355,
+  "source_sha256_at_launch": {
+    "phase2/benchmark.py": "b472b3da901290d768039a12e0a72badeb431b377326411c776c06734de68621",
+    "phase2/queues.py": "a7f0d49301b604cfd0ce8d4ebb95a23cc41a8486e6a7f651183a29db352754a5",
+    "phase2/indexes.py": "a28c957dea436d6e8a64f3fbf4f7575d2c7fc218f6ac3426b659ae06b7697be2",
+    "phase2/veb_index.py": "e9441ff59f83c352643dec8a1206df08120a759bd179832109fd35b1f6e31dfb",
+    "phase2/radix_queue.py": "c072f3b2560bdd04fd826502aa7d43498e2e74817c4bec726495029a480125f2",
+    "phase2/workloads.py": "53298dfa998440370fa88d5f4520eecf20968153234cac2d99292e436ee6ada2",
+    "data_loading.py": "0b68f44cc1b1c7c4fd3d7f8a3c16285dcbee7114a1ac4ac5c1cc1a5c81970da5",
+    "upstream/skiplist.py": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c"
+  },
+  "source_sha256_at_completion": {
+    "phase2/benchmark.py": "b472b3da901290d768039a12e0a72badeb431b377326411c776c06734de68621",
+    "phase2/queues.py": "a7f0d49301b604cfd0ce8d4ebb95a23cc41a8486e6a7f651183a29db352754a5",
+    "phase2/indexes.py": "a28c957dea436d6e8a64f3fbf4f7575d2c7fc218f6ac3426b659ae06b7697be2",
+    "phase2/veb_index.py": "e9441ff59f83c352643dec8a1206df08120a759bd179832109fd35b1f6e31dfb",
+    "phase2/radix_queue.py": "c072f3b2560bdd04fd826502aa7d43498e2e74817c4bec726495029a480125f2",
+    "phase2/workloads.py": "53298dfa998440370fa88d5f4520eecf20968153234cac2d99292e436ee6ada2",
+    "data_loading.py": "0b68f44cc1b1c7c4fd3d7f8a3c16285dcbee7114a1ac4ac5c1cc1a5c81970da5",
+    "upstream/skiplist.py": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c"
+  },
+  "code_unchanged_during_worker": true,
+  "plan_sha256": "f208c31a554fdf499ff8392704848cf2b92ebc06be97d60a39093dce86a86e56"
+}

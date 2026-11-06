@@ -1,0 +1,21 @@
+{
+  "case_id": "grid_8100_train1_far",
+  "workload": "grid_8100",
+  "training_graph": "grid_8100",
+  "train_source": 3196,
+  "query_source": 85,
+  "query_group": "far",
+  "train_index": 1,
+  "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+  "reference_distance_sha256": "567d45ffbfe544c13184902dc9e716766f9b3fcef1b9af57f957783160ff1bf2",
+  "repeat": 3,
+  "queue_seed": 1477508658,
+  "method_order": [
+    "occ_list_map",
+    "occ_linked_retain",
+    "occ_list_retain",
+    "occ_linked_map",
+    "grouped_compact_reference"
+  ],
+  "block_id": "grid_8100_train1_far:3"
+}

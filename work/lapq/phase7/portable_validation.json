@@ -1,0 +1,213 @@
+{
+  "status": "passed",
+  "scope": "Predetermined quick subset only, not a second full replication or a runtime measurement.",
+  "commands": [
+    [
+      "python3",
+      "work/lapq/phase7/reproduce_replication.py",
+      "--mode",
+      "quick",
+      "--destination",
+      "work/lapq/phase7/portable_validation/quick"
+    ]
+  ],
+  "planned_conditions": 6,
+  "method_runs": 18,
+  "primary_records_examined": 3780,
+  "all_input_metadata_hashes_and_comparison_outputs_identical": true,
+  "condition_checks": [
+    {
+      "condition_id": "class_n1000_p20_r00",
+      "input_hashes_exact_match": true,
+      "metadata_exact_match": true,
+      "all_three_engine_outputs_exact_match": true,
+      "hashes": {
+        "predictions": "3f967534f54eb9c01465b2310085ace65c6f6fbea8281e444dfae025cd674f84",
+        "order": "ee163bbe86c83a12c6754946ab7a024e29808ef54b38ba442a70418ec838c20b",
+        "heights": "a070ea79d5b39931438ab7a1b7babfbcab4468c277f99321d999ce5e353025fb"
+      },
+      "comparisons": [
+        {
+          "model": "offline",
+          "clean_comparisons": 999,
+          "dirty_comparisons": 0
+        },
+        {
+          "model": "online",
+          "clean_comparisons": 1991,
+          "dirty_comparisons": 0
+        },
+        {
+          "model": "dirty",
+          "clean_comparisons": 1986,
+          "dirty_comparisons": 17983
+        }
+      ]
+    },
+    {
+      "condition_id": "class_n10000_p20_r00",
+      "input_hashes_exact_match": true,
+      "metadata_exact_match": true,
+      "all_three_engine_outputs_exact_match": true,
+      "hashes": {
+        "predictions": "6634b8d11a45ba0660484aa15c6c4c5f57f39d25b38a06d8df81b9c965ee0aa7",
+        "order": "cc28e567b065afda282e88214483ecd053dfa5bb56951bef9ed0aec1aed26351",
+        "heights": "b453d7b5330f96e0ac057534941ce8fd9adabd99628d52b0aaf2df4c84dd427d"
+      },
+      "comparisons": [
+        {
+          "model": "offline",
+          "clean_comparisons": 9999,
+          "dirty_comparisons": 0
+        },
+        {
+          "model": "online",
+          "clean_comparisons": 19982,
+          "dirty_comparisons": 0
+        },
+        {
+          "model": "dirty",
+          "clean_comparisons": 19985,
+          "dirty_comparisons": 224738
+        }
+      ]
+    },
+    {
+      "condition_id": "class_n100000_p20_r00",
+      "input_hashes_exact_match": true,
+      "metadata_exact_match": true,
+      "all_three_engine_outputs_exact_match": true,
+      "hashes": {
+        "predictions": "4056a46d8b1f2870d28ecd2d6934af4a5afb96b9d45892980dd39281d061b304",
+        "order": "1bbbca722d26754183510d792f9127a43f83d4b13025fb52102a3639ddd3e079",
+        "heights": "fa159e833d9e22d9498b6093f48e3ab7735b3ab3a238aa8c5d9cad31f763db60"
+      },
+      "comparisons": [
+        {
+          "model": "offline",
+          "clean_comparisons": 99999,
+          "dirty_comparisons": 0
+        },
+        {
+          "model": "online",
+          "clean_comparisons": 199970,
+          "dirty_comparisons": 0
+        },
+        {
+          "model": "dirty",
+          "clean_comparisons": 199967,
+          "dirty_comparisons": 2837979
+        }
+      ]
+    },
+    {
+      "condition_id": "decay_n1000_p20_r00",
+      "input_hashes_exact_match": true,
+      "metadata_exact_match": true,
+      "all_three_engine_outputs_exact_match": true,
+      "hashes": {
+        "predictions": "607499aa9020d930d6ed5b2e9dfa6476d8da371f43993b5fb612987cae8100c5",
+        "order": "3a256c6c8e36d908aca24e25a04e0c4e163447cbd9430b248eeef28a4fc01629",
+        "heights": "6f004d0b280400c4d25c177cfd74192f1ff7f439f30f586902ebbc935e6ad5c6"
+      },
+      "comparisons": [
+        {
+          "model": "offline",
+          "clean_comparisons": 5686,
+          "dirty_comparisons": 0
+        },
+        {
+          "model": "online",
+          "clean_comparisons": 7440,
+          "dirty_comparisons": 0
+        },
+        {
+          "model": "dirty",
+          "clean_comparisons": 6938,
+          "dirty_comparisons": 14983
+        }
+      ]
+    },
+    {
+      "condition_id": "decay_n10000_p20_r00",
+      "input_hashes_exact_match": true,
+      "metadata_exact_match": true,
+      "all_three_engine_outputs_exact_match": true,
+      "hashes": {
+        "predictions": "bcae1e16377d5a1bc70513b1741b40932efeca5b78d7995bab261076371f90df",
+        "order": "4d1ec8ed525da97fdb24202a5ea420dcd0ab6aed76bd3ce7b1cd780fcd9f1b42",
+        "heights": "0c5a83d7d5c06f22cd655c5af48954f24db0391da25c51cebb82d3997be41d7b"
+      },
+      "comparisons": [
+        {
+          "model": "offline",
+          "clean_comparisons": 76833,
+          "dirty_comparisons": 0
+        },
+        {
+          "model": "online",
+          "clean_comparisons": 91104,
+          "dirty_comparisons": 0
+        },
+        {
+          "model": "dirty",
+          "clean_comparisons": 84713,
+          "dirty_comparisons": 221121
+        }
+      ]
+    },
+    {
+      "condition_id": "decay_n100000_p20_r00",
+      "input_hashes_exact_match": true,
+      "metadata_exact_match": true,
+      "all_three_engine_outputs_exact_match": true,
+      "hashes": {
+        "predictions": "5ba07e7b405aa2fd48afb97b2e2596e4412c33db656c1ff622de3626f3571036",
+        "order": "0f09db518f73f5242cf22f3a9c82db7334eab51cde28f828ccbd710a59355366",
+        "heights": "0c6ea7686a38d8b31169e459d9dea044799793d9d78f018a32767454421da409"
+      },
+      "comparisons": [
+        {
+          "model": "offline",
+          "clean_comparisons": 967411,
+          "dirty_comparisons": 0
+        },
+        {
+          "model": "online",
+          "clean_comparisons": 1096822,
+          "dirty_comparisons": 0
+        },
+        {
+          "model": "dirty",
+          "clean_comparisons": 1026962,
+          "dirty_comparisons": 2952196
+        }
+      ]
+    }
+  ],
+  "frozen_protocol_sha256": "5cf250d30ed87935eb0055137ff2a4305faa5858ed16e86c8adba026b3145a15",
+  "portable_runner_sha256": "f43225db572789bee97935d26f9ea4cea12ad574e0acf19c10972f9026696742",
+  "new_compiler_version": "Apple clang version 15.0.0 (clang-1500.1.0.2.5)\nTarget: arm64-apple-darwin23.3.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "new_binary_sha256": "5305c5b4a3421cc37c05031a2848197e46495d2171bbe21d90cc71240be0c526",
+  "historical_binary_pin_exemption": {
+    "path": "build/replication",
+    "original_sha256": "5305c5b4a3421cc37c05031a2848197e46495d2171bbe21d90cc71240be0c526",
+    "reason": "Platform-specific original binary; rebuild verified source and record the new executable instead."
+  },
+  "evidence_sha256": {
+    "portable_validation/quick/build/build.json": "ee4cf4fca3ab4b619f8ca92dba75e6f1a677fc50efbdd54fe7ac5d5fab61a9d2",
+    "portable_validation/quick/build/compile.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "portable_validation/quick/build/compile.stdout.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "portable_validation/quick/build/compiler-version.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "portable_validation/quick/build/compiler-version.stdout.txt": "32d767db2dedcb23fa5ff17393e052ea0c50df99065a142c4c011705988ff380",
+    "portable_validation/quick/conditions.jsonl": "79f4636384bc83a5744f504efc8f1ce301555439b59cb26b956844bd794468c6",
+    "portable_validation/quick/driver.stdout.txt": "d3a117bd0bc9b178a364b52450d045ae6ff92be4ac78093890921fad2afc8687",
+    "portable_validation/quick/engine-stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "portable_validation/quick/execution.json": "2d30112250643d5538f3bf87ef6cfa51cbd4f4d843a74e8cf7c302dd97c39dea",
+    "portable_validation/quick/raw-engine-output.jsonl": "b1d88aaeb70eff6ddb913403c0c253c0a380b4ac3da54d49b035ca26019fdb5e",
+    "portable_validation/quick/run-manifest.json": "9ae445ccf07d1653f5f4ac5e437de80c28d2083a2c3699e7f04eb7b7101e1cc0"
+  },
+  "primary_conditions_sha256": "18010bfe2d5abe57175c80dab1aa6559d38efd2126d26acfa4b75b6b0fbea12f",
+  "no_full_rerun": true,
+  "frozen_files_modified": false
+}

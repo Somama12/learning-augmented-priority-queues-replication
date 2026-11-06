@@ -1,0 +1,46 @@
+{
+  "status": "passed",
+  "source_artifact_sha256": "e05b822ddf67dcf259838c3807481777d90f3cc31802d6ec544ece26675aaffc",
+  "native_both_host_timings": 6888,
+  "retention_matched_cells": 30,
+  "scientific_outputs_exactly_reproduced": true,
+  "benchmarks_executed": false,
+  "imported_executables_run": false,
+  "external_inputs_only_in_disposable_copy": true,
+  "snapshot": "outputs/learned-priority-queue-audit-repository",
+  "builder_sha256": "fec87e0307677c0ed8a0cee1a7b1a5ebce6cbbdea016d838c25c11bbd0559c7c",
+  "post_analysis_documentation_updates": [
+    "Pinned reportlab4.4.9 supplied by coordinator from actual PDF environment; removed premature CFF release date. No analyzed source/raw bytes changed."
+  ],
+  "checks": [
+    {
+      "command": [
+        "verify_snapshot.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "work/lapq/phase4/native_cross_host_analysis.py",
+        "--output",
+        "reanalysis/native.json",
+        "--tables",
+        "reanalysis/tables"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "fetch_inputs.py",
+        "--check-only"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "work/lapq/phase4/retention_cross_host_analysis.py"
+      ],
+      "returncode": 0
+    }
+  ]
+}

@@ -1,0 +1,4 @@
+grid_8100_train0_far occ_list_retain ok
+grid_8100_train0_far occ_list_map ok
+grid_8100_train0_far occ_linked_retain ok
+grid_8100_train0_far occ_linked_map ok

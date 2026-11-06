@@ -1,0 +1,29 @@
+{
+  "stage": "primary",
+  "workload": "grid_8100",
+  "training_workload": "grid_8100",
+  "train_source": 2868,
+  "query_source": 2154,
+  "query_group": "near",
+  "train_index": 2,
+  "query_index": 0,
+  "repeat": 2,
+  "queue_seed": 43,
+  "method_order_seed": 41143,
+  "methods": [
+    "heapq_native",
+    "heapq_shared",
+    "sortedlist_native",
+    "skiplist",
+    "original_exact",
+    "original_linear",
+    "original_hist64",
+    "bitmap_exact",
+    "bitmap_linear",
+    "bitmap_hist64",
+    "veb_linear",
+    "compact_linear",
+    "radix"
+  ],
+  "block_id": "f37206c9fde60148"
+}

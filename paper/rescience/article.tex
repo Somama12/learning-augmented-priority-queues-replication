@@ -1,0 +1,12 @@
+\documentclass{rescience}
+\usepackage{array,booktabs,graphicx}
+\setlength{\emergencystretch}{2em}
+\rhead{} % A staged draft has not been submitted or placed under review.
+\begin{document}
+\input{header.tex}
+\section*{Abstract}
+Learning-augmented priority queues can reduce expensive true-key comparisons, but replicating that result requires precise advice, tie and counting conventions. We partially replicate the sorting experiments of Benomar and Coester with an independently authored C++ implementation checked against their released Python code. Across 11,340 runs, the class-quality and decay responses agree with the original findings; median pointwise relative errors are below 0.16\% on every curve at the two main-paper sizes. Comparison benefits remain conditional on advice quality, with the uninformative class endpoint exceeding the analytic heap reference. A separate extension identifies historical node-map ownership: last-occurrence cleanup reduces drained-queue traced memory from 35.18 to 0.024 MiB, with the ownership effect repeated on a second host. Native graph controls favor a direct heap on all seven tested workloads on both hosts. The artifact separates replicated comparison-count evidence from these additional memory and runtime measurements and provides reproducible input generation, raw counts and verification procedures.
+\input{content.tex}
+\setlength\bibitemsep{0pt}
+\printbibliography
+\end{document}

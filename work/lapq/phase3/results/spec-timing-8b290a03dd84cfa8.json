@@ -1,0 +1,21 @@
+{
+  "case_id": "sparse_2048__lopsided_train1_near",
+  "workload": "sparse_2048__lopsided",
+  "training_graph": "sparse_2048",
+  "train_source": 1792,
+  "query_source": 1772,
+  "query_group": "near",
+  "train_index": 1,
+  "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+  "reference_distance_sha256": "30fa48cb6af2479495bd34a02b57a8c24c2054444e2f697c7c850896b9ae4afc",
+  "repeat": 0,
+  "queue_seed": 2382103259,
+  "method_order": [
+    "occ_list_retain",
+    "grouped_compact_reference",
+    "occ_linked_retain",
+    "occ_linked_map",
+    "occ_list_map"
+  ],
+  "block_id": "sparse_2048__lopsided_train1_near:0"
+}

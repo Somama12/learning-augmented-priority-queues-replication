@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "started_utc": "2026-11-06T21:39:29.901488+00:00",
+  "freeze_sha256": "5cf250d30ed87935eb0055137ff2a4305faa5858ed16e86c8adba026b3145a15",
+  "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "platform": "macOS-14.3.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "scope": "Sorting comparison counts only; elapsed progress is not a benchmark result.",
+  "resumed_completed_conditions": 0,
+  "planned_conditions": 3780,
+  "planned_method_runs": 11340,
+  "completed_conditions": 3780,
+  "failures": [],
+  "last_progress_utc": "2026-11-06T21:50:14.570797+00:00",
+  "ended_utc": "2026-11-06T21:50:14.576828+00:00",
+  "condition_file_sha256": "18010bfe2d5abe57175c80dab1aa6559d38efd2126d26acfa4b75b6b0fbea12f",
+  "raw_engine_file_sha256": "e041327061e65852529ce600230ad540a0db44ed1caa22b303651fad1d8e6970"
+}

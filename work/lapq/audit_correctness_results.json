@@ -1,0 +1,1035 @@
+{
+  "upstream_commit": "3915cc261e87949b2b0aa724673c2227492d1b08",
+  "source_sha256": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c",
+  "numpy_version": "2.2.4",
+  "loading": "AST-load original Node, damagedCompare, SkipList, OnlineSL; no method modifications",
+  "oracle": "stdlib heapq plus sorted level-0 reachable multiset and emptiness checks",
+  "height_sampling": "original np.random.geometric(0.5), reseeded for every trace",
+  "total_executed_traces_including_minimization": 1767,
+  "random_modes": {
+    "distinct_zero": {
+      "traces": 125,
+      "counts": {
+        "passed": 125
+      },
+      "traces_observing_dangling_hint": 0
+    },
+    "distinct_collisions": {
+      "traces": 125,
+      "counts": {
+        "passed": 125
+      },
+      "traces_observing_dangling_hint": 0
+    },
+    "duplicate_zero": {
+      "traces": 125,
+      "counts": {
+        "passed": 125
+      },
+      "traces_observing_dangling_hint": 117
+    },
+    "duplicate_constant": {
+      "traces": 125,
+      "counts": {
+        "passed": 125
+      },
+      "traces_observing_dangling_hint": 117
+    },
+    "duplicate_collisions": {
+      "traces": 125,
+      "counts": {
+        "passed": 110,
+        "failure": 15
+      },
+      "traces_observing_dangling_hint": 121
+    },
+    "monotone_collisions": {
+      "traces": 125,
+      "counts": {
+        "failure": 22,
+        "passed": 103
+      },
+      "traces_observing_dangling_hint": 124
+    },
+    "duplicate_cdf_identity": {
+      "traces": 125,
+      "counts": {
+        "passed": 125
+      },
+      "traces_observing_dangling_hint": 125
+    },
+    "duplicate_cdf_bins": {
+      "traces": 125,
+      "counts": {
+        "passed": 125
+      },
+      "traces_observing_dangling_hint": 124
+    },
+    "monotone_cdf_identity": {
+      "traces": 125,
+      "counts": {
+        "passed": 125
+      },
+      "traces_observing_dangling_hint": 125
+    },
+    "monotone_cdf_bins": {
+      "traces": 125,
+      "counts": {
+        "passed": 125
+      },
+      "traces_observing_dangling_hint": 125
+    },
+    "duplicate_cdf_training": {
+      "traces": 125,
+      "counts": {
+        "passed": 125
+      },
+      "traces_observing_dangling_hint": 124
+    },
+    "monotone_cdf_training": {
+      "traces": 125,
+      "counts": {
+        "passed": 125
+      },
+      "traces_observing_dangling_hint": 125
+    },
+    "duplicate_fixed_nonmonotone": {
+      "traces": 125,
+      "counts": {
+        "passed": 116,
+        "failure": 9
+      },
+      "traces_observing_dangling_hint": 125
+    }
+  },
+  "directed_case": {
+    "height_seed": 0,
+    "trace": [
+      [
+        "insert",
+        0,
+        0
+      ],
+      [
+        "insert",
+        0,
+        0
+      ],
+      [
+        "extract"
+      ],
+      [
+        "insert",
+        0,
+        1
+      ],
+      [
+        "extract"
+      ],
+      [
+        "extract"
+      ]
+    ],
+    "result": {
+      "status": "failure",
+      "kind": "queue_multiset_mismatch",
+      "operation_index": 3,
+      "actual": [
+        0
+      ],
+      "expected": [
+        0,
+        0
+      ],
+      "first_dangling": {
+        "operation_index": 2,
+        "values": [
+          0
+        ]
+      },
+      "steps": [
+        {
+          "operation": [
+            "insert",
+            0,
+            0
+          ],
+          "observed": null,
+          "expected": null,
+          "reachable_values": [
+            0
+          ],
+          "expected_values": [
+            0
+          ],
+          "clean_comparisons": 0,
+          "dangling_hint_values": []
+        },
+        {
+          "operation": [
+            "insert",
+            0,
+            0
+          ],
+          "observed": null,
+          "expected": null,
+          "reachable_values": [
+            0,
+            0
+          ],
+          "expected_values": [
+            0,
+            0
+          ],
+          "clean_comparisons": 1,
+          "dangling_hint_values": []
+        },
+        {
+          "operation": [
+            "extract"
+          ],
+          "observed": 0,
+          "expected": 0,
+          "reachable_values": [
+            0
+          ],
+          "expected_values": [
+            0
+          ],
+          "clean_comparisons": 1,
+          "dangling_hint_values": [
+            0
+          ]
+        },
+        {
+          "operation": [
+            "insert",
+            0,
+            1
+          ],
+          "observed": null,
+          "expected": null,
+          "reachable_values": [
+            0
+          ],
+          "expected_values": [
+            0,
+            0
+          ],
+          "clean_comparisons": 3,
+          "dangling_hint_values": [
+            0
+          ]
+        }
+      ]
+    }
+  },
+  "directed_public_interface_continuation": {
+    "status": "failure",
+    "kind": "wrong_empty_status",
+    "operation_index": 5,
+    "steps": [
+      {
+        "operation": [
+          "insert",
+          0,
+          0
+        ],
+        "observed": null,
+        "expected": null,
+        "reachable_values": [
+          0
+        ],
+        "expected_values": [
+          0
+        ],
+        "clean_comparisons": 0,
+        "dangling_hint_values": []
+      },
+      {
+        "operation": [
+          "insert",
+          0,
+          0
+        ],
+        "observed": null,
+        "expected": null,
+        "reachable_values": [
+          0,
+          0
+        ],
+        "expected_values": [
+          0,
+          0
+        ],
+        "clean_comparisons": 1,
+        "dangling_hint_values": []
+      },
+      {
+        "operation": [
+          "extract"
+        ],
+        "observed": 0,
+        "expected": 0,
+        "reachable_values": [
+          0
+        ],
+        "expected_values": [
+          0
+        ],
+        "clean_comparisons": 1,
+        "dangling_hint_values": [
+          0
+        ]
+      },
+      {
+        "operation": [
+          "insert",
+          0,
+          1
+        ],
+        "observed": null,
+        "expected": null,
+        "reachable_values": [
+          0
+        ],
+        "expected_values": [
+          0,
+          0
+        ],
+        "clean_comparisons": 3,
+        "dangling_hint_values": [
+          0
+        ]
+      },
+      {
+        "operation": [
+          "extract"
+        ],
+        "observed": 0,
+        "expected": 0,
+        "reachable_values": [
+          0
+        ],
+        "expected_values": [
+          0
+        ],
+        "clean_comparisons": 3,
+        "dangling_hint_values": [
+          0
+        ]
+      },
+      {
+        "operation": [
+          "extract"
+        ],
+        "observed": 0,
+        "expected": 0,
+        "reachable_values": [
+          0
+        ],
+        "expected_values": [],
+        "clean_comparisons": 3,
+        "dangling_hint_values": []
+      }
+    ]
+  },
+  "minimized_failures": {
+    "directed_duplicate": {
+      "height_seed": 0,
+      "trace": [
+        [
+          "insert",
+          0,
+          0
+        ],
+        [
+          "insert",
+          0,
+          0
+        ],
+        [
+          "extract"
+        ],
+        [
+          "insert",
+          0,
+          1
+        ]
+      ],
+      "result": {
+        "status": "failure",
+        "kind": "queue_multiset_mismatch",
+        "operation_index": 3,
+        "actual": [
+          0
+        ],
+        "expected": [
+          0,
+          0
+        ],
+        "first_dangling": {
+          "operation_index": 2,
+          "values": [
+            0
+          ]
+        },
+        "steps": [
+          {
+            "operation": [
+              "insert",
+              0,
+              0
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              0
+            ],
+            "expected_values": [
+              0
+            ],
+            "clean_comparisons": 0,
+            "dangling_hint_values": []
+          },
+          {
+            "operation": [
+              "insert",
+              0,
+              0
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              0,
+              0
+            ],
+            "expected_values": [
+              0,
+              0
+            ],
+            "clean_comparisons": 1,
+            "dangling_hint_values": []
+          },
+          {
+            "operation": [
+              "extract"
+            ],
+            "observed": 0,
+            "expected": 0,
+            "reachable_values": [
+              0
+            ],
+            "expected_values": [
+              0
+            ],
+            "clean_comparisons": 1,
+            "dangling_hint_values": [
+              0
+            ]
+          },
+          {
+            "operation": [
+              "insert",
+              0,
+              1
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              0
+            ],
+            "expected_values": [
+              0,
+              0
+            ],
+            "clean_comparisons": 3,
+            "dangling_hint_values": [
+              0
+            ]
+          }
+        ]
+      }
+    },
+    "duplicate_collisions": {
+      "height_seed": 3,
+      "trace": [
+        [
+          "insert",
+          4,
+          1
+        ],
+        [
+          "insert",
+          4,
+          0
+        ],
+        [
+          "insert",
+          0,
+          2
+        ],
+        [
+          "extract"
+        ],
+        [
+          "extract"
+        ],
+        [
+          "insert",
+          4,
+          3
+        ]
+      ],
+      "result": {
+        "status": "failure",
+        "kind": "queue_multiset_mismatch",
+        "operation_index": 5,
+        "actual": [
+          4
+        ],
+        "expected": [
+          4,
+          4
+        ],
+        "first_dangling": {
+          "operation_index": 4,
+          "values": [
+            4
+          ]
+        },
+        "steps": [
+          {
+            "operation": [
+              "insert",
+              4,
+              1
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              4
+            ],
+            "expected_values": [
+              4
+            ],
+            "clean_comparisons": 0,
+            "dangling_hint_values": []
+          },
+          {
+            "operation": [
+              "insert",
+              4,
+              0
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              4,
+              4
+            ],
+            "expected_values": [
+              4,
+              4
+            ],
+            "clean_comparisons": 1,
+            "dangling_hint_values": []
+          },
+          {
+            "operation": [
+              "insert",
+              0,
+              2
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              0,
+              4,
+              4
+            ],
+            "expected_values": [
+              0,
+              4,
+              4
+            ],
+            "clean_comparisons": 3,
+            "dangling_hint_values": []
+          },
+          {
+            "operation": [
+              "extract"
+            ],
+            "observed": 0,
+            "expected": 0,
+            "reachable_values": [
+              4,
+              4
+            ],
+            "expected_values": [
+              4,
+              4
+            ],
+            "clean_comparisons": 3,
+            "dangling_hint_values": []
+          },
+          {
+            "operation": [
+              "extract"
+            ],
+            "observed": 4,
+            "expected": 4,
+            "reachable_values": [
+              4
+            ],
+            "expected_values": [
+              4
+            ],
+            "clean_comparisons": 3,
+            "dangling_hint_values": [
+              4
+            ]
+          },
+          {
+            "operation": [
+              "insert",
+              4,
+              3
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              4
+            ],
+            "expected_values": [
+              4,
+              4
+            ],
+            "clean_comparisons": 5,
+            "dangling_hint_values": [
+              4
+            ]
+          }
+        ]
+      }
+    },
+    "monotone_collisions": {
+      "height_seed": 0,
+      "trace": [
+        [
+          "insert",
+          3,
+          2
+        ],
+        [
+          "insert",
+          3,
+          0
+        ],
+        [
+          "extract"
+        ],
+        [
+          "insert",
+          3,
+          3
+        ]
+      ],
+      "result": {
+        "status": "failure",
+        "kind": "queue_multiset_mismatch",
+        "operation_index": 3,
+        "actual": [
+          3
+        ],
+        "expected": [
+          3,
+          3
+        ],
+        "first_dangling": {
+          "operation_index": 2,
+          "values": [
+            3
+          ]
+        },
+        "steps": [
+          {
+            "operation": [
+              "insert",
+              3,
+              2
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              3
+            ],
+            "expected_values": [
+              3
+            ],
+            "clean_comparisons": 0,
+            "dangling_hint_values": []
+          },
+          {
+            "operation": [
+              "insert",
+              3,
+              0
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              3,
+              3
+            ],
+            "expected_values": [
+              3,
+              3
+            ],
+            "clean_comparisons": 1,
+            "dangling_hint_values": []
+          },
+          {
+            "operation": [
+              "extract"
+            ],
+            "observed": 3,
+            "expected": 3,
+            "reachable_values": [
+              3
+            ],
+            "expected_values": [
+              3
+            ],
+            "clean_comparisons": 1,
+            "dangling_hint_values": [
+              3
+            ]
+          },
+          {
+            "operation": [
+              "insert",
+              3,
+              3
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              3
+            ],
+            "expected_values": [
+              3,
+              3
+            ],
+            "clean_comparisons": 3,
+            "dangling_hint_values": [
+              3
+            ]
+          }
+        ]
+      }
+    },
+    "duplicate_fixed_nonmonotone": {
+      "height_seed": 2,
+      "trace": [
+        [
+          "insert",
+          2,
+          0
+        ],
+        [
+          "insert",
+          0,
+          3
+        ],
+        [
+          "extract"
+        ],
+        [
+          "insert",
+          2,
+          0
+        ],
+        [
+          "extract"
+        ],
+        [
+          "insert",
+          0,
+          3
+        ],
+        [
+          "insert",
+          1,
+          1
+        ]
+      ],
+      "result": {
+        "status": "failure",
+        "kind": "queue_multiset_mismatch",
+        "operation_index": 6,
+        "actual": [
+          1,
+          0,
+          2
+        ],
+        "expected": [
+          0,
+          1,
+          2
+        ],
+        "first_dangling": {
+          "operation_index": 4,
+          "values": [
+            2
+          ]
+        },
+        "steps": [
+          {
+            "operation": [
+              "insert",
+              2,
+              0
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              2
+            ],
+            "expected_values": [
+              2
+            ],
+            "clean_comparisons": 0,
+            "dangling_hint_values": []
+          },
+          {
+            "operation": [
+              "insert",
+              0,
+              3
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              0,
+              2
+            ],
+            "expected_values": [
+              0,
+              2
+            ],
+            "clean_comparisons": 1,
+            "dangling_hint_values": []
+          },
+          {
+            "operation": [
+              "extract"
+            ],
+            "observed": 0,
+            "expected": 0,
+            "reachable_values": [
+              2
+            ],
+            "expected_values": [
+              2
+            ],
+            "clean_comparisons": 1,
+            "dangling_hint_values": []
+          },
+          {
+            "operation": [
+              "insert",
+              2,
+              0
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              2,
+              2
+            ],
+            "expected_values": [
+              2,
+              2
+            ],
+            "clean_comparisons": 2,
+            "dangling_hint_values": []
+          },
+          {
+            "operation": [
+              "extract"
+            ],
+            "observed": 2,
+            "expected": 2,
+            "reachable_values": [
+              2
+            ],
+            "expected_values": [
+              2
+            ],
+            "clean_comparisons": 2,
+            "dangling_hint_values": [
+              2
+            ]
+          },
+          {
+            "operation": [
+              "insert",
+              0,
+              3
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              0,
+              2
+            ],
+            "expected_values": [
+              0,
+              2
+            ],
+            "clean_comparisons": 4,
+            "dangling_hint_values": [
+              2
+            ]
+          },
+          {
+            "operation": [
+              "insert",
+              1,
+              1
+            ],
+            "observed": null,
+            "expected": null,
+            "reachable_values": [
+              1,
+              0,
+              2
+            ],
+            "expected_values": [
+              0,
+              1,
+              2
+            ],
+            "clean_comparisons": 6,
+            "dangling_hint_values": [
+              2
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "strict_rank_remapping": {
+    "transformation": "r -> 7*r+11",
+    "checks": [
+      {
+        "seed": 0,
+        "mode": "distinct_collisions",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 1,
+        "mode": "distinct_collisions",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 2,
+        "mode": "distinct_collisions",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 3,
+        "mode": "distinct_collisions",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 4,
+        "mode": "distinct_collisions",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 5,
+        "mode": "distinct_collisions",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 6,
+        "mode": "distinct_collisions",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 7,
+        "mode": "distinct_collisions",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 8,
+        "mode": "distinct_collisions",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 9,
+        "mode": "distinct_collisions",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 10,
+        "mode": "monotone_cdf_training",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 11,
+        "mode": "monotone_cdf_training",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 12,
+        "mode": "monotone_cdf_training",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 13,
+        "mode": "monotone_cdf_training",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 14,
+        "mode": "monotone_cdf_training",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 15,
+        "mode": "monotone_cdf_training",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 16,
+        "mode": "monotone_cdf_training",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 17,
+        "mode": "monotone_cdf_training",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 18,
+        "mode": "monotone_cdf_training",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      },
+      {
+        "seed": 19,
+        "mode": "monotone_cdf_training",
+        "same_per_operation_clean_comparisons_and_queue_state": true
+      }
+    ]
+  },
+  "scope": [
+    "Duplicate-key cases violate the paper's distinct-key premise and do not refute that theorem.",
+    "The original Dijkstra wrapper uses numeric distances as keys and can generate duplicate distances.",
+    "A multiset mismatch is a queue-state failure; the directed continuation demonstrates missing extraction.",
+    "Greedy minimization establishes local deletion minimality at the recorded height seed, not global minimality.",
+    "Passing finite random tests is not a correctness proof."
+  ]
+}

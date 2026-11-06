@@ -1,0 +1,25 @@
+{
+  "status": "passed",
+  "scope": "Post-freeze provenance audit of the already frozen published reference values; no measurement or reference value changed.",
+  "aggregate_sources": [
+    {
+      "file": "data_class_1000.json",
+      "sha256": "a9c51839cc5cd6960b8a5ffba2fc9c74a2b6f393315d058ebe8c71b0fee645ad",
+      "git_blob_sha1": "18ddca06d8ab5f402f091ef3d1ef387127f74f72",
+      "url": "https://github.com/Ziyad-Benomar/Learning-augmented-priority-queues/blob/3915cc261e87949b2b0aa724673c2227492d1b08/data/data_class_1000.json",
+      "kind": "Released aggregate means/std; not raw trials",
+      "original_trial_count_known": false
+    },
+    {
+      "file": "data_decay_1000.json",
+      "sha256": "2c4216c772cde9d040b8f71921d4e74269146f52d9fabb670e97a1782431ab5b",
+      "git_blob_sha1": "7067c14767b2b12d224903ba5478d6d873a8e2f5",
+      "url": "https://github.com/Ziyad-Benomar/Learning-augmented-priority-queues/blob/3915cc261e87949b2b0aa724673c2227492d1b08/data/data_decay_1000.json",
+      "kind": "Released aggregate means/std; not raw trials",
+      "original_trial_count_known": false
+    }
+  ],
+  "reference_sha256": "b45ffe3420cd83aa7dad537e047efae93425fa9a1a9eb581d73586ee5d097913",
+  "code_commit": "3915cc261e87949b2b0aa724673c2227492d1b08",
+  "pdf_source_url": "https://papers.neurips.cc/paper_files/paper/2024/file/e08e1a60c006ac3f0c9f953626b0f0c8-Paper-Conference.pdf"
+}

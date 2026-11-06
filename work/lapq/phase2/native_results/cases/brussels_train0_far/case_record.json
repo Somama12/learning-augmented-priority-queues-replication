@@ -1,0 +1,212 @@
+{
+  "case": {
+    "case_id": "brussels_train0_far",
+    "expected_reachable": 2238,
+    "expected_typed_distance_sha256": "ea3e4d06cf709e16cf2af46367c5d5378ec46fde4694a118b02996db5081f799",
+    "methods": [
+      "std_multiset",
+      "guided_bitmap_linear",
+      "guided_bitmap_hist64",
+      "grouped_heap",
+      "plain_skiplist",
+      "direct_heap",
+      "guided_set_exact",
+      "guided_set_linear",
+      "guided_set_hist64",
+      "guided_bitmap_exact",
+      "std_heap"
+    ],
+    "oracle_binary64_bytes": 18144,
+    "oracle_binary64_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/oracles/brussels_train0_far.f64le",
+    "oracle_binary64_sha256": "b26d4d7b363ee590fd64fe59436faeda75a363c42d0a3c602a0cbd702767ba92",
+    "paired_seed": 1550612217,
+    "query_source": 1480,
+    "repetitions": 7,
+    "source_group": "far",
+    "target_adjacency_sha256": "8673702900ebc00043b27b33029a4f70ece793c09741839448293d8df8352170",
+    "train_index": 0,
+    "train_source": 1984,
+    "training_graph": "brussels",
+    "workload": "brussels"
+  },
+  "distance_verification": {
+    "actual_bytes": 18144,
+    "actual_sha256": "b26d4d7b363ee590fd64fe59436faeda75a363c42d0a3c602a0cbd702767ba92",
+    "expected_bytes": 18144,
+    "expected_sha256": "b26d4d7b363ee590fd64fe59436faeda75a363c42d0a3c602a0cbd702767ba92",
+    "passed": true
+  },
+  "errors": [],
+  "execution_ordinal": 39,
+  "native_metadata": {
+    "all_exact_distances_passed": true,
+    "all_queues_drained": true,
+    "arcs": 4378,
+    "build_times": {
+      "exact": {
+        "cpu_seconds": 7.1e-05,
+        "wall_seconds": 7.1042e-05
+      },
+      "hist64": {
+        "cpu_seconds": 1.4e-05,
+        "wall_seconds": 1.3875e-05
+      },
+      "linear": {
+        "cpu_seconds": 8e-06,
+        "wall_seconds": 7.542e-06
+      }
+    },
+    "clock_ticks_per_second": 1000000,
+    "common_lifo_work_counts_passed": true,
+    "compiler": "Apple LLVM 15.0.0 (clang-1500.1.0.2.5)",
+    "diagnostics_outside_timing": {
+      "direct_heap": {
+        "extractions": 2369,
+        "insertions": 2369,
+        "peak_entries": 38,
+        "peak_queue_nodes": 38
+      },
+      "grouped_heap": {
+        "extractions": 2369,
+        "insertions": 2369,
+        "peak_entries": 38,
+        "peak_queue_nodes": 38
+      },
+      "guided_bitmap_exact": {
+        "extractions": 2369,
+        "insertions": 2369,
+        "peak_entries": 38,
+        "peak_queue_nodes": 38
+      },
+      "guided_bitmap_hist64": {
+        "extractions": 2369,
+        "insertions": 2369,
+        "peak_entries": 38,
+        "peak_queue_nodes": 38
+      },
+      "guided_bitmap_linear": {
+        "extractions": 2369,
+        "insertions": 2369,
+        "peak_entries": 38,
+        "peak_queue_nodes": 38
+      },
+      "guided_set_exact": {
+        "extractions": 2369,
+        "insertions": 2369,
+        "peak_entries": 38,
+        "peak_queue_nodes": 38
+      },
+      "guided_set_hist64": {
+        "extractions": 2369,
+        "insertions": 2369,
+        "peak_entries": 38,
+        "peak_queue_nodes": 38
+      },
+      "guided_set_linear": {
+        "extractions": 2369,
+        "insertions": 2369,
+        "peak_entries": 38,
+        "peak_queue_nodes": 38
+      },
+      "plain_skiplist": {
+        "extractions": 2369,
+        "insertions": 2369,
+        "peak_entries": 38,
+        "peak_queue_nodes": 38
+      },
+      "std_heap": {
+        "extractions": 2369,
+        "insertions": 2369,
+        "peak_entries": 38,
+        "peak_queue_nodes": 38
+      },
+      "std_multiset": {
+        "extractions": 2369,
+        "insertions": 2369,
+        "peak_entries": 38,
+        "peak_queue_nodes": 38
+      }
+    },
+    "distance_encoding": "little-endian IEEE754 binary64, vertex order",
+    "distance_fnv1a64": "9762600261480715874",
+    "distances_output": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/brussels_train0_far/distances.f64le",
+    "graph": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/inputs/brussels.txt",
+    "implementation": "independent engineered C++17; grouped live-only skiplist",
+    "methods": [
+      "std_multiset",
+      "guided_bitmap_linear",
+      "guided_bitmap_hist64",
+      "grouped_heap",
+      "plain_skiplist",
+      "direct_heap",
+      "guided_set_exact",
+      "guided_set_linear",
+      "guided_set_hist64",
+      "guided_bitmap_exact",
+      "std_heap"
+    ],
+    "notes": [
+      "Times include queue construction/destruction, distance allocation, predictor queries and all queue work. All methods except direct_heap include the common pending map. Model training/build and correctness checks are excluded.",
+      "Observed counters are compiled out of timed runs. Queue multiplicities and size fields remain algorithm state.",
+      "One observed warmup per method, shuffled; each repetition has matched height seed and shuffled method order.",
+      "Same scalar distance to LIFO vertex map for queue ablations. direct_heap embeds vertices with reverse insertion sequence, preserving LIFO ties without the map. Reference oracle uses an independent vertex-tie pair heap.",
+      "Guided set and bitmap share the same grouped skiplist and live-only rank buckets; plain skiplist shares grouping without rank buckets.",
+      "Grouping alters original artifact hint history and random-height consumption. This is an engineered crosscheck, not exact artifact reproduction.",
+      "Dense hierarchical bitmap is O(log_64 U), not vEB. Grouped heap controls duplicate compression. No RSS or total memory claim.",
+      "All three fitted advisors and training samples remain resident across methods; this is not isolated per-method memory measurement.",
+      "Training/build are measured once per invocation; baseline queues require neither. Shared-host timings are diagnostic."
+    ],
+    "radix_eligible": false,
+    "rank_universe": 2376,
+    "repeat": 7,
+    "schema_version": 1,
+    "seed": 1550612217,
+    "source": 1480,
+    "timed_records": 77,
+    "train": 1984,
+    "train_arcs": 4378,
+    "train_graph": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/inputs/brussels.txt",
+    "train_vertices": 2268,
+    "training_cpu_seconds": 0.000555,
+    "training_keys": 2375,
+    "training_timing_note": "one common std_heap run, collecting every successful noninitial insertion; excludes graph read and oracle",
+    "training_wall_seconds": 0.000555041,
+    "vertices": 2268
+  },
+  "passed": true,
+  "process": {
+    "argv": [
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/build/native_benchmark",
+      "--graph",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/inputs/brussels.txt",
+      "--train-graph",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/inputs/brussels.txt",
+      "--train",
+      "1984",
+      "--source",
+      "1480",
+      "--repeat",
+      "7",
+      "--seed",
+      "1550612217",
+      "--methods",
+      "std_multiset,guided_bitmap_linear,guided_bitmap_hist64,grouped_heap,plain_skiplist,direct_heap,guided_set_exact,guided_set_linear,guided_set_hist64,guided_bitmap_exact,std_heap",
+      "--output",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/brussels_train0_far/native",
+      "--distances-output",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/brussels_train0_far/distances.f64le"
+    ],
+    "cwd": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2",
+    "exception": null,
+    "finished_at_utc": "2026-11-06T06:42:32.996848+00:00",
+    "lifecycle_scope": "whole subprocess including IO; not algorithm-only runtime",
+    "process_lifecycle_wall_seconds": 0.1461807500163559,
+    "returncode": 0,
+    "started_at_utc": "2026-11-06T06:42:32.850675+00:00",
+    "stderr_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/brussels_train0_far/process.stderr.txt",
+    "stdout_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/brussels_train0_far/process.stdout.txt"
+  },
+  "timing_csv": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/brussels_train0_far/native.csv",
+  "timing_csv_sha256": "c1e2539096176392755a67b2bc1bcebe7ce833677d2c23202a242b66524226e5",
+  "timing_rows": 77
+}

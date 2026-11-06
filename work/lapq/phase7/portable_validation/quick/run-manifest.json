@@ -1,0 +1,249 @@
+{
+  "status": "prepared",
+  "created_utc": "2026-11-06T21:51:36.264476+00:00",
+  "mode": "quick",
+  "is_full_frozen_plan": false,
+  "quick_selection_rule": {
+    "parameter_index": 20,
+    "repetition": 0,
+    "regimes": [
+      "class",
+      "decay"
+    ],
+    "sizes": [
+      1000,
+      10000,
+      100000
+    ]
+  },
+  "planned_conditions": 6,
+  "planned_method_runs": 18,
+  "models": [
+    "offline",
+    "online",
+    "dirty"
+  ],
+  "conditions": [
+    {
+      "condition_id": "class_n1000_p20_r00",
+      "regime": "class",
+      "n": 1000,
+      "parameter_index": 20,
+      "repetition": 0,
+      "parameter_name": "c",
+      "parameter": 1000,
+      "maximum_parameter": 1000,
+      "effective_parameter": 1000,
+      "generation_algorithm": "class_interval_uniform_v1",
+      "master_seed": 2026110607,
+      "seeds": {
+        "advice": [
+          1622035766,
+          1980800949,
+          2476687068,
+          102280489
+        ],
+        "order": [
+          2680191133,
+          2004534308,
+          1627144783,
+          919610132
+        ],
+        "heights": [
+          1844373705,
+          1672245405,
+          3753915955,
+          2820237865
+        ]
+      }
+    },
+    {
+      "condition_id": "class_n10000_p20_r00",
+      "regime": "class",
+      "n": 10000,
+      "parameter_index": 20,
+      "repetition": 0,
+      "parameter_name": "c",
+      "parameter": 10000,
+      "maximum_parameter": 10000,
+      "effective_parameter": 10000,
+      "generation_algorithm": "class_interval_uniform_v1",
+      "master_seed": 2026110607,
+      "seeds": {
+        "advice": [
+          1635075009,
+          3732363539,
+          939159275,
+          3025667293
+        ],
+        "order": [
+          3691537353,
+          827487315,
+          3405620491,
+          3317431475
+        ],
+        "heights": [
+          2140783496,
+          2840625781,
+          3815011667,
+          1559398264
+        ]
+      }
+    },
+    {
+      "condition_id": "class_n100000_p20_r00",
+      "regime": "class",
+      "n": 100000,
+      "parameter_index": 20,
+      "repetition": 0,
+      "parameter_name": "c",
+      "parameter": 100000,
+      "maximum_parameter": 100000,
+      "effective_parameter": 100000,
+      "generation_algorithm": "class_interval_uniform_v1",
+      "master_seed": 2026110607,
+      "seeds": {
+        "advice": [
+          1372316742,
+          2637974054,
+          3420884940,
+          1188616136
+        ],
+        "order": [
+          1277984603,
+          1518024474,
+          2557300685,
+          3763764103
+        ],
+        "heights": [
+          3231386798,
+          4235913217,
+          2625495393,
+          425926926
+        ]
+      }
+    },
+    {
+      "condition_id": "decay_n1000_p20_r00",
+      "regime": "decay",
+      "n": 1000,
+      "parameter_index": 20,
+      "repetition": 0,
+      "parameter_name": "timesteps",
+      "parameter": 31622,
+      "maximum_parameter": 31622,
+      "effective_parameter": 31622,
+      "generation_algorithm": "decay_signed_multinomial_v1",
+      "master_seed": 2026110607,
+      "seeds": {
+        "advice": [
+          2578599371,
+          2189681616,
+          3278563796,
+          3409302253
+        ],
+        "order": [
+          3593169321,
+          156683469,
+          3341880875,
+          3749799350
+        ],
+        "heights": [
+          3818116532,
+          2433510155,
+          1912207162,
+          480020583
+        ]
+      }
+    },
+    {
+      "condition_id": "decay_n10000_p20_r00",
+      "regime": "decay",
+      "n": 10000,
+      "parameter_index": 20,
+      "repetition": 0,
+      "parameter_name": "timesteps",
+      "parameter": 1000000,
+      "maximum_parameter": 1000000,
+      "effective_parameter": 1000000,
+      "generation_algorithm": "decay_signed_multinomial_v1",
+      "master_seed": 2026110607,
+      "seeds": {
+        "advice": [
+          1650388580,
+          1413551431,
+          2327388518,
+          1742610553
+        ],
+        "order": [
+          1466106217,
+          2668502453,
+          3835445211,
+          1073343507
+        ],
+        "heights": [
+          52855300,
+          3493599044,
+          4182809463,
+          3171896894
+        ]
+      }
+    },
+    {
+      "condition_id": "decay_n100000_p20_r00",
+      "regime": "decay",
+      "n": 100000,
+      "parameter_index": 20,
+      "repetition": 0,
+      "parameter_name": "timesteps",
+      "parameter": 31622776,
+      "maximum_parameter": 31622776,
+      "effective_parameter": 31622776,
+      "generation_algorithm": "decay_signed_multinomial_v1",
+      "master_seed": 2026110607,
+      "seeds": {
+        "advice": [
+          3625086536,
+          3641584845,
+          2098349147,
+          42590001
+        ],
+        "order": [
+          3335588756,
+          1709913854,
+          4275000465,
+          46826260
+        ],
+        "heights": [
+          2992956580,
+          2349806105,
+          4287587474,
+          247204375
+        ]
+      }
+    }
+  ],
+  "original_freeze_sha256": "5cf250d30ed87935eb0055137ff2a4305faa5858ed16e86c8adba026b3145a15",
+  "verified_source_sha256": {
+    "replication.cpp": "5ef65dfa3cf90a90490fe731949a0faafbbf77a6b777c3ccd6c34cf61ba54ef9",
+    "input_generation.py": "440aeae4d4eaf5ea34f320609f6e0eb15fa8c9bad732ca72d36108851b267345",
+    "experiment_plan.py": "cf531b33284713c2f288a8bab97c464bd793ef9eb363de5f5d48bd3c7dea8139",
+    "experiment_plan.json": "0533c79a6003ee73f5d4c6a20f575901df1732e6d24988fd5856e4af553a95b1",
+    "run_replication.py": "30825f69d2e4e6b8290c50a63cbd91b2872644879f96354bcff6370a57c53979",
+    "engine_preflight.py": "4de4f83c3f38572a6c34e1af9f7a0a8bfd0f3f61dd7baf619ae9fa714ea64f1f",
+    "engine_preflight.json": "58ce45d951b379dc955b79bd838c852d754d9aacb868f161469270ac57546aed",
+    "input_generation_validation.json": "2f09dc990874aaef4010b9466ae2145a7435fb4c0bb6bd4268ab6b2e4690d461",
+    "extract_reference_curves.py": "a3822fafe238ff845ffaaa773f08a504fb2c6c3cef60ceef49b44223378fa8d7",
+    "published_reference_curves.json": "b45ffe3420cd83aa7dad537e047efae93425fa9a1a9eb581d73586ee5d097913"
+  },
+  "historical_binary_exemption": {
+    "path": "build/replication",
+    "original_sha256": "5305c5b4a3421cc37c05031a2848197e46495d2171bbe21d90cc71240be0c526",
+    "reason": "Platform-specific original binary; rebuild verified source and record the new executable instead."
+  },
+  "portable_runner_sha256": "f43225db572789bee97935d26f9ea4cea12ad574e0acf19c10972f9026696742",
+  "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "platform": "macOS-14.3.1-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "scope": "Comparison-count reproduction; elapsed progress is not a runtime benchmark. Quick mode is incomplete paper evidence."
+}

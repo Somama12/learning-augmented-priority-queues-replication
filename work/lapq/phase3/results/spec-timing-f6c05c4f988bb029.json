@@ -1,0 +1,21 @@
+{
+  "case_id": "ny_train0_far",
+  "workload": "ny",
+  "training_graph": "ny",
+  "train_source": 22217,
+  "query_source": 156630,
+  "query_group": "far",
+  "train_index": 0,
+  "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+  "reference_distance_sha256": "4590853dfe6a169e158ba236bc82c880b9b30c22b73181e997ec548e38e34403",
+  "repeat": 0,
+  "queue_seed": 3718898066,
+  "method_order": [
+    "occ_list_map",
+    "occ_linked_retain",
+    "occ_list_retain",
+    "grouped_compact_reference",
+    "occ_linked_map"
+  ],
+  "block_id": "ny_train0_far:0"
+}

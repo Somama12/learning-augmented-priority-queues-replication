@@ -1,0 +1,4 @@
+geometric_8192_train1_near occ_list_retain ok
+geometric_8192_train1_near occ_list_map ok
+geometric_8192_train1_near occ_linked_retain ok
+geometric_8192_train1_near occ_linked_map ok

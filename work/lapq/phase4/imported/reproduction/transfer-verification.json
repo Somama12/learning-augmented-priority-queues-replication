@@ -1,0 +1,20 @@
+[
+  {
+    "File": "learned-priority-queues-working-paper-and-ablations.zip",
+    "Expected": "f0c5a7bfbfb3e82f1dac8d89b1a2105475c7161f486fd71ef649a2a7baa0baa8",
+    "Actual": "f0c5a7bfbfb3e82f1dac8d89b1a2105475c7161f486fd71ef649a2a7baa0baa8",
+    "Verified": true
+  },
+  {
+    "File": "learned-priority-queues-working-paper-and-ablations.manifest.json",
+    "Expected": "d1643b0a230b0e3b499f630ce237c1331bd6a424289e850c45239e0da41279f8",
+    "Actual": "d1643b0a230b0e3b499f630ce237c1331bd6a424289e850c45239e0da41279f8",
+    "Verified": true
+  },
+  {
+    "File": "windows-second-machine-handoff.txt",
+    "Expected": "8e7b08fb4e850b3f088439e0ef23a645050226b39add73517da79c9dc797767a",
+    "Actual": "8e7b08fb4e850b3f088439e0ef23a645050226b39add73517da79c9dc797767a",
+    "Verified": true
+  }
+]

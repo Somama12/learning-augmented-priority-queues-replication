@@ -1,0 +1,91 @@
+{
+  "kind": "retention",
+  "status": "ok",
+  "spec": {
+    "method": "occ_linked_retain",
+    "gc_mode": "enabled",
+    "insertions": 100000,
+    "max_live": 128,
+    "queue_seed": 101,
+    "prediction": "constant0",
+    "rank_universe": 1
+  },
+  "environment": {
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "executable": "/root/research/learned-pq-second-host/.venv/bin/python",
+    "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+    "machine": "x86_64",
+    "processor": "x86_64",
+    "cpu_count_visible": 8,
+    "load_average": [
+      0.86376953125,
+      0.65478515625,
+      0.31591796875
+    ],
+    "process_id": 505,
+    "argv": [
+      "/root/research/learned-pq-second-host/work/lapq/phase3/ablation_runner.py",
+      "worker",
+      "--kind",
+      "retention",
+      "--spec",
+      "/root/research/learned-pq-second-host/work/lapq/phase3/second_host_retention/retention-100000-occ_linked_retain-enabled/spec.json",
+      "--manifest",
+      "/root/research/learned-pq-second-host/work/lapq/phase3/execution_manifest.json"
+    ],
+    "numpy": "2.2.4",
+    "sortedcontainers": "2.4.0",
+    "host_control": "Shared host; CPU affinity, frequency, thermal state and OS activity uncontrolled.",
+    "timer": "perf_counter_ns and process_time_ns",
+    "gc_thresholds": [
+      700,
+      10,
+      10
+    ]
+  },
+  "all_extractions_correct": true,
+  "insertions": 100000,
+  "extractions": 100000,
+  "python_traced_current_at_live_limit_bytes": 36218000,
+  "python_traced_peak_at_live_limit_bytes": 36218040,
+  "python_traced_total_peak_bytes": 36218152,
+  "python_traced_empty_queue_alive_before_gc_bytes": 36097576,
+  "python_traced_empty_queue_alive_after_gc_bytes": 36092944,
+  "python_traced_after_queue_destroyed_bytes": 1306,
+  "post_snapshot_stats_buffer_traced_increment_bytes": 3084,
+  "explicit_collection_objects_while_queue_alive": 0,
+  "post_query_queue_stats": {
+    "reachable_nodes": 0,
+    "level0_cycle": false,
+    "retained_node_map_entries": 100000,
+    "max_skiplist_height": 19,
+    "clean_comparisons": null,
+    "kind": "occ_linked_retain",
+    "live_entries": 0,
+    "live_rank_groups": 0,
+    "live_value_groups": 0,
+    "rank_bucket_items": 0,
+    "value_rank_items": 0,
+    "index": {
+      "index_kind": "hierarchical_64bit_bitmap",
+      "universe": 1,
+      "mode": "dense",
+      "size": 0,
+      "levels": 1,
+      "word_capacity_by_level": [
+        1
+      ],
+      "nonzero_words_by_level": [
+        0
+      ],
+      "python_bytes_estimate": 1102,
+      "memory_scope": "reachable Python objects owned/referenced by index; shared objects counted once; not RSS",
+      "complexity": "O(log_64 U) predecessor/add/remove; NOT a van Emde Boas implementation"
+    },
+    "rank_bucket_policy": "linked",
+    "historical_node_cleanup": "retain",
+    "valRank_policy": "original per-occurrence rank list unchanged",
+    "grouping": false
+  },
+  "memory_scope": "Unique increasing keys; constant zero rank; occupancy bounded. RNG/classes prewarmed. No timing claim. Empty snapshots precede stats allocation; after-destruction retains small statistics report. Automatic GC disabled between drain and pre-GC snapshot."
+}

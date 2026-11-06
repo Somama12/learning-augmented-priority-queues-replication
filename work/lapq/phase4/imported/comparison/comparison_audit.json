@@ -1,0 +1,74 @@
+{
+  "status": "passed",
+  "created_utc": "2026-11-06T19:19:47.863446+00:00",
+  "native_cases_per_host": 42,
+  "native_timings_per_host": 3444,
+  "retention_workers_per_host": 30,
+  "failures_second_host": [],
+  "protocol_job_inputs_hashes_and_case_order_match": true,
+  "all_method_repetition_height_seeds_match_across_hosts": true,
+  "method_repetition_order_cells_differing_across_hosts": 3181,
+  "ratio_audit": "Independently recomputed each within-repetition method/baseline ratio from raw CSVs, then median across seven repetitions per source and six source units per workload. Recomputed values agree with shipped/second-host summary values.",
+  "ranking_definition": "Sort each method by its median source-level paired wall ratio to direct_heap, which is assigned its self-ratio 1.0. Descriptive ranks without significance threshold.",
+  "fastest_by_workload": [
+    {
+      "workload": "brussels",
+      "Mac_fastest": "direct_heap",
+      "Windows_WSL2_fastest": "direct_heap",
+      "fastest_changed": false
+    },
+    {
+      "workload": "ny",
+      "Mac_fastest": "direct_heap",
+      "Windows_WSL2_fastest": "direct_heap",
+      "fastest_changed": false
+    },
+    {
+      "workload": "grid_8100",
+      "Mac_fastest": "direct_heap",
+      "Windows_WSL2_fastest": "direct_heap",
+      "fastest_changed": false
+    },
+    {
+      "workload": "geometric_8192",
+      "Mac_fastest": "direct_heap",
+      "Windows_WSL2_fastest": "direct_heap",
+      "fastest_changed": false
+    },
+    {
+      "workload": "sparse_8192",
+      "Mac_fastest": "direct_heap",
+      "Windows_WSL2_fastest": "direct_heap",
+      "fastest_changed": false
+    },
+    {
+      "workload": "sparse_2048__scale4",
+      "Mac_fastest": "direct_heap",
+      "Windows_WSL2_fastest": "direct_heap",
+      "fastest_changed": false
+    },
+    {
+      "workload": "sparse_2048__lopsided",
+      "Mac_fastest": "direct_heap",
+      "Windows_WSL2_fastest": "direct_heap",
+      "fastest_changed": false
+    }
+  ],
+  "changed_rank_positions": 28,
+  "rank_position_count": 82,
+  "preservation": {
+    "outer_members_verified": 479,
+    "base_members_verified": 1315
+  },
+  "first_host_compiler": "Apple clang version 15.0.0 (clang-1500.1.0.2.5)\nTarget: arm64-apple-darwin23.3.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "second_host_compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "interpretation": [
+    "This is Windows + WSL2 evidence from a second physical laptop identified by the user.",
+    "Both hosts use the same workload/source cases, seven repetitions and matched height seeds. OS/compiler/standard-library differences may change seeded method permutations; actual orders are preserved.",
+    "Hardware, OS, compiler and Python interpreter differ together; cross-host differences cannot be assigned exclusively to hardware.",
+    "Python traces measure ownership and traced allocations with at most 128 live entries, not runtime or RSS; empty snapshots occur before stats allocation.",
+    "Only three training sources per workload and one near/far query per source; rankings describe these fixed instances.",
+    "The shipped phase-three gate remains historical first-host validation; each second-host retention worker checks every extraction and source hash.",
+    "Windows/WSL calendar timestamps differ by about 45 seconds at the post-run handshake. Stage order was enforced synchronously and durations use monotonic/process clocks."
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "stage": "primary",
+  "workload": "brussels",
+  "training_workload": "brussels",
+  "train_source": 1984,
+  "query_source": 1480,
+  "query_group": "far",
+  "train_index": 0,
+  "query_index": 1,
+  "repeat": 4,
+  "queue_seed": 79,
+  "method_order_seed": 41010,
+  "methods": [
+    "heapq_native",
+    "heapq_shared",
+    "sortedlist_native",
+    "skiplist",
+    "original_exact",
+    "original_linear",
+    "original_hist64",
+    "bitmap_exact",
+    "bitmap_linear",
+    "bitmap_hist64",
+    "veb_linear",
+    "compact_linear"
+  ],
+  "block_id": "8f3b60f087942300",
+  "method": "heapq_shared",
+  "memory_id": "brussels-0-heapq_shared"
+}

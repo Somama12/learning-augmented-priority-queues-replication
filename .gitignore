@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+reanalysis/
+work/lapq/upstream/
+work/lapq/data/
+work/data/
+**/mpl-cache/
+**/mplconfig/
+**/rerun*/
+*.zip
+
+work/lapq/phase7/sources/original-paper.pdf
+
+reruns/

@@ -1,0 +1,1 @@
+{"output": "work/lapq/phase2/second_host_native/native_summary.json", "coverage": {"planned_cases": 42, "observed_cases": 42, "missing_cases": [], "unexpected_cases": [], "failed_cases": 0, "complete_and_matching": true}}

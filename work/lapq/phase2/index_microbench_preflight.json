@@ -1,0 +1,481 @@
+{
+  "kind": "synthetic dynamic-predecessor microbenchmark; no end-to-end claim",
+  "timing_enabled": false,
+  "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "platform": "macOS-14.3.1-arm64-arm-64bit-Mach-O",
+  "cases": [
+    {
+      "name": "U256_n16_uniform",
+      "universe": 256,
+      "active": 16,
+      "distribution": "uniform",
+      "seed": 3233241452773385379,
+      "cluster_interval": [
+        0,
+        256
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "fef416e8e9c5580c0454218dd5d4a7de921025d13bf192aafd200054c33615ad"
+    },
+    {
+      "name": "U256_n16_clustered",
+      "universe": 256,
+      "active": 16,
+      "distribution": "clustered",
+      "seed": 10413402711506884465,
+      "cluster_interval": [
+        192,
+        224
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "1a844199fd4e28034b5acc66f013e562fb0939d04a0ff9a0523b44723cafed60"
+    },
+    {
+      "name": "U256_n128_uniform",
+      "universe": 256,
+      "active": 128,
+      "distribution": "uniform",
+      "seed": 8179222359759502912,
+      "cluster_interval": [
+        0,
+        256
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "26f226731c60f818235f1762f61ddf22750527914297acbb0b7cc2f0e90b3f34"
+    },
+    {
+      "name": "U256_n128_clustered",
+      "universe": 256,
+      "active": 128,
+      "distribution": "clustered",
+      "seed": 11905827439600189414,
+      "cluster_interval": [
+        90,
+        234
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "c64091e004e36cf18128f3ae665aedc8945d722724848d85329e343e6e5f09bc"
+    },
+    {
+      "name": "U4096_n16_uniform",
+      "universe": 4096,
+      "active": 16,
+      "distribution": "uniform",
+      "seed": 1852271989162105962,
+      "cluster_interval": [
+        0,
+        4096
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "eaec4a8dbf850b93e5c559c8652ba046aaeca6b5f8f8ce2ea4cec6131fbcdaac"
+    },
+    {
+      "name": "U4096_n16_clustered",
+      "universe": 4096,
+      "active": 16,
+      "distribution": "clustered",
+      "seed": 5053468974434412948,
+      "cluster_interval": [
+        2143,
+        2175
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "1d5802777d2050a2f14fead62550f2fc103b7a716acad5d968c3d6b4dc60d6d5"
+    },
+    {
+      "name": "U4096_n128_uniform",
+      "universe": 4096,
+      "active": 128,
+      "distribution": "uniform",
+      "seed": 11780318618962381946,
+      "cluster_interval": [
+        0,
+        4096
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "c0df07df6727cd4595f80d3b9a58fca5c26b501f43eb1cc213b369275325ffa1"
+    },
+    {
+      "name": "U4096_n128_clustered",
+      "universe": 4096,
+      "active": 128,
+      "distribution": "clustered",
+      "seed": 3802302882296684133,
+      "cluster_interval": [
+        1105,
+        1249
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "a6831f7ef89c71493add8a40bd84b4fafe2ef5910f84a631e5d2a499f16e3850"
+    },
+    {
+      "name": "U4096_n512_uniform",
+      "universe": 4096,
+      "active": 512,
+      "distribution": "uniform",
+      "seed": 13251353594380285693,
+      "cluster_interval": [
+        0,
+        4096
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "7559f9ba51f04ace88b79a9641ddb4731d14c286435582ac18e405e83688c8c8"
+    },
+    {
+      "name": "U4096_n512_clustered",
+      "universe": 4096,
+      "active": 512,
+      "distribution": "clustered",
+      "seed": 6503663023924737092,
+      "cluster_interval": [
+        2417,
+        2945
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "e18bb3fd7042ecdd5812f459de54fc82594c9eea4e14ef4200c433be11bb64b7"
+    },
+    {
+      "name": "U300001_n16_uniform",
+      "universe": 300001,
+      "active": 16,
+      "distribution": "uniform",
+      "seed": 12636916995441645016,
+      "cluster_interval": [
+        0,
+        300001
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "4c0b3344ab58f2805873fba2a16f8de9b7ca123ce18cf1466fd5628510f16c76"
+    },
+    {
+      "name": "U300001_n16_clustered",
+      "universe": 300001,
+      "active": 16,
+      "distribution": "clustered",
+      "seed": 10721987859061477866,
+      "cluster_interval": [
+        89019,
+        91363
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "01b99a2dc0c7f9c2f7c29033661e754297630b2861a5f5e5f325fa21a0f429d1"
+    },
+    {
+      "name": "U300001_n128_uniform",
+      "universe": 300001,
+      "active": 128,
+      "distribution": "uniform",
+      "seed": 13281345790845201123,
+      "cluster_interval": [
+        0,
+        300001
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "fa5c6b99654d23585c09a3e0e6016cabb1dfa90239902544ddcd9d3e84683122"
+    },
+    {
+      "name": "U300001_n128_clustered",
+      "universe": 300001,
+      "active": 128,
+      "distribution": "clustered",
+      "seed": 12214962252627375040,
+      "cluster_interval": [
+        189806,
+        192150
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "ca0e11fcb399daef1daac33c8eb287d9cf7e891f3f161f65b4cb36d713e6bced"
+    },
+    {
+      "name": "U300001_n512_uniform",
+      "universe": 300001,
+      "active": 512,
+      "distribution": "uniform",
+      "seed": 1251502588560903325,
+      "cluster_interval": [
+        0,
+        300001
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "99125a862c3d97b7bf47521b51232dc0cb47c919669bf7544347017cd751d724"
+    },
+    {
+      "name": "U300001_n512_clustered",
+      "universe": 300001,
+      "active": 512,
+      "distribution": "clustered",
+      "seed": 15254070500541400472,
+      "cluster_interval": [
+        265232,
+        267576
+      ],
+      "operations": 10000,
+      "mix": {
+        "add": 2500,
+        "remove": 2500,
+        "strict_predecessor": 5000
+      },
+      "trace_sha256": "3d969f9a1953009958e08d3998a0eaa05c16882ca6ae85e9b2563820c2f89712"
+    }
+  ],
+  "skipped": [
+    {
+      "name": "U256_n512_uniform",
+      "reason": "active cardinality must be smaller than universe; no silent clamping"
+    },
+    {
+      "name": "U256_n512_clustered",
+      "reason": "active cardinality must be smaller than universe; no silent clamping"
+    }
+  ],
+  "preflight": [
+    {
+      "case": "U256_n16_uniform",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U256_n16_clustered",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U256_n128_uniform",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U256_n128_clustered",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U4096_n16_uniform",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U4096_n16_clustered",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U4096_n128_uniform",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U4096_n128_clustered",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U4096_n512_uniform",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U4096_n512_clustered",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U300001_n16_uniform",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U300001_n16_clustered",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U300001_n128_uniform",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U300001_n128_clustered",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U300001_n512_uniform",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    },
+    {
+      "case": "U300001_n512_clustered",
+      "passed": true,
+      "operations_checked_per_method": 10000,
+      "methods": [
+        "sortedlist",
+        "bitmap",
+        "veb"
+      ]
+    }
+  ],
+  "methods": [
+    "sortedlist",
+    "bitmap",
+    "veb"
+  ],
+  "repetitions": 5,
+  "semantic_contract": "bounded active keys with strict predecessor; inserted keys guaranteed absent and removed keys guaranteed present; SortedList has no extra membership search, matching external rankVal guard",
+  "timing_notes": "unmodified GC policy; collect before each run; one untimed warmup per method/case; shuffled method order per repetition; stats outside clock interval",
+  "source_sha256": {
+    "index_microbench.py": "eeaaf5af9af8b276e83fa404303be5a835a755b3d8314350dc536047d3d99d8e",
+    "indexes.py": "a28c957dea436d6e8a64f3fbf4f7575d2c7fc218f6ac3426b659ae06b7697be2",
+    "veb_index.py": "e9441ff59f83c352643dec8a1206df08120a759bd179832109fd35b1f6e31dfb"
+  }
+}

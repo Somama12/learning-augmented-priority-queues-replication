@@ -1,0 +1,6 @@
+{
+  "status": "passed",
+  "checked_medians": 48,
+  "summary_sha256": "bdd94f0eb152fe8eff4f480e2363d2fc81f6dc55411b6ffd7a2f1d61d2485ad6",
+  "scope": "Direct raw-record arithmetic for every target/contrast/clock median; intervals separately reviewed"
+}

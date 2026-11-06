@@ -1,0 +1,1 @@
+{"selftest":"passed","index_mutations":90000,"queue_extractions":641147,"graph_method_pairs":3680,"direct_shared_trace_pairs":320}

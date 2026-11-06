@@ -1,0 +1,21 @@
+{
+  "case_id": "geometric_8192_train1_far",
+  "workload": "geometric_8192",
+  "training_graph": "geometric_8192",
+  "train_source": 1518,
+  "query_source": 8145,
+  "query_group": "far",
+  "train_index": 1,
+  "target_adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+  "reference_distance_sha256": "bc4108169fc3cf0236e8b1f43d2cf322bbddef1936d111a8d0d0e931a1fb7d47",
+  "repeat": 1,
+  "queue_seed": 4094569679,
+  "method_order": [
+    "occ_list_retain",
+    "occ_linked_map",
+    "occ_list_map",
+    "occ_linked_retain",
+    "grouped_compact_reference"
+  ],
+  "block_id": "geometric_8192_train1_far:1"
+}

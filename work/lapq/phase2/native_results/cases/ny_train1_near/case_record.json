@@ -1,0 +1,220 @@
+{
+  "case": {
+    "case_id": "ny_train1_near",
+    "expected_reachable": 264346,
+    "expected_typed_distance_sha256": "eb368d050dbc06cf0fdb2ff8cb934a7e1c051223f7df8ac4d487eb1cd802306a",
+    "methods": [
+      "guided_set_linear",
+      "plain_skiplist",
+      "guided_set_hist64",
+      "std_heap",
+      "guided_bitmap_linear",
+      "grouped_heap",
+      "guided_bitmap_hist64",
+      "std_multiset",
+      "guided_bitmap_exact",
+      "guided_set_exact",
+      "direct_heap",
+      "radix"
+    ],
+    "oracle_binary64_bytes": 2114768,
+    "oracle_binary64_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/oracles/ny_train1_near.f64le",
+    "oracle_binary64_sha256": "e2f8de2d51e69da3caf7907e3ca76e83cf67a130f253696dc3e2ef1f40876889",
+    "paired_seed": 1324913856,
+    "query_source": 243856,
+    "repetitions": 7,
+    "source_group": "near",
+    "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+    "train_index": 1,
+    "train_source": 257685,
+    "training_graph": "ny",
+    "workload": "ny"
+  },
+  "distance_verification": {
+    "actual_bytes": 2114768,
+    "actual_sha256": "e2f8de2d51e69da3caf7907e3ca76e83cf67a130f253696dc3e2ef1f40876889",
+    "expected_bytes": 2114768,
+    "expected_sha256": "e2f8de2d51e69da3caf7907e3ca76e83cf67a130f253696dc3e2ef1f40876889",
+    "passed": true
+  },
+  "errors": [],
+  "execution_ordinal": 27,
+  "native_metadata": {
+    "all_exact_distances_passed": true,
+    "all_queues_drained": true,
+    "arcs": 733846,
+    "build_times": {
+      "exact": {
+        "cpu_seconds": 0.010803,
+        "wall_seconds": 0.010820875
+      },
+      "hist64": {
+        "cpu_seconds": 0.001268,
+        "wall_seconds": 0.001268292
+      },
+      "linear": {
+        "cpu_seconds": 0.000658,
+        "wall_seconds": 0.000657792
+      }
+    },
+    "clock_ticks_per_second": 1000000,
+    "common_lifo_work_counts_passed": true,
+    "compiler": "Apple LLVM 15.0.0 (clang-1500.1.0.2.5)",
+    "diagnostics_outside_timing": {
+      "direct_heap": {
+        "extractions": 297866,
+        "insertions": 297866,
+        "peak_entries": 810,
+        "peak_queue_nodes": 810
+      },
+      "grouped_heap": {
+        "extractions": 297866,
+        "insertions": 297866,
+        "peak_entries": 810,
+        "peak_queue_nodes": 676
+      },
+      "guided_bitmap_exact": {
+        "extractions": 297866,
+        "insertions": 297866,
+        "peak_entries": 810,
+        "peak_queue_nodes": 676
+      },
+      "guided_bitmap_hist64": {
+        "extractions": 297866,
+        "insertions": 297866,
+        "peak_entries": 810,
+        "peak_queue_nodes": 676
+      },
+      "guided_bitmap_linear": {
+        "extractions": 297866,
+        "insertions": 297866,
+        "peak_entries": 810,
+        "peak_queue_nodes": 676
+      },
+      "guided_set_exact": {
+        "extractions": 297866,
+        "insertions": 297866,
+        "peak_entries": 810,
+        "peak_queue_nodes": 676
+      },
+      "guided_set_hist64": {
+        "extractions": 297866,
+        "insertions": 297866,
+        "peak_entries": 810,
+        "peak_queue_nodes": 676
+      },
+      "guided_set_linear": {
+        "extractions": 297866,
+        "insertions": 297866,
+        "peak_entries": 810,
+        "peak_queue_nodes": 676
+      },
+      "plain_skiplist": {
+        "extractions": 297866,
+        "insertions": 297866,
+        "peak_entries": 810,
+        "peak_queue_nodes": 676
+      },
+      "radix": {
+        "extractions": 297866,
+        "insertions": 297866,
+        "peak_entries": 810,
+        "peak_queue_nodes": 810
+      },
+      "std_heap": {
+        "extractions": 297866,
+        "insertions": 297866,
+        "peak_entries": 810,
+        "peak_queue_nodes": 810
+      },
+      "std_multiset": {
+        "extractions": 297866,
+        "insertions": 297866,
+        "peak_entries": 810,
+        "peak_queue_nodes": 810
+      }
+    },
+    "distance_encoding": "little-endian IEEE754 binary64, vertex order",
+    "distance_fnv1a64": "14967277113754709966",
+    "distances_output": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/ny_train1_near/distances.f64le",
+    "graph": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/inputs/ny.txt",
+    "implementation": "independent engineered C++17; grouped live-only skiplist",
+    "methods": [
+      "guided_set_linear",
+      "plain_skiplist",
+      "guided_set_hist64",
+      "std_heap",
+      "guided_bitmap_linear",
+      "grouped_heap",
+      "guided_bitmap_hist64",
+      "std_multiset",
+      "guided_bitmap_exact",
+      "guided_set_exact",
+      "direct_heap",
+      "radix"
+    ],
+    "notes": [
+      "Times include queue construction/destruction, distance allocation, predictor queries and all queue work. All methods except direct_heap include the common pending map. Model training/build and correctness checks are excluded.",
+      "Observed counters are compiled out of timed runs. Queue multiplicities and size fields remain algorithm state.",
+      "One observed warmup per method, shuffled; each repetition has matched height seed and shuffled method order.",
+      "Same scalar distance to LIFO vertex map for queue ablations. direct_heap embeds vertices with reverse insertion sequence, preserving LIFO ties without the map. Reference oracle uses an independent vertex-tie pair heap.",
+      "Guided set and bitmap share the same grouped skiplist and live-only rank buckets; plain skiplist shares grouping without rank buckets.",
+      "Grouping alters original artifact hint history and random-height consumption. This is an engineered crosscheck, not exact artifact reproduction.",
+      "Dense hierarchical bitmap is O(log_64 U), not vEB. Grouped heap controls duplicate compression. No RSS or total memory claim.",
+      "All three fitted advisors and training samples remain resident across methods; this is not isolated per-method memory measurement.",
+      "Training/build are measured once per invocation; baseline queues require neither. Shared-host timings are diagnostic."
+    ],
+    "radix_eligible": true,
+    "rank_universe": 298012,
+    "repeat": 7,
+    "schema_version": 1,
+    "seed": 1324913856,
+    "source": 243856,
+    "timed_records": 84,
+    "train": 257685,
+    "train_arcs": 733846,
+    "train_graph": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/inputs/ny.txt",
+    "train_vertices": 264346,
+    "training_cpu_seconds": 0.06081,
+    "training_keys": 298011,
+    "training_timing_note": "one common std_heap run, collecting every successful noninitial insertion; excludes graph read and oracle",
+    "training_wall_seconds": 0.060892167,
+    "vertices": 264346
+  },
+  "passed": true,
+  "process": {
+    "argv": [
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/build/native_benchmark",
+      "--graph",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/inputs/ny.txt",
+      "--train-graph",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/inputs/ny.txt",
+      "--train",
+      "257685",
+      "--source",
+      "243856",
+      "--repeat",
+      "7",
+      "--seed",
+      "1324913856",
+      "--methods",
+      "guided_set_linear,plain_skiplist,guided_set_hist64,std_heap,guided_bitmap_linear,grouped_heap,guided_bitmap_hist64,std_multiset,guided_bitmap_exact,guided_set_exact,direct_heap,radix",
+      "--output",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/ny_train1_near/native",
+      "--distances-output",
+      "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/ny_train1_near/distances.f64le"
+    ],
+    "cwd": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2",
+    "exception": null,
+    "finished_at_utc": "2026-11-06T06:42:17.013157+00:00",
+    "lifecycle_scope": "whole subprocess including IO; not algorithm-only runtime",
+    "process_lifecycle_wall_seconds": 12.540576290979516,
+    "returncode": 0,
+    "started_at_utc": "2026-11-06T06:42:04.472877+00:00",
+    "stderr_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/ny_train1_near/process.stderr.txt",
+    "stdout_path": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/ny_train1_near/process.stdout.txt"
+  },
+  "timing_csv": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase2/native_results/cases/ny_train1_near/native.csv",
+  "timing_csv_sha256": "ff220350ec9753c325f5cfb3b167d7e97787451a177c0d60eb2ce72ca77e2798",
+  "timing_rows": 84
+}

@@ -1,0 +1,21 @@
+{
+  "case_id": "ny_train1_near",
+  "workload": "ny",
+  "training_graph": "ny",
+  "train_source": 257685,
+  "query_source": 243856,
+  "query_group": "near",
+  "train_index": 1,
+  "target_adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+  "reference_distance_sha256": "eb368d050dbc06cf0fdb2ff8cb934a7e1c051223f7df8ac4d487eb1cd802306a",
+  "repeat": 2,
+  "queue_seed": 3788569757,
+  "method_order": [
+    "grouped_compact_reference",
+    "occ_list_map",
+    "occ_linked_map",
+    "occ_list_retain",
+    "occ_linked_retain"
+  ],
+  "block_id": "ny_train1_near:2"
+}

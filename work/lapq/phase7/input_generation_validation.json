@@ -1,0 +1,26 @@
+{
+  "status": "passed",
+  "reference_parity": {
+    "status": "passed",
+    "exact_class_and_literal_reference_cases": 96,
+    "compressed_mode_bitwise_equivalence_claimed": false
+  },
+  "small_selfcheck": {
+    "status": "passed",
+    "small_deterministic_conditions": 6,
+    "exact_law_enumeration": {
+      "n": 2,
+      "timesteps": 4,
+      "literal_paths": 256
+    },
+    "primary_conditions_generated": 0
+  },
+  "reference_git_blob_sha1": "68f60b4d96fbfe1d5d942d2706adfdfd2bd624ed",
+  "reference_source_sha256": "9a79bea84f8f24e4d228d09a9bfdc25acb89b63fba96f74398738f4f6fbf4ffe",
+  "source_sha256": {
+    "input_generation.py": "440aeae4d4eaf5ea34f320609f6e0eb15fa8c9bad732ca72d36108851b267345",
+    "experiment_plan.py": "cf531b33284713c2f288a8bab97c464bd793ef9eb363de5f5d48bd3c7dea8139"
+  },
+  "primary_conditions_generated": 0,
+  "primary_experiments_run": false
+}

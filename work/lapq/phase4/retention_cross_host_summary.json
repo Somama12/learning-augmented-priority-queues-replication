@@ -1,0 +1,2192 @@
+{
+  "schema_version": 1,
+  "analysis_kind": "Read-only independent retention/hardware audit of supplied second-host evidence",
+  "imported_code_executed": false,
+  "new_benchmarks_executed": false,
+  "audit_passed": true,
+  "errors": [],
+  "warnings": [
+    "retention-100000-occ_list_map-enabled: reversed calendar timestamps; no retention duration is inferred"
+  ],
+  "coverage": {
+    "expected_cells": 30,
+    "cross_host_matched_cells": 30,
+    "methods": [
+      "occ_list_retain",
+      "occ_list_map",
+      "occ_linked_retain",
+      "occ_linked_map",
+      "grouped_compact_reference"
+    ],
+    "insertions": [
+      1000,
+      10000,
+      100000
+    ],
+    "gc_modes": [
+      "enabled",
+      "disabled_during_trace"
+    ],
+    "max_live": 128,
+    "queue_seed": 101,
+    "rank_universe": 1,
+    "prediction": "constant0",
+    "distinct_second_host_pids": 30,
+    "pinned_source_evidence_files": 18
+  },
+  "source_hash_checks": [
+    {
+      "file": "work/lapq/phase3/ablation_queues.py",
+      "expected_sha256": "1446ce3e454555b6f178500d3bd597ee53b88e294349d0fb7a584accfaab1be1",
+      "actual_sha256": "1446ce3e454555b6f178500d3bd597ee53b88e294349d0fb7a584accfaab1be1",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase3/preflight.py",
+      "expected_sha256": "548cbe296c628ddec82fa50bd3b99dda9d0eed18a2b99e56a96c6e86bd56970e",
+      "actual_sha256": "548cbe296c628ddec82fa50bd3b99dda9d0eed18a2b99e56a96c6e86bd56970e",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase3/freeze_proposal.py",
+      "expected_sha256": "bdcbff524d9d59a6232ec53c0a7c236d206ded495d19958ef5fec62c1d0fe883",
+      "actual_sha256": "bdcbff524d9d59a6232ec53c0a7c236d206ded495d19958ef5fec62c1d0fe883",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase2/queues.py",
+      "expected_sha256": "a7f0d49301b604cfd0ce8d4ebb95a23cc41a8486e6a7f651183a29db352754a5",
+      "actual_sha256": "a7f0d49301b604cfd0ce8d4ebb95a23cc41a8486e6a7f651183a29db352754a5",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase2/indexes.py",
+      "expected_sha256": "a28c957dea436d6e8a64f3fbf4f7575d2c7fc218f6ac3426b659ae06b7697be2",
+      "actual_sha256": "a28c957dea436d6e8a64f3fbf4f7575d2c7fc218f6ac3426b659ae06b7697be2",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase2/benchmark.py",
+      "expected_sha256": "b472b3da901290d768039a12e0a72badeb431b377326411c776c06734de68621",
+      "actual_sha256": "b472b3da901290d768039a12e0a72badeb431b377326411c776c06734de68621",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase2/workloads.py",
+      "expected_sha256": "53298dfa998440370fa88d5f4520eecf20968153234cac2d99292e436ee6ada2",
+      "actual_sha256": "53298dfa998440370fa88d5f4520eecf20968153234cac2d99292e436ee6ada2",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/data_loading.py",
+      "expected_sha256": "0b68f44cc1b1c7c4fd3d7f8a3c16285dcbee7114a1ac4ac5c1cc1a5c81970da5",
+      "actual_sha256": "0b68f44cc1b1c7c4fd3d7f8a3c16285dcbee7114a1ac4ac5c1cc1a5c81970da5",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/upstream/skiplist.py",
+      "expected_sha256": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c",
+      "actual_sha256": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase3/ablation_runner.py",
+      "expected_sha256": "b11f44b75dd637655cd7a5a6782c6ed0eac56d43620595578c693a34fce18abf",
+      "actual_sha256": "b11f44b75dd637655cd7a5a6782c6ed0eac56d43620595578c693a34fce18abf",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase3/preflight_results.json",
+      "expected_sha256": "c4cafccda16ef7404381a1716818e0d973dd803fd1b90e8b92659ab0bd9a35f7",
+      "actual_sha256": "c4cafccda16ef7404381a1716818e0d973dd803fd1b90e8b92659ab0bd9a35f7",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase3/runner_selfcheck.json",
+      "expected_sha256": "23cdf2c446cda3223695f81af902426cb0fb60ec45d74786c02f867e1045b3f0",
+      "actual_sha256": "23cdf2c446cda3223695f81af902426cb0fb60ec45d74786c02f867e1045b3f0",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase3/full_trace_gate.py",
+      "expected_sha256": "22556c00412c663451b3540577c7c34c3fa848182b8b6a2e0168051ec4eb543a",
+      "actual_sha256": "22556c00412c663451b3540577c7c34c3fa848182b8b6a2e0168051ec4eb543a",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase3/full_trace_gate_results.json",
+      "expected_sha256": "8710500dc4ea925f82940d2eac5045b2cd84ee25bb306fa6e06cfe6f31695574",
+      "actual_sha256": "8710500dc4ea925f82940d2eac5045b2cd84ee25bb306fa6e06cfe6f31695574",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase3/ablation_protocol.json",
+      "expected_sha256": "08cde3cdf932bd68fddac8275d70f6c55205f566455b6daea7e0a6d096c08d77",
+      "actual_sha256": "08cde3cdf932bd68fddac8275d70f6c55205f566455b6daea7e0a6d096c08d77",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase2/workload_manifest.json",
+      "expected_sha256": "44ecbd9e2cea1e077d2f9c173b768fa49f9fd52b56e679c8e4680af1b8db58e5",
+      "actual_sha256": "44ecbd9e2cea1e077d2f9c173b768fa49f9fd52b56e679c8e4680af1b8db58e5",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase2/veb_index.py",
+      "expected_sha256": "e9441ff59f83c352643dec8a1206df08120a759bd179832109fd35b1f6e31dfb",
+      "actual_sha256": "e9441ff59f83c352643dec8a1206df08120a759bd179832109fd35b1f6e31dfb",
+      "matched": true
+    },
+    {
+      "file": "work/lapq/phase2/radix_queue.py",
+      "expected_sha256": "c072f3b2560bdd04fd826502aa7d43498e2e74817c4bec726495029a480125f2",
+      "actual_sha256": "c072f3b2560bdd04fd826502aa7d43498e2e74817c4bec726495029a480125f2",
+      "matched": true
+    }
+  ],
+  "wrapper_review": {
+    "sha256": "2b2e0cb76520ff9ce4595e15d7567139f1d7db768ba2dd89b9aa272932b30032",
+    "plan_serialization": {
+      "executed_original_sha256": "1de6b23b69cbd84b30dc89ec6e97953ad25746a6968f23d4e851bd5edb1d7290",
+      "normalized_snapshot_sha256": "d0d867371fc63fab773bcb69109791d34478e01d0aa57fdd8ebfb208f03f6f97",
+      "parsed_json_equal": true,
+      "original_crlf_count": 467,
+      "snapshot_crlf_count": 0,
+      "explanation": "The wrapper verifies the original CRLF plan bytes and then writes a normalized LF JSON snapshot. Its byte hash differs; its parsed specifications are identical."
+    },
+    "behavior": "Selects the exact 30 existing retention jobs; verifies their source manifest and sources; invokes unchanged worker_main in blocking subprocess.run calls; preserves stdout/stderr/return codes, exact specs and before/after source pins.",
+    "no_pointer_detachment_scope": "The four occurrence arms only remove exhausted map entries and/or replace occurrence rank buckets; no skip-list pointer detachment. The grouped compact reference retains its existing combined detachment policy.",
+    "validation_scope": "Shipped preflight/gate files remain first-host evidence. Reusing worker_main does not constitute a fresh full-workload phase-three gate. New retention workers validate every extraction locally.",
+    "limits": "Source equality and raw-record consistency are verified; this audit does not observe historical execution directly or prove exclusion of all background processes."
+  },
+  "hardware": {
+    "first_host_recorded_hardware": {
+      "model": "MacBookAir10,1",
+      "chip": "Apple M1",
+      "physical_memory_bytes": 8589934592,
+      "total_cores": 8,
+      "performance_cores": 4,
+      "efficiency_cores": 4,
+      "macos_version": "14.3.1"
+    },
+    "physical_host_evidence": "User-identified second physical laptop, supported by distinct Windows/WSL hardware records; not merely a container on the original Mac.",
+    "manufacturer": "Dell Inc.",
+    "model": "Latitude 5400",
+    "cpu": "Intel(R) Core(TM) i5-8365U CPU @ 1.60GHz",
+    "physical_cores_reported": 4,
+    "threads_per_core_reported": 2,
+    "installed_ram_bytes": 8589934592,
+    "windows_display_version": "25H2",
+    "windows_build": "26200.9168",
+    "windows_legacy_registry_name": "Windows 10 Pro",
+    "windows_name_note": "Legacy registry ProductName says Windows 10 Pro; build/display metadata and handoff identify Windows 11 Pro 25H2. Retain the discrepancy instead of silently treating ProductName as current branding.",
+    "wsl_distribution": "Ubuntu-24.04",
+    "linux_os_release": "PRETTY_NAME=\"Ubuntu 24.04.5 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.5 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+    "linux_kernel": "6.18.54.1-microsoft-standard-WSL2",
+    "machine": "x86_64",
+    "visible_cpu_count": 8,
+    "allowed_cpu_affinity": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "wsl_visible_memory_bytes": 3986362368,
+    "wsl_swap_bytes": 1073741824,
+    "swap_used_at_snapshots_bytes": [
+      0,
+      0,
+      0
+    ],
+    "cgroup_limits": {
+      "cpu.max": "max 100000\n",
+      "memory.max": "max\n",
+      "memory.swap.max": "max\n",
+      "pids.max": "max\n"
+    },
+    "resource_limits": {
+      "RLIMIT_AS": [
+        -1,
+        -1
+      ],
+      "RLIMIT_CPU": [
+        -1,
+        -1
+      ],
+      "RLIMIT_DATA": [
+        -1,
+        -1
+      ],
+      "RLIMIT_STACK": [
+        8388608,
+        -1
+      ],
+      "RLIMIT_NPROC": [
+        15168,
+        15168
+      ],
+      "RLIMIT_NOFILE": [
+        10240,
+        1048576
+      ],
+      "RLIMIT_MEMLOCK": [
+        67108864,
+        67108864
+      ]
+    },
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "compiler": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0",
+    "native_compile_flags": [
+      "-O3",
+      "-std=c++17",
+      "-DNDEBUG"
+    ],
+    "package_versions": [
+      "networkx==3.4.2",
+      "numpy==2.2.4",
+      "sortedcontainers==2.4.0"
+    ],
+    "host_environments_in_retention_records": {
+      "mac": [
+        {
+          "cpu_count_visible": 8,
+          "gc_thresholds": [
+            2000,
+            10,
+            10
+          ],
+          "machine": "arm64",
+          "numpy": "2.2.4",
+          "platform": "macOS-14.3.1-arm64-arm-64bit-Mach-O",
+          "python": "3.13.3 (v3.13.3:6280bb54784, Apr  8 2025, 10:47:54) [Clang 15.0.0 (clang-1500.3.9.4)]",
+          "sortedcontainers": "2.4.0"
+        }
+      ],
+      "windows_wsl2": [
+        {
+          "cpu_count_visible": 8,
+          "gc_thresholds": [
+            700,
+            10,
+            10
+          ],
+          "machine": "x86_64",
+          "numpy": "2.2.4",
+          "platform": "Linux-6.18.54.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+          "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+          "sortedcontainers": "2.4.0"
+        }
+      ]
+    },
+    "power": {
+      "ac_line_status_before_after": [
+        1,
+        1
+      ],
+      "battery_saver_before_after": [
+        0,
+        0
+      ],
+      "plan_observed_after": "Power Scheme GUID: 381b4222-f694-41f0-9685-ff5bb260df2e  (Balanced)",
+      "native_awake_request": {
+        "captured_utc": "2026-11-06T19:13:10.7054615Z",
+        "api": "SetThreadExecutionState",
+        "requested": "ES_CONTINUOUS | ES_SYSTEM_REQUIRED",
+        "return_value": 2147483648,
+        "duration": "Parent Windows PowerShell thread waits synchronously for native stages; cleared on completion"
+      }
+    },
+    "limits": [
+      "Windows/WSL virtualization, CPython version and compiler differ from Mac, so host effects are not isolated hardware effects.",
+      "No CPU pinning, frequency/thermal control, continuous power trace or exclusive-machine guarantee.",
+      "No cgroup CPU/memory quota observed; WSL still exposes only its VM-visible memory, not all installed RAM.",
+      "Zero swap use at snapshots does not prove no transient paging during measurements."
+    ]
+  },
+  "chronology": {
+    "native_cases": 42,
+    "native_case_intervals_nonoverlapping": true,
+    "native_first_start_utc": "2026-11-06T19:13:06.854171+00:00",
+    "native_last_finish_utc": "2026-11-06T19:15:06.914246+00:00",
+    "retention_first_start_utc": "2026-11-06T19:15:47.067246+00:00",
+    "retention_last_finish_utc": "2026-11-06T19:16:32.728322+00:00",
+    "retention_calendar_lifecycles_monotone": false,
+    "retention_inter_worker_calendar_gaps_nonnegative": true,
+    "retention_calendar_anomalies": [
+      {
+        "job_id": "retention-100000-occ_list_map-enabled",
+        "ordinal": 26,
+        "started_utc": "2026-11-06T19:17:15.961811+00:00",
+        "finished_utc": "2026-11-06T19:16:31.474621+00:00",
+        "calendar_difference_seconds": -44.48719
+      }
+    ],
+    "retention_calendar_records": [
+      {
+        "job_id": "retention-100000-occ_linked_map-disabled_during_trace",
+        "ordinal": 0,
+        "started_utc": "2026-11-06T19:15:47.069505+00:00",
+        "finished_utc": "2026-11-06T19:15:50.654144+00:00",
+        "calendar_difference_seconds": 3.584639
+      },
+      {
+        "job_id": "retention-10000-occ_list_retain-enabled",
+        "ordinal": 1,
+        "started_utc": "2026-11-06T19:15:50.660441+00:00",
+        "finished_utc": "2026-11-06T19:15:51.232488+00:00",
+        "calendar_difference_seconds": 0.572047
+      },
+      {
+        "job_id": "retention-1000-grouped_compact_reference-enabled",
+        "ordinal": 2,
+        "started_utc": "2026-11-06T19:15:51.235304+00:00",
+        "finished_utc": "2026-11-06T19:15:51.557607+00:00",
+        "calendar_difference_seconds": 0.322303
+      },
+      {
+        "job_id": "retention-1000-occ_list_map-enabled",
+        "ordinal": 3,
+        "started_utc": "2026-11-06T19:15:51.562898+00:00",
+        "finished_utc": "2026-11-06T19:15:51.891184+00:00",
+        "calendar_difference_seconds": 0.328286
+      },
+      {
+        "job_id": "retention-1000-occ_list_retain-enabled",
+        "ordinal": 4,
+        "started_utc": "2026-11-06T19:15:51.903810+00:00",
+        "finished_utc": "2026-11-06T19:15:52.283273+00:00",
+        "calendar_difference_seconds": 0.379463
+      },
+      {
+        "job_id": "retention-1000-occ_linked_retain-disabled_during_trace",
+        "ordinal": 5,
+        "started_utc": "2026-11-06T19:15:52.297222+00:00",
+        "finished_utc": "2026-11-06T19:15:52.672054+00:00",
+        "calendar_difference_seconds": 0.374832
+      },
+      {
+        "job_id": "retention-1000-occ_linked_map-disabled_during_trace",
+        "ordinal": 6,
+        "started_utc": "2026-11-06T19:15:52.678665+00:00",
+        "finished_utc": "2026-11-06T19:15:53.054294+00:00",
+        "calendar_difference_seconds": 0.375629
+      },
+      {
+        "job_id": "retention-10000-occ_list_map-disabled_during_trace",
+        "ordinal": 7,
+        "started_utc": "2026-11-06T19:15:53.064118+00:00",
+        "finished_utc": "2026-11-06T19:15:53.636100+00:00",
+        "calendar_difference_seconds": 0.571982
+      },
+      {
+        "job_id": "retention-1000-grouped_compact_reference-disabled_during_trace",
+        "ordinal": 8,
+        "started_utc": "2026-11-06T19:15:53.641138+00:00",
+        "finished_utc": "2026-11-06T19:15:53.964082+00:00",
+        "calendar_difference_seconds": 0.322944
+      },
+      {
+        "job_id": "retention-100000-grouped_compact_reference-enabled",
+        "ordinal": 9,
+        "started_utc": "2026-11-06T19:15:53.972301+00:00",
+        "finished_utc": "2026-11-06T19:15:57.056501+00:00",
+        "calendar_difference_seconds": 3.0842
+      },
+      {
+        "job_id": "retention-100000-occ_list_map-disabled_during_trace",
+        "ordinal": 10,
+        "started_utc": "2026-11-06T19:15:57.062475+00:00",
+        "finished_utc": "2026-11-06T19:16:00.093216+00:00",
+        "calendar_difference_seconds": 3.030741
+      },
+      {
+        "job_id": "retention-100000-occ_list_retain-disabled_during_trace",
+        "ordinal": 11,
+        "started_utc": "2026-11-06T19:16:00.097207+00:00",
+        "finished_utc": "2026-11-06T19:16:03.531099+00:00",
+        "calendar_difference_seconds": 3.433892
+      },
+      {
+        "job_id": "retention-100000-occ_linked_retain-enabled",
+        "ordinal": 12,
+        "started_utc": "2026-11-06T19:16:03.535128+00:00",
+        "finished_utc": "2026-11-06T19:16:07.320813+00:00",
+        "calendar_difference_seconds": 3.785685
+      },
+      {
+        "job_id": "retention-100000-occ_linked_retain-disabled_during_trace",
+        "ordinal": 13,
+        "started_utc": "2026-11-06T19:16:07.325780+00:00",
+        "finished_utc": "2026-11-06T19:16:11.007981+00:00",
+        "calendar_difference_seconds": 3.682201
+      },
+      {
+        "job_id": "retention-100000-occ_list_retain-enabled",
+        "ordinal": 14,
+        "started_utc": "2026-11-06T19:16:11.013499+00:00",
+        "finished_utc": "2026-11-06T19:16:15.700468+00:00",
+        "calendar_difference_seconds": 4.686969
+      },
+      {
+        "job_id": "retention-10000-occ_linked_retain-enabled",
+        "ordinal": 15,
+        "started_utc": "2026-11-06T19:16:15.709039+00:00",
+        "finished_utc": "2026-11-06T19:16:16.634886+00:00",
+        "calendar_difference_seconds": 0.925847
+      },
+      {
+        "job_id": "retention-10000-occ_linked_map-enabled",
+        "ordinal": 16,
+        "started_utc": "2026-11-06T19:16:16.643662+00:00",
+        "finished_utc": "2026-11-06T19:16:17.369417+00:00",
+        "calendar_difference_seconds": 0.725755
+      },
+      {
+        "job_id": "retention-100000-occ_linked_map-enabled",
+        "ordinal": 17,
+        "started_utc": "2026-11-06T19:16:17.379683+00:00",
+        "finished_utc": "2026-11-06T19:16:21.013406+00:00",
+        "calendar_difference_seconds": 3.633723
+      },
+      {
+        "job_id": "retention-10000-occ_list_map-enabled",
+        "ordinal": 18,
+        "started_utc": "2026-11-06T19:16:21.018827+00:00",
+        "finished_utc": "2026-11-06T19:16:21.642927+00:00",
+        "calendar_difference_seconds": 0.6241
+      },
+      {
+        "job_id": "retention-10000-occ_linked_retain-disabled_during_trace",
+        "ordinal": 19,
+        "started_utc": "2026-11-06T19:16:21.649164+00:00",
+        "finished_utc": "2026-11-06T19:16:22.323330+00:00",
+        "calendar_difference_seconds": 0.674166
+      },
+      {
+        "job_id": "retention-1000-occ_list_map-disabled_during_trace",
+        "ordinal": 20,
+        "started_utc": "2026-11-06T19:16:22.331645+00:00",
+        "finished_utc": "2026-11-06T19:16:22.655407+00:00",
+        "calendar_difference_seconds": 0.323762
+      },
+      {
+        "job_id": "retention-1000-occ_linked_map-enabled",
+        "ordinal": 21,
+        "started_utc": "2026-11-06T19:16:22.669122+00:00",
+        "finished_utc": "2026-11-06T19:16:22.989526+00:00",
+        "calendar_difference_seconds": 0.320404
+      },
+      {
+        "job_id": "retention-10000-grouped_compact_reference-disabled_during_trace",
+        "ordinal": 22,
+        "started_utc": "2026-11-06T19:16:22.995520+00:00",
+        "finished_utc": "2026-11-06T19:16:23.576037+00:00",
+        "calendar_difference_seconds": 0.580517
+      },
+      {
+        "job_id": "retention-100000-grouped_compact_reference-disabled_during_trace",
+        "ordinal": 23,
+        "started_utc": "2026-11-06T19:16:23.589152+00:00",
+        "finished_utc": "2026-11-06T19:16:26.921629+00:00",
+        "calendar_difference_seconds": 3.332477
+      },
+      {
+        "job_id": "retention-10000-occ_list_retain-disabled_during_trace",
+        "ordinal": 24,
+        "started_utc": "2026-11-06T19:16:26.929025+00:00",
+        "finished_utc": "2026-11-06T19:16:27.550924+00:00",
+        "calendar_difference_seconds": 0.621899
+      },
+      {
+        "job_id": "retention-10000-occ_linked_map-disabled_during_trace",
+        "ordinal": 25,
+        "started_utc": "2026-11-06T19:16:27.556921+00:00",
+        "finished_utc": "2026-11-06T19:17:15.951066+00:00",
+        "calendar_difference_seconds": 48.394145
+      },
+      {
+        "job_id": "retention-100000-occ_list_map-enabled",
+        "ordinal": 26,
+        "started_utc": "2026-11-06T19:17:15.961811+00:00",
+        "finished_utc": "2026-11-06T19:16:31.474621+00:00",
+        "calendar_difference_seconds": -44.48719
+      },
+      {
+        "job_id": "retention-10000-grouped_compact_reference-enabled",
+        "ordinal": 27,
+        "started_utc": "2026-11-06T19:16:31.481372+00:00",
+        "finished_utc": "2026-11-06T19:16:32.052792+00:00",
+        "calendar_difference_seconds": 0.57142
+      },
+      {
+        "job_id": "retention-1000-occ_linked_retain-enabled",
+        "ordinal": 28,
+        "started_utc": "2026-11-06T19:16:32.059587+00:00",
+        "finished_utc": "2026-11-06T19:16:32.385365+00:00",
+        "calendar_difference_seconds": 0.325778
+      },
+      {
+        "job_id": "retention-1000-occ_list_retain-disabled_during_trace",
+        "ordinal": 29,
+        "started_utc": "2026-11-06T19:16:32.394760+00:00",
+        "finished_utc": "2026-11-06T19:16:32.721289+00:00",
+        "calendar_difference_seconds": 0.326529
+      }
+    ],
+    "minimum_between_retention_workers_seconds": 0.002816,
+    "native_finished_before_retention_seconds": 40.153,
+    "all_recorded_compilation_selftests_finished_before_native": true,
+    "windows_minus_linux_calendar_bracket_seconds": [
+      44.901577,
+      47.737678
+    ],
+    "interpretation": "Stage shell scripts and wrappers use blocking calls and record consecutive ordinals. Native lifecycle timestamps are internally ordered. One retention worker has reversed calendar labels, consistent with a calendar-clock discontinuity; retention ordering therefore rests on blocking wrapper calls and ordinal/record consistency, not UTC durations. The post-run handshake also shows a Windows/WSL calendar offset. Algorithm duration clocks are monotonic/process clocks; retention measurements are allocation snapshots, not duration benchmarks.",
+    "limits": "The records substantiate ordering of these study jobs, not absence of all background OS/user processes. Calendar lifecycle times are not algorithm runtimes."
+  },
+  "rows": [
+    {
+      "job_id": "retention-1000-grouped_compact_reference-disabled_during_trace",
+      "method": "grouped_compact_reference",
+      "insertions": 1000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "grouped_compact_reference",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 1000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 89270,
+        "python_traced_peak_at_live_limit_bytes": 98710,
+        "python_traced_total_peak_bytes": 98710,
+        "python_traced_empty_queue_alive_before_gc_bytes": 25558,
+        "python_traced_empty_queue_alive_after_gc_bytes": 20830,
+        "python_traced_after_queue_destroyed_bytes": 1246,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3048
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 88310,
+        "python_traced_peak_at_live_limit_bytes": 97750,
+        "python_traced_total_peak_bytes": 97750,
+        "python_traced_empty_queue_alive_before_gc_bytes": 25566,
+        "python_traced_empty_queue_alive_after_gc_bytes": 20766,
+        "python_traced_after_queue_destroyed_bytes": 1246,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3032
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 15,
+      "second_over_first_post_gc_bytes": 0.9969275084013443,
+      "second_minus_first_post_gc_bytes": -64,
+      "first_host_file": "work/lapq/phase3/results/retention-1000-grouped_compact_reference-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-1000-grouped_compact_reference-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-1000-occ_linked_map-disabled_during_trace",
+      "method": "occ_linked_map",
+      "insertions": 1000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "occ_linked_map",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 1000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 192233,
+        "python_traced_peak_at_live_limit_bytes": 201641,
+        "python_traced_total_peak_bytes": 201641,
+        "python_traced_empty_queue_alive_before_gc_bytes": 31249,
+        "python_traced_empty_queue_alive_after_gc_bytes": 26009,
+        "python_traced_after_queue_destroyed_bytes": 1275,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3072
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 191101,
+        "python_traced_peak_at_live_limit_bytes": 200509,
+        "python_traced_total_peak_bytes": 200509,
+        "python_traced_empty_queue_alive_before_gc_bytes": 31141,
+        "python_traced_empty_queue_alive_after_gc_bytes": 25901,
+        "python_traced_after_queue_destroyed_bytes": 1275,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3056
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 15,
+      "second_over_first_post_gc_bytes": 0.9958475912184244,
+      "second_minus_first_post_gc_bytes": -108,
+      "first_host_file": "work/lapq/phase3/results/retention-1000-occ_linked_map-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_map-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-1000-occ_linked_retain-disabled_during_trace",
+      "method": "occ_linked_retain",
+      "insertions": 1000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "occ_linked_retain",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 1000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 487796,
+        "python_traced_peak_at_live_limit_bytes": 487836,
+        "python_traced_total_peak_bytes": 487948,
+        "python_traced_empty_queue_alive_before_gc_bytes": 367324,
+        "python_traced_empty_queue_alive_after_gc_bytes": 362084,
+        "python_traced_after_queue_destroyed_bytes": 1306,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3100
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 479656,
+        "python_traced_peak_at_live_limit_bytes": 479696,
+        "python_traced_total_peak_bytes": 479808,
+        "python_traced_empty_queue_alive_before_gc_bytes": 359184,
+        "python_traced_empty_queue_alive_after_gc_bytes": 353944,
+        "python_traced_after_queue_destroyed_bytes": 1306,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3084
+      },
+      "mac_retained_node_map_entries": 1000,
+      "windows_wsl2_retained_node_map_entries": 1000,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 15,
+      "second_over_first_post_gc_bytes": 0.977519028733664,
+      "second_minus_first_post_gc_bytes": -8140,
+      "first_host_file": "work/lapq/phase3/results/retention-1000-occ_linked_retain-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_retain-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-1000-occ_list_map-disabled_during_trace",
+      "method": "occ_list_map",
+      "insertions": 1000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "occ_list_map",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 1000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 78391,
+        "python_traced_peak_at_live_limit_bytes": 87799,
+        "python_traced_total_peak_bytes": 87799,
+        "python_traced_empty_queue_alive_before_gc_bytes": 30079,
+        "python_traced_empty_queue_alive_after_gc_bytes": 24951,
+        "python_traced_after_queue_destroyed_bytes": 1273,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3072
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 77315,
+        "python_traced_peak_at_live_limit_bytes": 86723,
+        "python_traced_total_peak_bytes": 86723,
+        "python_traced_empty_queue_alive_before_gc_bytes": 30027,
+        "python_traced_empty_queue_alive_after_gc_bytes": 24843,
+        "python_traced_after_queue_destroyed_bytes": 1273,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3056
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 15,
+      "second_over_first_post_gc_bytes": 0.9956715161716966,
+      "second_minus_first_post_gc_bytes": -108,
+      "first_host_file": "work/lapq/phase3/results/retention-1000-occ_list_map-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_map-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-1000-occ_list_retain-disabled_during_trace",
+      "method": "occ_list_retain",
+      "insertions": 1000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "occ_list_retain",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 1000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 373954,
+        "python_traced_peak_at_live_limit_bytes": 373994,
+        "python_traced_total_peak_bytes": 374106,
+        "python_traced_empty_queue_alive_before_gc_bytes": 366154,
+        "python_traced_empty_queue_alive_after_gc_bytes": 361026,
+        "python_traced_after_queue_destroyed_bytes": 1304,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3100
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 365870,
+        "python_traced_peak_at_live_limit_bytes": 365910,
+        "python_traced_total_peak_bytes": 366022,
+        "python_traced_empty_queue_alive_before_gc_bytes": 358070,
+        "python_traced_empty_queue_alive_after_gc_bytes": 352886,
+        "python_traced_after_queue_destroyed_bytes": 1304,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3084
+      },
+      "mac_retained_node_map_entries": 1000,
+      "windows_wsl2_retained_node_map_entries": 1000,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 15,
+      "second_over_first_post_gc_bytes": 0.9774531474187454,
+      "second_minus_first_post_gc_bytes": -8140,
+      "first_host_file": "work/lapq/phase3/results/retention-1000-occ_list_retain-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_retain-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-1000-grouped_compact_reference-enabled",
+      "method": "grouped_compact_reference",
+      "insertions": 1000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "grouped_compact_reference",
+        "gc_mode": "enabled",
+        "insertions": 1000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 89270,
+        "python_traced_peak_at_live_limit_bytes": 98710,
+        "python_traced_total_peak_bytes": 98710,
+        "python_traced_empty_queue_alive_before_gc_bytes": 25558,
+        "python_traced_empty_queue_alive_after_gc_bytes": 20830,
+        "python_traced_after_queue_destroyed_bytes": 1246,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3048
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 88310,
+        "python_traced_peak_at_live_limit_bytes": 97750,
+        "python_traced_total_peak_bytes": 97750,
+        "python_traced_empty_queue_alive_before_gc_bytes": 25566,
+        "python_traced_empty_queue_alive_after_gc_bytes": 20766,
+        "python_traced_after_queue_destroyed_bytes": 1246,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3032
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 15,
+      "second_over_first_post_gc_bytes": 0.9969275084013443,
+      "second_minus_first_post_gc_bytes": -64,
+      "first_host_file": "work/lapq/phase3/results/retention-1000-grouped_compact_reference-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-1000-grouped_compact_reference-enabled/result.json"
+    },
+    {
+      "job_id": "retention-1000-occ_linked_map-enabled",
+      "method": "occ_linked_map",
+      "insertions": 1000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "occ_linked_map",
+        "gc_mode": "enabled",
+        "insertions": 1000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 192233,
+        "python_traced_peak_at_live_limit_bytes": 201641,
+        "python_traced_total_peak_bytes": 201641,
+        "python_traced_empty_queue_alive_before_gc_bytes": 31249,
+        "python_traced_empty_queue_alive_after_gc_bytes": 26009,
+        "python_traced_after_queue_destroyed_bytes": 1275,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3072
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 191101,
+        "python_traced_peak_at_live_limit_bytes": 200509,
+        "python_traced_total_peak_bytes": 200509,
+        "python_traced_empty_queue_alive_before_gc_bytes": 31141,
+        "python_traced_empty_queue_alive_after_gc_bytes": 25901,
+        "python_traced_after_queue_destroyed_bytes": 1275,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3056
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 15,
+      "second_over_first_post_gc_bytes": 0.9958475912184244,
+      "second_minus_first_post_gc_bytes": -108,
+      "first_host_file": "work/lapq/phase3/results/retention-1000-occ_linked_map-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_map-enabled/result.json"
+    },
+    {
+      "job_id": "retention-1000-occ_linked_retain-enabled",
+      "method": "occ_linked_retain",
+      "insertions": 1000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "occ_linked_retain",
+        "gc_mode": "enabled",
+        "insertions": 1000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 487796,
+        "python_traced_peak_at_live_limit_bytes": 487836,
+        "python_traced_total_peak_bytes": 487948,
+        "python_traced_empty_queue_alive_before_gc_bytes": 367324,
+        "python_traced_empty_queue_alive_after_gc_bytes": 362084,
+        "python_traced_after_queue_destroyed_bytes": 1306,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3100
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 479656,
+        "python_traced_peak_at_live_limit_bytes": 479696,
+        "python_traced_total_peak_bytes": 479808,
+        "python_traced_empty_queue_alive_before_gc_bytes": 359184,
+        "python_traced_empty_queue_alive_after_gc_bytes": 353944,
+        "python_traced_after_queue_destroyed_bytes": 1306,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3084
+      },
+      "mac_retained_node_map_entries": 1000,
+      "windows_wsl2_retained_node_map_entries": 1000,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 15,
+      "second_over_first_post_gc_bytes": 0.977519028733664,
+      "second_minus_first_post_gc_bytes": -8140,
+      "first_host_file": "work/lapq/phase3/results/retention-1000-occ_linked_retain-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_retain-enabled/result.json"
+    },
+    {
+      "job_id": "retention-1000-occ_list_map-enabled",
+      "method": "occ_list_map",
+      "insertions": 1000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "occ_list_map",
+        "gc_mode": "enabled",
+        "insertions": 1000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 78391,
+        "python_traced_peak_at_live_limit_bytes": 87799,
+        "python_traced_total_peak_bytes": 87799,
+        "python_traced_empty_queue_alive_before_gc_bytes": 30079,
+        "python_traced_empty_queue_alive_after_gc_bytes": 24951,
+        "python_traced_after_queue_destroyed_bytes": 1273,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3072
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 77315,
+        "python_traced_peak_at_live_limit_bytes": 86723,
+        "python_traced_total_peak_bytes": 86723,
+        "python_traced_empty_queue_alive_before_gc_bytes": 30027,
+        "python_traced_empty_queue_alive_after_gc_bytes": 24843,
+        "python_traced_after_queue_destroyed_bytes": 1273,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3056
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 15,
+      "second_over_first_post_gc_bytes": 0.9956715161716966,
+      "second_minus_first_post_gc_bytes": -108,
+      "first_host_file": "work/lapq/phase3/results/retention-1000-occ_list_map-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_map-enabled/result.json"
+    },
+    {
+      "job_id": "retention-1000-occ_list_retain-enabled",
+      "method": "occ_list_retain",
+      "insertions": 1000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "occ_list_retain",
+        "gc_mode": "enabled",
+        "insertions": 1000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 373954,
+        "python_traced_peak_at_live_limit_bytes": 373994,
+        "python_traced_total_peak_bytes": 374106,
+        "python_traced_empty_queue_alive_before_gc_bytes": 366154,
+        "python_traced_empty_queue_alive_after_gc_bytes": 361026,
+        "python_traced_after_queue_destroyed_bytes": 1304,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3100
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 365870,
+        "python_traced_peak_at_live_limit_bytes": 365910,
+        "python_traced_total_peak_bytes": 366022,
+        "python_traced_empty_queue_alive_before_gc_bytes": 358070,
+        "python_traced_empty_queue_alive_after_gc_bytes": 352886,
+        "python_traced_after_queue_destroyed_bytes": 1304,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3084
+      },
+      "mac_retained_node_map_entries": 1000,
+      "windows_wsl2_retained_node_map_entries": 1000,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 15,
+      "second_over_first_post_gc_bytes": 0.9774531474187454,
+      "second_minus_first_post_gc_bytes": -8140,
+      "first_host_file": "work/lapq/phase3/results/retention-1000-occ_list_retain-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_retain-enabled/result.json"
+    },
+    {
+      "job_id": "retention-10000-grouped_compact_reference-disabled_during_trace",
+      "method": "grouped_compact_reference",
+      "insertions": 10000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "grouped_compact_reference",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 10000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 89206,
+        "python_traced_peak_at_live_limit_bytes": 99190,
+        "python_traced_total_peak_bytes": 99190,
+        "python_traced_empty_queue_alive_before_gc_bytes": 25558,
+        "python_traced_empty_queue_alive_after_gc_bytes": 20830,
+        "python_traced_after_queue_destroyed_bytes": 1246,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3048
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 88246,
+        "python_traced_peak_at_live_limit_bytes": 98230,
+        "python_traced_total_peak_bytes": 98230,
+        "python_traced_empty_queue_alive_before_gc_bytes": 25566,
+        "python_traced_empty_queue_alive_after_gc_bytes": 20766,
+        "python_traced_after_queue_destroyed_bytes": 1246,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3032
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 16,
+      "second_over_first_post_gc_bytes": 0.9969275084013443,
+      "second_minus_first_post_gc_bytes": -64,
+      "first_host_file": "work/lapq/phase3/results/retention-10000-grouped_compact_reference-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-10000-grouped_compact_reference-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-10000-occ_linked_map-disabled_during_trace",
+      "method": "occ_linked_map",
+      "insertions": 10000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "occ_linked_map",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 10000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 192169,
+        "python_traced_peak_at_live_limit_bytes": 202121,
+        "python_traced_total_peak_bytes": 202121,
+        "python_traced_empty_queue_alive_before_gc_bytes": 31249,
+        "python_traced_empty_queue_alive_after_gc_bytes": 26009,
+        "python_traced_after_queue_destroyed_bytes": 1275,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3072
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 191037,
+        "python_traced_peak_at_live_limit_bytes": 200989,
+        "python_traced_total_peak_bytes": 200989,
+        "python_traced_empty_queue_alive_before_gc_bytes": 31141,
+        "python_traced_empty_queue_alive_after_gc_bytes": 25901,
+        "python_traced_after_queue_destroyed_bytes": 1275,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3056
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 16,
+      "second_over_first_post_gc_bytes": 0.9958475912184244,
+      "second_minus_first_post_gc_bytes": -108,
+      "first_host_file": "work/lapq/phase3/results/retention-10000-occ_linked_map-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_map-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-10000-occ_linked_retain-disabled_during_trace",
+      "method": "occ_linked_retain",
+      "insertions": 10000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "occ_linked_retain",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 10000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 3593708,
+        "python_traced_peak_at_live_limit_bytes": 3593748,
+        "python_traced_total_peak_bytes": 3593860,
+        "python_traced_empty_queue_alive_before_gc_bytes": 3473236,
+        "python_traced_empty_queue_alive_after_gc_bytes": 3467996,
+        "python_traced_after_queue_destroyed_bytes": 1306,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3100
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 3513568,
+        "python_traced_peak_at_live_limit_bytes": 3513608,
+        "python_traced_total_peak_bytes": 3513720,
+        "python_traced_empty_queue_alive_before_gc_bytes": 3393096,
+        "python_traced_empty_queue_alive_after_gc_bytes": 3387856,
+        "python_traced_after_queue_destroyed_bytes": 1306,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3084
+      },
+      "mac_retained_node_map_entries": 10000,
+      "windows_wsl2_retained_node_map_entries": 10000,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 16,
+      "second_over_first_post_gc_bytes": 0.9768915535081355,
+      "second_minus_first_post_gc_bytes": -80140,
+      "first_host_file": "work/lapq/phase3/results/retention-10000-occ_linked_retain-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_retain-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-10000-occ_list_map-disabled_during_trace",
+      "method": "occ_list_map",
+      "insertions": 10000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "occ_list_map",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 10000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 78327,
+        "python_traced_peak_at_live_limit_bytes": 88279,
+        "python_traced_total_peak_bytes": 88279,
+        "python_traced_empty_queue_alive_before_gc_bytes": 30079,
+        "python_traced_empty_queue_alive_after_gc_bytes": 24951,
+        "python_traced_after_queue_destroyed_bytes": 1273,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3072
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 77251,
+        "python_traced_peak_at_live_limit_bytes": 87203,
+        "python_traced_total_peak_bytes": 87203,
+        "python_traced_empty_queue_alive_before_gc_bytes": 30027,
+        "python_traced_empty_queue_alive_after_gc_bytes": 24843,
+        "python_traced_after_queue_destroyed_bytes": 1273,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3056
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 16,
+      "second_over_first_post_gc_bytes": 0.9956715161716966,
+      "second_minus_first_post_gc_bytes": -108,
+      "first_host_file": "work/lapq/phase3/results/retention-10000-occ_list_map-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_map-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-10000-occ_list_retain-disabled_during_trace",
+      "method": "occ_list_retain",
+      "insertions": 10000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "occ_list_retain",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 10000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 3479866,
+        "python_traced_peak_at_live_limit_bytes": 3479906,
+        "python_traced_total_peak_bytes": 3480018,
+        "python_traced_empty_queue_alive_before_gc_bytes": 3472066,
+        "python_traced_empty_queue_alive_after_gc_bytes": 3466938,
+        "python_traced_after_queue_destroyed_bytes": 1304,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3100
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 3399782,
+        "python_traced_peak_at_live_limit_bytes": 3399822,
+        "python_traced_total_peak_bytes": 3399934,
+        "python_traced_empty_queue_alive_before_gc_bytes": 3391982,
+        "python_traced_empty_queue_alive_after_gc_bytes": 3386798,
+        "python_traced_after_queue_destroyed_bytes": 1304,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3084
+      },
+      "mac_retained_node_map_entries": 10000,
+      "windows_wsl2_retained_node_map_entries": 10000,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 16,
+      "second_over_first_post_gc_bytes": 0.9768845015399756,
+      "second_minus_first_post_gc_bytes": -80140,
+      "first_host_file": "work/lapq/phase3/results/retention-10000-occ_list_retain-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_retain-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-10000-grouped_compact_reference-enabled",
+      "method": "grouped_compact_reference",
+      "insertions": 10000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "grouped_compact_reference",
+        "gc_mode": "enabled",
+        "insertions": 10000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 89206,
+        "python_traced_peak_at_live_limit_bytes": 99190,
+        "python_traced_total_peak_bytes": 99190,
+        "python_traced_empty_queue_alive_before_gc_bytes": 25558,
+        "python_traced_empty_queue_alive_after_gc_bytes": 20830,
+        "python_traced_after_queue_destroyed_bytes": 1246,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3048
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 88246,
+        "python_traced_peak_at_live_limit_bytes": 98230,
+        "python_traced_total_peak_bytes": 98230,
+        "python_traced_empty_queue_alive_before_gc_bytes": 25566,
+        "python_traced_empty_queue_alive_after_gc_bytes": 20766,
+        "python_traced_after_queue_destroyed_bytes": 1246,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3032
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 16,
+      "second_over_first_post_gc_bytes": 0.9969275084013443,
+      "second_minus_first_post_gc_bytes": -64,
+      "first_host_file": "work/lapq/phase3/results/retention-10000-grouped_compact_reference-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-10000-grouped_compact_reference-enabled/result.json"
+    },
+    {
+      "job_id": "retention-10000-occ_linked_map-enabled",
+      "method": "occ_linked_map",
+      "insertions": 10000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "occ_linked_map",
+        "gc_mode": "enabled",
+        "insertions": 10000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 192169,
+        "python_traced_peak_at_live_limit_bytes": 202121,
+        "python_traced_total_peak_bytes": 202121,
+        "python_traced_empty_queue_alive_before_gc_bytes": 31249,
+        "python_traced_empty_queue_alive_after_gc_bytes": 26009,
+        "python_traced_after_queue_destroyed_bytes": 1275,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3072
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 191037,
+        "python_traced_peak_at_live_limit_bytes": 200989,
+        "python_traced_total_peak_bytes": 200989,
+        "python_traced_empty_queue_alive_before_gc_bytes": 31141,
+        "python_traced_empty_queue_alive_after_gc_bytes": 25901,
+        "python_traced_after_queue_destroyed_bytes": 1275,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3056
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 16,
+      "second_over_first_post_gc_bytes": 0.9958475912184244,
+      "second_minus_first_post_gc_bytes": -108,
+      "first_host_file": "work/lapq/phase3/results/retention-10000-occ_linked_map-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_map-enabled/result.json"
+    },
+    {
+      "job_id": "retention-10000-occ_linked_retain-enabled",
+      "method": "occ_linked_retain",
+      "insertions": 10000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "occ_linked_retain",
+        "gc_mode": "enabled",
+        "insertions": 10000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 3593708,
+        "python_traced_peak_at_live_limit_bytes": 3593748,
+        "python_traced_total_peak_bytes": 3593860,
+        "python_traced_empty_queue_alive_before_gc_bytes": 3473236,
+        "python_traced_empty_queue_alive_after_gc_bytes": 3467996,
+        "python_traced_after_queue_destroyed_bytes": 1306,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3100
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 3513568,
+        "python_traced_peak_at_live_limit_bytes": 3513608,
+        "python_traced_total_peak_bytes": 3513720,
+        "python_traced_empty_queue_alive_before_gc_bytes": 3393096,
+        "python_traced_empty_queue_alive_after_gc_bytes": 3387856,
+        "python_traced_after_queue_destroyed_bytes": 1306,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3084
+      },
+      "mac_retained_node_map_entries": 10000,
+      "windows_wsl2_retained_node_map_entries": 10000,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 16,
+      "second_over_first_post_gc_bytes": 0.9768915535081355,
+      "second_minus_first_post_gc_bytes": -80140,
+      "first_host_file": "work/lapq/phase3/results/retention-10000-occ_linked_retain-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_retain-enabled/result.json"
+    },
+    {
+      "job_id": "retention-10000-occ_list_map-enabled",
+      "method": "occ_list_map",
+      "insertions": 10000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "occ_list_map",
+        "gc_mode": "enabled",
+        "insertions": 10000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 78327,
+        "python_traced_peak_at_live_limit_bytes": 88279,
+        "python_traced_total_peak_bytes": 88279,
+        "python_traced_empty_queue_alive_before_gc_bytes": 30079,
+        "python_traced_empty_queue_alive_after_gc_bytes": 24951,
+        "python_traced_after_queue_destroyed_bytes": 1273,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3072
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 77251,
+        "python_traced_peak_at_live_limit_bytes": 87203,
+        "python_traced_total_peak_bytes": 87203,
+        "python_traced_empty_queue_alive_before_gc_bytes": 30027,
+        "python_traced_empty_queue_alive_after_gc_bytes": 24843,
+        "python_traced_after_queue_destroyed_bytes": 1273,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3056
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 16,
+      "second_over_first_post_gc_bytes": 0.9956715161716966,
+      "second_minus_first_post_gc_bytes": -108,
+      "first_host_file": "work/lapq/phase3/results/retention-10000-occ_list_map-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_map-enabled/result.json"
+    },
+    {
+      "job_id": "retention-10000-occ_list_retain-enabled",
+      "method": "occ_list_retain",
+      "insertions": 10000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "occ_list_retain",
+        "gc_mode": "enabled",
+        "insertions": 10000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 3479866,
+        "python_traced_peak_at_live_limit_bytes": 3479906,
+        "python_traced_total_peak_bytes": 3480018,
+        "python_traced_empty_queue_alive_before_gc_bytes": 3472066,
+        "python_traced_empty_queue_alive_after_gc_bytes": 3466938,
+        "python_traced_after_queue_destroyed_bytes": 1304,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3100
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 3399782,
+        "python_traced_peak_at_live_limit_bytes": 3399822,
+        "python_traced_total_peak_bytes": 3399934,
+        "python_traced_empty_queue_alive_before_gc_bytes": 3391982,
+        "python_traced_empty_queue_alive_after_gc_bytes": 3386798,
+        "python_traced_after_queue_destroyed_bytes": 1304,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3084
+      },
+      "mac_retained_node_map_entries": 10000,
+      "windows_wsl2_retained_node_map_entries": 10000,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 16,
+      "second_over_first_post_gc_bytes": 0.9768845015399756,
+      "second_minus_first_post_gc_bytes": -80140,
+      "first_host_file": "work/lapq/phase3/results/retention-10000-occ_list_retain-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_retain-enabled/result.json"
+    },
+    {
+      "job_id": "retention-100000-grouped_compact_reference-disabled_during_trace",
+      "method": "grouped_compact_reference",
+      "insertions": 100000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "grouped_compact_reference",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 100000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 89526,
+        "python_traced_peak_at_live_limit_bytes": 99318,
+        "python_traced_total_peak_bytes": 99318,
+        "python_traced_empty_queue_alive_before_gc_bytes": 25622,
+        "python_traced_empty_queue_alive_after_gc_bytes": 20894,
+        "python_traced_after_queue_destroyed_bytes": 1246,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3048
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 88566,
+        "python_traced_peak_at_live_limit_bytes": 98358,
+        "python_traced_total_peak_bytes": 98358,
+        "python_traced_empty_queue_alive_before_gc_bytes": 25630,
+        "python_traced_empty_queue_alive_after_gc_bytes": 20830,
+        "python_traced_after_queue_destroyed_bytes": 1246,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3032
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 19,
+      "second_over_first_post_gc_bytes": 0.9969369196898631,
+      "second_minus_first_post_gc_bytes": -64,
+      "first_host_file": "work/lapq/phase3/results/retention-100000-grouped_compact_reference-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-100000-grouped_compact_reference-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-100000-occ_linked_map-disabled_during_trace",
+      "method": "occ_linked_map",
+      "insertions": 100000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "occ_linked_map",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 100000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 192489,
+        "python_traced_peak_at_live_limit_bytes": 202249,
+        "python_traced_total_peak_bytes": 202249,
+        "python_traced_empty_queue_alive_before_gc_bytes": 31313,
+        "python_traced_empty_queue_alive_after_gc_bytes": 26073,
+        "python_traced_after_queue_destroyed_bytes": 1275,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3072
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 191357,
+        "python_traced_peak_at_live_limit_bytes": 201117,
+        "python_traced_total_peak_bytes": 201117,
+        "python_traced_empty_queue_alive_before_gc_bytes": 31205,
+        "python_traced_empty_queue_alive_after_gc_bytes": 25965,
+        "python_traced_after_queue_destroyed_bytes": 1275,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3056
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 19,
+      "second_over_first_post_gc_bytes": 0.9958577839143942,
+      "second_minus_first_post_gc_bytes": -108,
+      "first_host_file": "work/lapq/phase3/results/retention-100000-occ_linked_map-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_map-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-100000-occ_linked_retain-disabled_during_trace",
+      "method": "occ_linked_retain",
+      "insertions": 100000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "occ_linked_retain",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 100000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 37018796,
+        "python_traced_peak_at_live_limit_bytes": 37018836,
+        "python_traced_total_peak_bytes": 37018948,
+        "python_traced_empty_queue_alive_before_gc_bytes": 36898324,
+        "python_traced_empty_queue_alive_after_gc_bytes": 36893084,
+        "python_traced_after_queue_destroyed_bytes": 1306,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3100
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 36218656,
+        "python_traced_peak_at_live_limit_bytes": 36218696,
+        "python_traced_total_peak_bytes": 36218808,
+        "python_traced_empty_queue_alive_before_gc_bytes": 36098184,
+        "python_traced_empty_queue_alive_after_gc_bytes": 36092944,
+        "python_traced_after_queue_destroyed_bytes": 1306,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3084
+      },
+      "mac_retained_node_map_entries": 100000,
+      "windows_wsl2_retained_node_map_entries": 100000,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 19,
+      "second_over_first_post_gc_bytes": 0.9783119242620107,
+      "second_minus_first_post_gc_bytes": -800140,
+      "first_host_file": "work/lapq/phase3/results/retention-100000-occ_linked_retain-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_retain-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-100000-occ_list_map-disabled_during_trace",
+      "method": "occ_list_map",
+      "insertions": 100000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "occ_list_map",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 100000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 78647,
+        "python_traced_peak_at_live_limit_bytes": 88407,
+        "python_traced_total_peak_bytes": 88407,
+        "python_traced_empty_queue_alive_before_gc_bytes": 30143,
+        "python_traced_empty_queue_alive_after_gc_bytes": 25015,
+        "python_traced_after_queue_destroyed_bytes": 1273,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3072
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 77571,
+        "python_traced_peak_at_live_limit_bytes": 87331,
+        "python_traced_total_peak_bytes": 87331,
+        "python_traced_empty_queue_alive_before_gc_bytes": 30091,
+        "python_traced_empty_queue_alive_after_gc_bytes": 24907,
+        "python_traced_after_queue_destroyed_bytes": 1273,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3056
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 19,
+      "second_over_first_post_gc_bytes": 0.9956825904457326,
+      "second_minus_first_post_gc_bytes": -108,
+      "first_host_file": "work/lapq/phase3/results/retention-100000-occ_list_map-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_map-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-100000-occ_list_retain-disabled_during_trace",
+      "method": "occ_list_retain",
+      "insertions": 100000,
+      "gc_mode": "disabled_during_trace",
+      "spec": {
+        "method": "occ_list_retain",
+        "gc_mode": "disabled_during_trace",
+        "insertions": 100000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 36904954,
+        "python_traced_peak_at_live_limit_bytes": 36904994,
+        "python_traced_total_peak_bytes": 36905106,
+        "python_traced_empty_queue_alive_before_gc_bytes": 36897154,
+        "python_traced_empty_queue_alive_after_gc_bytes": 36892026,
+        "python_traced_after_queue_destroyed_bytes": 1304,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3100
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 36104870,
+        "python_traced_peak_at_live_limit_bytes": 36104910,
+        "python_traced_total_peak_bytes": 36105022,
+        "python_traced_empty_queue_alive_before_gc_bytes": 36097070,
+        "python_traced_empty_queue_alive_after_gc_bytes": 36091886,
+        "python_traced_after_queue_destroyed_bytes": 1304,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3084
+      },
+      "mac_retained_node_map_entries": 100000,
+      "windows_wsl2_retained_node_map_entries": 100000,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 19,
+      "second_over_first_post_gc_bytes": 0.9783113022852147,
+      "second_minus_first_post_gc_bytes": -800140,
+      "first_host_file": "work/lapq/phase3/results/retention-100000-occ_list_retain-disabled_during_trace.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_retain-disabled_during_trace/result.json"
+    },
+    {
+      "job_id": "retention-100000-grouped_compact_reference-enabled",
+      "method": "grouped_compact_reference",
+      "insertions": 100000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "grouped_compact_reference",
+        "gc_mode": "enabled",
+        "insertions": 100000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 89526,
+        "python_traced_peak_at_live_limit_bytes": 99318,
+        "python_traced_total_peak_bytes": 99318,
+        "python_traced_empty_queue_alive_before_gc_bytes": 25622,
+        "python_traced_empty_queue_alive_after_gc_bytes": 20894,
+        "python_traced_after_queue_destroyed_bytes": 1246,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3048
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 88566,
+        "python_traced_peak_at_live_limit_bytes": 98358,
+        "python_traced_total_peak_bytes": 98358,
+        "python_traced_empty_queue_alive_before_gc_bytes": 25630,
+        "python_traced_empty_queue_alive_after_gc_bytes": 20830,
+        "python_traced_after_queue_destroyed_bytes": 1246,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3032
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 19,
+      "second_over_first_post_gc_bytes": 0.9969369196898631,
+      "second_minus_first_post_gc_bytes": -64,
+      "first_host_file": "work/lapq/phase3/results/retention-100000-grouped_compact_reference-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-100000-grouped_compact_reference-enabled/result.json"
+    },
+    {
+      "job_id": "retention-100000-occ_linked_map-enabled",
+      "method": "occ_linked_map",
+      "insertions": 100000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "occ_linked_map",
+        "gc_mode": "enabled",
+        "insertions": 100000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 192489,
+        "python_traced_peak_at_live_limit_bytes": 202249,
+        "python_traced_total_peak_bytes": 202249,
+        "python_traced_empty_queue_alive_before_gc_bytes": 31313,
+        "python_traced_empty_queue_alive_after_gc_bytes": 26073,
+        "python_traced_after_queue_destroyed_bytes": 1275,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3072
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 191357,
+        "python_traced_peak_at_live_limit_bytes": 201117,
+        "python_traced_total_peak_bytes": 201117,
+        "python_traced_empty_queue_alive_before_gc_bytes": 31205,
+        "python_traced_empty_queue_alive_after_gc_bytes": 25965,
+        "python_traced_after_queue_destroyed_bytes": 1275,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3056
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 19,
+      "second_over_first_post_gc_bytes": 0.9958577839143942,
+      "second_minus_first_post_gc_bytes": -108,
+      "first_host_file": "work/lapq/phase3/results/retention-100000-occ_linked_map-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_map-enabled/result.json"
+    },
+    {
+      "job_id": "retention-100000-occ_linked_retain-enabled",
+      "method": "occ_linked_retain",
+      "insertions": 100000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "occ_linked_retain",
+        "gc_mode": "enabled",
+        "insertions": 100000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 37018140,
+        "python_traced_peak_at_live_limit_bytes": 37018180,
+        "python_traced_total_peak_bytes": 37018292,
+        "python_traced_empty_queue_alive_before_gc_bytes": 36897716,
+        "python_traced_empty_queue_alive_after_gc_bytes": 36893084,
+        "python_traced_after_queue_destroyed_bytes": 1306,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3100
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 36218000,
+        "python_traced_peak_at_live_limit_bytes": 36218040,
+        "python_traced_total_peak_bytes": 36218152,
+        "python_traced_empty_queue_alive_before_gc_bytes": 36097576,
+        "python_traced_empty_queue_alive_after_gc_bytes": 36092944,
+        "python_traced_after_queue_destroyed_bytes": 1306,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3084
+      },
+      "mac_retained_node_map_entries": 100000,
+      "windows_wsl2_retained_node_map_entries": 100000,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 19,
+      "second_over_first_post_gc_bytes": 0.9783119242620107,
+      "second_minus_first_post_gc_bytes": -800140,
+      "first_host_file": "work/lapq/phase3/results/retention-100000-occ_linked_retain-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_retain-enabled/result.json"
+    },
+    {
+      "job_id": "retention-100000-occ_list_map-enabled",
+      "method": "occ_list_map",
+      "insertions": 100000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "occ_list_map",
+        "gc_mode": "enabled",
+        "insertions": 100000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 78647,
+        "python_traced_peak_at_live_limit_bytes": 88407,
+        "python_traced_total_peak_bytes": 88407,
+        "python_traced_empty_queue_alive_before_gc_bytes": 30143,
+        "python_traced_empty_queue_alive_after_gc_bytes": 25015,
+        "python_traced_after_queue_destroyed_bytes": 1273,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3072
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 77571,
+        "python_traced_peak_at_live_limit_bytes": 87331,
+        "python_traced_total_peak_bytes": 87331,
+        "python_traced_empty_queue_alive_before_gc_bytes": 30091,
+        "python_traced_empty_queue_alive_after_gc_bytes": 24907,
+        "python_traced_after_queue_destroyed_bytes": 1273,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3056
+      },
+      "mac_retained_node_map_entries": 0,
+      "windows_wsl2_retained_node_map_entries": 0,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 19,
+      "second_over_first_post_gc_bytes": 0.9956825904457326,
+      "second_minus_first_post_gc_bytes": -108,
+      "first_host_file": "work/lapq/phase3/results/retention-100000-occ_list_map-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_map-enabled/result.json"
+    },
+    {
+      "job_id": "retention-100000-occ_list_retain-enabled",
+      "method": "occ_list_retain",
+      "insertions": 100000,
+      "gc_mode": "enabled",
+      "spec": {
+        "method": "occ_list_retain",
+        "gc_mode": "enabled",
+        "insertions": 100000,
+        "max_live": 128,
+        "queue_seed": 101,
+        "prediction": "constant0",
+        "rank_universe": 1
+      },
+      "mac": {
+        "python_traced_current_at_live_limit_bytes": 36904290,
+        "python_traced_peak_at_live_limit_bytes": 36904330,
+        "python_traced_total_peak_bytes": 36904498,
+        "python_traced_empty_queue_alive_before_gc_bytes": 36896546,
+        "python_traced_empty_queue_alive_after_gc_bytes": 36892026,
+        "python_traced_after_queue_destroyed_bytes": 1304,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3100
+      },
+      "windows_wsl2": {
+        "python_traced_current_at_live_limit_bytes": 36104206,
+        "python_traced_peak_at_live_limit_bytes": 36104246,
+        "python_traced_total_peak_bytes": 36104358,
+        "python_traced_empty_queue_alive_before_gc_bytes": 36096406,
+        "python_traced_empty_queue_alive_after_gc_bytes": 36091886,
+        "python_traced_after_queue_destroyed_bytes": 1304,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 3084
+      },
+      "mac_retained_node_map_entries": 100000,
+      "windows_wsl2_retained_node_map_entries": 100000,
+      "mac_explicit_gc_collected": 0,
+      "windows_wsl2_explicit_gc_collected": 0,
+      "maximum_sampled_height_both_hosts": 19,
+      "second_over_first_post_gc_bytes": 0.9783113022852147,
+      "second_minus_first_post_gc_bytes": -800140,
+      "first_host_file": "work/lapq/phase3/results/retention-100000-occ_list_retain-enabled.json",
+      "second_host_file": "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_retain-enabled/result.json"
+    }
+  ],
+  "within_host_cleanup_comparisons": [
+    {
+      "insertions": 1000,
+      "gc_mode": "enabled",
+      "bucket": "list",
+      "mac_post_gc_retain_over_map": 14.469400024047133,
+      "windows_wsl2_post_gc_retain_over_map": 14.20464517167814
+    },
+    {
+      "insertions": 1000,
+      "gc_mode": "enabled",
+      "bucket": "linked",
+      "mac_post_gc_retain_over_map": 13.921488715444653,
+      "windows_wsl2_post_gc_retain_over_map": 13.665263889425118
+    },
+    {
+      "insertions": 1000,
+      "gc_mode": "disabled_during_trace",
+      "bucket": "list",
+      "mac_post_gc_retain_over_map": 14.469400024047133,
+      "windows_wsl2_post_gc_retain_over_map": 14.20464517167814
+    },
+    {
+      "insertions": 1000,
+      "gc_mode": "disabled_during_trace",
+      "bucket": "linked",
+      "mac_post_gc_retain_over_map": 13.921488715444653,
+      "windows_wsl2_post_gc_retain_over_map": 13.665263889425118
+    },
+    {
+      "insertions": 10000,
+      "gc_mode": "enabled",
+      "bucket": "list",
+      "mac_post_gc_retain_over_map": 138.94986172898882,
+      "windows_wsl2_post_gc_retain_over_map": 136.3280602181701
+    },
+    {
+      "insertions": 10000,
+      "gc_mode": "enabled",
+      "bucket": "linked",
+      "mac_post_gc_retain_over_map": 133.33830597101004,
+      "windows_wsl2_post_gc_retain_over_map": 130.80020076444924
+    },
+    {
+      "insertions": 10000,
+      "gc_mode": "disabled_during_trace",
+      "bucket": "list",
+      "mac_post_gc_retain_over_map": 138.94986172898882,
+      "windows_wsl2_post_gc_retain_over_map": 136.3280602181701
+    },
+    {
+      "insertions": 10000,
+      "gc_mode": "disabled_during_trace",
+      "bucket": "linked",
+      "mac_post_gc_retain_over_map": 133.33830597101004,
+      "windows_wsl2_post_gc_retain_over_map": 130.80020076444924
+    },
+    {
+      "insertions": 100000,
+      "gc_mode": "enabled",
+      "bucket": "list",
+      "mac_post_gc_retain_over_map": 1474.7961623026185,
+      "windows_wsl2_post_gc_retain_over_map": 1449.0659653912555
+    },
+    {
+      "insertions": 100000,
+      "gc_mode": "enabled",
+      "bucket": "linked",
+      "mac_post_gc_retain_over_map": 1414.991907337092,
+      "windows_wsl2_post_gc_retain_over_map": 1390.0613903331407
+    },
+    {
+      "insertions": 100000,
+      "gc_mode": "disabled_during_trace",
+      "bucket": "list",
+      "mac_post_gc_retain_over_map": 1474.7961623026185,
+      "windows_wsl2_post_gc_retain_over_map": 1449.0659653912555
+    },
+    {
+      "insertions": 100000,
+      "gc_mode": "disabled_during_trace",
+      "bucket": "linked",
+      "mac_post_gc_retain_over_map": 1414.991907337092,
+      "windows_wsl2_post_gc_retain_over_map": 1390.0613903331407
+    }
+  ],
+  "memory_diagnostics": {
+    "mac": {
+      "explicit_gc_collected_counts": [
+        0
+      ],
+      "before_minus_after_gc_byte_range": [
+        4520,
+        5240
+      ],
+      "after_queue_destruction_bytes_range": [
+        1246,
+        1306
+      ],
+      "enabled_vs_disabled_max_absolute_differences_bytes": {
+        "python_traced_current_at_live_limit_bytes": 664,
+        "python_traced_peak_at_live_limit_bytes": 664,
+        "python_traced_total_peak_bytes": 656,
+        "python_traced_empty_queue_alive_before_gc_bytes": 608,
+        "python_traced_empty_queue_alive_after_gc_bytes": 0,
+        "python_traced_after_queue_destroyed_bytes": 0,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 0
+      },
+      "map_only_post_gc_bytes_range": [
+        24951,
+        25015
+      ]
+    },
+    "windows_wsl2": {
+      "explicit_gc_collected_counts": [
+        0
+      ],
+      "before_minus_after_gc_byte_range": [
+        4520,
+        5240
+      ],
+      "after_queue_destruction_bytes_range": [
+        1246,
+        1306
+      ],
+      "enabled_vs_disabled_max_absolute_differences_bytes": {
+        "python_traced_current_at_live_limit_bytes": 664,
+        "python_traced_peak_at_live_limit_bytes": 664,
+        "python_traced_total_peak_bytes": 664,
+        "python_traced_empty_queue_alive_before_gc_bytes": 664,
+        "python_traced_empty_queue_alive_after_gc_bytes": 0,
+        "python_traced_after_queue_destroyed_bytes": 0,
+        "post_snapshot_stats_buffer_traced_increment_bytes": 0
+      },
+      "map_only_post_gc_bytes_range": [
+        24843,
+        24907
+      ]
+    }
+  },
+  "interpretation": [
+    "This is a second-physical-host repetition of the 30 bounded-live Python retention cells, not a rerun of Python graph timings or graph-memory ablations.",
+    "The history-retaining maps contain N entries after drain; map-cleaned and compact maps contain zero. Both hosts return every expected key and have no live level-zero entries after drain.",
+    "Report bytes and within-host ratios descriptively; each method/length/GC cell has one process, not repeated samples supporting a confidence interval.",
+    "Absolute cross-host allocation differences cannot be assigned to hardware: CPython 3.13 versus 3.12, OS, allocator and runtime layout also differ.",
+    "Extracted skip-list node pointers are not detached in the four occurrence arms; the compact reference is explicitly coupled. Linked occurrence-bucket entries have their own separate link-removal bookkeeping.",
+    "Zero explicit-GC collected objects means before/after-GC byte differences are not evidence of reclaimed cycles; interpreter free-list effects can also change traced bytes.",
+    "The first-host phase-three full-workload trace gate is preserved evidence, not newly executed second-host validation; each new retention worker checks every expected extraction.",
+    "No constant-space theorem, process-RSS reduction, general predictor benefit, or cross-host Python query-time result follows from these retention measurements."
+  ],
+  "input_sha256": {
+    "work/lapq/phase3/ablation_protocol.json": "08cde3cdf932bd68fddac8275d70f6c55205f566455b6daea7e0a6d096c08d77",
+    "work/lapq/phase3/execution_manifest.json": "c7968452e66977018bfa7cfa0928086cf9b4e8da7ccc6f5b187df2ab5f58e28e",
+    "work/lapq/phase4/imported/second_host_retention/frozen_wrapper_plan.json": "d0d867371fc63fab773bcb69109791d34478e01d0aa57fdd8ebfb208f03f6f97",
+    "work/lapq/phase4/imported/second_host_retention/retention_execution.json": "d21c83d1bd217779e5541a90dadea04d13a6d63fad1ee1fc81ac0c08f3f047da",
+    "work/lapq/phase3/ablation_queues.py": "1446ce3e454555b6f178500d3bd597ee53b88e294349d0fb7a584accfaab1be1",
+    "work/lapq/phase3/preflight.py": "548cbe296c628ddec82fa50bd3b99dda9d0eed18a2b99e56a96c6e86bd56970e",
+    "work/lapq/phase3/freeze_proposal.py": "bdcbff524d9d59a6232ec53c0a7c236d206ded495d19958ef5fec62c1d0fe883",
+    "work/lapq/phase2/queues.py": "a7f0d49301b604cfd0ce8d4ebb95a23cc41a8486e6a7f651183a29db352754a5",
+    "work/lapq/phase2/indexes.py": "a28c957dea436d6e8a64f3fbf4f7575d2c7fc218f6ac3426b659ae06b7697be2",
+    "work/lapq/phase2/benchmark.py": "b472b3da901290d768039a12e0a72badeb431b377326411c776c06734de68621",
+    "work/lapq/phase2/workloads.py": "53298dfa998440370fa88d5f4520eecf20968153234cac2d99292e436ee6ada2",
+    "work/lapq/data_loading.py": "0b68f44cc1b1c7c4fd3d7f8a3c16285dcbee7114a1ac4ac5c1cc1a5c81970da5",
+    "work/lapq/upstream/skiplist.py": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c",
+    "work/lapq/phase3/ablation_runner.py": "b11f44b75dd637655cd7a5a6782c6ed0eac56d43620595578c693a34fce18abf",
+    "work/lapq/phase3/preflight_results.json": "c4cafccda16ef7404381a1716818e0d973dd803fd1b90e8b92659ab0bd9a35f7",
+    "work/lapq/phase3/runner_selfcheck.json": "23cdf2c446cda3223695f81af902426cb0fb60ec45d74786c02f867e1045b3f0",
+    "work/lapq/phase3/full_trace_gate.py": "22556c00412c663451b3540577c7c34c3fa848182b8b6a2e0168051ec4eb543a",
+    "work/lapq/phase3/full_trace_gate_results.json": "8710500dc4ea925f82940d2eac5045b2cd84ee25bb306fa6e06cfe6f31695574",
+    "work/lapq/phase2/workload_manifest.json": "44ecbd9e2cea1e077d2f9c173b768fa49f9fd52b56e679c8e4680af1b8db58e5",
+    "work/lapq/phase2/veb_index.py": "e9441ff59f83c352643dec8a1206df08120a759bd179832109fd35b1f6e31dfb",
+    "work/lapq/phase2/radix_queue.py": "c072f3b2560bdd04fd826502aa7d43498e2e74817c4bec726495029a480125f2",
+    "work/lapq/phase4/imported/hardware_and_logs/second-host-retention-plan.json": "1de6b23b69cbd84b30dc89ec6e97953ad25746a6968f23d4e851bd5edb1d7290",
+    "work/lapq/phase4/imported/second_host_retention/second_host_retention.py": "2b2e0cb76520ff9ce4595e15d7567139f1d7db768ba2dd89b9aa272932b30032",
+    "work/lapq/phase4/imported/hardware_and_logs/second_host_retention.py": "2b2e0cb76520ff9ce4595e15d7567139f1d7db768ba2dd89b9aa272932b30032",
+    "work/lapq/phase4/imported/reproduction/second_host_retention.py": "2b2e0cb76520ff9ce4595e15d7567139f1d7db768ba2dd89b9aa272932b30032",
+    "work/lapq/phase4/imported/reproduction/second-host-retention-plan.json": "1de6b23b69cbd84b30dc89ec6e97953ad25746a6968f23d4e851bd5edb1d7290",
+    "work/lapq/phase4/imported/hardware_and_logs/retention-wrapper-freeze.sha256": "812c6ffe1cdc7c7875dfc750fa3c5d66226de163cf9beb3d8cf16717c9e84f93",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_map-disabled_during_trace/spec.json": "27bdb6ef927af34fab34625a243f79f204f5ae1118f79224e1972d8d516cccb2",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_map-disabled_during_trace/execution.json": "b83216173c05513383ba893f455a49f2800d944a8d89dc44ea168bb0f65bdb3a",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_map-disabled_during_trace/stdout.txt": "9f821d1694b21ba270e469c52d4b9474ea715220fd4a1210ccdaeed9ee5f6bc1",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_map-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_map-disabled_during_trace/result.json": "9b7ffa346ee486469069ce1894bdd00ac972abd17facf661a134c4d6ad2c39c1",
+    "work/lapq/phase3/results/retention-100000-occ_linked_map-disabled_during_trace.json": "02b9d61914da4e2c480a44064b8e0bbbf5d1771d822663bd428fea077506bfed",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_retain-enabled/spec.json": "35124018b1ee839284e4bb876a8384fd9dcd711d7896eefb7c4c6ee40ad93a79",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_retain-enabled/execution.json": "43bf88c343d8e51ef43dc105c4928b4f0f0dc5b7f1942845975c3b49988ee359",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_retain-enabled/stdout.txt": "d8c9750f02c6572af0c4ddaa179317b605a3bcd11fd301447af89c8973652f58",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_retain-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_retain-enabled/result.json": "f8cce6109872f05a619b565fee061098c0a3aa8ea5a4871ae4f8b65d6163154f",
+    "work/lapq/phase3/results/retention-10000-occ_list_retain-enabled.json": "97ea91303577cc2b8476f031a7e79d2aafe6ecfb4dfad96407eef5085a854cb7",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-grouped_compact_reference-enabled/spec.json": "a286d28fb6f827c1d16d1affe9aea2fcaa4f0824df8ecd67f59433f586bd429c",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-grouped_compact_reference-enabled/execution.json": "d22acbcee660455b9c2ac2c7281a771ac8fb14935b71e6e10c104fcd6ee29fde",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-grouped_compact_reference-enabled/stdout.txt": "7246917cb52ec01016fcdf560136f0df59f25d299ae82b49c4256b7f073626f6",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-grouped_compact_reference-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-grouped_compact_reference-enabled/result.json": "1129f6c9c1df31280de227022a63c99eba63e0a98dc603e7b7263707fd1f6e4e",
+    "work/lapq/phase3/results/retention-1000-grouped_compact_reference-enabled.json": "d945e8951789e682f60bed8bf71a503f64ef98ca31c91221f94136c603ffb486",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_map-enabled/spec.json": "6fb2a8446f1c0fce841f948ad14c666d76402e7e046745673b8d90c37044e67a",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_map-enabled/execution.json": "0d2ee1f523078bf455b6c2e589b431d579d3aada0cd415f7c8fd635fca4a283a",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_map-enabled/stdout.txt": "731b4dced1cc57c80b713f63491309a24580d16e85f06da25813546c6760c4a8",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_map-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_map-enabled/result.json": "db280ba00b1e9220625ca882aa7f558bb6f1c97243dca9d63a11b52c09138c5c",
+    "work/lapq/phase3/results/retention-1000-occ_list_map-enabled.json": "8b72c59b58c251e3afa6a31b746c4a14d0c6b955db6fcdba13ec488ccfc55321",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_retain-enabled/spec.json": "bd600ab64d7b7fa24d2469aa69a8edb926879c6e38db36d38ff15247211f7559",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_retain-enabled/execution.json": "0d81ce450fd8a9b6574ef5cb19089686d1a47474e3b364616ebdcef7a7e607d1",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_retain-enabled/stdout.txt": "68512d08e0507fa85e34d2ec6b0b4b3ea9f9ce9390595a8dbf976f9124aa8cb7",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_retain-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_retain-enabled/result.json": "a7b675c4fcb39941542202b30b58d2b8cf02d8acae107ea2652f81bc58ba05a7",
+    "work/lapq/phase3/results/retention-1000-occ_list_retain-enabled.json": "86ba90f383558e1fa5982440b564a9f8678b9f6c38653af2a00304fdb8c38954",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_retain-disabled_during_trace/spec.json": "4095d6b28748acd1e3848987e65d893dd12f1594f7f42e34d94cf7bbf2bb4195",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_retain-disabled_during_trace/execution.json": "f7e3c7c700f612477a30b8c5920a26ffce864e9e07b3009d30e714d050d4cf06",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_retain-disabled_during_trace/stdout.txt": "582b817907774fd612fce12d692a63164d093beb588802bee59ded91251232ab",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_retain-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_retain-disabled_during_trace/result.json": "2767fba1a986a856adb9d54251bd660c8c185d710df4b6fde72fd4e57eb746fd",
+    "work/lapq/phase3/results/retention-1000-occ_linked_retain-disabled_during_trace.json": "620d1a7660e791425c67ffdfc0b93c4abd9ec63898d3c6d575ab4bfed7bda837",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_map-disabled_during_trace/spec.json": "9a803a8ddc32858059041757b09d3d5ab3840954f23312c56cd54c64add7b82e",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_map-disabled_during_trace/execution.json": "0096926be2c4ba46ec74d2b1c9815c91db23de05b80156605420091b755b7912",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_map-disabled_during_trace/stdout.txt": "beccbac27c6a1ecdc7738e7d1672f9411a2ad3f69bf3c5332c43c8b53ab3e4be",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_map-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_map-disabled_during_trace/result.json": "fba85e1d6307fca61cdbd06623484adab267a857b1a740c22ae0ea3776934dd5",
+    "work/lapq/phase3/results/retention-1000-occ_linked_map-disabled_during_trace.json": "f935ce871da0fb44d315d7f6539dd7db04848a9250531d72eedae9682fdf2e7b",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_map-disabled_during_trace/spec.json": "2da011db92b90985327ba3ae9e2f6a0ac0b359f7dc2613a7170e546fe31598fc",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_map-disabled_during_trace/execution.json": "a6f613c4088eaa3da24cbe1f7fff65b0c3eed4b3ba7d137aa6e3c212120e2485",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_map-disabled_during_trace/stdout.txt": "fd33bc314a724a5d6ac41589f279382a12c81eac2bc3681028c5c9b26905f23b",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_map-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_map-disabled_during_trace/result.json": "f9f49125b4f04f107869cfb8483fdd4526ba9ab100936a2b743bbd88c92e743d",
+    "work/lapq/phase3/results/retention-10000-occ_list_map-disabled_during_trace.json": "f518c9b62b9d5adf680f1ff233a9cb8cde906fec3cf4de8c80ce941a7523de7f",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-grouped_compact_reference-disabled_during_trace/spec.json": "503d5b590a5d64a33799dd8ff2be92ac3c292dbc30c22bfc47fa230943ab9352",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-grouped_compact_reference-disabled_during_trace/execution.json": "d98d3616051fa145363425edbf0acc2cdc81eedc010dce6814371bca24334eff",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-grouped_compact_reference-disabled_during_trace/stdout.txt": "f5cbe31906691080009b5933a763df5bae56400a352b34dbda89d37b5be7adc8",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-grouped_compact_reference-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-grouped_compact_reference-disabled_during_trace/result.json": "342b1a4420d7e43152f7cfb815051ea431d3f467cfdbd758d8c988296f1fc302",
+    "work/lapq/phase3/results/retention-1000-grouped_compact_reference-disabled_during_trace.json": "cb04e025f2a046856de1d0173dd19304e7b5c9a3873dc37e3522f7cf55377e38",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-grouped_compact_reference-enabled/spec.json": "779ff92a34637c6db4e52279725548d3c9d1e8e95251e3ff5d028564de866312",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-grouped_compact_reference-enabled/execution.json": "25905d704cd7b5b8eac7f737a269725bce32b36eb1158a9c82ed1c4840582dd0",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-grouped_compact_reference-enabled/stdout.txt": "a869a46098798f7dd158c99ebe85209a058c2e2a373c729b515f4d607ef3ddbc",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-grouped_compact_reference-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-grouped_compact_reference-enabled/result.json": "0778796bdc7cf0dea4b610a8c3e558d7cf6d297d8a194812ac6b67061dadf1f2",
+    "work/lapq/phase3/results/retention-100000-grouped_compact_reference-enabled.json": "e7ae510309e517608375d7edc76332f8e8af8520481020d5fe8def84f16ab2ff",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_map-disabled_during_trace/spec.json": "3d8a91ecc6c3b76e3f476c5dfb2c152a32fec9b1a47b95e530bad42e72f3c46b",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_map-disabled_during_trace/execution.json": "83d62aac8925c7fcfc7d11b2b7d0c25af02abafc5e02e362f4af6d76b85cdcd8",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_map-disabled_during_trace/stdout.txt": "9639c688d5adb8589f81d4c4ffafd7643b1115b1880dd3ab626cba8e73218881",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_map-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_map-disabled_during_trace/result.json": "fbe5a25e47593d9e09023582c5b8ed7e6176e7537986ee6b9d111b057faf766b",
+    "work/lapq/phase3/results/retention-100000-occ_list_map-disabled_during_trace.json": "2cebead66601c91c4eafefdbe259a87daba85e9d533e8dec6d5e0a242f7a939d",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_retain-disabled_during_trace/spec.json": "4faf70bbbb9b6244ec47c4939e258236b3874508c9966410321bfd0df7a510a9",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_retain-disabled_during_trace/execution.json": "ee7853f2a3a94518a4b69c25dacf610c18b9869dbebebd1bf33e4f047b5ac9c5",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_retain-disabled_during_trace/stdout.txt": "3cab85f67cdb2ba00bda523c19a3d31f29f126ea49b6c8588bc1ce4352fc3b6a",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_retain-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_retain-disabled_during_trace/result.json": "a8c950ab9f34a80da64ab37e5dcf072008f14996dedad9c36e654e4774265031",
+    "work/lapq/phase3/results/retention-100000-occ_list_retain-disabled_during_trace.json": "61b0b97b0b975af27442107c9dee66d1ed9329354118edb01925ce4a320ea45a",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_retain-enabled/spec.json": "4f795c069d74cc4467d0554a64c8fbe002b3f670461473caf92a4e9695f629be",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_retain-enabled/execution.json": "9d5c01943d19022e30c6ce622e08a11535a314b08b2fb7c9361666a7479684b8",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_retain-enabled/stdout.txt": "566a00ffc71a2849c1b9c2f2526e48fa48b7f381c8c4bb8c0cdbd4fa116600fb",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_retain-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_retain-enabled/result.json": "bc5a7ba76716a84619659fcfcde5a9dd9e71c79ba625f972e701ac131c2da780",
+    "work/lapq/phase3/results/retention-100000-occ_linked_retain-enabled.json": "152b5b8b9e5cad7a451bb9690092c729d578835471f4401791de5e52b167240a",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_retain-disabled_during_trace/spec.json": "a2db7e6013ea2ca5752c423d3b0b3cfb5c85b351f45c1bf6f693ffd116b14ada",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_retain-disabled_during_trace/execution.json": "e0214f57de8fe8c7e9cbeb4fdfe8c041d71f04679f29e7558139d9b20fe0dc6c",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_retain-disabled_during_trace/stdout.txt": "888b1887a8130e5222022c6b942f3c5317a9034fe4bb14d94c5102f6a8cb2e1d",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_retain-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_retain-disabled_during_trace/result.json": "6dce8128defadbe5c34ff5c28a6068c47b677cf92549aca3bf85b890fcda37d1",
+    "work/lapq/phase3/results/retention-100000-occ_linked_retain-disabled_during_trace.json": "65884aede6a26ae518f52d1287743ee7db17da86951b907ca2d6c795f48426d9",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_retain-enabled/spec.json": "b8c261fdb6037c6060a7f82a6233a578fd8651fb0206b419bf4959ec86c8f575",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_retain-enabled/execution.json": "a4214bae4dcef2cce4d5a44ad3f8ba636464ddba85de7b485588d3d78847ef27",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_retain-enabled/stdout.txt": "aecf8c5d312ca6de370ef10790173da37e6ca2b05f413502a859dbb4c3853372",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_retain-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_retain-enabled/result.json": "68ff68c1c5a319997f54ab30c0e95ccc667e0346d45f84045ce07ae0f9dcbe80",
+    "work/lapq/phase3/results/retention-100000-occ_list_retain-enabled.json": "cd9c8c430723c0e8efd6a3a551ba10fcef6ff7b45d8222208e39061b34fe5298",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_retain-enabled/spec.json": "c380453b951035c5d31d59065a5fd5f98aca6cf38ad7c4b040743a52520b1fc8",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_retain-enabled/execution.json": "794fd757c7472657bce39970cbc47bd61567fbc0a72bf141e65feae57bb26e62",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_retain-enabled/stdout.txt": "7a2fb1dda2349afe5bdba003b931ace39fff81f7e382803d01e90a0fb7e886ec",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_retain-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_retain-enabled/result.json": "7014563b31886a9f3ce6cfac74d4e895d641552b73ac574267f918e0025a861e",
+    "work/lapq/phase3/results/retention-10000-occ_linked_retain-enabled.json": "cb1c03f17fad952070eec7fe6dd662dbc9e0e16290a33400e42cc81112fdca41",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_map-enabled/spec.json": "e69542b2a271f80214682f649bd4f7bc54be597372fbc11f0c29fe233c938906",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_map-enabled/execution.json": "3561f454d971b3c0b2dd551b4a91fbf1e32ae0b60c2e4e86215409c7d03f56b5",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_map-enabled/stdout.txt": "f3419d1144ee49c1afa9bbd39dd1c554d20be97d5de48e852820c9ec77b75576",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_map-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_map-enabled/result.json": "68940911a183ba486452dc5511e7a5c1153812b7dbce61d8f177f0de3b1f11f0",
+    "work/lapq/phase3/results/retention-10000-occ_linked_map-enabled.json": "1d26a8f632da6e6478bcbfa4ab298adb85075d0adb116d44f98d9e3521109eb5",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_map-enabled/spec.json": "0bab5e1d9adb9a33c993bb8ecc9a4e3905d1ea7a5d974f60054643a38d2da045",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_map-enabled/execution.json": "c417df3d0e47b4244c6f945ed80eade0e2bc9d9f9ac6846feac1ce1264a0ad16",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_map-enabled/stdout.txt": "211d94319e9367d9260bb92129242455bc309f1ad59df4a4e0f9a8da6e7daeaa",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_map-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_linked_map-enabled/result.json": "60d08e05fe6f1b3bbf77cbe9891bac8bdbec7494bd13196837581e70bf618c8d",
+    "work/lapq/phase3/results/retention-100000-occ_linked_map-enabled.json": "5179536c4de121648a7e435c788672a91d37e6ce0749555faf8fd64d50b1d86f",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_map-enabled/spec.json": "a62ee968ef0c1ef0c9dcfd0208bafbfb4a2f58df3777deb228c4d228a160e042",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_map-enabled/execution.json": "c1f9375639b34f585970679af603f189b76883fc9f1231e747126cc6762497d9",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_map-enabled/stdout.txt": "464f5dde8248724a5d26dfbdccfadb1ca931622059fb132433a7f448d8b7ef64",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_map-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_map-enabled/result.json": "0e9aa8b13ea94da14beb56cc5558f0c0dbc9adc76b12766049136b7c7a2a9160",
+    "work/lapq/phase3/results/retention-10000-occ_list_map-enabled.json": "a4f762f413562229577e651714ba0d987304074b7bc9f50a324b92a3fb571c6c",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_retain-disabled_during_trace/spec.json": "5c817cd43e424d2772c7b5037c22f2afe0f3978aae76bf9a19223e58d2ae9757",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_retain-disabled_during_trace/execution.json": "4c5fbb096d62437c9d62e52af3bd62e2f3cb1242ea396fbd1d1030cf46632ac5",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_retain-disabled_during_trace/stdout.txt": "837598cda9c058e78ff7215acaf11bc49132546ce4a162caebf73e499d8654f2",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_retain-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_retain-disabled_during_trace/result.json": "5f298861411cadf80473409d18567c65db3fe6e16b2316bd347e8c05dfa2fe2c",
+    "work/lapq/phase3/results/retention-10000-occ_linked_retain-disabled_during_trace.json": "070eb92302785b283c136374ad84d9f6e35e2944d6733521f20c1745fea37428",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_map-disabled_during_trace/spec.json": "17f375236fe9bbc694d52057faace433afe4ef108fdf7e4306116699bd827ae0",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_map-disabled_during_trace/execution.json": "045aea93e1bb610d050d9d0ecbe602d0db67f27fc0a0a5d00dc0244c97c7068d",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_map-disabled_during_trace/stdout.txt": "d4c68fd5aff3bfca784a3af67bfa36c76cfaf7b18d428a5d5bf4a5d494c08ee2",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_map-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_map-disabled_during_trace/result.json": "c0b7c0468a8c74d393d4e80fb207d66a59fbfe9542418068fa1db75c6dece588",
+    "work/lapq/phase3/results/retention-1000-occ_list_map-disabled_during_trace.json": "c4ffd8f38872bf5a11bd6f503710e77c1da96a337dcc84b09a3d2c576cbdbfb0",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_map-enabled/spec.json": "8cdbfac50d421047d2ad42d395bd142b24024d262af21f6a610999e4b30289ca",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_map-enabled/execution.json": "eee3527623dd65a5352068407b062e136dfe174dbe50e75a28a0ebbc46f10a9e",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_map-enabled/stdout.txt": "ba4ed14bdf690b88d3a379c5042aa5c45d3283999886ae9eaf5c66d68b4aa004",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_map-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_map-enabled/result.json": "f38f9678e6ca26db5ecc0397ab8892c50835404ebd3a5bf95e1f5c9e4500a499",
+    "work/lapq/phase3/results/retention-1000-occ_linked_map-enabled.json": "6e0d0b0835a33b64aafa6118d0e445f540d57eef54a0d468bea8467da867b6a0",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-grouped_compact_reference-disabled_during_trace/spec.json": "06011652d038d3827fb40025ae7286596822255e4a263756ef2b0a5d95811bf5",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-grouped_compact_reference-disabled_during_trace/execution.json": "af3b2710c0ad5051623ef747e6a89eb228566b87ae7066b3fe660cb29de5c833",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-grouped_compact_reference-disabled_during_trace/stdout.txt": "48e07d02f210af59db3d9c26d1e7c087624118dc1a6f364f347fda1bb4b657cc",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-grouped_compact_reference-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-grouped_compact_reference-disabled_during_trace/result.json": "d5e4a04a292ee10c9c60fdc35b82f5599d18650bed1cc06bf467240d8ddca3f8",
+    "work/lapq/phase3/results/retention-10000-grouped_compact_reference-disabled_during_trace.json": "346199d123e5933f8481dc76cb2456419073b6a192d8e1930c995e03acfdcd5d",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-grouped_compact_reference-disabled_during_trace/spec.json": "79d1f5845523f9fe850a43882a48b47beb1ee9bb8f70445132f95b2587a72856",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-grouped_compact_reference-disabled_during_trace/execution.json": "8691ff52da25bc13877b0ed2d789f73b4452555623a4bcd7b772bfac0de67bde",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-grouped_compact_reference-disabled_during_trace/stdout.txt": "fc198d3f0c99788d923ce2ec35c3e189f7bdeaf9557354c2601212e2ad0af3c7",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-grouped_compact_reference-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-grouped_compact_reference-disabled_during_trace/result.json": "3eb1a3cc4584d94e5c502558aa38cb589b3f7b34089f109fedf3370d5ebb0f0a",
+    "work/lapq/phase3/results/retention-100000-grouped_compact_reference-disabled_during_trace.json": "87ff8cddb668403faeae6899104e6581fc0260da0a19bd3a6f68cbacaeac259d",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_retain-disabled_during_trace/spec.json": "fb747af08cfb2ae2d58266ea75b6774aaa95ed8a0782e56c4c3d63be6ddf316c",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_retain-disabled_during_trace/execution.json": "1359434341f05784a620140c04ed3d5f65a9e8e25f2254604107e194a4ff7bdf",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_retain-disabled_during_trace/stdout.txt": "d6cf9cab08ff51654148dda2e04399b7446391136b781ef5a3cd715cbf32624a",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_retain-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_list_retain-disabled_during_trace/result.json": "0efb3620ae16c9ddab66166fa8d351573a4bd14243f5160861cc829a1eeda8c6",
+    "work/lapq/phase3/results/retention-10000-occ_list_retain-disabled_during_trace.json": "0ec397052469f0cd9b8bc8a7b068889b4af6efe68d99b2604f2cc91ebe638a9f",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_map-disabled_during_trace/spec.json": "60a466d3c6066354d138759ac9976e210dec2a5392701e1e884a777261a8cd7d",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_map-disabled_during_trace/execution.json": "24f5e62faa476de2d462ffb4d744e2ddf18a0b9e7ffcafcd746ce912b1853489",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_map-disabled_during_trace/stdout.txt": "c19492877cf1500bd3ed2ad3aaacbea8942fb2001129b5b9de9ac59e4f2dac41",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_map-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-occ_linked_map-disabled_during_trace/result.json": "45b0ac517fbb00eb64b44ce2f428f2a788083a6a8b5d853fbc9794089c873fbc",
+    "work/lapq/phase3/results/retention-10000-occ_linked_map-disabled_during_trace.json": "07b10690a788ef47b408aeec8ef9a573c331f5650e268b48478c863619f5a098",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_map-enabled/spec.json": "1af671221c57ad81ee34f35307b867ab718469aea16bf020dc81f1a683ab3617",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_map-enabled/execution.json": "9da376e8b955c79be7796ab826e3807cbd7fef2c9a50b0264f5348f54d8d2deb",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_map-enabled/stdout.txt": "35ae73db0c71a98820987d8fb96298dc62c0dc5712daea94db11028431071c56",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_map-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-100000-occ_list_map-enabled/result.json": "af5bcf822867cd9d1fa14591505b168e28313b55e6edd3f62bada56288072e1b",
+    "work/lapq/phase3/results/retention-100000-occ_list_map-enabled.json": "d30c6c3b5ffdb7a74058c1e92fef0cd1d0d8df14421fb8e394b76a281ae4b426",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-grouped_compact_reference-enabled/spec.json": "2350cae768c085558664abd7c567c2c806688eda9eb2c1cc5fd6c968410d040f",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-grouped_compact_reference-enabled/execution.json": "cd1e3e6b18e3010430ae7c0f54229a74d057b9f61f2bdd0ebba7917aee78f912",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-grouped_compact_reference-enabled/stdout.txt": "f92575e8e48d007504f9381b8a92fc7bcdcd1ff0b5e9868c292a976739517526",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-grouped_compact_reference-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-10000-grouped_compact_reference-enabled/result.json": "1bb4bfbdd6f0f6789a791ab6bd961f5ab8a4ebfe58acdd07ffb2655083b0cd26",
+    "work/lapq/phase3/results/retention-10000-grouped_compact_reference-enabled.json": "94329bf5a137be7dde95e969f3d33da807131ab8d060aa823f68270c4efb284f",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_retain-enabled/spec.json": "da8106eb713ba613656a721ddb8f5b8352ef2fc2634b1affd609ef8c81cb663c",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_retain-enabled/execution.json": "71cacd1f9c812bf4812c87a6ac55dbfbac3b9ba1ce6e362163b09f0d09ee1498",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_retain-enabled/stdout.txt": "8d6acaee0f005fc3e06db8eab41bf9dd005ede7e0c50687a97ab8c682711a2a9",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_retain-enabled/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_linked_retain-enabled/result.json": "2972cd7d7f040176e46eecbbff76f83ee82877e76d16215388233a196f318255",
+    "work/lapq/phase3/results/retention-1000-occ_linked_retain-enabled.json": "99bb3c829d50ac05c3b2cd7b3027a9868e51bebe8d6876b22a130e719f0b777b",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_retain-disabled_during_trace/spec.json": "8f57fd84dea691abf44255e7f527a1d0ffc67f85f4ce8fe2e550d1696cc3720d",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_retain-disabled_during_trace/execution.json": "59ca27cf658ae4358f62406d21dbd793727fdbf0574a1dce3c6334b4389de0d2",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_retain-disabled_during_trace/stdout.txt": "e6fa80f5bc31fad2ac6cb46a44cb70b3d4e996583cf229549685789cc5b6d7a0",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_retain-disabled_during_trace/stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "work/lapq/phase4/imported/second_host_retention/retention-1000-occ_list_retain-disabled_during_trace/result.json": "7cc742cd44fa35c0010e919419c5d0376c1408dec594f29272582ad0b5905a03",
+    "work/lapq/phase3/results/retention-1000-occ_list_retain-disabled_during_trace.json": "f28b1f6c2bd329bb10aec257af73003e2d2a2d5ac1f7c057518afadb94b73af3",
+    "work/lapq/phase4/imported/hardware_and_logs/windows-before-native.json": "a9a0598b13f2b385fc92c6ccd9dd644393aed3b6065e7b2a7afe29ab11e911c5",
+    "work/lapq/phase4/imported/hardware_and_logs/windows-after-measurements.json": "4092576a54c074c5e1608b96c0dbde4d23e6a4ab5f582c29a0c6ec53b2ce3003",
+    "work/lapq/phase2/primary_small_protocol.json": "f208c31a554fdf499ff8392704848cf2b92ebc06be97d60a39093dce86a86e56",
+    "work/lapq/phase4/imported/hardware_and_logs/linux-before-native.json": "c1e73e8f12cd0e46e2a87aa8a506bee4c93e307c0087c3272e8a1b0b4a83ec1b",
+    "work/lapq/phase4/imported/hardware_and_logs/linux-after-native.json": "ddd3b95e258bdf60f09f7d1955188311fcf3c5259510060167d79e3f56876235",
+    "work/lapq/phase4/imported/hardware_and_logs/linux-after-retention.json": "62eaa3230d5b8c82387a6d3361ffa293303a9dc8dae1edc12333aa5e3bb7f96c",
+    "work/lapq/phase4/imported/second_host_native/build/build.json": "0a456bdc3ce066d7505537b706ca5ec65de49543babedc7a677e8b5dbd9f201a",
+    "work/lapq/phase4/imported/second_host_native/native_experiment.json": "040f4656c111252c69fd0fc9cc5a10813e14bbafcbfd95cc870ca04905cb8963",
+    "work/lapq/phase4/imported/second_host_native/build/selftest.json": "1e353ce3967f3734459dc284bb8127b882f988c239ba8744811ac883ba6bf98a",
+    "work/lapq/phase4/imported/second_host_native/build/sanitizer_build.json": "dbb9d0d603b639a4f3fce9444c82e7991674ed01c95e39d00bfe72116a3f27f8",
+    "work/lapq/phase4/imported/second_host_native/build/sanitizer_selftest.json": "a3e3beb9309c5e42759c91f246fce315f992ae145bf24e7109d6dacb265caba2",
+    "work/lapq/phase4/imported/hardware_and_logs/clock-handshake-after.json": "1a9321975ef59aa0f5f399f0c95f32da0e9595ad1181f7e5d321394283ebd717",
+    "work/lapq/phase4/imported/hardware_and_logs/native-awake-request.json": "8a41c7e39bc30d50198279e171ba385af94942f31ad5f1a35b61c8846faef679",
+    "work/lapq/phase4/imported/hardware_and_logs/power-plan-after.txt": "d0b15730b387596e12220621144ebd194d6e56cf3498223062a33d6fee1e2e26",
+    "work/lapq/phase4/imported/hardware_and_logs/logs/pip-freeze.txt": "318ed3e52881cb465422241c02aa0836f609580151de90c4575a9f3aecd06363",
+    "work/lapq/phase4/imported/reproduction/run-native-stages.sh": "afdce8c12d3a486b08ad1ec385acd8f2a9be40dd7152ca3af83a450496dbde54",
+    "work/lapq/phase4/imported/reproduction/run-retention-stages.sh": "73abee1fbb66d7244aff6ec29dfafc7acc8472c259db82829c514ac409d52f90",
+    "work/lapq/phase4/imported/reproduction/run-native-awake.ps1": "374f75c703291e5cfa3c98ff6204b45b1f5098aa249e9f4a8e7862b4a3c769ee",
+    "work/lapq/phase4/imported/reproduction/capture-windows-host.ps1": "2a32f206c02ead6fd657d0e18b0c711171e893f075ab278ca13013c3b7d3db0c",
+    "work/lapq/phase4/imported/reproduction/linux-host-metadata.py": "ff92f3baf4f23990da32e1c961c496098b85cb4a1a4ea9d25e788d0861b9184e"
+  },
+  "analysis_source_sha256": "1b46fdcb62af48fd5bc7f288375aa0c8a3f3010399adcba9a550aef7831b6936"
+}

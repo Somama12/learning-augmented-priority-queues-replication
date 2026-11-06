@@ -1,0 +1,2759 @@
+{
+  "design_seed": 20261105,
+  "generator_sha256": "53298dfa998440370fa88d5f4520eecf20968153234cac2d99292e436ee6ada2",
+  "generator_version": 1,
+  "performance_timings_collected": false,
+  "protocol_version": 1,
+  "workloads": {
+    "brussels": {
+      "adjacency_sha256": "8673702900ebc00043b27b33029a4f70ece793c09741839448293d8df8352170",
+      "all_weights_int_type": false,
+      "all_weights_integral_value": false,
+      "family": "released_osmnx",
+      "m": 4378,
+      "max_weight": 3444.053999999999,
+      "metadata": {
+        "created_date": "2024-09-24 17:20:39",
+        "created_with": "OSMnx 1.9.3",
+        "crs": "epsg:4326",
+        "simplified": "True",
+        "workload_name": "brussels"
+      },
+      "min_weight": 1.37,
+      "n": 2268,
+      "n_times_max_weight_bound": 7811114.471999998,
+      "name": "brussels",
+      "raw_edges": 4393,
+      "reference_distances": {
+        "1218": {
+          "max_distance": 13290.512999999995,
+          "reachable": 2238,
+          "sha256": "f8e2ac04fcf84af45f69fe206a374bf6e8542dadeca7a1797b1670d7e8a69dd4"
+        },
+        "1308": {
+          "max_distance": 11934.587000000001,
+          "reachable": 2238,
+          "sha256": "af42c7055e06bd17e6ba5eb7cc0763f4b067730da116beb7a3188c83a238ec39"
+        },
+        "1361": {
+          "max_distance": 14567.985999999992,
+          "reachable": 2238,
+          "sha256": "bb25a7a1a2717bcdfee207cf17b8a40f1483bd390e3358169d006a9242e52428"
+        },
+        "1383": {
+          "max_distance": 14445.680999999991,
+          "reachable": 2238,
+          "sha256": "1e8b0d33a206abe0362cb6f613c4c25b1878b0dca948c46efb1d7fa8e5352fad"
+        },
+        "1480": {
+          "max_distance": 14615.329999999993,
+          "reachable": 2238,
+          "sha256": "ea3e4d06cf709e16cf2af46367c5d5378ec46fde4694a118b02996db5081f799"
+        },
+        "1848": {
+          "max_distance": 10703.572000000004,
+          "reachable": 2238,
+          "sha256": "dbbfd612cf8005ade6583132c109ae8939601d710183017e70b6465d2f00f007"
+        },
+        "1945": {
+          "max_distance": 16209.27099999999,
+          "reachable": 2238,
+          "sha256": "3d4f86005d07b905291a9b036035261ce0e046a013cd6704882418f36dc575b5"
+        },
+        "197": {
+          "max_distance": 13279.779,
+          "reachable": 2238,
+          "sha256": "7137d595730782cb2e41e59ea61dc075c291381309fd7df7cbe10add5b0d0eaf"
+        },
+        "1978": {
+          "max_distance": 11581.24,
+          "reachable": 2238,
+          "sha256": "8e5f73c292c9ea67d78d5cd157e904e4a217459c6a064312e3c271063e4c7fed"
+        },
+        "1984": {
+          "max_distance": 12034.161000000002,
+          "reachable": 2238,
+          "sha256": "7f9e76ab571bbeee4d1ef5f481abed3db5f66e14a901552ce1a054c2c021d9d7"
+        },
+        "39": {
+          "max_distance": 15363.089000000009,
+          "reachable": 2238,
+          "sha256": "ec1397cb208f84ad9f8683914ef80fb29461fae9fbae09ef3fd02daea8b85275"
+        },
+        "423": {
+          "max_distance": 13693.869999999995,
+          "reachable": 2238,
+          "sha256": "7f791b0dd73591f60d4617e7f589a9bcbd01e755d25ded9ee8d5e83696add404"
+        },
+        "458": {
+          "max_distance": 13864.824999999997,
+          "reachable": 2238,
+          "sha256": "8fd60cda907da645f71325e2a49223ecbe5445c8b66139d4ce3df4d2214f771a"
+        },
+        "853": {
+          "max_distance": 11327.448000000002,
+          "reachable": 2238,
+          "sha256": "279088baf2324034edbc43ad0dbeffbbf3ae2cc37d870edcc0d2c69e48b79177"
+        },
+        "897": {
+          "max_distance": 12314.391000000005,
+          "reachable": 2238,
+          "sha256": "634b9661bff7e32c6ee436cb57bd0c02bcaec023cc74ba0ddba9faaa1c45dc13"
+        }
+      },
+      "source_path_relative_to_lapq": "data/brussels.graphml",
+      "source_sha256": "6892a621086135187074ba0e10230783cc8185b98ff5303fadbf2b6bb20b85d6",
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1848
+            },
+            {
+              "group": "near",
+              "source": 853
+            },
+            {
+              "group": "far",
+              "source": 1480
+            },
+            {
+              "group": "far",
+              "source": 1945
+            }
+          ],
+          "train_source": 1984
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1218
+            },
+            {
+              "group": "near",
+              "source": 423
+            },
+            {
+              "group": "far",
+              "source": 897
+            },
+            {
+              "group": "far",
+              "source": 1308
+            }
+          ],
+          "train_source": 1383
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 197
+            },
+            {
+              "group": "near",
+              "source": 1978
+            },
+            {
+              "group": "far",
+              "source": 458
+            },
+            {
+              "group": "far",
+              "source": 1361
+            }
+          ],
+          "train_source": 39
+        }
+      ],
+      "training_graph": "brussels",
+      "transform": null
+    },
+    "brussels__scale025": {
+      "adjacency_sha256": "9c53765a326b3d8c73f34772d67f35f5075a59472902895e7c75fad78a2b435b",
+      "all_weights_int_type": false,
+      "all_weights_integral_value": false,
+      "family": "released_osmnx",
+      "m": 4378,
+      "max_weight": 861.0134999999998,
+      "metadata": {
+        "created_date": "2024-09-24 17:20:39",
+        "created_with": "OSMnx 1.9.3",
+        "crs": "epsg:4326",
+        "simplified": "True",
+        "training_graph": "brussels",
+        "transform": "scale025",
+        "workload_name": "brussels__scale025"
+      },
+      "min_weight": 0.3425,
+      "n": 2268,
+      "n_times_max_weight_bound": 1952778.6179999996,
+      "name": "brussels__scale025",
+      "raw_edges": 4393,
+      "reference_distances": {
+        "1218": {
+          "max_distance": 3322.628249999999,
+          "reachable": 2238,
+          "sha256": "9e86b2ffe3e5d9004140d3a66f7f63eec5e5ae6425e5c1d73e131c086ef57e20"
+        },
+        "1308": {
+          "max_distance": 2983.6467500000003,
+          "reachable": 2238,
+          "sha256": "8ddd28924e5929bc4fd0412c1756154fadf353148c6325c90e668593fcd93eff"
+        },
+        "1361": {
+          "max_distance": 3641.996499999998,
+          "reachable": 2238,
+          "sha256": "aef01a8d912f9845e2628588a22418673066e8528953b869714b4320bacb4b86"
+        },
+        "1383": {
+          "max_distance": 3611.420249999998,
+          "reachable": 2238,
+          "sha256": "9aab93c7bd4030dfc99e1ff9da1a01881a75977a715ff8989768c964bcce4529"
+        },
+        "1480": {
+          "max_distance": 3653.832499999998,
+          "reachable": 2238,
+          "sha256": "f86d24c5a5ece76dc10b14faef79bd8585085596f98709245746c45b7dade9f9"
+        },
+        "1848": {
+          "max_distance": 2675.893000000001,
+          "reachable": 2238,
+          "sha256": "132082d97e0366d44dfb393f28e9cf221ca01294db7e959fd5a2bf1e2e875ef5"
+        },
+        "1945": {
+          "max_distance": 4052.3177499999974,
+          "reachable": 2238,
+          "sha256": "5d72d5818719cd79135aa2c811bc631e24eba9b87c4537890074f9d9905cc914"
+        },
+        "197": {
+          "max_distance": 3319.94475,
+          "reachable": 2238,
+          "sha256": "5892c0e868fda901a3e199cd43e7d07ff6d65809f4780cf60907391676ed4229"
+        },
+        "1978": {
+          "max_distance": 2895.31,
+          "reachable": 2238,
+          "sha256": "1e64dbfabd682f048d0b7217722bc0d1254eb54be071cbb721073bca3199dbf6"
+        },
+        "1984": {
+          "max_distance": 3008.5402500000005,
+          "reachable": 2238,
+          "sha256": "ad1edda2e0b4d8fa04d4120b0e2ef7c10f4206c6de808f2d77422024bd05888b"
+        },
+        "39": {
+          "max_distance": 3840.7722500000023,
+          "reachable": 2238,
+          "sha256": "e3146092055586ed8229da21cc67f0494b91c50072ee9df957a01a2045c43fed"
+        },
+        "423": {
+          "max_distance": 3423.467499999999,
+          "reachable": 2238,
+          "sha256": "60edaf225d3df1fa46fb6b0364ec9a687c8edc235812f861ee1b87805b0692c9"
+        },
+        "458": {
+          "max_distance": 3466.2062499999993,
+          "reachable": 2238,
+          "sha256": "159b465233e6e0a2d0efb5b26cf718152c2f89660b0f2a932ce38e7e0613d1b8"
+        },
+        "853": {
+          "max_distance": 2831.8620000000005,
+          "reachable": 2238,
+          "sha256": "b3d521e7018308aee3688e38a6703b3a8533ee085963b31898fbcc2788f63f28"
+        },
+        "897": {
+          "max_distance": 3078.5977500000013,
+          "reachable": 2238,
+          "sha256": "bc32a9ac56d119cd043e1e1e68740d7c6d3b9274a101573879294a389997c8f2"
+        }
+      },
+      "source_path_relative_to_lapq": "data/brussels.graphml",
+      "source_sha256": "6892a621086135187074ba0e10230783cc8185b98ff5303fadbf2b6bb20b85d6",
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1848
+            },
+            {
+              "group": "near",
+              "source": 853
+            },
+            {
+              "group": "far",
+              "source": 1480
+            },
+            {
+              "group": "far",
+              "source": 1945
+            }
+          ],
+          "train_source": 1984
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1218
+            },
+            {
+              "group": "near",
+              "source": 423
+            },
+            {
+              "group": "far",
+              "source": 897
+            },
+            {
+              "group": "far",
+              "source": 1308
+            }
+          ],
+          "train_source": 1383
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 197
+            },
+            {
+              "group": "near",
+              "source": 1978
+            },
+            {
+              "group": "far",
+              "source": 458
+            },
+            {
+              "group": "far",
+              "source": 1361
+            }
+          ],
+          "train_source": 39
+        }
+      ],
+      "training_graph": "brussels",
+      "transform": "scale025"
+    },
+    "brussels__scale4": {
+      "adjacency_sha256": "546e9098fbba3a95b2225f6fafcfa462b7b1fb0cc138e942448eaa69b1aa6077",
+      "all_weights_int_type": false,
+      "all_weights_integral_value": false,
+      "family": "released_osmnx",
+      "m": 4378,
+      "max_weight": 13776.215999999997,
+      "metadata": {
+        "created_date": "2024-09-24 17:20:39",
+        "created_with": "OSMnx 1.9.3",
+        "crs": "epsg:4326",
+        "simplified": "True",
+        "training_graph": "brussels",
+        "transform": "scale4",
+        "workload_name": "brussels__scale4"
+      },
+      "min_weight": 5.48,
+      "n": 2268,
+      "n_times_max_weight_bound": 31244457.887999993,
+      "name": "brussels__scale4",
+      "raw_edges": 4393,
+      "reference_distances": {
+        "1218": {
+          "max_distance": 53162.05199999998,
+          "reachable": 2238,
+          "sha256": "5169292578c3726c23bdb163a6c805c8f89ddb127d46071ff258328231295c8c"
+        },
+        "1308": {
+          "max_distance": 47738.348000000005,
+          "reachable": 2238,
+          "sha256": "00e129ef6fcfdc32258b99ffef0e0a911774ada720754a988735b3896ab2aca0"
+        },
+        "1361": {
+          "max_distance": 58271.94399999997,
+          "reachable": 2238,
+          "sha256": "0e3ee32691d15882c1e8484133847972a4ac75b6e320d60e06b0b70d1be5557f"
+        },
+        "1383": {
+          "max_distance": 57782.723999999966,
+          "reachable": 2238,
+          "sha256": "90a9952c30eab0187ce7166d488a982efa421eb3b1fa40e1530ca7587dfbb16c"
+        },
+        "1480": {
+          "max_distance": 58461.31999999997,
+          "reachable": 2238,
+          "sha256": "f0b3aff0623b71891f694980d5ddb0b5d520a7497f7bbf94347097c4672504ef"
+        },
+        "1848": {
+          "max_distance": 42814.288000000015,
+          "reachable": 2238,
+          "sha256": "ebbfa225ccc0a12e06f1a66ebfb6bed221f5f54c7cf5c68170d5811d236a43cf"
+        },
+        "1945": {
+          "max_distance": 64837.08399999996,
+          "reachable": 2238,
+          "sha256": "36d92f98c169384aae2ff38fc5e9dd62eb70e5de4b4f1e38daa9fac80f722239"
+        },
+        "197": {
+          "max_distance": 53119.116,
+          "reachable": 2238,
+          "sha256": "4c8da32dc6a34ddbfa5a3c4573593c5e70697fa660e7211c9df7932d7bc5a614"
+        },
+        "1978": {
+          "max_distance": 46324.96,
+          "reachable": 2238,
+          "sha256": "5271df6b96729c5fc245ed822e0fed0b3249300db78201e8b8f3430c123f21fb"
+        },
+        "1984": {
+          "max_distance": 48136.64400000001,
+          "reachable": 2238,
+          "sha256": "bbb75cf87fe81341d221c0df79674609d30e36d2bf320d1134023c5688188df4"
+        },
+        "39": {
+          "max_distance": 61452.356000000036,
+          "reachable": 2238,
+          "sha256": "9c2f3388689ccf56dc9990244dbe70c19977788f2636e5fe44bb7c6d6e8f2cc8"
+        },
+        "423": {
+          "max_distance": 54775.47999999998,
+          "reachable": 2238,
+          "sha256": "05799308964965a734ef47cb858436305a0795d5b8dada151829d750cd938a6d"
+        },
+        "458": {
+          "max_distance": 55459.29999999999,
+          "reachable": 2238,
+          "sha256": "bd1c33a3b299045d59b7d59287e5b776255cd58f9904e64bc447f9b7104edb7d"
+        },
+        "853": {
+          "max_distance": 45309.79200000001,
+          "reachable": 2238,
+          "sha256": "512548e1158a1956b172121570a087d97549c11ffd8a0df613ad2877fc8bee8e"
+        },
+        "897": {
+          "max_distance": 49257.56400000002,
+          "reachable": 2238,
+          "sha256": "cd1b12052e3c0fa961f4289902b95fb7d3a4107b425c94f9d2f3b7dfada10a94"
+        }
+      },
+      "source_path_relative_to_lapq": "data/brussels.graphml",
+      "source_sha256": "6892a621086135187074ba0e10230783cc8185b98ff5303fadbf2b6bb20b85d6",
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1848
+            },
+            {
+              "group": "near",
+              "source": 853
+            },
+            {
+              "group": "far",
+              "source": 1480
+            },
+            {
+              "group": "far",
+              "source": 1945
+            }
+          ],
+          "train_source": 1984
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1218
+            },
+            {
+              "group": "near",
+              "source": 423
+            },
+            {
+              "group": "far",
+              "source": 897
+            },
+            {
+              "group": "far",
+              "source": 1308
+            }
+          ],
+          "train_source": 1383
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 197
+            },
+            {
+              "group": "near",
+              "source": 1978
+            },
+            {
+              "group": "far",
+              "source": 458
+            },
+            {
+              "group": "far",
+              "source": 1361
+            }
+          ],
+          "train_source": 39
+        }
+      ],
+      "training_graph": "brussels",
+      "transform": "scale4"
+    },
+    "geometric_2048": {
+      "adjacency_sha256": "79bd237bb6ac5132758d65e77ee69edad8d9ea128cffb03a83f1b51963fc8b99",
+      "all_weights_int_type": false,
+      "all_weights_integral_value": false,
+      "family": "geometric_float",
+      "m": 18954,
+      "max_weight": 741.0947734457619,
+      "metadata": {
+        "component_bridges": "[]",
+        "family": "geometric_float",
+        "generator_seed": "2001",
+        "generator_version": "1",
+        "workload_name": "geometric_2048"
+      },
+      "min_weight": 5.3046342975648315,
+      "n": 2048,
+      "n_times_max_weight_bound": 1517762.0960169204,
+      "name": "geometric_2048",
+      "raw_edges": 18954,
+      "reference_distances": {
+        "1254": {
+          "max_distance": 11286.166000632002,
+          "reachable": 2048,
+          "sha256": "54010a9084b02132b97f9dbc21ee224b1d6e6039dbcc24240046b450ce123e4f"
+        },
+        "1307": {
+          "max_distance": 11839.85663673293,
+          "reachable": 2048,
+          "sha256": "f009a53300421d5a555a8064134e1f552ab8c6850950324cc80967796f765cb0"
+        },
+        "1366": {
+          "max_distance": 10809.976918772027,
+          "reachable": 2048,
+          "sha256": "1d21d3a9e551e5e7ddb1c3d2e69d6bde27bab2fc92cfa6bb86582ed309c1b688"
+        },
+        "1370": {
+          "max_distance": 14558.903401301677,
+          "reachable": 2048,
+          "sha256": "31ca3627872319a6012dab0acce978fe4d2a395248c7e32c7d99ad7772dc6a19"
+        },
+        "1424": {
+          "max_distance": 13102.638822665265,
+          "reachable": 2048,
+          "sha256": "f4f48a4c3f21835e7d41b964b3c72294beb7dd7738ccd1185b15e8ceed1f0180"
+        },
+        "1506": {
+          "max_distance": 11237.766798813525,
+          "reachable": 2048,
+          "sha256": "f2d486dd07ca264edc3aef3529c3d207dbf9317a30512c52aca7c7d919eecc72"
+        },
+        "1530": {
+          "max_distance": 8300.893639301761,
+          "reachable": 2048,
+          "sha256": "ce3b43154c10c2b8c14b3cf757e6b4e2f0e37c793b6f99c1754222115c03f121"
+        },
+        "1679": {
+          "max_distance": 11138.011709284168,
+          "reachable": 2048,
+          "sha256": "990d51ee128d040c903d3bfb9c6e0bfbc53ae079725b521f190a6d881168f6d7"
+        },
+        "1887": {
+          "max_distance": 10577.263969081,
+          "reachable": 2048,
+          "sha256": "d98ecaa2d13a34d12fa68d21d415ba0a358e78f5a6092cad1fe75ebb89d804fa"
+        },
+        "362": {
+          "max_distance": 13751.78637901817,
+          "reachable": 2048,
+          "sha256": "0457d0202af8ef82f504bc852d5f0ee7b001964a800f1bde621536040c5c7f58"
+        },
+        "605": {
+          "max_distance": 12676.96212875543,
+          "reachable": 2048,
+          "sha256": "347326d616bce749d95bf2e515568fe66c4d48c8741dbe01804fe8203c8d8c6c"
+        },
+        "734": {
+          "max_distance": 10614.674219482156,
+          "reachable": 2048,
+          "sha256": "0b91a711fd58c1424637e16beef1b5bed6e3ca4c5ad7ff83a870f3781762610a"
+        },
+        "735": {
+          "max_distance": 12254.912102881728,
+          "reachable": 2048,
+          "sha256": "8f400eabf8e41f82258acf9b04a2ad41771e13202846e98f291ed21d89fd7ec4"
+        },
+        "756": {
+          "max_distance": 8532.376385331077,
+          "reachable": 2048,
+          "sha256": "02690f10e47e135d28747cc27d759905ea7baa3e60dfcb1a921e618ecaa1d2b5"
+        },
+        "952": {
+          "max_distance": 9311.06732659133,
+          "reachable": 2048,
+          "sha256": "65f777a55d8e67fc88858585c2b270c7ab4e3e483cad37179092938276293bb2"
+        }
+      },
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 734
+            },
+            {
+              "group": "near",
+              "source": 1506
+            },
+            {
+              "group": "far",
+              "source": 605
+            },
+            {
+              "group": "far",
+              "source": 1307
+            }
+          ],
+          "train_source": 1370
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1887
+            },
+            {
+              "group": "near",
+              "source": 756
+            },
+            {
+              "group": "far",
+              "source": 1424
+            },
+            {
+              "group": "far",
+              "source": 362
+            }
+          ],
+          "train_source": 1530
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1254
+            },
+            {
+              "group": "near",
+              "source": 952
+            },
+            {
+              "group": "far",
+              "source": 1679
+            },
+            {
+              "group": "far",
+              "source": 735
+            }
+          ],
+          "train_source": 1366
+        }
+      ],
+      "training_graph": "geometric_2048",
+      "transform": null
+    },
+    "geometric_2048__scale025": {
+      "adjacency_sha256": "12b3cbd7cdc9f101aead4ffd40a575b68b4e39ae5612cd5ba830af01efd44123",
+      "all_weights_int_type": false,
+      "all_weights_integral_value": false,
+      "family": "geometric_float",
+      "m": 18954,
+      "max_weight": 185.27369336144048,
+      "metadata": {
+        "component_bridges": "[]",
+        "family": "geometric_float",
+        "generator_seed": "2001",
+        "generator_version": "1",
+        "training_graph": "geometric_2048",
+        "transform": "scale025",
+        "workload_name": "geometric_2048__scale025"
+      },
+      "min_weight": 1.3261585743912079,
+      "n": 2048,
+      "n_times_max_weight_bound": 379440.5240042301,
+      "name": "geometric_2048__scale025",
+      "raw_edges": 18954,
+      "reference_distances": {
+        "1254": {
+          "max_distance": 2821.5415001580004,
+          "reachable": 2048,
+          "sha256": "d57694cac5f7055faa7ab6e777e8f0b10c643f02a4fc4646583718005d4c48d8"
+        },
+        "1307": {
+          "max_distance": 2959.9641591832324,
+          "reachable": 2048,
+          "sha256": "0eea34603880da7b5158a86c8650c2779f9f24b37f5f83f41a06792529edf3d1"
+        },
+        "1366": {
+          "max_distance": 2702.4942296930067,
+          "reachable": 2048,
+          "sha256": "944d1d6bfb6e9ae1dccd604d355a984d34176623e1442e4c6d49d6a7048eabbd"
+        },
+        "1370": {
+          "max_distance": 3639.7258503254193,
+          "reachable": 2048,
+          "sha256": "5ba2a028c36aac1fc7259b5588c43212cbc88ce491b619be773a0889c2c33103"
+        },
+        "1424": {
+          "max_distance": 3275.6597056663163,
+          "reachable": 2048,
+          "sha256": "03ae61d903125f85106b64803455dc8bcad1ade8bfb834ae560d61552c475fe8"
+        },
+        "1506": {
+          "max_distance": 2809.4416997033813,
+          "reachable": 2048,
+          "sha256": "622768619a2c9d86f2026ad1fb89927ccc1cb1621652921995d13c7442872d70"
+        },
+        "1530": {
+          "max_distance": 2075.2234098254403,
+          "reachable": 2048,
+          "sha256": "f2b0c8444e1fdee99cfd754f4989a0101216b17330a348abc8043196f040c7e3"
+        },
+        "1679": {
+          "max_distance": 2784.502927321042,
+          "reachable": 2048,
+          "sha256": "3ebfaa95513052f0c668092b0f5e07bafd40bd7f888c1299f6850bfb51ef6494"
+        },
+        "1887": {
+          "max_distance": 2644.31599227025,
+          "reachable": 2048,
+          "sha256": "1c1ab001910c583fe9b82853265b2d41fe57afa4334bf3a3c613e1bf74cd84af"
+        },
+        "362": {
+          "max_distance": 3437.9465947545423,
+          "reachable": 2048,
+          "sha256": "f5ce580f606a69210078a6fe01bf96ec8bcb0fbecef7103f09276a8c9bec7c6b"
+        },
+        "605": {
+          "max_distance": 3169.2405321888573,
+          "reachable": 2048,
+          "sha256": "bc1634f8e77022f04380c94125ac815c0265432950db2c71feb0fbda693c07b2"
+        },
+        "734": {
+          "max_distance": 2653.668554870539,
+          "reachable": 2048,
+          "sha256": "298b38b1386b2954d0a7f59c89f452200e322475fd965be4c7847adcea73fb45"
+        },
+        "735": {
+          "max_distance": 3063.728025720432,
+          "reachable": 2048,
+          "sha256": "cb8de8c91ede09fd20744ecf0b299beca3ea581c8120682f42be0d6ca6fe0702"
+        },
+        "756": {
+          "max_distance": 2133.0940963327694,
+          "reachable": 2048,
+          "sha256": "1df845ed64f07ffd1bd7ef54bfb569ecda472b7c143311d2210059510f4d8e0d"
+        },
+        "952": {
+          "max_distance": 2327.7668316478325,
+          "reachable": 2048,
+          "sha256": "cc5c5b2212063c74ab3d8753500714f573859df75aebd84a7313b623dd202f67"
+        }
+      },
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 734
+            },
+            {
+              "group": "near",
+              "source": 1506
+            },
+            {
+              "group": "far",
+              "source": 605
+            },
+            {
+              "group": "far",
+              "source": 1307
+            }
+          ],
+          "train_source": 1370
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1887
+            },
+            {
+              "group": "near",
+              "source": 756
+            },
+            {
+              "group": "far",
+              "source": 1424
+            },
+            {
+              "group": "far",
+              "source": 362
+            }
+          ],
+          "train_source": 1530
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1254
+            },
+            {
+              "group": "near",
+              "source": 952
+            },
+            {
+              "group": "far",
+              "source": 1679
+            },
+            {
+              "group": "far",
+              "source": 735
+            }
+          ],
+          "train_source": 1366
+        }
+      ],
+      "training_graph": "geometric_2048",
+      "transform": "scale025"
+    },
+    "geometric_2048__scale4": {
+      "adjacency_sha256": "e33bfef62f0c7a3e1e97998ec0b9ceca388abc4eaa12f3ab9222ede9bc934535",
+      "all_weights_int_type": false,
+      "all_weights_integral_value": false,
+      "family": "geometric_float",
+      "m": 18954,
+      "max_weight": 2964.3790937830477,
+      "metadata": {
+        "component_bridges": "[]",
+        "family": "geometric_float",
+        "generator_seed": "2001",
+        "generator_version": "1",
+        "training_graph": "geometric_2048",
+        "transform": "scale4",
+        "workload_name": "geometric_2048__scale4"
+      },
+      "min_weight": 21.218537190259326,
+      "n": 2048,
+      "n_times_max_weight_bound": 6071048.384067682,
+      "name": "geometric_2048__scale4",
+      "raw_edges": 18954,
+      "reference_distances": {
+        "1254": {
+          "max_distance": 45144.66400252801,
+          "reachable": 2048,
+          "sha256": "90a38cf2b6f479301aa43a46a6d7754ace9e756f4172d7c456bbe0cdda88bd48"
+        },
+        "1307": {
+          "max_distance": 47359.42654693172,
+          "reachable": 2048,
+          "sha256": "a2916637b0a01b8e5902ec64678f566e9b95ed6656020630ad838adc458f2288"
+        },
+        "1366": {
+          "max_distance": 43239.90767508811,
+          "reachable": 2048,
+          "sha256": "57d3582860f21587b602e9b28018071b43f6e46e51d31face093b41b5fef79ed"
+        },
+        "1370": {
+          "max_distance": 58235.61360520671,
+          "reachable": 2048,
+          "sha256": "6dae9460fa32344d0342977ca85227839c7697fbe90ab5591a828bb3ee0db5cb"
+        },
+        "1424": {
+          "max_distance": 52410.55529066106,
+          "reachable": 2048,
+          "sha256": "de84091f4fe1095305ca0e8f49ce2fba0753bde64dfb071752e6c33c0dd34156"
+        },
+        "1506": {
+          "max_distance": 44951.0671952541,
+          "reachable": 2048,
+          "sha256": "103d53dd8e12f3acd36ef198a9b01f6474a4695f3a8c1b5c7d6e848b0e764bdb"
+        },
+        "1530": {
+          "max_distance": 33203.574557207045,
+          "reachable": 2048,
+          "sha256": "fd9c331b81415d955a288534b0cc7270cc785a696abe0450d0b184e56c004b69"
+        },
+        "1679": {
+          "max_distance": 44552.04683713667,
+          "reachable": 2048,
+          "sha256": "f151b12d41b03e22b459cea5221ac81f41e2c4902360ee168438d99a8f93c03d"
+        },
+        "1887": {
+          "max_distance": 42309.055876324,
+          "reachable": 2048,
+          "sha256": "e447ac475e3e33475064bf6d722e9f35c0ed9e3d1d80c6cc8ce4b0177dbd7d6c"
+        },
+        "362": {
+          "max_distance": 55007.14551607268,
+          "reachable": 2048,
+          "sha256": "c97da13df3138c0c902092a8724ebd44526cfe4a6eac4c9c7f545ade9c451d7f"
+        },
+        "605": {
+          "max_distance": 50707.84851502172,
+          "reachable": 2048,
+          "sha256": "ee7207848276d993b414888dddd90d26241e1667e96ba159e88afe4b8d801286"
+        },
+        "734": {
+          "max_distance": 42458.696877928625,
+          "reachable": 2048,
+          "sha256": "eee6e5ec7c9ac5b2aa6159162ae7d8a59b2ce6043642e99b40a6d4a98ba1d5e3"
+        },
+        "735": {
+          "max_distance": 49019.64841152691,
+          "reachable": 2048,
+          "sha256": "6641afc69ff22567b61201e27d314ff745389dfb6dc7717605cf33377bbed8f8"
+        },
+        "756": {
+          "max_distance": 34129.50554132431,
+          "reachable": 2048,
+          "sha256": "1700bfc4b9ad5b1d1022ab7452d714a991b167e7c5f7bc18506f06f0e0b9f20c"
+        },
+        "952": {
+          "max_distance": 37244.26930636532,
+          "reachable": 2048,
+          "sha256": "0eb50abdaf6312f85c4001e5f8cb56ef91885d36cb1466ff6d02e65a5df2a18f"
+        }
+      },
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 734
+            },
+            {
+              "group": "near",
+              "source": 1506
+            },
+            {
+              "group": "far",
+              "source": 605
+            },
+            {
+              "group": "far",
+              "source": 1307
+            }
+          ],
+          "train_source": 1370
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1887
+            },
+            {
+              "group": "near",
+              "source": 756
+            },
+            {
+              "group": "far",
+              "source": 1424
+            },
+            {
+              "group": "far",
+              "source": 362
+            }
+          ],
+          "train_source": 1530
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1254
+            },
+            {
+              "group": "near",
+              "source": 952
+            },
+            {
+              "group": "far",
+              "source": 1679
+            },
+            {
+              "group": "far",
+              "source": 735
+            }
+          ],
+          "train_source": 1366
+        }
+      ],
+      "training_graph": "geometric_2048",
+      "transform": "scale4"
+    },
+    "geometric_8192": {
+      "adjacency_sha256": "00e15301f9c00ae2eb9e53bd3a3a6262b5e73531a6a19a6520d196302e2b9383",
+      "all_weights_int_type": false,
+      "all_weights_integral_value": false,
+      "family": "geometric_float",
+      "m": 75568,
+      "max_weight": 357.6366228605567,
+      "metadata": {
+        "component_bridges": "[]",
+        "family": "geometric_float",
+        "generator_seed": "2002",
+        "generator_version": "1",
+        "workload_name": "geometric_8192"
+      },
+      "min_weight": 0.7498282514187389,
+      "n": 8192,
+      "n_times_max_weight_bound": 2929759.2144736806,
+      "name": "geometric_8192",
+      "raw_edges": 75568,
+      "reference_distances": {
+        "1072": {
+          "max_distance": 10042.375714875307,
+          "reachable": 8192,
+          "sha256": "87158f16df139b4ce7ba8906d62076b911bbeda6595f59b1706d1ada218168ed"
+        },
+        "1421": {
+          "max_distance": 13423.841986527515,
+          "reachable": 8192,
+          "sha256": "58d56b03236dd96744a119bbeca08fce595e0a53d729ab5336221404092cfd1f"
+        },
+        "1518": {
+          "max_distance": 12378.771358040996,
+          "reachable": 8192,
+          "sha256": "3b51f5c9d2bfa786125b9ca95ad3ca76644f25a3e90849b18a14293866fd32f4"
+        },
+        "2370": {
+          "max_distance": 11853.765621850278,
+          "reachable": 8192,
+          "sha256": "5adfb25198eecf0df4eb75f39446d13973a2aae426bab0ba8ac60d47caf1c851"
+        },
+        "2870": {
+          "max_distance": 12740.213289101184,
+          "reachable": 8192,
+          "sha256": "d6f27bfce18e409149648abda908dd2fd0e0b61100bb72b93355f8637dcde4a2"
+        },
+        "2908": {
+          "max_distance": 10669.17679147758,
+          "reachable": 8192,
+          "sha256": "d2c5a24848ac0f2d1237d8cc485b370560091f9e063778e7e5aa11e8e99b4b68"
+        },
+        "390": {
+          "max_distance": 9668.409729516237,
+          "reachable": 8192,
+          "sha256": "af63facaab07a894557a82f4d97a520fa646c40927c0abc21f47f8f4133ad2c1"
+        },
+        "4015": {
+          "max_distance": 12073.29097946807,
+          "reachable": 8192,
+          "sha256": "0b29812ea47361cc59b0b7ac1599db7a63063cc440c996af93eee181a1bed7ec"
+        },
+        "4711": {
+          "max_distance": 10819.714581527473,
+          "reachable": 8192,
+          "sha256": "5a00c5969eba65d43a1a897178898c25697f879dff3172cba330dbed3929d7c0"
+        },
+        "5805": {
+          "max_distance": 11707.137417732098,
+          "reachable": 8192,
+          "sha256": "f19fa56e8ce7fde0b03992c1fd01fcfc8823637166c8829af30e4649566c2e45"
+        },
+        "5813": {
+          "max_distance": 11135.040480735059,
+          "reachable": 8192,
+          "sha256": "2e18fc685067b208e2120aeb61741ed0e5a38bfabbbfa76879f864eaacdbf4eb"
+        },
+        "625": {
+          "max_distance": 8997.594391376475,
+          "reachable": 8192,
+          "sha256": "e533ba3c781eb5501eaf2f2c73dc9cbef644bdf977a71bac533389994455b908"
+        },
+        "7435": {
+          "max_distance": 12762.65898646099,
+          "reachable": 8192,
+          "sha256": "d38c78760c0f986a439ba0f3de9adeecc5c7142089d8c96430aaa31b1ae18177"
+        },
+        "7757": {
+          "max_distance": 11244.643546832249,
+          "reachable": 8192,
+          "sha256": "68c3beca4d50ab9f301e237fc5b1f60968c1b9a94affb6601f107b618fbd11b8"
+        },
+        "8145": {
+          "max_distance": 12579.077015384832,
+          "reachable": 8192,
+          "sha256": "bc4108169fc3cf0236e8b1f43d2cf322bbddef1936d111a8d0d0e931a1fb7d47"
+        }
+      },
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1072
+            },
+            {
+              "group": "near",
+              "source": 625
+            },
+            {
+              "group": "far",
+              "source": 5813
+            },
+            {
+              "group": "far",
+              "source": 2870
+            }
+          ],
+          "train_source": 2370
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 4711
+            },
+            {
+              "group": "near",
+              "source": 1421
+            },
+            {
+              "group": "far",
+              "source": 8145
+            },
+            {
+              "group": "far",
+              "source": 7435
+            }
+          ],
+          "train_source": 1518
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 4015
+            },
+            {
+              "group": "near",
+              "source": 390
+            },
+            {
+              "group": "far",
+              "source": 5805
+            },
+            {
+              "group": "far",
+              "source": 7757
+            }
+          ],
+          "train_source": 2908
+        }
+      ],
+      "training_graph": "geometric_8192",
+      "transform": null
+    },
+    "grid_2025": {
+      "adjacency_sha256": "ace80a89abb4351b90693f95281157326b4a50bc7a0aeeafdadc04a61a77e9e6",
+      "all_weights_int_type": true,
+      "all_weights_integral_value": true,
+      "family": "grid_integer",
+      "m": 7920,
+      "max_weight": 16,
+      "metadata": {
+        "family": "grid_integer",
+        "generator_seed": "1001",
+        "generator_version": "1",
+        "workload_name": "grid_2025"
+      },
+      "min_weight": 1,
+      "n": 2025,
+      "n_times_max_weight_bound": 32400,
+      "name": "grid_2025",
+      "raw_edges": 7920,
+      "reference_distances": {
+        "1033": {
+          "max_distance": 304,
+          "reachable": 2025,
+          "sha256": "2cc60d4d56a7362f04fb0e7c4d9732233a12a5c1aa1aa6e70f4a86ac3f0d3bb9"
+        },
+        "1041": {
+          "max_distance": 288,
+          "reachable": 2025,
+          "sha256": "4a0168a84344ceddefe6cd640e1d05aeebbedd869bb70ccb51eef928e67cba71"
+        },
+        "1247": {
+          "max_distance": 276,
+          "reachable": 2025,
+          "sha256": "52659da072ce0650edb772aa262c16b14c657af6a10ba4fd807971024993af07"
+        },
+        "141": {
+          "max_distance": 382,
+          "reachable": 2025,
+          "sha256": "8541dd379f8cc7448d974e78dc31aa557877a46abb54acba20a9f5e3c489eeee"
+        },
+        "1422": {
+          "max_distance": 268,
+          "reachable": 2025,
+          "sha256": "498d8b21c8c9031c5ddbd2469dc3dc266a7cfe91cbab6334e676305924d5de22"
+        },
+        "1472": {
+          "max_distance": 299,
+          "reachable": 2025,
+          "sha256": "ca063796c11e213cc61d1e09ff3f86e998e2e1746f36d8bd7355583a980463ba"
+        },
+        "159": {
+          "max_distance": 306,
+          "reachable": 2025,
+          "sha256": "c6e2fefd4fe1338f30a87fff707ed33be500d50015748a9368dfa03ef9687633"
+        },
+        "1807": {
+          "max_distance": 338,
+          "reachable": 2025,
+          "sha256": "db6c32ff79da1ec06b3f8ea059aa3162927175bd1cd7ca06d274ef31eb8d14ec"
+        },
+        "1935": {
+          "max_distance": 384,
+          "reachable": 2025,
+          "sha256": "622cd1fa19f434ec92ede88d1cfaa68e2059c94ff73407f281f8c57f543544c2"
+        },
+        "324": {
+          "max_distance": 348,
+          "reachable": 2025,
+          "sha256": "dbf65be83516ba98cc95b60f32d65afe2acfe2686d8a3763fe0d56e385a7a0a3"
+        },
+        "39": {
+          "max_distance": 365,
+          "reachable": 2025,
+          "sha256": "bc21e814071d267c6b1b6653f57d3363c0689f17a16c8f0e8dab5429df8104f4"
+        },
+        "70": {
+          "max_distance": 315,
+          "reachable": 2025,
+          "sha256": "f8a67466d3b239a80318584fcaf742f85ea0a3a867e90f558fb5c499ce58f901"
+        },
+        "780": {
+          "max_distance": 268,
+          "reachable": 2025,
+          "sha256": "1f389171f9fc6b74d3f6d373fb6bc5e73aa481daa1d845659870e74edb7f2e43"
+        },
+        "877": {
+          "max_distance": 235,
+          "reachable": 2025,
+          "sha256": "8e9ecf37fed390045eb3b8cf7cd65f1bff74bfa6252b358ba2c58b265277b3c4"
+        },
+        "941": {
+          "max_distance": 299,
+          "reachable": 2025,
+          "sha256": "37416746b7144542d348b5a40be6975b59891c2bde35f72294078bd5103184ea"
+        }
+      },
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1041
+            },
+            {
+              "group": "near",
+              "source": 780
+            },
+            {
+              "group": "far",
+              "source": 1247
+            },
+            {
+              "group": "far",
+              "source": 1033
+            }
+          ],
+          "train_source": 141
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 941
+            },
+            {
+              "group": "near",
+              "source": 159
+            },
+            {
+              "group": "far",
+              "source": 1935
+            },
+            {
+              "group": "far",
+              "source": 1807
+            }
+          ],
+          "train_source": 39
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 877
+            },
+            {
+              "group": "near",
+              "source": 1472
+            },
+            {
+              "group": "far",
+              "source": 324
+            },
+            {
+              "group": "far",
+              "source": 70
+            }
+          ],
+          "train_source": 1422
+        }
+      ],
+      "training_graph": "grid_2025",
+      "transform": null
+    },
+    "grid_2025__scale025": {
+      "adjacency_sha256": "1494e79e2f6d37b4942e13f01c59abded017801aff63c9988d9253811e9b8952",
+      "all_weights_int_type": false,
+      "all_weights_integral_value": false,
+      "family": "grid_integer",
+      "m": 7920,
+      "max_weight": 4.0,
+      "metadata": {
+        "family": "grid_integer",
+        "generator_seed": "1001",
+        "generator_version": "1",
+        "training_graph": "grid_2025",
+        "transform": "scale025",
+        "workload_name": "grid_2025__scale025"
+      },
+      "min_weight": 0.25,
+      "n": 2025,
+      "n_times_max_weight_bound": 8100.0,
+      "name": "grid_2025__scale025",
+      "raw_edges": 7920,
+      "reference_distances": {
+        "1033": {
+          "max_distance": 76.0,
+          "reachable": 2025,
+          "sha256": "ce2eda0ebee2af5be55b6f849f4fe919d029174f0ec42e007f12ffd7944f6542"
+        },
+        "1041": {
+          "max_distance": 72.0,
+          "reachable": 2025,
+          "sha256": "ee4b7a228a81683acd2d8d8a1036d1cefbb86ba75090d4635491e3a5d253dc4d"
+        },
+        "1247": {
+          "max_distance": 69.0,
+          "reachable": 2025,
+          "sha256": "2897a5596e4c5cf65ce0eb4ad81f8bec2481b194a47ce96956b7d42e07d09f7e"
+        },
+        "141": {
+          "max_distance": 95.5,
+          "reachable": 2025,
+          "sha256": "98413964e0b8f4634dcbf479e7d89b0f8a811e38b67dbd4eb8031656e10dfa54"
+        },
+        "1422": {
+          "max_distance": 67.0,
+          "reachable": 2025,
+          "sha256": "99f75421309d4215f067fff493018d9b0de8733fb34796b3ee5e55f282b3fd2f"
+        },
+        "1472": {
+          "max_distance": 74.75,
+          "reachable": 2025,
+          "sha256": "1305acd88a7fd8d9af7752c5a111cb59aea7c7d16db1bc980795af2428c21cf4"
+        },
+        "159": {
+          "max_distance": 76.5,
+          "reachable": 2025,
+          "sha256": "ae1794d224f3204d9686826a1e20e0afe1aa6993c96c8a9d863a61c381c37ddd"
+        },
+        "1807": {
+          "max_distance": 84.5,
+          "reachable": 2025,
+          "sha256": "d71791867f563dfec7ab0b26da778a874875c7b0b1e044055498f2899d63d97d"
+        },
+        "1935": {
+          "max_distance": 96.0,
+          "reachable": 2025,
+          "sha256": "f240e1f9e2241babfc2b8b5687b4f9e0df0446f0860df0fe76f90b085043d087"
+        },
+        "324": {
+          "max_distance": 87.0,
+          "reachable": 2025,
+          "sha256": "49aeba74db899ae121902a5d74375cce099d31ce97f4a1f9cc3c2047cf46f0aa"
+        },
+        "39": {
+          "max_distance": 91.25,
+          "reachable": 2025,
+          "sha256": "3d72bd186a38073a0a4523edbcc0a729b1ff3ed6522802678b446526de85b3fa"
+        },
+        "70": {
+          "max_distance": 78.75,
+          "reachable": 2025,
+          "sha256": "339359b4a62eb01a0e1ba50665e966a5fb2e36d5c29e3e5fcacec2655a7f59dd"
+        },
+        "780": {
+          "max_distance": 67.0,
+          "reachable": 2025,
+          "sha256": "11a5ae5d18e1370fe9d3f24a8830b9391f434d7b236af4e34b80b93608a97365"
+        },
+        "877": {
+          "max_distance": 58.75,
+          "reachable": 2025,
+          "sha256": "325599c0dbba90ead25182c7ece15c627443011330cd89a6976a0708427dc89c"
+        },
+        "941": {
+          "max_distance": 74.75,
+          "reachable": 2025,
+          "sha256": "53081f221bd2599e61953cb72ca06e16207b276706e88808d99b39357fb1e0b2"
+        }
+      },
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1041
+            },
+            {
+              "group": "near",
+              "source": 780
+            },
+            {
+              "group": "far",
+              "source": 1247
+            },
+            {
+              "group": "far",
+              "source": 1033
+            }
+          ],
+          "train_source": 141
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 941
+            },
+            {
+              "group": "near",
+              "source": 159
+            },
+            {
+              "group": "far",
+              "source": 1935
+            },
+            {
+              "group": "far",
+              "source": 1807
+            }
+          ],
+          "train_source": 39
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 877
+            },
+            {
+              "group": "near",
+              "source": 1472
+            },
+            {
+              "group": "far",
+              "source": 324
+            },
+            {
+              "group": "far",
+              "source": 70
+            }
+          ],
+          "train_source": 1422
+        }
+      ],
+      "training_graph": "grid_2025",
+      "transform": "scale025"
+    },
+    "grid_2025__scale4": {
+      "adjacency_sha256": "b7300f7d38de2743e81c4c9a15a181ed0a331833f8e29a6f85a856ebb508496a",
+      "all_weights_int_type": true,
+      "all_weights_integral_value": true,
+      "family": "grid_integer",
+      "m": 7920,
+      "max_weight": 64,
+      "metadata": {
+        "family": "grid_integer",
+        "generator_seed": "1001",
+        "generator_version": "1",
+        "training_graph": "grid_2025",
+        "transform": "scale4",
+        "workload_name": "grid_2025__scale4"
+      },
+      "min_weight": 4,
+      "n": 2025,
+      "n_times_max_weight_bound": 129600,
+      "name": "grid_2025__scale4",
+      "raw_edges": 7920,
+      "reference_distances": {
+        "1033": {
+          "max_distance": 1216,
+          "reachable": 2025,
+          "sha256": "ffb4b8343c290d8c49cb2bd37210b30302b2510772ce0d9c28cd038cb91faa26"
+        },
+        "1041": {
+          "max_distance": 1152,
+          "reachable": 2025,
+          "sha256": "56cc85fdeaf5cfd1967f2099bf3a9ddebbafc072231fb0253c9d740d33ff70b1"
+        },
+        "1247": {
+          "max_distance": 1104,
+          "reachable": 2025,
+          "sha256": "ec7366193c572ab44ce47316fd293c7bd8905ebb9365d970943f0498372072ef"
+        },
+        "141": {
+          "max_distance": 1528,
+          "reachable": 2025,
+          "sha256": "3ba740378dd51a138433032c1b51ac6a8099de4995b56f16bd20f1ad7cee34de"
+        },
+        "1422": {
+          "max_distance": 1072,
+          "reachable": 2025,
+          "sha256": "0621d54cf3589511b916888068cec378b55606061c520ec89bd3bd5bec4dd3d9"
+        },
+        "1472": {
+          "max_distance": 1196,
+          "reachable": 2025,
+          "sha256": "3e1a383264610cc4600c2c8c56268fea22b1e2188cacf0ea52ed9f99de8bc84b"
+        },
+        "159": {
+          "max_distance": 1224,
+          "reachable": 2025,
+          "sha256": "9ed0f524ab4baf6aaa6d966ce74d3bb00ba5e22a2c543009a4643dc73a7f7166"
+        },
+        "1807": {
+          "max_distance": 1352,
+          "reachable": 2025,
+          "sha256": "c643fc7f1d2b50cb7531e4d6f56de3e8bf1eda475f2bd70d8dd8ec314ba15225"
+        },
+        "1935": {
+          "max_distance": 1536,
+          "reachable": 2025,
+          "sha256": "45d928d3dd58c90f11bc897f3f28c146fc3852792f9a340ec280fd4189c12691"
+        },
+        "324": {
+          "max_distance": 1392,
+          "reachable": 2025,
+          "sha256": "30bb6569dc49ac82ad29728322eb0c3fc35b085474a93b2e46e37ee5eed8e2f6"
+        },
+        "39": {
+          "max_distance": 1460,
+          "reachable": 2025,
+          "sha256": "806f251e48927d29c7cf2b0a6d0c2c89a7f9705fcda9748a5302641616194ea5"
+        },
+        "70": {
+          "max_distance": 1260,
+          "reachable": 2025,
+          "sha256": "1e303405ef2ab2e3d3948d785f06595782fc6ac6dff6ef165690dff47ad40e62"
+        },
+        "780": {
+          "max_distance": 1072,
+          "reachable": 2025,
+          "sha256": "a36e855747bef2560b853368aba65e30e2bef2b20d325b5a3ff3e0c98790310a"
+        },
+        "877": {
+          "max_distance": 940,
+          "reachable": 2025,
+          "sha256": "e1298d685c122685b2d2cdd230b9edff241fd59b16e42d1666d68f6f3c5d4ef2"
+        },
+        "941": {
+          "max_distance": 1196,
+          "reachable": 2025,
+          "sha256": "9cc5a20110b97e257b5b648589400288c0548ac24e401bff0e93ad6f4b3b6166"
+        }
+      },
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1041
+            },
+            {
+              "group": "near",
+              "source": 780
+            },
+            {
+              "group": "far",
+              "source": 1247
+            },
+            {
+              "group": "far",
+              "source": 1033
+            }
+          ],
+          "train_source": 141
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 941
+            },
+            {
+              "group": "near",
+              "source": 159
+            },
+            {
+              "group": "far",
+              "source": 1935
+            },
+            {
+              "group": "far",
+              "source": 1807
+            }
+          ],
+          "train_source": 39
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 877
+            },
+            {
+              "group": "near",
+              "source": 1472
+            },
+            {
+              "group": "far",
+              "source": 324
+            },
+            {
+              "group": "far",
+              "source": 70
+            }
+          ],
+          "train_source": 1422
+        }
+      ],
+      "training_graph": "grid_2025",
+      "transform": "scale4"
+    },
+    "grid_8100": {
+      "adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+      "all_weights_int_type": true,
+      "all_weights_integral_value": true,
+      "family": "grid_integer",
+      "m": 32040,
+      "max_weight": 16,
+      "metadata": {
+        "family": "grid_integer",
+        "generator_seed": "1002",
+        "generator_version": "1",
+        "workload_name": "grid_8100"
+      },
+      "min_weight": 1,
+      "n": 8100,
+      "n_times_max_weight_bound": 129600,
+      "name": "grid_8100",
+      "raw_edges": 32040,
+      "reference_distances": {
+        "1621": {
+          "max_distance": 683,
+          "reachable": 8100,
+          "sha256": "45ae9320cb447bd93dde47311b36b548d89f7a56a68e5b6d0721ed329bfeb47f"
+        },
+        "1986": {
+          "max_distance": 640,
+          "reachable": 8100,
+          "sha256": "973cffd9d266100d4fb6a2c3f902235cc823360a493546d0302dd310dc6a51b9"
+        },
+        "2154": {
+          "max_distance": 657,
+          "reachable": 8100,
+          "sha256": "04bf0249225d0a7cf98c8696cc5946168e437865fb25f05be6311d86f173e902"
+        },
+        "2307": {
+          "max_distance": 556,
+          "reachable": 8100,
+          "sha256": "7312f627107661d57c2bc2d8f5dbc0f6f9158bff8eada8365aea4a5c1b836733"
+        },
+        "2868": {
+          "max_distance": 599,
+          "reachable": 8100,
+          "sha256": "d2a57f7aec55825a94ca7877fe43ac47b36a348dfc5cc5402151cc82bc27a333"
+        },
+        "292": {
+          "max_distance": 686,
+          "reachable": 8100,
+          "sha256": "12c0440d0fed68adf8c950d939dcb4705087ac1c8a06a1920317636e4945e21e"
+        },
+        "3059": {
+          "max_distance": 643,
+          "reachable": 8100,
+          "sha256": "9fdb338a784bfdba9a5f36a2c2d4272ccfe87f3b4bfe37fe13ec2d26640512b2"
+        },
+        "3196": {
+          "max_distance": 465,
+          "reachable": 8100,
+          "sha256": "e97ae2a691a023552481eec2ea0fa170d3c71a95f603f72830efc2d66a2b67b1"
+        },
+        "3547": {
+          "max_distance": 450,
+          "reachable": 8100,
+          "sha256": "f00b0215fe98bf0b90d2b9efb11c5fb05779914cb6067c0d79950f665724734e"
+        },
+        "3666": {
+          "max_distance": 514,
+          "reachable": 8100,
+          "sha256": "4a3720f1ee5a34cdb9db87dc9c41c3ffccabc7217ff9f4f7e6a06184b83a2c8a"
+        },
+        "3712": {
+          "max_distance": 512,
+          "reachable": 8100,
+          "sha256": "2d7eea6dfc9bbfc712abdee36050206a345ba9fba646a5e8b04f9b87e5d021ab"
+        },
+        "4334": {
+          "max_distance": 548,
+          "reachable": 8100,
+          "sha256": "6bb889652d8bcdd552814b11ba43384a81a080d70e072111c457158c86afc536"
+        },
+        "6474": {
+          "max_distance": 667,
+          "reachable": 8100,
+          "sha256": "d8d663183df2c2c8dea714e6cdfa4cf960a3d9a87039a5c5086758be556b409c"
+        },
+        "7350": {
+          "max_distance": 629,
+          "reachable": 8100,
+          "sha256": "343f7b2d46bbaab1ec484b57f47499b3453eb4b8524901023b7533c225b63758"
+        },
+        "85": {
+          "max_distance": 752,
+          "reachable": 8100,
+          "sha256": "567d45ffbfe544c13184902dc9e716766f9b3fcef1b9af57f957783160ff1bf2"
+        }
+      },
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 3712
+            },
+            {
+              "group": "near",
+              "source": 1621
+            },
+            {
+              "group": "far",
+              "source": 7350
+            },
+            {
+              "group": "far",
+              "source": 3059
+            }
+          ],
+          "train_source": 292
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 3547
+            },
+            {
+              "group": "near",
+              "source": 2307
+            },
+            {
+              "group": "far",
+              "source": 85
+            },
+            {
+              "group": "far",
+              "source": 6474
+            }
+          ],
+          "train_source": 3196
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 2154
+            },
+            {
+              "group": "near",
+              "source": 3666
+            },
+            {
+              "group": "far",
+              "source": 1986
+            },
+            {
+              "group": "far",
+              "source": 4334
+            }
+          ],
+          "train_source": 2868
+        }
+      ],
+      "training_graph": "grid_8100",
+      "transform": null
+    },
+    "ny": {
+      "adjacency_sha256": "3d29a85ba4327be2b85754aff7c5b711b50f6b7a368ca6e3447eb7462c29a7f5",
+      "all_weights_int_type": true,
+      "all_weights_integral_value": true,
+      "family": "dimacs_road",
+      "m": 733846,
+      "max_weight": 36946,
+      "metadata": {
+        "comments": "9th DIMACS Implementation Challenge: Shortest Paths\nhttp://www.dis.uniroma1.it/~challenge9\nTIGER/Line graph USA-road-d.NY\n\ngraph contains 264346 nodes and 733846 arcs\n",
+        "format": "DIMACS sp",
+        "parallel_arc_policy": "preserve_all",
+        "workload_name": "ny"
+      },
+      "min_weight": 1,
+      "n": 264346,
+      "n_times_max_weight_bound": 9766527316,
+      "name": "ny",
+      "raw_edges": 733846,
+      "reference_distances": {
+        "109779": {
+          "max_distance": 983101,
+          "reachable": 264346,
+          "sha256": "1640839dec456073751a56025db88f969d6b80ffdca95b2f3663105dd59f2eda"
+        },
+        "119297": {
+          "max_distance": 1351960,
+          "reachable": 264346,
+          "sha256": "a2526dfc51ea23a49c452772df214ac0ff85b27d157409752208a8d93f1e3ca8"
+        },
+        "156630": {
+          "max_distance": 1294675,
+          "reachable": 264346,
+          "sha256": "4590853dfe6a169e158ba236bc82c880b9b30c22b73181e997ec548e38e34403"
+        },
+        "22217": {
+          "max_distance": 960789,
+          "reachable": 264346,
+          "sha256": "8754a3b5cf190f139ba520bd345f01c430bccba917655b10543693ef26355fd1"
+        },
+        "243856": {
+          "max_distance": 1363043,
+          "reachable": 264346,
+          "sha256": "eb368d050dbc06cf0fdb2ff8cb934a7e1c051223f7df8ac4d487eb1cd802306a"
+        },
+        "257685": {
+          "max_distance": 1584256,
+          "reachable": 264346,
+          "sha256": "5bd531c457725e962c0bb6f04f47eac17951ffc4e1478892c474de69fc9fcd5b"
+        },
+        "33459": {
+          "max_distance": 989566,
+          "reachable": 264346,
+          "sha256": "37efa544d2d976e92a74c38b9bbf725e1b198264cd1480090c4e14deaf1127d4"
+        },
+        "42015": {
+          "max_distance": 1005722,
+          "reachable": 264346,
+          "sha256": "f5f1126d9ec05acc107b4cd90011afc477cc30dfc32edcf81444ce007b12256a"
+        },
+        "81713": {
+          "max_distance": 1496294,
+          "reachable": 264346,
+          "sha256": "1e979cf7459cade8503f3ad1108ee7d9253cd840d8daaec5414604df5bc4e313"
+        }
+      },
+      "source_path_relative_to_lapq": "../data/USA-road-d.NY.gr",
+      "source_sha256": "37f5b3eff82330850466956b6c036a8ab8551512bdc7509edca1d4c6cf943fa3",
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 109779
+            },
+            {
+              "group": "far",
+              "source": 156630
+            }
+          ],
+          "train_source": 22217
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 243856
+            },
+            {
+              "group": "far",
+              "source": 119297
+            }
+          ],
+          "train_source": 257685
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 33459
+            },
+            {
+              "group": "far",
+              "source": 81713
+            }
+          ],
+          "train_source": 42015
+        }
+      ],
+      "training_graph": "ny",
+      "transform": null
+    },
+    "sparse_2048": {
+      "adjacency_sha256": "c9b26fe2f9520a48540b48f19b6ee0078cecc2fa7a4629790587871d18e18070",
+      "all_weights_int_type": true,
+      "all_weights_integral_value": true,
+      "family": "sparse_integer",
+      "m": 12288,
+      "max_weight": 1024,
+      "metadata": {
+        "family": "sparse_integer",
+        "generator_seed": "3001",
+        "generator_version": "1",
+        "workload_name": "sparse_2048"
+      },
+      "min_weight": 1,
+      "n": 2048,
+      "n_times_max_weight_bound": 2097152,
+      "name": "sparse_2048",
+      "raw_edges": 12288,
+      "reference_distances": {
+        "1038": {
+          "max_distance": 2386,
+          "reachable": 2048,
+          "sha256": "aca6cd3837fa88f1b755a85c9af30978e6418291e56c7ed6af6c0f4f5ecea814"
+        },
+        "1098": {
+          "max_distance": 2489,
+          "reachable": 2048,
+          "sha256": "33d22b759e17bbaa7875a90d717f012701ffb2d778a34dd4b47dc7829ccd9b99"
+        },
+        "123": {
+          "max_distance": 2773,
+          "reachable": 2048,
+          "sha256": "adb40c22d15843028e6f5cdffba4c3739d3833b4b042bd71de21d302d4d33a3f"
+        },
+        "1487": {
+          "max_distance": 2923,
+          "reachable": 2048,
+          "sha256": "9804d49952ee6eed12bc1dd7408f90de5c5036a6b7163144cda74bbaaeea0d6b"
+        },
+        "1509": {
+          "max_distance": 2770,
+          "reachable": 2048,
+          "sha256": "917c851d99cab10fec978557c972a9da48ad8c13b99929a91aea17f4923f963f"
+        },
+        "1772": {
+          "max_distance": 2926,
+          "reachable": 2048,
+          "sha256": "5327fd9337bb5a6007fb24779efc39f317d667400bb9567c30eda6f522840625"
+        },
+        "1792": {
+          "max_distance": 2652,
+          "reachable": 2048,
+          "sha256": "00505fa1bd0ceaf9b42ed9eba65a5b49f8352a9030c5342794715d9400f035bd"
+        },
+        "1906": {
+          "max_distance": 2628,
+          "reachable": 2048,
+          "sha256": "585c3b84733dbb22adb0c0f15896d4e2cf7dba33d16838db7496657113e61e21"
+        },
+        "1990": {
+          "max_distance": 2990,
+          "reachable": 2048,
+          "sha256": "dae3f2772f83058f4b7617c907e87ca16001510a8f96a5eb247f3d0bd065a17f"
+        },
+        "248": {
+          "max_distance": 2640,
+          "reachable": 2048,
+          "sha256": "3b0a14171179983aacbb80012f5fb4450d1a2a2e0a6072bb7eb0d124386bd766"
+        },
+        "396": {
+          "max_distance": 2832,
+          "reachable": 2048,
+          "sha256": "25f100143f8eec21e70564bd204feb7b611e063ac96bef69bdaa12d3706ec31b"
+        },
+        "759": {
+          "max_distance": 2703,
+          "reachable": 2048,
+          "sha256": "c2a9300c7bbc52a44b9ceef0d899e5bc389f23bc70f25d9e60140ee749bf694e"
+        },
+        "870": {
+          "max_distance": 2365,
+          "reachable": 2048,
+          "sha256": "b73b2fda2421a8e16074adbad0dacd3fb23f96f3b757aaa69f5313d19f3897d0"
+        },
+        "929": {
+          "max_distance": 2588,
+          "reachable": 2048,
+          "sha256": "a7086e2cddf0f0837518786ee940cae523e7f4a3edcab00858f43524ca1a3e42"
+        },
+        "975": {
+          "max_distance": 2600,
+          "reachable": 2048,
+          "sha256": "80c391ba84b2645c4f4436e403d0521cf96f92e9ae8084cc4c5f273614fd58d8"
+        }
+      },
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1487
+            },
+            {
+              "group": "near",
+              "source": 929
+            },
+            {
+              "group": "far",
+              "source": 975
+            },
+            {
+              "group": "far",
+              "source": 1038
+            }
+          ],
+          "train_source": 870
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1772
+            },
+            {
+              "group": "near",
+              "source": 123
+            },
+            {
+              "group": "far",
+              "source": 1098
+            },
+            {
+              "group": "far",
+              "source": 1990
+            }
+          ],
+          "train_source": 1792
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 396
+            },
+            {
+              "group": "near",
+              "source": 759
+            },
+            {
+              "group": "far",
+              "source": 248
+            },
+            {
+              "group": "far",
+              "source": 1906
+            }
+          ],
+          "train_source": 1509
+        }
+      ],
+      "training_graph": "sparse_2048",
+      "transform": null
+    },
+    "sparse_2048__lopsided": {
+      "adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+      "all_weights_int_type": true,
+      "all_weights_integral_value": true,
+      "family": "sparse_integer",
+      "m": 12288,
+      "max_weight": 4194304,
+      "metadata": {
+        "family": "sparse_integer",
+        "generator_seed": "3001",
+        "generator_version": "1",
+        "training_graph": "sparse_2048",
+        "transform": "lopsided",
+        "workload_name": "sparse_2048__lopsided"
+      },
+      "min_weight": 2,
+      "n": 2048,
+      "n_times_max_weight_bound": 8589934592,
+      "name": "sparse_2048__lopsided",
+      "raw_edges": 12288,
+      "reference_distances": {
+        "1038": {
+          "max_distance": 7938737,
+          "reachable": 2048,
+          "sha256": "6fdc52a5771d1ca800b52c3943a85a0f9071aa4ab55ec15642e9e437d124844a"
+        },
+        "1098": {
+          "max_distance": 7856231,
+          "reachable": 2048,
+          "sha256": "0bb1eeba893df261123aee13e250e9d14d852ecee0bc80b15a6408e8c3b3b9ec"
+        },
+        "123": {
+          "max_distance": 6082562,
+          "reachable": 2048,
+          "sha256": "1692f3d22f21e749d1b6b38d88b64e86e86ccdbea262422f299b9a07b10dbc6a"
+        },
+        "1487": {
+          "max_distance": 7896711,
+          "reachable": 2048,
+          "sha256": "06ca943cab6a86196611fd2508e9b9031e52b60ae62fb14a537ccd5fada521df"
+        },
+        "1509": {
+          "max_distance": 8085130,
+          "reachable": 2048,
+          "sha256": "388b707609199331e73952008a201b0c77587df020a3d6508ef626832122c5be"
+        },
+        "1772": {
+          "max_distance": 7665930,
+          "reachable": 2048,
+          "sha256": "30fa48cb6af2479495bd34a02b57a8c24c2054444e2f697c7c850896b9ae4afc"
+        },
+        "1792": {
+          "max_distance": 6734341,
+          "reachable": 2048,
+          "sha256": "3fbd90f4bd21079ee2655d03b0091d0d85eba428b94ee9b0631d32b4dfbacef5"
+        },
+        "1906": {
+          "max_distance": 7958509,
+          "reachable": 2048,
+          "sha256": "4e2eb08321513fe2863380c57c905ccdf00971cc0e5bd6364b26d0376b6dfdea"
+        },
+        "1990": {
+          "max_distance": 8302852,
+          "reachable": 2048,
+          "sha256": "d1f9b95a70bb0c0ff15bdf7f748a9e51689212e7436220eba804bbcb206f8339"
+        },
+        "248": {
+          "max_distance": 6081792,
+          "reachable": 2048,
+          "sha256": "abaa0ef86ba976d0afc9e0a749cb0e08e0d1afadf8c080c30c7de68d7a379ae0"
+        },
+        "396": {
+          "max_distance": 6082857,
+          "reachable": 2048,
+          "sha256": "c5444777be6e3ab3c6459313b0f14f4c82b735bde668e11a5e0e8403a1938990"
+        },
+        "759": {
+          "max_distance": 8019496,
+          "reachable": 2048,
+          "sha256": "e74caf43fd9a1fc1141648aafa93e37c73fdb758c7437a6177931e7991a9c630"
+        },
+        "870": {
+          "max_distance": 7327623,
+          "reachable": 2048,
+          "sha256": "5f708d58396640f50b77f3177efb59a4ef76d192f06bfb99ec85e078d64fe6a8"
+        },
+        "929": {
+          "max_distance": 9133290,
+          "reachable": 2048,
+          "sha256": "8409ff185f8e8fe474068085185105cd3d972de05fb1e4a589af665ee5b10f95"
+        },
+        "975": {
+          "max_distance": 6729357,
+          "reachable": 2048,
+          "sha256": "c21a27e64858f288049deb4be83d2cd06879ee8ea67846d4028d643adf8f1340"
+        }
+      },
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1487
+            },
+            {
+              "group": "near",
+              "source": 929
+            },
+            {
+              "group": "far",
+              "source": 975
+            },
+            {
+              "group": "far",
+              "source": 1038
+            }
+          ],
+          "train_source": 870
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1772
+            },
+            {
+              "group": "near",
+              "source": 123
+            },
+            {
+              "group": "far",
+              "source": 1098
+            },
+            {
+              "group": "far",
+              "source": 1990
+            }
+          ],
+          "train_source": 1792
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 396
+            },
+            {
+              "group": "near",
+              "source": 759
+            },
+            {
+              "group": "far",
+              "source": 248
+            },
+            {
+              "group": "far",
+              "source": 1906
+            }
+          ],
+          "train_source": 1509
+        }
+      ],
+      "training_graph": "sparse_2048",
+      "transform": "lopsided"
+    },
+    "sparse_2048__scale025": {
+      "adjacency_sha256": "7081a99424ef8eee2b4d485488cf1bd55f90ba97f107313c210baec0546325a4",
+      "all_weights_int_type": false,
+      "all_weights_integral_value": false,
+      "family": "sparse_integer",
+      "m": 12288,
+      "max_weight": 256.0,
+      "metadata": {
+        "family": "sparse_integer",
+        "generator_seed": "3001",
+        "generator_version": "1",
+        "training_graph": "sparse_2048",
+        "transform": "scale025",
+        "workload_name": "sparse_2048__scale025"
+      },
+      "min_weight": 0.25,
+      "n": 2048,
+      "n_times_max_weight_bound": 524288.0,
+      "name": "sparse_2048__scale025",
+      "raw_edges": 12288,
+      "reference_distances": {
+        "1038": {
+          "max_distance": 596.5,
+          "reachable": 2048,
+          "sha256": "35b52140590d9aaff02072a56a5b2d7c99687773b975267c69cd4c88e036c82c"
+        },
+        "1098": {
+          "max_distance": 622.25,
+          "reachable": 2048,
+          "sha256": "37e14f7767c6f8e0a65ad9e4a5a30f8f6561d4e89cc4495f20eea8de78587aaa"
+        },
+        "123": {
+          "max_distance": 693.25,
+          "reachable": 2048,
+          "sha256": "9847191694de13bfc4ec8042a7415981286108a2de9012a1695cbd80d8b26c3e"
+        },
+        "1487": {
+          "max_distance": 730.75,
+          "reachable": 2048,
+          "sha256": "df1bc06f54799fb96b57a5635efab46971624d816f4dec09d24e794f6108ee39"
+        },
+        "1509": {
+          "max_distance": 692.5,
+          "reachable": 2048,
+          "sha256": "9af261b7cbe1b93fab065d3844be3dbc2d6114ac478aae7ec4f4355425c992be"
+        },
+        "1772": {
+          "max_distance": 731.5,
+          "reachable": 2048,
+          "sha256": "3e63edcea2a7a7ce63e487be8687a7d89c6bd1b5178f5c8a24e3276cec69b193"
+        },
+        "1792": {
+          "max_distance": 663.0,
+          "reachable": 2048,
+          "sha256": "ec468a4e546a6de89b1b43c42b72cb239ad2bca2fcd8a0cceb93410e5939d595"
+        },
+        "1906": {
+          "max_distance": 657.0,
+          "reachable": 2048,
+          "sha256": "2d10c6e367a4bfa5f5ba1ce4872839d1a033328976395b79126c3bc76b043200"
+        },
+        "1990": {
+          "max_distance": 747.5,
+          "reachable": 2048,
+          "sha256": "40c88373ac45f67f89cff20723b5b3396e61e4a7e4385065bab8ff6afb62a9e9"
+        },
+        "248": {
+          "max_distance": 660.0,
+          "reachable": 2048,
+          "sha256": "7a7c36e930aeeac2bb970040249455d40157d38f131d23b38044eedcc18ebc37"
+        },
+        "396": {
+          "max_distance": 708.0,
+          "reachable": 2048,
+          "sha256": "b062206eb6cf0e2b9c5b1ecc4054b47abd11e05d15ac526e526a932031a84ff6"
+        },
+        "759": {
+          "max_distance": 675.75,
+          "reachable": 2048,
+          "sha256": "87a21e61ca07442b86465bdd951ca190437624e981fdc1c6d26f8a7c6a56f649"
+        },
+        "870": {
+          "max_distance": 591.25,
+          "reachable": 2048,
+          "sha256": "18e247e4a948188a19ff612f7a6fc390f8b39212a4304f2a899ff87b0077c23a"
+        },
+        "929": {
+          "max_distance": 647.0,
+          "reachable": 2048,
+          "sha256": "bdedbb09a826f2120b7d83c709128eb6e807957d74f47430ea28856ab669100f"
+        },
+        "975": {
+          "max_distance": 650.0,
+          "reachable": 2048,
+          "sha256": "e85aa3f3119ebaceb32e9f58b5704046f78c522503635d6babe38830a85f2b5a"
+        }
+      },
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1487
+            },
+            {
+              "group": "near",
+              "source": 929
+            },
+            {
+              "group": "far",
+              "source": 975
+            },
+            {
+              "group": "far",
+              "source": 1038
+            }
+          ],
+          "train_source": 870
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1772
+            },
+            {
+              "group": "near",
+              "source": 123
+            },
+            {
+              "group": "far",
+              "source": 1098
+            },
+            {
+              "group": "far",
+              "source": 1990
+            }
+          ],
+          "train_source": 1792
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 396
+            },
+            {
+              "group": "near",
+              "source": 759
+            },
+            {
+              "group": "far",
+              "source": 248
+            },
+            {
+              "group": "far",
+              "source": 1906
+            }
+          ],
+          "train_source": 1509
+        }
+      ],
+      "training_graph": "sparse_2048",
+      "transform": "scale025"
+    },
+    "sparse_2048__scale4": {
+      "adjacency_sha256": "6ad8804e3141528b3c26ac71d190e0f325d0c7be2b714d86c009d3d8577039ea",
+      "all_weights_int_type": true,
+      "all_weights_integral_value": true,
+      "family": "sparse_integer",
+      "m": 12288,
+      "max_weight": 4096,
+      "metadata": {
+        "family": "sparse_integer",
+        "generator_seed": "3001",
+        "generator_version": "1",
+        "training_graph": "sparse_2048",
+        "transform": "scale4",
+        "workload_name": "sparse_2048__scale4"
+      },
+      "min_weight": 4,
+      "n": 2048,
+      "n_times_max_weight_bound": 8388608,
+      "name": "sparse_2048__scale4",
+      "raw_edges": 12288,
+      "reference_distances": {
+        "1038": {
+          "max_distance": 9544,
+          "reachable": 2048,
+          "sha256": "aadd064acf9501eb2b6bcd2bb8a6d1fb47d8b558e9ef5c1ea9bc4dc6ebb4e692"
+        },
+        "1098": {
+          "max_distance": 9956,
+          "reachable": 2048,
+          "sha256": "dd000e0a618101afb67ff4e6c571809bc02e096cee75227102ac1ded43491976"
+        },
+        "123": {
+          "max_distance": 11092,
+          "reachable": 2048,
+          "sha256": "838534fe4a820172418cf6ef0eccad66ca53650f4754c89748ea25965baed19f"
+        },
+        "1487": {
+          "max_distance": 11692,
+          "reachable": 2048,
+          "sha256": "c5e2183c05305096e2be2a1bf493abd6792d1d182e0d1d3489203cd0aaf4bb0a"
+        },
+        "1509": {
+          "max_distance": 11080,
+          "reachable": 2048,
+          "sha256": "9e78e365de56758f7e80ad376ee0abe386a5b02aae6f32388859fc900806634b"
+        },
+        "1772": {
+          "max_distance": 11704,
+          "reachable": 2048,
+          "sha256": "a57d086504cca659bb03ffe953ccba9781e439296341addda74125bb79e438b9"
+        },
+        "1792": {
+          "max_distance": 10608,
+          "reachable": 2048,
+          "sha256": "f0853847461dc70ea028159d8ab261283c73e10b441cbdf15b75378d499024e5"
+        },
+        "1906": {
+          "max_distance": 10512,
+          "reachable": 2048,
+          "sha256": "17880bf5c2ea8a43292ea7c589bc5220f104c9f798ded7ea62eac53b7b698981"
+        },
+        "1990": {
+          "max_distance": 11960,
+          "reachable": 2048,
+          "sha256": "38080dffd5419c4c36c2d0ecdc7ad44070243bbd8d4fbd0d2640be3f0506c0ee"
+        },
+        "248": {
+          "max_distance": 10560,
+          "reachable": 2048,
+          "sha256": "6ccb049aa43462fbe9e794073ce580a501448ad55abf6af51c39fd07cfe3feaf"
+        },
+        "396": {
+          "max_distance": 11328,
+          "reachable": 2048,
+          "sha256": "fd2cce2e257add9d5388b2451ec836e36f6e62c3bb3ae901d128fb3172fe07e3"
+        },
+        "759": {
+          "max_distance": 10812,
+          "reachable": 2048,
+          "sha256": "536fbb1cacc478845b971ff215c809183fcf03fe270a314a8531e3564e656f22"
+        },
+        "870": {
+          "max_distance": 9460,
+          "reachable": 2048,
+          "sha256": "15eaf45f7c5e008fccce4de6ae39d4bc11b9b256a71ce3f0605946a04e46722f"
+        },
+        "929": {
+          "max_distance": 10352,
+          "reachable": 2048,
+          "sha256": "ab147b3fde48119f52a4b413cdeb3d407415c6c7782cf015cdf76ceae7862f8d"
+        },
+        "975": {
+          "max_distance": 10400,
+          "reachable": 2048,
+          "sha256": "3018645e681245af9474e293ff6827eed9005f04c6ebe29b5b016faed1970a7e"
+        }
+      },
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1487
+            },
+            {
+              "group": "near",
+              "source": 929
+            },
+            {
+              "group": "far",
+              "source": 975
+            },
+            {
+              "group": "far",
+              "source": 1038
+            }
+          ],
+          "train_source": 870
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 1772
+            },
+            {
+              "group": "near",
+              "source": 123
+            },
+            {
+              "group": "far",
+              "source": 1098
+            },
+            {
+              "group": "far",
+              "source": 1990
+            }
+          ],
+          "train_source": 1792
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 396
+            },
+            {
+              "group": "near",
+              "source": 759
+            },
+            {
+              "group": "far",
+              "source": 248
+            },
+            {
+              "group": "far",
+              "source": 1906
+            }
+          ],
+          "train_source": 1509
+        }
+      ],
+      "training_graph": "sparse_2048",
+      "transform": "scale4"
+    },
+    "sparse_8192": {
+      "adjacency_sha256": "6615225e8d1946b36ba238336b828a31cd14b30b67e1cc4e01dfd5b973a1bb61",
+      "all_weights_int_type": true,
+      "all_weights_integral_value": true,
+      "family": "sparse_integer",
+      "m": 49152,
+      "max_weight": 1024,
+      "metadata": {
+        "family": "sparse_integer",
+        "generator_seed": "3002",
+        "generator_version": "1",
+        "workload_name": "sparse_8192"
+      },
+      "min_weight": 1,
+      "n": 8192,
+      "n_times_max_weight_bound": 8388608,
+      "name": "sparse_8192",
+      "raw_edges": 49152,
+      "reference_distances": {
+        "1515": {
+          "max_distance": 2934,
+          "reachable": 8192,
+          "sha256": "2fb220050b79ac3916a42faa812b20d9542d48c7f2aa3e71732710024af70a28"
+        },
+        "1785": {
+          "max_distance": 2766,
+          "reachable": 8192,
+          "sha256": "0269ae2e83b8ce096cdd8a1c0f41b5650d0f52abb073feaf924a2318f67c9817"
+        },
+        "2293": {
+          "max_distance": 3160,
+          "reachable": 8192,
+          "sha256": "e86c95dd7e01e8c9b9496f5058d4863da04d68abed45516804f9122c10863c00"
+        },
+        "2312": {
+          "max_distance": 2921,
+          "reachable": 8192,
+          "sha256": "69776fee25b620ecc323517eb758240c93152f1eabd3b27a4c278b38e4216565"
+        },
+        "2445": {
+          "max_distance": 3143,
+          "reachable": 8192,
+          "sha256": "66b5dee0d0f1afcbb220c3ca8cec3ec14e37e056f5d6be1e7e7815371568ef93"
+        },
+        "30": {
+          "max_distance": 2705,
+          "reachable": 8192,
+          "sha256": "b8836010c522d39d94a2aef7b72b51937fd471b4bd3f6b21050c9e4d101391c9"
+        },
+        "3158": {
+          "max_distance": 3206,
+          "reachable": 8192,
+          "sha256": "3b6fe761701192e85fe2d329e4e125864e60333986a4964a4a619c6f9258a81a"
+        },
+        "3179": {
+          "max_distance": 2964,
+          "reachable": 8192,
+          "sha256": "a403f501f208d23466c8f9aad94258ed65e1f6da9581f2ad3412b54d6bf25d32"
+        },
+        "4298": {
+          "max_distance": 2630,
+          "reachable": 8192,
+          "sha256": "56c59c1107b30c45a121b4e489fd33374b50aed3fa91d45989876395400741a3"
+        },
+        "4868": {
+          "max_distance": 2841,
+          "reachable": 8192,
+          "sha256": "6f7bbfc6314fb559e9fc91dce34c5c2d47e2bcbdf3669e1303d998b9952e30ca"
+        },
+        "5375": {
+          "max_distance": 2862,
+          "reachable": 8192,
+          "sha256": "1e6717fd0777f6188e8ab724b60bd45f0b28d008ff100305f8b4ca65f95e80ca"
+        },
+        "5657": {
+          "max_distance": 3117,
+          "reachable": 8192,
+          "sha256": "b50711e996db96af24bef6be71329e0609ddce090cd6f6903ee2ddfe5bea1b43"
+        },
+        "6076": {
+          "max_distance": 2923,
+          "reachable": 8192,
+          "sha256": "6f96e05f5b358255f084fb3c9e58cb539042e4bcc9832c1b1923bd894878e94c"
+        },
+        "6646": {
+          "max_distance": 2683,
+          "reachable": 8192,
+          "sha256": "8ac999009146f8c646432afc211e9a76d8573ad6b1ca33cb827a5e3885b17335"
+        },
+        "7529": {
+          "max_distance": 2807,
+          "reachable": 8192,
+          "sha256": "d0cf329815d1336572a4c82b46d719cf70467c29e29349442a4a9924572bd5e0"
+        }
+      },
+      "splits": [
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 2445
+            },
+            {
+              "group": "near",
+              "source": 7529
+            },
+            {
+              "group": "far",
+              "source": 6646
+            },
+            {
+              "group": "far",
+              "source": 2293
+            }
+          ],
+          "train_source": 1785
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 2312
+            },
+            {
+              "group": "near",
+              "source": 3158
+            },
+            {
+              "group": "far",
+              "source": 4298
+            },
+            {
+              "group": "far",
+              "source": 4868
+            }
+          ],
+          "train_source": 5657
+        },
+        {
+          "queries": [
+            {
+              "group": "near",
+              "source": 5375
+            },
+            {
+              "group": "near",
+              "source": 1515
+            },
+            {
+              "group": "far",
+              "source": 3179
+            },
+            {
+              "group": "far",
+              "source": 6076
+            }
+          ],
+          "train_source": 30
+        }
+      ],
+      "training_graph": "sparse_8192",
+      "transform": null
+    }
+  }
+}

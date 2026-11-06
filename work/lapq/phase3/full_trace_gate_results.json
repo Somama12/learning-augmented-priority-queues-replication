@@ -1,0 +1,143 @@
+{
+  "status": "passed",
+  "planned_source_cases": 24,
+  "observed_source_cases": 24,
+  "variant_executions": 96,
+  "protocol_sha256": "08cde3cdf932bd68fddac8275d70f6c55205f566455b6daea7e0a6d096c08d77",
+  "source_sha256": {
+    "work/lapq/phase3/ablation_queues.py": "1446ce3e454555b6f178500d3bd597ee53b88e294349d0fb7a584accfaab1be1",
+    "work/lapq/phase3/preflight.py": "548cbe296c628ddec82fa50bd3b99dda9d0eed18a2b99e56a96c6e86bd56970e",
+    "work/lapq/phase3/freeze_proposal.py": "bdcbff524d9d59a6232ec53c0a7c236d206ded495d19958ef5fec62c1d0fe883",
+    "work/lapq/phase2/queues.py": "a7f0d49301b604cfd0ce8d4ebb95a23cc41a8486e6a7f651183a29db352754a5",
+    "work/lapq/phase2/indexes.py": "a28c957dea436d6e8a64f3fbf4f7575d2c7fc218f6ac3426b659ae06b7697be2",
+    "work/lapq/phase2/benchmark.py": "b472b3da901290d768039a12e0a72badeb431b377326411c776c06734de68621",
+    "work/lapq/phase2/workloads.py": "53298dfa998440370fa88d5f4520eecf20968153234cac2d99292e436ee6ada2",
+    "work/lapq/data_loading.py": "0b68f44cc1b1c7c4fd3d7f8a3c16285dcbee7114a1ac4ac5c1cc1a5c81970da5",
+    "work/lapq/upstream/skiplist.py": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c",
+    "work/lapq/phase3/ablation_protocol.json": "08cde3cdf932bd68fddac8275d70f6c55205f566455b6daea7e0a6d096c08d77",
+    "work/lapq/phase3/full_trace_gate.py": "22556c00412c663451b3540577c7c34c3fa848182b8b6a2e0168051ec4eb543a"
+  },
+  "scope": "Untimed stream equivalence, one repeat-0 height seed per source case. Finite validation, not all timed seeds or universal proof.",
+  "cases": [
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-00.json",
+      "sha256": "0ea044b0e677b77e697ecd6859b7f16aed963f21b34179af78a3100a840320dc",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-01.json",
+      "sha256": "80b8f15ad0200b27eda30f7540d69c360a692402e8c822c79c7bbc5b480465a3",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-02.json",
+      "sha256": "f1db02b210cae6f919ea935452af8abaf0ef59f3f4dc6faaa98e6c2af797c763",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-03.json",
+      "sha256": "ad50a56bbd7e3bd8364b8c25385c9e1fd7a239e603826968573017b5c884ac33",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-04.json",
+      "sha256": "30dafb83ccbbf7849cf42beba3a0431d6aef839fd4cbf692c78d9f39846bb5ef",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-05.json",
+      "sha256": "3c41b3854248e1e5eb3f3a6b0440333d40ec285bc66474183b64265b8dd152d2",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-06.json",
+      "sha256": "c3e14dfc430fdd7ef5323345b462bfb9d78840cd05ff34646ce1d7f6ec05bd3f",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-07.json",
+      "sha256": "da73c34e51a3bfd8a198026a0c21faf290ace844b35c3181bbdcfba2f7ad49cc",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-08.json",
+      "sha256": "95d07a35a22168e4f0fd880619f3c34ab782d8dfda04a08785f331c90a09ffdd",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-09.json",
+      "sha256": "57cb98bebc21fe8f977a3994f5936a52733452e371479fd3e6c09146c1f2e1ff",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-10.json",
+      "sha256": "0bdc0a2b0bd616b51dfabec445d156dab8812ea83e5d73e6348c723a601db175",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-11.json",
+      "sha256": "0bb691c1e31eb0b32a0f17a6e10257bb3498481aaaa3d1eaded0f90021f49ded",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-12.json",
+      "sha256": "7d9694688e8719a50ae3690990c94f8ec40389ee23f2021d35a93786c0762785",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-13.json",
+      "sha256": "afeb2310645d77eeffef7ddec9e3d84589743db057b56e41ffe16b66c096f27f",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-14.json",
+      "sha256": "e263942ffb5b51debc0be0101505367b6aeae896022241b294c15768efbdead4",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-15.json",
+      "sha256": "7df51d07cd920d0def57ece5a053ab94e2ca5e766937e596be8b582335ce3588",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-16.json",
+      "sha256": "7cd81bad37a85fa033d6dd30940e9af6d972d4df6b4a75e49e7c9509e11c9644",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-17.json",
+      "sha256": "948f7be4c88fac02beb977c734500e45ea133a77d0dd27d575f3f62ecb12f4bb",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-18.json",
+      "sha256": "59ef65e4a08cab2550d5fc1d22f4b4204d6d9204d41e06917ac2e905696999f3",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-19.json",
+      "sha256": "d9fcab25af65ca347c67be1b6b2b009d71f2c4de387957e17065da421df02de1",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-20.json",
+      "sha256": "9fe4a8121cf9cac716e1c699693c7f7e18b5338ec2fe29457869ffa12b3a66fe",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-21.json",
+      "sha256": "91eaeb5a63f5aaa344b64462607f0f599f587930ff4767fa6eb83a1e012cd8f0",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-22.json",
+      "sha256": "4a41fefe6dac0073c5537963fc0579b907fdd386c39c9b9e06f62152f6861d64",
+      "status": "passed"
+    },
+    {
+      "file": "work/lapq/phase3/trace_gate_results/case-23.json",
+      "sha256": "1bd4d8f38aab6a54711dfa43e5091b907ca79093140ec4d9b7effd020d5b5983",
+      "status": "passed"
+    }
+  ]
+}

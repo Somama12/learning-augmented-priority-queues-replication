@@ -1,0 +1,14 @@
+{
+  "purpose": "Correctness/semantic preflight only; no performance measurements",
+  "bucket_mutations": 3600,
+  "counted_parity_pairs": 288,
+  "counted_and_counter_free_executions": 576,
+  "grouped_correctness_traces": 72,
+  "graph_method_cases": 60,
+  "status": "passed",
+  "validity_contract": "Finite numeric priorities, frozen deterministic monotone ranks; original arbitrary-advice duplicate failures are not claimed repaired.",
+  "sources": {
+    "ablation_queues.py": "1446ce3e454555b6f178500d3bd597ee53b88e294349d0fb7a584accfaab1be1",
+    "preflight.py": "548cbe296c628ddec82fa50bd3b99dda9d0eed18a2b99e56a96c6e86bd56970e"
+  }
+}

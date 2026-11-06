@@ -1,0 +1,46 @@
+[
+  {
+    "kind": "paper",
+    "target": "sources/original-paper.pdf",
+    "url": "https://papers.neurips.cc/paper_files/paper/2024/file/e08e1a60c006ac3f0c9f953626b0f0c8-Paper-Conference.pdf",
+    "download_sha256": "23e7b768343941b056074a1ed7ee7514463cc5614235e4c568dd509f9815e354",
+    "local_sha256": "23e7b768343941b056074a1ed7ee7514463cc5614235e4c568dd509f9815e354",
+    "normalization": "none"
+  },
+  {
+    "kind": "oracle",
+    "target": "../upstream/skiplist.py",
+    "url": "https://raw.githubusercontent.com/Ziyad-Benomar/Learning-augmented-priority-queues/3915cc261e87949b2b0aa724673c2227492d1b08/skiplist.py",
+    "download_sha256": "373d148ab5426f967113540eabd91bb1c2cf1a011f907dd24c38bde5652d3c3b",
+    "local_sha256": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c",
+    "git_blob_sha1": "168d39c1107892044884559bc19fc9a7faf81821",
+    "normalization": "append_one_newline"
+  },
+  {
+    "kind": "oracle",
+    "target": "../upstream/sorting.py",
+    "url": "https://raw.githubusercontent.com/Ziyad-Benomar/Learning-augmented-priority-queues/3915cc261e87949b2b0aa724673c2227492d1b08/sorting.py",
+    "download_sha256": "15ddb24cbbe4da63bea77a5ca2484e61c330f347e935442491a81c939c4ad88c",
+    "local_sha256": "d477f8c63161371f0480b152c5ec501f9ea09628ca7579fbdde1d40246ff9de9",
+    "git_blob_sha1": "211374e66719d815f2d859dc9ad001d9a8c8a086",
+    "normalization": "append_one_newline"
+  },
+  {
+    "kind": "oracle",
+    "target": "../upstream/predictions.py",
+    "url": "https://raw.githubusercontent.com/Ziyad-Benomar/Learning-augmented-priority-queues/3915cc261e87949b2b0aa724673c2227492d1b08/predictions.py",
+    "download_sha256": "9a79bea84f8f24e4d228d09a9bfdc25acb89b63fba96f74398738f4f6fbf4ffe",
+    "local_sha256": "19694c93a8695d4a889a9dba92cc23fc6c31efb41a13b45693aa914d9ccab30d",
+    "git_blob_sha1": "68f60b4d96fbfe1d5d942d2706adfdfd2bd624ed",
+    "normalization": "append_one_newline"
+  },
+  {
+    "kind": "oracle",
+    "target": "../upstream/heaps.py",
+    "url": "https://raw.githubusercontent.com/Ziyad-Benomar/Learning-augmented-priority-queues/3915cc261e87949b2b0aa724673c2227492d1b08/heaps.py",
+    "download_sha256": "1d1340cdf4377c100062a62616a871d683da9ceb59daae790e0c62e41a32f80f",
+    "local_sha256": "87c1b4d215254ffbc3c084b246a576e859febb7bcc99d4a780d7db17d052e605",
+    "git_blob_sha1": "eadb3369dec983ac7d70fc97bb804b6e61aa6251",
+    "normalization": "append_one_newline"
+  }
+]

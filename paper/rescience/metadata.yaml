@@ -1,0 +1,109 @@
+{
+  "title": "[Re] Comparison-count benefits in learning-augmented priority queues",
+  "authors": [
+    {
+      "name": "Somama Siddiqui",
+      "orcid": "",
+      "email": "somamasiddiqui11@gmail.com",
+      "affiliations": "*"
+    }
+  ],
+  "affiliations": [],
+  "keywords": "priority queues, replication, learning-augmented algorithms, C++",
+  "code": [
+    {
+      "url": ""
+    },
+    {
+      "doi": ""
+    },
+    {
+      "swh": ""
+    }
+  ],
+  "data": [
+    {
+      "url": ""
+    },
+    {
+      "doi": ""
+    }
+  ],
+  "replication": [
+    {
+      "cite": "Ziyad Benomar and Christian Coester. Learning-Augmented Priority Queues. NeurIPS 2024."
+    },
+    {
+      "bib": "ref1"
+    },
+    {
+      "url": "https://papers.neurips.cc/paper_files/paper/2024/file/e08e1a60c006ac3f0c9f953626b0f0c8-Paper-Conference.pdf"
+    },
+    {
+      "doi": ""
+    }
+  ],
+  "abstract": "Learning-augmented priority queues can reduce expensive true-key comparisons, but replicating that result requires precise advice, tie and counting conventions. We partially replicate the sorting experiments of Benomar and Coester with an independently authored C++ implementation checked against their released Python code. Across 11,340 runs, the class-quality and decay responses agree with the original findings; median pointwise relative errors are below 0.16% on every curve at the two main-paper sizes. Comparison benefits remain conditional on advice quality, with the uninformative class endpoint exceeding the analytic heap reference. A separate extension identifies historical node-map ownership: last-occurrence cleanup reduces drained-queue traced memory from 35.18 to 0.024 MiB, with the ownership effect repeated on a second host. Native graph controls favor a direct heap on all seven tested workloads on both hosts. The artifact separates replicated comparison-count evidence from these additional memory and runtime measurements and provides reproducible input generation, raw counts and verification procedures.",
+  "bibliography": "bibliography.bib",
+  "type": "Replication",
+  "domain": "Computer Science",
+  "language": "C++, Python",
+  "review": [
+    {
+      "url": ""
+    }
+  ],
+  "contributors": [
+    {
+      "name": "",
+      "orcid": "",
+      "role": "editor"
+    },
+    {
+      "name": "",
+      "orcid": "",
+      "role": "reviewer"
+    },
+    {
+      "name": "",
+      "orcid": "",
+      "role": "reviewer"
+    }
+  ],
+  "dates": [
+    {
+      "received": ""
+    },
+    {
+      "accepted": ""
+    },
+    {
+      "published": ""
+    }
+  ],
+  "article": [
+    {
+      "number": ""
+    },
+    {
+      "doi": ""
+    },
+    {
+      "url": ""
+    }
+  ],
+  "journal": [
+    {
+      "name": "ReScience C"
+    },
+    {
+      "issn": "2430-3658"
+    },
+    {
+      "volume": ""
+    },
+    {
+      "issue": ""
+    }
+  ]
+}

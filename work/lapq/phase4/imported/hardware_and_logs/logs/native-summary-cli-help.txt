@@ -1,0 +1,8 @@
+usage: native_summary.py [-h] [--input INPUT] [--output OUTPUT]
+                         [--bootstrap-draws BOOTSTRAP_DRAWS]
+
+options:
+  -h, --help            show this help message and exit
+  --input INPUT
+  --output OUTPUT
+  --bootstrap-draws BOOTSTRAP_DRAWS

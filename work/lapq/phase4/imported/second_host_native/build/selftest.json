@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/build/native_benchmark",
+    "--selftest"
+  ],
+  "binary_sha256": "c08959211af5d82ac1ce22a60a8566d6c330232351e4b561eb6c29c31a07ad74",
+  "cwd": "/root/research/learned-pq-second-host/work/lapq/phase2",
+  "exception": null,
+  "finished_at_utc": "2026-11-06T19:12:39.652262+00:00",
+  "lifecycle_scope": "whole subprocess including IO; not algorithm-only runtime",
+  "process_lifecycle_wall_seconds": 0.36642937300001677,
+  "returncode": 0,
+  "started_at_utc": "2026-11-06T19:12:39.285842+00:00",
+  "stderr_path": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/build/selftest.stderr.txt",
+  "stdout_path": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/build/selftest.stdout.txt"
+}

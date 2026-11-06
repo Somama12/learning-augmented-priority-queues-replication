@@ -1,0 +1,40 @@
+[
+  {
+    "target": "work/lapq/upstream/dijkstra.py",
+    "url": "https://raw.githubusercontent.com/Ziyad-Benomar/Learning-augmented-priority-queues/3915cc261e87949b2b0aa724673c2227492d1b08/dijkstra.py",
+    "download_sha256": "b25ba1376e2d3fef2f48316c74636375c3babd890bb3b3b78f59698b1a2d30c4",
+    "normalization": "append_one_newline",
+    "local_sha256": "70c6b3cfd15ae53f04934ccc3870356304b0be50787bbcef0d76a36d3aee4568",
+    "git_blob_sha1": "2bac87b8e623ff0150f2c2bbc67127e0806f7569"
+  },
+  {
+    "target": "work/lapq/upstream/heaps.py",
+    "url": "https://raw.githubusercontent.com/Ziyad-Benomar/Learning-augmented-priority-queues/3915cc261e87949b2b0aa724673c2227492d1b08/heaps.py",
+    "download_sha256": "1d1340cdf4377c100062a62616a871d683da9ceb59daae790e0c62e41a32f80f",
+    "normalization": "append_one_newline",
+    "local_sha256": "87c1b4d215254ffbc3c084b246a576e859febb7bcc99d4a780d7db17d052e605",
+    "git_blob_sha1": "eadb3369dec983ac7d70fc97bb804b6e61aa6251"
+  },
+  {
+    "target": "work/lapq/upstream/skiplist.py",
+    "url": "https://raw.githubusercontent.com/Ziyad-Benomar/Learning-augmented-priority-queues/3915cc261e87949b2b0aa724673c2227492d1b08/skiplist.py",
+    "download_sha256": "373d148ab5426f967113540eabd91bb1c2cf1a011f907dd24c38bde5652d3c3b",
+    "normalization": "append_one_newline",
+    "local_sha256": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c",
+    "git_blob_sha1": "168d39c1107892044884559bc19fc9a7faf81821"
+  },
+  {
+    "target": "work/lapq/data/brussels.graphml",
+    "url": "https://raw.githubusercontent.com/Ziyad-Benomar/Learning-augmented-priority-queues/3915cc261e87949b2b0aa724673c2227492d1b08/data/brussels.graphml",
+    "download_sha256": "6892a621086135187074ba0e10230783cc8185b98ff5303fadbf2b6bb20b85d6",
+    "local_sha256": "6892a621086135187074ba0e10230783cc8185b98ff5303fadbf2b6bb20b85d6",
+    "normalization": "none"
+  },
+  {
+    "target": "work/data/USA-road-d.NY.gr",
+    "url": "https://raw.githubusercontent.com/TrainingByPackt/CPP-Data-Structures-and-Algorithm-Design-Principles/master/Lesson6/Activity14/USA-road-d.NY.gr",
+    "download_sha256": "37f5b3eff82330850466956b6c036a8ab8551512bdc7509edca1d4c6cf943fa3",
+    "local_sha256": "37f5b3eff82330850466956b6c036a8ab8551512bdc7509edca1d4c6cf943fa3",
+    "normalization": "none"
+  }
+]

@@ -1,0 +1,8 @@
+{"completed_conditions": 6, "planned_conditions": 6, "elapsed_progress_seconds_not_benchmark": 1.7}
+{
+  "status": "passed",
+  "mode": "quick",
+  "completed_conditions": 6,
+  "completed_method_runs": 18,
+  "destination": "/Users/somamasiddiqui/Documents/Codex/2026-11-05/is-it/work/lapq/phase7/portable_validation/quick"
+}

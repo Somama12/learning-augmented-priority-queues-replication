@@ -1,0 +1,9 @@
+{
+  "method": "occ_list_retain",
+  "gc_mode": "enabled",
+  "insertions": 1000,
+  "max_live": 128,
+  "queue_seed": 101,
+  "prediction": "constant0",
+  "rank_universe": 1
+}

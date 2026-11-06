@@ -1,0 +1,47 @@
+{
+  "status": "expected_failure_reproduced",
+  "operations": [
+    [
+      "insert",
+      1,
+      1
+    ],
+    [
+      "insert",
+      1,
+      1
+    ],
+    [
+      "extract",
+      1
+    ],
+    [
+      "insert",
+      2,
+      2
+    ]
+  ],
+  "seed": 101,
+  "predictor": "identity; fixed monotone integer rank",
+  "unsafe_method": "occ_list_detach",
+  "unsafe_error": "IndexError('list index out of range')",
+  "control_extractions": {
+    "occ_list_retain": [
+      1,
+      1,
+      2
+    ],
+    "occ_list_map": [
+      1,
+      1,
+      2
+    ],
+    "occ_linked_map": [
+      1,
+      1,
+      2
+    ]
+  },
+  "mechanism": "Newest equal-key node can be extracted while older duplicate remains. sl.nodes[value] still points to that extracted node, and a later larger-rank insertion uses it as the hint. Blind pointer detachment invalidates this hint.",
+  "scope": "Failure of an attempted cleanup transformation, not evidence that the original queue fails this trace."
+}

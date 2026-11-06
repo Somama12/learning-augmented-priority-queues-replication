@@ -1,0 +1,21 @@
+{
+  "case_id": "sparse_2048__lopsided_train0_far",
+  "workload": "sparse_2048__lopsided",
+  "training_graph": "sparse_2048",
+  "train_source": 870,
+  "query_source": 975,
+  "query_group": "far",
+  "train_index": 0,
+  "target_adjacency_sha256": "045bc0d8513bbfb3c64ca35a85552b1d1cedc3dd38dd63ed6d4fcfeacead69ab",
+  "reference_distance_sha256": "c21a27e64858f288049deb4be83d2cd06879ee8ea67846d4028d643adf8f1340",
+  "repeat": 1,
+  "queue_seed": 844710632,
+  "method_order": [
+    "occ_list_map",
+    "grouped_compact_reference",
+    "occ_list_retain",
+    "occ_linked_retain",
+    "occ_linked_map"
+  ],
+  "block_id": "sparse_2048__lopsided_train0_far:1"
+}

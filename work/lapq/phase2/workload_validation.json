@@ -1,0 +1,93 @@
+{
+  "all_checks_passed": true,
+  "performance_timings_collected": false,
+  "workloads": [
+    {
+      "name": "brussels",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "brussels__scale025",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "brussels__scale4",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "geometric_2048",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "geometric_2048__scale025",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "geometric_2048__scale4",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "geometric_8192",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "grid_2025",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "grid_2025__scale025",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "grid_2025__scale4",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "grid_8100",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "ny",
+      "hash_reproduced": true,
+      "disjoint_sources": 9
+    },
+    {
+      "name": "sparse_2048",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "sparse_2048__lopsided",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "sparse_2048__scale025",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "sparse_2048__scale4",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    },
+    {
+      "name": "sparse_8192",
+      "hash_reproduced": true,
+      "disjoint_sources": 15
+    }
+  ],
+  "geometric_knn_bruteforce_n": 128,
+  "scale_distance_invariance_checked": true
+}

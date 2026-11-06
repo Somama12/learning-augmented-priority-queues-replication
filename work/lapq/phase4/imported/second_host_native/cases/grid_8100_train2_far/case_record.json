@@ -1,0 +1,220 @@
+{
+  "case": {
+    "case_id": "grid_8100_train2_far",
+    "expected_reachable": 8100,
+    "expected_typed_distance_sha256": "973cffd9d266100d4fb6a2c3f902235cc823360a493546d0302dd310dc6a51b9",
+    "methods": [
+      "guided_set_exact",
+      "std_multiset",
+      "grouped_heap",
+      "radix",
+      "guided_bitmap_linear",
+      "plain_skiplist",
+      "guided_set_hist64",
+      "guided_bitmap_exact",
+      "guided_bitmap_hist64",
+      "std_heap",
+      "guided_set_linear",
+      "direct_heap"
+    ],
+    "oracle_binary64_bytes": 64800,
+    "oracle_binary64_path": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/oracles/grid_8100_train2_far.f64le",
+    "oracle_binary64_sha256": "7c64e8239d3ddefcbfb3099dc53226b5c6b24a3f615e0bedd2346bf8e6d01d36",
+    "paired_seed": 2289064177,
+    "query_source": 1986,
+    "repetitions": 7,
+    "source_group": "far",
+    "target_adjacency_sha256": "7af0cd5f454f80dc4e600b939855e8ec42e3d3398f27b8bf221263f43aa46307",
+    "train_index": 2,
+    "train_source": 2868,
+    "training_graph": "grid_8100",
+    "workload": "grid_8100"
+  },
+  "distance_verification": {
+    "actual_bytes": 64800,
+    "actual_sha256": "7c64e8239d3ddefcbfb3099dc53226b5c6b24a3f615e0bedd2346bf8e6d01d36",
+    "expected_bytes": 64800,
+    "expected_sha256": "7c64e8239d3ddefcbfb3099dc53226b5c6b24a3f615e0bedd2346bf8e6d01d36",
+    "passed": true
+  },
+  "errors": [],
+  "execution_ordinal": 17,
+  "native_metadata": {
+    "all_exact_distances_passed": true,
+    "all_queues_drained": true,
+    "arcs": 32040,
+    "build_times": {
+      "exact": {
+        "cpu_seconds": 0.000287,
+        "wall_seconds": 0.0002873
+      },
+      "hist64": {
+        "cpu_seconds": 4.5e-05,
+        "wall_seconds": 4.49e-05
+      },
+      "linear": {
+        "cpu_seconds": 2.2e-05,
+        "wall_seconds": 2.21e-05
+      }
+    },
+    "clock_ticks_per_second": 1000000,
+    "common_lifo_work_counts_passed": true,
+    "compiler": "13.3.0",
+    "diagnostics_outside_timing": {
+      "direct_heap": {
+        "extractions": 10317,
+        "insertions": 10317,
+        "peak_entries": 243,
+        "peak_queue_nodes": 243
+      },
+      "grouped_heap": {
+        "extractions": 10317,
+        "insertions": 10317,
+        "peak_entries": 243,
+        "peak_queue_nodes": 17
+      },
+      "guided_bitmap_exact": {
+        "extractions": 10317,
+        "insertions": 10317,
+        "peak_entries": 243,
+        "peak_queue_nodes": 17
+      },
+      "guided_bitmap_hist64": {
+        "extractions": 10317,
+        "insertions": 10317,
+        "peak_entries": 243,
+        "peak_queue_nodes": 17
+      },
+      "guided_bitmap_linear": {
+        "extractions": 10317,
+        "insertions": 10317,
+        "peak_entries": 243,
+        "peak_queue_nodes": 17
+      },
+      "guided_set_exact": {
+        "extractions": 10317,
+        "insertions": 10317,
+        "peak_entries": 243,
+        "peak_queue_nodes": 17
+      },
+      "guided_set_hist64": {
+        "extractions": 10317,
+        "insertions": 10317,
+        "peak_entries": 243,
+        "peak_queue_nodes": 17
+      },
+      "guided_set_linear": {
+        "extractions": 10317,
+        "insertions": 10317,
+        "peak_entries": 243,
+        "peak_queue_nodes": 17
+      },
+      "plain_skiplist": {
+        "extractions": 10317,
+        "insertions": 10317,
+        "peak_entries": 243,
+        "peak_queue_nodes": 17
+      },
+      "radix": {
+        "extractions": 10317,
+        "insertions": 10317,
+        "peak_entries": 243,
+        "peak_queue_nodes": 243
+      },
+      "std_heap": {
+        "extractions": 10317,
+        "insertions": 10317,
+        "peak_entries": 243,
+        "peak_queue_nodes": 243
+      },
+      "std_multiset": {
+        "extractions": 10317,
+        "insertions": 10317,
+        "peak_entries": 243,
+        "peak_queue_nodes": 243
+      }
+    },
+    "distance_encoding": "little-endian IEEE754 binary64, vertex order",
+    "distance_fnv1a64": "12518784489406085504",
+    "distances_output": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/cases/grid_8100_train2_far/distances.f64le",
+    "graph": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/inputs/grid_8100.txt",
+    "implementation": "independent engineered C++17; grouped live-only skiplist",
+    "methods": [
+      "guided_set_exact",
+      "std_multiset",
+      "grouped_heap",
+      "radix",
+      "guided_bitmap_linear",
+      "plain_skiplist",
+      "guided_set_hist64",
+      "guided_bitmap_exact",
+      "guided_bitmap_hist64",
+      "std_heap",
+      "guided_set_linear",
+      "direct_heap"
+    ],
+    "notes": [
+      "Times include queue construction/destruction, distance allocation, predictor queries and all queue work. All methods except direct_heap include the common pending map. Model training/build and correctness checks are excluded.",
+      "Observed counters are compiled out of timed runs. Queue multiplicities and size fields remain algorithm state.",
+      "One observed warmup per method, shuffled; each repetition has matched height seed and shuffled method order.",
+      "Same scalar distance to LIFO vertex map for queue ablations. direct_heap embeds vertices with reverse insertion sequence, preserving LIFO ties without the map. Reference oracle uses an independent vertex-tie pair heap.",
+      "Guided set and bitmap share the same grouped skiplist and live-only rank buckets; plain skiplist shares grouping without rank buckets.",
+      "Grouping alters original artifact hint history and random-height consumption. This is an engineered crosscheck, not exact artifact reproduction.",
+      "Dense hierarchical bitmap is O(log_64 U), not vEB. Grouped heap controls duplicate compression. No RSS or total memory claim.",
+      "All three fitted advisors and training samples remain resident across methods; this is not isolated per-method memory measurement.",
+      "Training/build are measured once per invocation; baseline queues require neither. Shared-host timings are diagnostic."
+    ],
+    "radix_eligible": true,
+    "rank_universe": 10284,
+    "repeat": 7,
+    "schema_version": 1,
+    "seed": 2289064177,
+    "source": 1986,
+    "timed_records": 84,
+    "train": 2868,
+    "train_arcs": 32040,
+    "train_graph": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/inputs/grid_8100.txt",
+    "train_vertices": 8100,
+    "training_cpu_seconds": 0.001697,
+    "training_keys": 10283,
+    "training_timing_note": "one common std_heap run, collecting every successful noninitial insertion; excludes graph read and oracle",
+    "training_wall_seconds": 0.0016982,
+    "vertices": 8100
+  },
+  "passed": true,
+  "process": {
+    "argv": [
+      "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/build/native_benchmark",
+      "--graph",
+      "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/inputs/grid_8100.txt",
+      "--train-graph",
+      "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/inputs/grid_8100.txt",
+      "--train",
+      "2868",
+      "--source",
+      "1986",
+      "--repeat",
+      "7",
+      "--seed",
+      "2289064177",
+      "--methods",
+      "guided_set_exact,std_multiset,grouped_heap,radix,guided_bitmap_linear,plain_skiplist,guided_set_hist64,guided_bitmap_exact,guided_bitmap_hist64,std_heap,guided_set_linear,direct_heap",
+      "--output",
+      "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/cases/grid_8100_train2_far/native",
+      "--distances-output",
+      "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/cases/grid_8100_train2_far/distances.f64le"
+    ],
+    "cwd": "/root/research/learned-pq-second-host/work/lapq/phase2",
+    "exception": null,
+    "finished_at_utc": "2026-11-06T19:14:11.542550+00:00",
+    "lifecycle_scope": "whole subprocess including IO; not algorithm-only runtime",
+    "process_lifecycle_wall_seconds": 0.21572158399999353,
+    "returncode": 0,
+    "started_at_utc": "2026-11-06T19:14:11.326836+00:00",
+    "stderr_path": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/cases/grid_8100_train2_far/process.stderr.txt",
+    "stdout_path": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/cases/grid_8100_train2_far/process.stdout.txt"
+  },
+  "timing_csv": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/cases/grid_8100_train2_far/native.csv",
+  "timing_csv_sha256": "580212bc75c8c4de9ab4d0adc4d630ff40766b0d62ac308b9f225b59e8c89fdb",
+  "timing_rows": 84
+}

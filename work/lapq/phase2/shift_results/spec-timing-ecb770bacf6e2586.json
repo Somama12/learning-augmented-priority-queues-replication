@@ -1,0 +1,29 @@
+{
+  "stage": "shift",
+  "workload": "grid_2025__scale4",
+  "training_workload": "grid_2025",
+  "train_source": 39,
+  "query_source": 941,
+  "query_group": "near",
+  "train_index": 1,
+  "query_index": 0,
+  "repeat": 1,
+  "queue_seed": 29,
+  "method_order_seed": 41098,
+  "methods": [
+    "heapq_native",
+    "heapq_shared",
+    "sortedlist_native",
+    "skiplist",
+    "original_exact",
+    "original_linear",
+    "original_hist64",
+    "bitmap_exact",
+    "bitmap_linear",
+    "bitmap_hist64",
+    "veb_linear",
+    "compact_linear",
+    "radix"
+  ],
+  "block_id": "ecb770bacf6e2586"
+}

@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "Please cite this software snapshot when using its code or results."
+type: software
+title: "Learning-Augmented Priority Queues: Partial Replication and Artifact Audit"
+version: "0.2.0-preparation"
+authors:
+  - family-names: "Siddiqui"
+    given-names: "Somama"
+abstract: "Source, frozen plans, comparison-count observations, and analysis for a partial replication of learning-augmented priority queues, with a separate two-host runtime and memory audit. Licensing scope is documented in THIRD_PARTY_NOTICES.md."

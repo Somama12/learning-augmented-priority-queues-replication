@@ -1,0 +1,195 @@
+{
+  "status": "passed",
+  "upstream_repository": "Ziyad-Benomar/Learning-augmented-priority-queues",
+  "upstream_commit": "3915cc261e87949b2b0aa724673c2227492d1b08",
+  "upstream_skiplist_sha256": "63282bd3c84e89684380ab690c48f43a24fa013f4323a57e045fc94fc96b4a3c",
+  "upstream_source_unchanged": true,
+  "reproducer_sha256": "312f346c21db59263c1fd3a03eb3026f35b8fba07ae13779d5a33daec5414cef",
+  "scope": "Correctness and container cardinality only; no timing, allocation, process-leak or asymptotic claim.",
+  "unique_bounded_live_trace": [
+    {
+      "variant": "OnlineSL",
+      "insertions": 1000,
+      "extractions": 1000,
+      "maximum_live_entries": 128,
+      "drained": true,
+      "node_map_entries_after_drain": 1000
+    },
+    {
+      "variant": "MapCleanup",
+      "insertions": 1000,
+      "extractions": 1000,
+      "maximum_live_entries": 128,
+      "drained": true,
+      "node_map_entries_after_drain": 0
+    }
+  ],
+  "minimal_duplicate_control": [
+    {
+      "variant": "OnlineSL",
+      "remaining_duplicate_hint_preserved": true,
+      "remaining_extractions": [
+        1,
+        2
+      ],
+      "drained": true
+    },
+    {
+      "variant": "MapCleanup",
+      "remaining_duplicate_hint_preserved": true,
+      "remaining_extractions": [
+        1,
+        2
+      ],
+      "drained": true
+    }
+  ],
+  "random_duplicate_traces": [
+    {
+      "variant": "OnlineSL",
+      "predictor": "constant",
+      "seed": 3,
+      "insertions": 144,
+      "extractions": 144,
+      "passed": true
+    },
+    {
+      "variant": "MapCleanup",
+      "predictor": "constant",
+      "seed": 3,
+      "insertions": 144,
+      "extractions": 144,
+      "passed": true
+    },
+    {
+      "variant": "OnlineSL",
+      "predictor": "constant",
+      "seed": 17,
+      "insertions": 130,
+      "extractions": 130,
+      "passed": true
+    },
+    {
+      "variant": "MapCleanup",
+      "predictor": "constant",
+      "seed": 17,
+      "insertions": 130,
+      "extractions": 130,
+      "passed": true
+    },
+    {
+      "variant": "OnlineSL",
+      "predictor": "constant",
+      "seed": 101,
+      "insertions": 139,
+      "extractions": 139,
+      "passed": true
+    },
+    {
+      "variant": "MapCleanup",
+      "predictor": "constant",
+      "seed": 101,
+      "insertions": 139,
+      "extractions": 139,
+      "passed": true
+    },
+    {
+      "variant": "OnlineSL",
+      "predictor": "identity",
+      "seed": 3,
+      "insertions": 144,
+      "extractions": 144,
+      "passed": true
+    },
+    {
+      "variant": "MapCleanup",
+      "predictor": "identity",
+      "seed": 3,
+      "insertions": 144,
+      "extractions": 144,
+      "passed": true
+    },
+    {
+      "variant": "OnlineSL",
+      "predictor": "identity",
+      "seed": 17,
+      "insertions": 130,
+      "extractions": 130,
+      "passed": true
+    },
+    {
+      "variant": "MapCleanup",
+      "predictor": "identity",
+      "seed": 17,
+      "insertions": 130,
+      "extractions": 130,
+      "passed": true
+    },
+    {
+      "variant": "OnlineSL",
+      "predictor": "identity",
+      "seed": 101,
+      "insertions": 139,
+      "extractions": 139,
+      "passed": true
+    },
+    {
+      "variant": "MapCleanup",
+      "predictor": "identity",
+      "seed": 101,
+      "insertions": 139,
+      "extractions": 139,
+      "passed": true
+    },
+    {
+      "variant": "OnlineSL",
+      "predictor": "binned",
+      "seed": 3,
+      "insertions": 144,
+      "extractions": 144,
+      "passed": true
+    },
+    {
+      "variant": "MapCleanup",
+      "predictor": "binned",
+      "seed": 3,
+      "insertions": 144,
+      "extractions": 144,
+      "passed": true
+    },
+    {
+      "variant": "OnlineSL",
+      "predictor": "binned",
+      "seed": 17,
+      "insertions": 130,
+      "extractions": 130,
+      "passed": true
+    },
+    {
+      "variant": "MapCleanup",
+      "predictor": "binned",
+      "seed": 17,
+      "insertions": 130,
+      "extractions": 130,
+      "passed": true
+    },
+    {
+      "variant": "OnlineSL",
+      "predictor": "binned",
+      "seed": 101,
+      "insertions": 139,
+      "extractions": 139,
+      "passed": true
+    },
+    {
+      "variant": "MapCleanup",
+      "predictor": "binned",
+      "seed": 101,
+      "insertions": 139,
+      "extractions": 139,
+      "passed": true
+    }
+  ],
+  "extracted_node_pointer_checks": 4484,
+  "cleanup_scope": "Final-occurrence node-map deletion only; original next/prev pointers remain intact. Random controls use deterministic monotone predictions and do not establish arbitrary-advice duplicate correctness."
+}

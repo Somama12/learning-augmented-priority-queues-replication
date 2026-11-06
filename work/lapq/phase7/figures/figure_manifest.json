@@ -1,0 +1,11 @@
+{
+  "files": [
+    "figures/replication-class.pdf",
+    "figures/replication-class.png",
+    "figures/replication-decay.pdf",
+    "figures/replication-decay.png"
+  ],
+  "data": "replication_summary.json",
+  "coordinate_offsets": false,
+  "uncertainty": "Pointwise95% bootstrap intervals of our30replicates; published curves have no inferred standard errors."
+}

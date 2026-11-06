@@ -1,0 +1,30 @@
+{
+  "stage": "primary",
+  "workload": "geometric_8192",
+  "training_workload": "geometric_8192",
+  "train_source": 2370,
+  "query_source": 5813,
+  "query_group": "far",
+  "train_index": 0,
+  "query_index": 1,
+  "repeat": 4,
+  "queue_seed": 79,
+  "method_order_seed": 41070,
+  "methods": [
+    "heapq_native",
+    "heapq_shared",
+    "sortedlist_native",
+    "skiplist",
+    "original_exact",
+    "original_linear",
+    "original_hist64",
+    "bitmap_exact",
+    "bitmap_linear",
+    "bitmap_hist64",
+    "veb_linear",
+    "compact_linear"
+  ],
+  "block_id": "a0efcca90d808336",
+  "method": "skiplist",
+  "memory_id": "geometric_8192-0-skiplist"
+}

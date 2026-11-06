@@ -1,0 +1,5 @@
+Fetched and verified: work/lapq/upstream/dijkstra.py
+Fetched and verified: work/lapq/upstream/heaps.py
+Fetched and verified: work/lapq/upstream/skiplist.py
+Fetched and verified: work/lapq/data/brussels.graphml
+Fetched and verified: work/data/USA-road-d.NY.gr

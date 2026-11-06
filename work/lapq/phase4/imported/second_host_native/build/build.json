@@ -1,0 +1,31 @@
+{
+  "argv": [
+    "/usr/bin/g++",
+    "-O3",
+    "-std=c++17",
+    "-DNDEBUG",
+    "/root/research/learned-pq-second-host/work/lapq/phase2/native_benchmark.cpp",
+    "-o",
+    "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/build/native_benchmark"
+  ],
+  "binary_path": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/build/native_benchmark",
+  "binary_sha256": "c08959211af5d82ac1ce22a60a8566d6c330232351e4b561eb6c29c31a07ad74",
+  "compile_flags": [
+    "-O3",
+    "-std=c++17",
+    "-DNDEBUG"
+  ],
+  "compiler": "/usr/bin/g++",
+  "compiler_version": "g++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n",
+  "cwd": "/root/research/learned-pq-second-host/work/lapq/phase2",
+  "exception": null,
+  "finished_at_utc": "2026-11-06T19:12:39.282168+00:00",
+  "lifecycle_scope": "whole subprocess including IO; not algorithm-only runtime",
+  "process_lifecycle_wall_seconds": 7.59512263299996,
+  "returncode": 0,
+  "sanitizers": false,
+  "source_sha256": "1ce22bccf0d90010cdf58e7639ef674c189ff7679e442f5823cb1b739a579f2c",
+  "started_at_utc": "2026-11-06T19:12:31.687175+00:00",
+  "stderr_path": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/build/compile.stderr.txt",
+  "stdout_path": "/root/research/learned-pq-second-host/work/lapq/phase2/second_host_native/build/compile.stdout.txt"
+}
