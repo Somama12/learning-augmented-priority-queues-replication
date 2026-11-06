@@ -22,6 +22,8 @@ Author: **Sahil Siddiqui**. The author is responsible for all claims. AI coding
 assistants were used as tools for code generation, debugging, and editing of prose.
 
 Public repository: [learning-augmented-priority-queues-replication](https://github.com/Somama12/learning-augmented-priority-queues-replication).
+Journal submission: [ReScience C #153](https://github.com/ReScience/submissions/issues/153) (submitted; not accepted).
+
 Use the [v1.0.0 tagged source](https://github.com/Somama12/learning-augmented-priority-queues-replication/tree/v1.0.0) and
 [v1.0.0 release page](https://github.com/Somama12/learning-augmented-priority-queues-replication/releases/tag/v1.0.0).
 Artifact DOI: [10.5281/zenodo.24023742](https://doi.org/10.5281/zenodo.24023742).
@@ -193,7 +195,7 @@ acceptance or journal publication date is asserted.
 - [x] Version v1.0.0 links and the artifact DOI are recorded in paper, README and citation metadata.
 - [x] The active C++ formatting revision passes differential, quick-run and warning checks; the measured source is archived unchanged.
 - [x] Historical local paths/name provenance remain disclosed and unchanged; component license notices are preserved.
-- [ ] Complete the current ReScience C submission form using the actual release URLs.
+- [x] Submitted to ReScience C as [issue #153](https://github.com/ReScience/submissions/issues/153) using the v1.0.0 release links.
 
 The software release and journal review are separate. The artifact DOI identifies
 the software/data archive; it is not a journal article DOI or an acceptance claim.

@@ -18,8 +18,8 @@
       "sha256": "82de3bf65515abe9da97969bc730e996ebed42cd43a3d94b1876a49fc4df939a"
     },
     "README.md": {
-      "bytes": 11411,
-      "sha256": "92d01d39b55d99cb00d44ce20274e37af455cf8c40642eb8a7c78aba9ebeddf0"
+      "bytes": 11577,
+      "sha256": "46c69d2886714865be60e5642952d3b589bcd128e437705898bc5d7b68d92fd2"
     },
     "THIRD_PARTY_NOTICES.md": {
       "bytes": 4327,
@@ -21883,9 +21883,9 @@
       "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
     },
     "README.md": {
-      "sha256": "92d01d39b55d99cb00d44ce20274e37af455cf8c40642eb8a7c78aba9ebeddf0",
-      "bytes": 11411,
-      "origin": "Completed phase7 replication or licensed ReScience paper source; previous scientific records unchanged"
+      "bytes": 11577,
+      "sha256": "46c69d2886714865be60e5642952d3b589bcd128e437705898bc5d7b68d92fd2",
+      "origin": "Post-release journal-submission status update; v1.0.0 tag/archive remain unchanged."
     },
     "THIRD_PARTY_NOTICES.md": {
       "sha256": "35d2e097271d517286dac5aec5a79e6556cae1bcc9bff18b160726167fbca53f",
